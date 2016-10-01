@@ -16,7 +16,7 @@ I built this simple set of essential <abbr title="Sassy CSS">SCSS</abbr> variabl
 <li>Designed to be compatible with <a href="http://www.gridlover.net/">Grid Lover</a></li>
 </ul>
 
-<p><a href="https://erictlurick.github.io/ecssential/">Demo</a></p>
+<p>Preview at <a href="https://erictlurick.github.io/ecssential/">https://erictlurick.github.io/ecssential/</a></p>
 
 <h2>Acknowledgements &amp; Inspiration</h2>
 Heavily inspired by <a href="http://www.gridlover.net/">Grid Lover</a>, <a href="https://github.com/sevenupcan/gridlover-mixin">Gridlover Mixin</a>, <a href="https://10up.github.io/sanitize.css/">Sanitize</a>, <a href="https://github.com/inuitcss">InuitCSS</a> and <a href="https://yeun.github.io/open-color/">Open Color</a>.
