@@ -17,4 +17,4 @@ I built this simple set of essential <abbr title="Sassy CSS">SCSS</abbr> variabl
 </ul>
 
 <h2>Acknowledgements &amp; Inspiration</h2>
-Heavily inspired by <a href="http://www.gridlover.net/">Grid Lover</a>, <a href="https://github.com/sevenupcan/gridlover-mixin">Gridlover Mixin</a>, <a href="https://10up.github.io/sanitize.css/">Sanitize</a>, <a href="https://github.com/inuitcss">InuitCSS and <a href="https://yeun.github.io/open-color/">Open Color</a>.
+Heavily inspired by <a href="http://www.gridlover.net/">Grid Lover</a>, <a href="https://github.com/sevenupcan/gridlover-mixin">Gridlover Mixin</a>, <a href="https://10up.github.io/sanitize.css/">Sanitize</a>, <a href="https://github.com/inuitcss">InuitCSS</a>a> and <a href="https://yeun.github.io/open-color/">Open Color</a>.
