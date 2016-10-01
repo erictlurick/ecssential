@@ -1,0 +1,2535 @@
+@charset "UTF-8";
+/**
+ * CONTENTS
+ *
+ * SETTINGS
+ * Breakpoints..........Define our breakpoints for later use.
+ * Colors...............Our brand and project colours.
+ * Configuration........Define any project-level configuration, feature
+ *                      switches, etc. in here.
+ * Font stacks..........A collection of font stacks.
+ * Font weights.........Define our font weights for later use.
+ * Global...............Standardise some UI treatments.
+ * Layers...............Define a list of stacking levels for later use.
+ * Scales...............Define a list of typographic scales.
+ * Typography...........Base typographical styles.
+ *
+ * FUNCTIONS
+ * Colors...............Functions to get colour values
+ * Exponent.............Exponent operator
+ * Units................Internally-used functions to remove the units and get
+                        the em or rem value based on the pixel value.
+ *
+ * MIXINS
+ * Attention............Apply styles to links in one go
+ * Baseline.............Baseline grid.
+ * Borders..............Apply borders and keep a consistent baseline.
+ * Breakpoints..........Responsive breakpoints.
+ * Clearfix.............Drop micro clearfix into a selector.
+ * Hide.................Hide content.
+ * Palette..............A whole bunch of friendly color variables.
+ * Prefix...............Allows you to prefix multiple properties at once.
+ * Pseudo elements......Easily generate pseudo-elements.
+ * Space................Space elements by an amount based on your magic number.
+ * Typography...........Apply typographic styles.
+ *
+ * GENERIC
+ * Baseline checks......Quickly debug and fix the baseline by adding a noticeable
+                        background color to block level elements.
+ * Box sizing...........Set the global `box-sizing` state to `border-box`.
+ * Breakpoint checks....Use this little piece of CSS to see what media queries
+                        are being rendered in your browser.
+ * Health checks........By using substring selectors, we can target and then
+                        visualise the general makeup of a page based on the types
+                        of class it contains.
+ * Reset................A level playing field using Jonathan T. Neal's Sanitize.
+ * Shared...............Sensibly and tersely share some global commonalities
+ *                      (particularly useful when managing vertical rhythm).
+ *
+ * ELEMENTS
+ * Page.................Set up our document's default `font-size` and
+ *                      `line-height`.
+ * Headings.............Set up our document's default for headings 1 through 6.
+ * Typography...........Set up our document's default for typography.
+ * Anchors..............Set up our document's default for links.
+ * Code.................Set up our document's default for code.
+ * Forms................Set up our document's default for forms.
+ * Lists................Set up our document's default for lists.
+ * Tables...............Set up our document's default for tables
+ * Media................Set up our document's default for images and figures.
+ * Selections...........Set up our document's default for selections.
+ *
+ * LAYOUT
+ * Content..............Abstract layout into a quasi-grid-system.
+ * Grid.................Basic flexbox grid.
+ * Wrappers.............Use wrappers when you need a content area that is a
+ *                      standardized width and centered on the page.
+ *
+ * OBJECTS
+ * Box..................Boxes off content.
+
+ * Form fields..........Group sets of form fields.
+ * Form helpers.........Extra help text displayed after a field when that field
+                        is in focus and invalid.
+ * Icons................Set up SVG icons.
+ * Ratios...............Create ratio-bound content blocks, to keep media (e.g.
+ *                      images, videos) in their correct aspect ratios.
+ *
+ * COMPONENTS
+ * Buttons..............Set up various button styles.
+ *
+ * TRUMPS
+ * Headings.............Headings 1-6's corresponding Greek-alphabet abstract
+                        classes for double- stranded heading hierarchy.
+ * Helpers..............A series of classes to use arbitrarily.
+ * Print................Very crude, reset-like styles taken from the HTML5
+                        Boilerplate.
+ * Text.................Utilities to adjust the size of a span of text by a
+                        little bit more, or a little bit less.
+ */
+/**
+ * Color scheme for UI design. You can use it for font, background, border, etc.
+ * It contains a gray and twelve colors. All the colors are perceptible by color
+ * blind (specifically deuteranopia and protanopia) people.
+ *
+ * Source: https://yeun.github.io/open-color/
+ */
+@import "https://fonts.googleapis.com/css?family=Gentium+Basic:400,400i,700,700i|Open+Sans+Condensed:700&subset=latin-ext";
+/*------------------------------------*\
+    GENERIC / RESET
+\*------------------------------------*/
+/*
+ * Normalization
+ */
+:root {
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  overflow-y: scroll;
+  -webkit-text-size-adjust: 100%;
+}
+
+audio:not([controls]) {
+  display: none;
+}
+
+button {
+  overflow: visible;
+}
+
+details {
+  display: block;
+}
+
+input[type="number"] {
+  width: auto;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+main {
+  display: block;
+}
+
+summary {
+  display: block;
+}
+
+pre {
+  overflow: auto;
+}
+
+progress {
+  display: inline-block;
+}
+
+template {
+  display: none;
+}
+
+textarea {
+  overflow: auto;
+}
+
+[hidden] {
+  display: none;
+}
+
+/*
+ * Universal inheritance
+ */
+*,
+::before,
+::after {
+  box-sizing: inherit;
+  vertical-align: inherit;
+}
+
+* {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+::before,
+::after {
+  text-decoration: inherit;
+}
+
+/**
+ * Specify the border style and width of all elements.
+ */
+*,
+::before,
+::after {
+  border-style: solid;
+  border-width: 0;
+}
+
+/**
+ * Remove the margin and padding of all elements.
+ */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * Specify the progress cursor of updating elements.
+ */
+[aria-busy="true"] {
+  cursor: progress;
+}
+
+/**
+ * Specify the pointer cursor of trigger elements.
+ */
+[aria-controls] {
+  cursor: pointer;
+}
+
+/**
+ * Specify the unstyled cursor of disabled, not-editable, or otherwise inoperable
+ * elements.
+ */
+[aria-disabled] {
+  cursor: default;
+}
+
+/**
+ * Specify the style of visually hidden yet accessible elements.
+ */
+[hidden][aria-hidden="false"] {
+  clip: rect(0 0 0 0);
+  display: inherit;
+  position: absolute;
+}
+
+[hidden][aria-hidden="false"]:focus {
+  clip: auto;
+}
+
+/**
+ * Specify the background color of form elements.
+ */
+button,
+input,
+select,
+textarea {
+  background-color: transparent;
+}
+
+/**
+ * Specify the inherited color and font of form elements.
+ */
+button,
+input,
+select,
+textarea {
+  color: inherit;
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+}
+
+label {
+  vertical-align: top;
+}
+
+/**
+ * Specify the resizability of textareas.
+ */
+textarea {
+  resize: vertical;
+}
+
+/**
+ * Specify the standard appearance of selects.
+ */
+select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+select::-ms-value {
+  color: currentColor;
+}
+
+[type="radio"],
+[type="checkbox"] {
+  vertical-align: middle !important;
+}
+
+/*------------------------------------*\
+    GENERIC / BOX-SIZING
+\*------------------------------------*/
+/**
+ * Set the global `box-sizing` state to `border-box`.
+ *
+ * https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
+ * http://paulirish.com/2012/box-sizing-border-box-ftw
+ */
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+/*------------------------------------*\
+    GENERIC / SHARED
+\*------------------------------------*/
+/**
+ * Where `margin-bottom` is concerned,this value will be the same as the
+ * base line-height. This allows us to keep a consistent vertical rhythm.
+ * As per: csswizardry.com/2012/06/single-direction-margin-declarations
+ */
+ul, ol, dl,
+blockquote, p, address,
+table,
+fieldset, legend, figure, details,
+pre {
+  margin-bottom: 1.5rem;
+}
+
+/**
+ * Where `margin-left` is concerned we want to try and indent certain elements
+ * by a consistent amount. Define that amount once,here.
+ */
+ul, ol {
+  margin-left: 1.5rem;
+}
+
+/*------------------------------------*\
+    ELEMENTS / PAGE
+\*------------------------------------*/
+/**
+ * Simple page-level setup.
+ *
+ * 1. Ensure the page always fills at least the entire height of the viewport.
+ * 2. Clip the left/right edges if it overflows the area
+ * 3. Force scrollbars to always be visible to prevent awkward ÔÇÿjumpsÔÇÖ when
+ * 4. Set the default `font-size` and `line-height` for the entire project,
+ *    sourced from our default variables. The `font-size` is calculated to exist
+ *    in ems, the `line-height` is calculated to exist unitlessly.
+ *    navigating between pages that do/do not have enough content to produce
+ *    scrollbars naturally.
+ * 5. Prevent certain mobile browsers from automatically zooming fonts.
+ * 6. Fonts on OSX will look more consistent with other systems that do not
+ *    render text using sub-pixel anti-aliasing.
+ */
+html {
+  min-height: 100%;
+  /* [1] */
+  overflow-x: hidden;
+  /* [2] */
+  overflow-y: scroll;
+  /* [3] */
+  font-family: "Gentium Basic", Georgia, Times, "Times New Roman", serif;
+  font-size: 1em;
+  /* [4] */
+  line-height: 1.5;
+  /* [4] */
+  font-weight: 400;
+  color: #212529;
+  background-color: #fff;
+  -webkit-text-size-adjust: 100%;
+  /* [5] */
+  -ms-text-size-adjust: 100%;
+  /* [5] */
+  -moz-osx-font-smoothing: grayscale;
+  /* [6] */
+  -webkit-font-smoothing: antialiased;
+  /* [6] */
+}
+@media (min-width: 60em) {
+  html {
+    font-size: 125%;
+    /* [4] */
+  }
+}
+
+body {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -webkit-hyphen: auto;
+  -ms-hyphen: auto;
+  -moz-hyphen: auto;
+  hyphen: auto;
+}
+
+/*------------------------------------*\
+    ELEMENTS / HEADINGS
+\*------------------------------------*/
+h1, h2, h3, h4, h5, h6, .u-h1-size, .u-h2-size, .u-h3-size, .u-h4-size, .u-h5-size, .u-h6-size {
+  font-family: "Open Sans Condensed", "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 600;
+  letter-spacing: -.028em;
+  word-wrap: break-word;
+  color: #495057;
+}
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, .u-h1-size a, .u-h2-size a, .u-h3-size a, .u-h4-size a, .u-h5-size a, .u-h6-size a {
+  font-weight: inherit;
+}
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .u-h1-size small, .u-h2-size small, .u-h3-size small, .u-h4-size small, .u-h5-size small, .u-h6-size small {
+  display: table;
+  height: 1.5rem;
+  vertical-align: baseline;
+  font-size: 75%;
+  line-height: 1;
+  color: #868e96;
+}
+@media (min-width: 45em) {
+  h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .u-h1-size small, .u-h2-size small, .u-h3-size small, .u-h4-size small, .u-h5-size small, .u-h6-size small {
+    display: inline;
+  }
+}
+
+h1 {
+  margin-bottom: 1.5rem;
+  font-size: 3.1875rem;
+  line-height: 4.5rem;
+}
+
+h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2.375rem;
+  line-height: 3rem;
+}
+
+h3 {
+  margin-bottom: 0.75rem;
+  font-size: 1.75rem;
+  line-height: 3rem;
+}
+
+h4 {
+  margin-bottom: 0.75rem;
+  font-size: 1.3125rem;
+  line-height: 1.5rem;
+}
+
+h5 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+h6 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+/**
+ * Set space between headings.
+ */
+h3 + h4,
+h4 + h5,
+h5 + h6 {
+  margin-top: 1.5rem;
+}
+
+/**
+ * Off screen content.
+ */
+h1[aria-hidden],
+h2[aria-hidden],
+h3[aria-hidden],
+h4[aria-hidden],
+h5[aria-hidden],
+h6[aria-hidden] {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+
+/*------------------------------------*\
+    ELEMENTS / TYPOGRAPHY
+\*------------------------------------*/
+/**
+ * http://meyerweb.com/eric/thoughts/2012/12/17/where-to-avoid-css-hyphenation
+ */
+abbr,
+acronym,
+blockquote,
+code,
+dir,
+kbd,
+listing,
+plaintext,
+q,
+samp,
+tt,
+var,
+xmp {
+  -webkit-hyphen: none;
+  -ms-hyphen: none;
+  -moz-hyphen: none;
+  hyphen: none;
+}
+
+/**
+ * For use in smallprint etc.
+ */
+small {
+  font-size: 0.75rem;
+  line-height: 1;
+}
+
+/**
+ * 1. Change all letters to uppercase
+ * 2. Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ * 3. Turn on small caps for upper and lowercase letters
+ */
+abbr[title] {
+  text-transform: uppercase;
+  /* [1] */
+  letter-spacing: 0.05em;
+  border-bottom: 1px dotted;
+  /* [2] */
+  cursor: help;
+  /* [2] */
+}
+
+/**
+ * 1. Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
+b,
+strong {
+  font-weight: 700;
+  /* [1] */
+  color: #495057;
+}
+
+/**
+ * 1. Address styling not present in Safari and Chrome.
+ */
+dfn {
+  font-style: italic;
+  /* [1] */
+  cursor: help;
+  /* [1] */
+}
+
+/**
+ * 1. Address styling not present in IE 8/9.
+ */
+mark {
+  padding-right: 0.1em;
+  padding-left: 0.1em;
+  color: #212529;
+  /* [1] */
+  background-color: transparent !important;
+  /* [1] */
+  background-image: linear-gradient(to bottom, #defad3, #defad3);
+}
+
+mark code,
+mark samp {
+  background-color: transparent;
+}
+
+/**
+ * Avoid confusion with links.
+ */
+ins {
+  padding-right: 0.1em;
+  padding-left: 0.1em;
+  text-decoration: none;
+  color: #212529;
+  background-color: transparent !important;
+  background-image: linear-gradient(to bottom, #e0f4ff, #e0f4ff);
+}
+
+/**
+ * Use color to differentiate from `s`.
+ */
+del {
+  padding-right: 0.1em;
+  padding-left: 0.1em;
+  text-decoration: none;
+  color: #212529;
+  background-color: transparent !important;
+  background-image: linear-gradient(to bottom, #ffa8a8, #ffa8a8);
+}
+
+s {
+  text-decoration: line-through;
+  color: #212529;
+  opacity: .5;
+}
+
+address {
+  font-style: normal;
+}
+
+/**
+ * 1. Makes all browsers position the sup/sup properly, relative to the
+ *    surrounding text.
+ * 2. Specified in % so that the sup/sup is the right size relative to the
+ *    surrounding text.
+ * 3. Zero out the line-height so that it doesn't interfere with the positioning
+ *    that follows.
+ * 4. Turn on proper supercript numerals.
+ * 5. Move the superscripted text up.
+ * 6. Move the subscripted text down, but only half as far down as the
+ *    superscript moved up.
+ */
+sub,
+sup {
+  position: relative;
+  /* [1] */
+  font-size: 75%;
+  /* [2] */
+  line-height: 0;
+  /* [3] */
+  vertical-align: baseline;
+  /* [1] */
+}
+
+sup {
+  top: -.5em;
+  /* [5] */
+}
+
+sub {
+  bottom: -.25em;
+  /* [6] */
+}
+
+/**
+ * Details.
+ */
+summary {
+  cursor: pointer;
+  outline: 0;
+}
+
+/**
+ * Dividers.
+ */
+hr {
+  width: 100%;
+  margin-top: 0;
+  margin-right: auto;
+  margin-bottom: 0;
+  margin-left: auto;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  border: 0;
+  background-image: linear-gradient(to bottom, transparent 50%, transparent 50%);
+  background-position: 0 50%;
+  background-repeat: repeat-x;
+  background-size: 100% 0.1rem;
+  position: relative;
+}
+hr:after {
+  content: "• • •";
+  position: absolute;
+  top: 1.53rem;
+  right: 0;
+  left: 0;
+  line-height: 0;
+  letter-spacing: 0.6em;
+  text-align: center;
+  color: #495057;
+}
+
+/**
+ * Dropcaps.
+ *
+ * The font size and margins used on lines 8 and 10 of the code above vary for
+ * different typefaces. The following table provides values for two heights of
+ * drop cap for each of four common typefaces.
+
+    Times New Roman/Times, two lines   => font-size: 3.29em | margin: 0.205em 0.153em 0 0
+    Times New Roman/Times, three lines => font-size: 5.53em | margin: 0.151em 0.0904em 0 0
+    Georgia, two lines                 => font-size: 3.20em | margin: 0.225em 0.159em 0 0
+    Georgia, three lines               => font-size: 5.32em | margin: 0.172em 0.0940em 0 0
+    Arial/Helvetica, two lines         => font-size: 3.11em | margin: 0.240em 0.161em 0 0
+    Arial/Helvetica, three lines       => font-size: 5.20em | margin: 0.192em 0.0962em 0 0
+    Verdana, two lines                 => font-size: 3.06em | margin: 0.218em 0.163em 0 0
+    Verdana, three lines               => font-size: 5.12em | margin: 0.162em 0.0977em 0 0
+
+ * Info: http://code.stephenmorley.org/html-and-css/creating-drop-caps/
+ */
+.u-dropcap:first-letter {
+  float: left;
+  vertical-align: bottom;
+  margin: 0.225em 0.159em 0 0;
+  font-family: Georgia;
+  font-size: 3.2em;
+  line-height: 0.5;
+  text-transform: uppercase;
+  color: inherit;
+}
+
+/**
+ * The `.u-lede` class is used to make the introductory text (usually a paragraph)
+ * of a document slightly larger: en.wikipedia.org/wiki/Lede_(news)
+ */
+.u-lede {
+  font-family: "Open Sans Condensed", "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+  margin-bottom: 1.5rem;
+  font-size: 1.3125rem;
+  line-height: 1.5rem;
+  color: #495057;
+}
+
+/*------------------------------------*\
+    ELEMENTS / ANCHORS
+\*------------------------------------*/
+/**
+ * 1. Remove the gray background color from active links in IE 10.
+ * 2. Improve readability when focused and also mouse hovered in all browsers.
+ */
+a {
+  font-weight: 700;
+  text-decoration: none;
+  color: #329af0;
+  background-color: transparent;
+  /* [1] */
+  border-bottom-width: 1px;
+  transition: all 0.25s ease-out;
+}
+
+a:hover, a:active, a:focus {
+  color: #1a8eee;
+  outline: 0;
+  /* [2] */
+}
+
+a:active {
+  position: relative;
+  top: 1px;
+}
+
+a small,
+a:before,
+a:after {
+  font-size: 0.75rem;
+  line-height: 1;
+  font-weight: 400;
+}
+
+a img,
+a abbr {
+  border: 0 !important;
+}
+
+/*------------------------------------*\
+    #QUOTES
+\*------------------------------------*/
+:lang(fr) q {
+  quotes: "\00AB\00A0" "\00A0\00BB" "\201C" "\201D" "\2018" "\2019";
+}
+
+:lang(fr) blockquote {
+  quotes: "\00AB\00A0" "\00A0\00BB";
+}
+
+:lang(en) q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+:lang(en) blockquote {
+  quotes: "\201C" "\201D";
+}
+
+q:before {
+  content: open-quote;
+}
+
+q:after {
+  content: close-quote;
+}
+
+q q:before {
+  content: open-quote;
+}
+
+q q:after {
+  content: close-quote;
+}
+
+blockquote p:before {
+  content: open-quote;
+}
+
+blockquote p + p:before {
+  content: '';
+  content: no-open-quote;
+}
+
+blockquote p:after {
+  content: '';
+  content: no-close-quote;
+}
+
+blockquote p:last-of-type:after {
+  content: close-quote;
+}
+
+blockquote q:before {
+  content: open-quote;
+}
+
+blockquote q:after {
+  content: close-quote;
+}
+
+blockquote p:last-of-type {
+  margin-bottom: 0;
+}
+
+blockquote footer {
+  font-size: 0.75rem;
+  line-height: 1.5rem;
+}
+
+/**
+ * 1. Hang the opening quote of the english blockquotes.
+ */
+:lang(en) blockquote p:first-child {
+  text-indent: -.41em;
+  /* 1 */
+}
+
+/*------------------------------------*\
+    ELEMENTS / CODE
+\*------------------------------------*/
+/**
+ * 1. Fix an odd quirk whereby, without this, code blocks are rendered at a
+ *    font-size smaller than 1rem.
+ */
+code,
+kbd,
+pre,
+samp {
+  font-family: Consolas, monaco, monospace;
+  /* [1] */
+  font-size: 1rem;
+  /* [1] */
+  text-shadow: 0 1px #fff;
+  color: #212529;
+  background-color: #f1f3f5;
+  border-radius: 0;
+}
+
+code,
+kbd,
+samp {
+  padding: .1em;
+  font-size: 90%;
+}
+
+/**
+ * 1. Contain overflow in all browsers.
+ */
+pre {
+  padding: 1.5rem;
+  white-space: pre;
+  /* [1] */
+  white-space: pre-wrap;
+  /* [1] */
+  word-break: break-all;
+  /* [1] */
+  word-wrap: break-word;
+  /* [1] */
+}
+
+pre code {
+  padding: 0;
+  background-color: transparent;
+  border-radius: none;
+}
+
+/*------------------------------------*\
+    ELEMENTS / FORMS
+\*------------------------------------*/
+label {
+  display: block;
+}
+
+/**
+ * 1. inputs with a type=["search"] in WebKit browsers by default have rounded
+ *    corners and are very strict in what you can alter via CSS. We don't want
+ *    that styling and remove it in one fell swoop with appearance.
+ *    Info: https://css-tricks.com/almanac/properties/a/appearance/
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* [1] */
+}
+
+/**
+ * Make sure our form elements don't use any UA-specific font styles: we want
+ * them to use ours. This may need reverting as more design information becomes
+ * available, and we start putting together more complete forms.
+ */
+input {
+  font: inherit;
+}
+
+/**
+ * 1. Remove default styling.
+ * 2. When input not empty / in focus / not valid
+ */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="week"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+select,
+textarea {
+  width: auto;
+  height: 1.5rem;
+  padding-right: 0.375rem;
+  padding-left: 0.375rem;
+  color: #212529;
+  background-color: #fff;
+  border: none;
+  border-radius: none;
+  box-shadow: 0px 0px 0px 1px #e9ecef;
+  transition: all 0.25s ease-out;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  /* [1] */
+}
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+select:focus,
+textarea:focus {
+  outline: 0;
+  box-shadow: 0px 0px 0px 1px #dee2e6;
+}
+input[type="text"]:invalid:focus:not(:placeholder-shown),
+input[type="password"]:invalid:focus:not(:placeholder-shown),
+input[type="email"]:invalid:focus:not(:placeholder-shown),
+input[type="url"]:invalid:focus:not(:placeholder-shown),
+input[type="date"]:invalid:focus:not(:placeholder-shown),
+input[type="month"]:invalid:focus:not(:placeholder-shown),
+input[type="time"]:invalid:focus:not(:placeholder-shown),
+input[type="datetime"]:invalid:focus:not(:placeholder-shown),
+input[type="datetime-local"]:invalid:focus:not(:placeholder-shown),
+input[type="week"]:invalid:focus:not(:placeholder-shown),
+input[type="number"]:invalid:focus:not(:placeholder-shown),
+input[type="search"]:invalid:focus:not(:placeholder-shown),
+input[type="tel"]:invalid:focus:not(:placeholder-shown),
+input[type="color"]:invalid:focus:not(:placeholder-shown),
+select:invalid:focus:not(:placeholder-shown),
+textarea:invalid:focus:not(:placeholder-shown) {
+  box-shadow: 0px 0px 0px 1px #fa5252;
+  /* [2] */
+}
+input[type="text"][disabled], input[type="text"][readonly],
+input[type="password"][disabled],
+input[type="password"][readonly],
+input[type="email"][disabled],
+input[type="email"][readonly],
+input[type="url"][disabled],
+input[type="url"][readonly],
+input[type="date"][disabled],
+input[type="date"][readonly],
+input[type="month"][disabled],
+input[type="month"][readonly],
+input[type="time"][disabled],
+input[type="time"][readonly],
+input[type="datetime"][disabled],
+input[type="datetime"][readonly],
+input[type="datetime-local"][disabled],
+input[type="datetime-local"][readonly],
+input[type="week"][disabled],
+input[type="week"][readonly],
+input[type="number"][disabled],
+input[type="number"][readonly],
+input[type="search"][disabled],
+input[type="search"][readonly],
+input[type="tel"][disabled],
+input[type="tel"][readonly],
+input[type="color"][disabled],
+input[type="color"][readonly],
+select[disabled],
+select[readonly],
+textarea[disabled],
+textarea[readonly] {
+  font-style: italic;
+  color: #c4cdd5;
+}
+input[type="text"][disabled],
+input[type="password"][disabled],
+input[type="email"][disabled],
+input[type="url"][disabled],
+input[type="date"][disabled],
+input[type="month"][disabled],
+input[type="time"][disabled],
+input[type="datetime"][disabled],
+input[type="datetime-local"][disabled],
+input[type="week"][disabled],
+input[type="number"][disabled],
+input[type="search"][disabled],
+input[type="tel"][disabled],
+input[type="color"][disabled],
+select[disabled],
+textarea[disabled] {
+  cursor: not-allowed;
+}
+
+/**
+ * Placeholder attribute text.
+ */
+input::-webkit-input-placeholder {
+  color: #ccc;
+}
+
+input::-moz-placeholder {
+  color: #ccc;
+}
+
+input:-ms-input-placeholder {
+  color: #ccc;
+}
+
+input::placeholder {
+  color: #ccc;
+}
+
+/**
+ * Change Autocomplete styles in Chrome.
+ *
+ * 1. Text color.
+ * 2. Trick the yellow color to your own background color with a strong inside
+ *    shadow. Change `white` to any color.
+ * 3. Use this if you need a transparent input field.
+ */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: #212529 !important;
+  /* [1] */
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+  /* [2] */
+}
+
+/**
+ * 1. Remove the extra bottom margin that both Firefox and Chrome seem to give
+ *    to textareas.
+ */
+textarea {
+  vertical-align: top;
+  /* [1] */
+  min-height: 6rem;
+}
+
+select {
+  height: 1.5rem;
+}
+
+/*------------------------------------*\
+    ELEMENTS / LISTS
+\*------------------------------------*/
+/**
+ * Remove trailing margins from nested lists.
+ */
+li > ul,
+li > ol {
+  margin-bottom: 0;
+  margin-left: 0;
+}
+
+/**
+ * Navigation lists.
+ */
+nav ul,
+nav ol {
+  margin-left: 0;
+  list-style: none;
+}
+
+/*------------------------------------*\
+    ELEMENTS / TABLES
+\*------------------------------------*/
+/**
+ * Crude table styles; tables are very difficult to keep on the baseline.
+ *
+ * 1. Turns on tabular, lining numerals and slashed zero
+ */
+table {
+  width: 100%;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0;
+  /* [1] */
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+thead {
+  font-weight: 700;
+}
+thead > tr > th {
+  position: relative;
+  border-style: solid;
+  border-color: #e9ecef;
+}
+thead > tr > th:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, transparent 50%, #e9ecef 50%);
+  /* [1] */
+  background-position: 0 bottom;
+  /* [1] */
+  background-repeat: repeat-x;
+  /* [1] */
+  background-size: 100% 0.1rem;
+  /* [1] */
+}
+
+tr:hover {
+  background-color: rgba(241, 243, 245, 0.5);
+}
+
+th, td {
+  padding: 0.75rem;
+  text-align: center;
+  vertical-align: inherit;
+}
+
+/**
+ * 1. Turns on tabular, lining numerals and slashed zero
+ */
+tbody,
+caption {
+  font-feature-settings: "kern" 1,  "liga" 1,  "calt" 1,  "pnum" 0,  "tnum" 1,  "onum" 0,  "lnum" 1, "zero" 1;
+  /* [1] */
+}
+
+/*------------------------------------*\
+    ELEMENTS / MEDIA
+\*------------------------------------*/
+/**
+ * 1. Fluid images for responsive purposes.
+ * 2. Preserve image ratio.
+ * 3. Correct a bug on IE8.
+ * 4. Offset `alt` text from surrounding copy.
+ * 3. Setting `vertical-align` removes the whitespace that appears under `img`
+ *    elements when they are dropped into a page as-is. Safer alternative to
+ *    using `display: block;`.
+ * 6. Remove border when inside `a` element in IE 8/9/10.
+ * 7. Broken images are ugly. But they don't always have to be. We can use CSS
+ *    to apply styles to the <img> element to provide a better experience than
+ *    the default. when the image is broken and not loaded, the
+ *    pseudo-elements can appear.
+ *    @ireaderinokun http://bitsofco.de/styling-broken-images/
+ */
+img,
+canvas,
+iframe,
+svg,
+video {
+  max-width: 100%;
+  /* [1] */
+  height: auto;
+  /* [2] */
+  width: auto;
+  /* [3] */
+  vertical-align: middle;
+  /* [5] */
+  border: 0;
+  /* [6] */
+}
+
+/**
+ * 1. If a `width` and/or `height` attribute have been explicitly defined, letÔÇÖs
+ * not make the image fluid.
+ * 2. Google Maps breaks if `max-width: 100%` acts upon it; use their selector
+ * to remove the effects.
+ */
+img[width],
+img[height],
+.gm-style img {
+  /* [2] */
+  max-width: none;
+}
+
+/**
+ * 1. As we know that `inline-block` elements grow wider max till 100%
+ *    (considering padding and no width defined) of its parent based on its
+ *    content. When the content text of figcaption is less, it's aligned
+ *    center by virtue of the property `text-align:center` defined on its
+ *    parent figure. As the text of figcaption grows into multiple lines, it
+ *    keeps widening to the max width of its parent figure width. Now the
+ *    magic starts! `text-align: left;` defined on figcaption makes the
+ *    content text left aligned.
+ * 2. Default value of `vertical-align` is baseline and when applied to blocks
+ *    of different heights, it's often unwanted. Applying a value of top will
+ *    solve the problem of white space above.
+ */
+figure {
+  text-align: center;
+  /* [1] */
+}
+
+figcaption {
+  display: inline-block;
+  /* [1] */
+  vertical-align: top;
+  /* [2] */
+  font-size: 0.75rem;
+  line-height: 1.5rem;
+  text-align: left;
+  /* [1] */
+}
+
+/**
+ * Image placement variations
+ */
+@media (min-width: 45em) {
+  img.is-pushed-right,
+  figure.is-pushed-right {
+    float: right;
+    width: 33.333%;
+    margin-left: 1.5rem;
+  }
+
+  img.is-pulled-left,
+  figure.is-pulled-left {
+    float: left;
+    width: 33.333%;
+    margin-right: 1.5rem;
+  }
+}
+/**
+ * Broken images are ugly. But they don't always have to be. We can use CSS to
+ * apply styles to the `img` element to provide a better experience than the
+ * default. when the image is broken and not loaded, the pseudo-elements can
+ * appear.
+ *
+ * jQuery will detect broken images and add the `.is-broken` class.
+ *
+   $(window).bind('load', function() {
+     $('img').each(function() {
+       if((typeof this.naturalWidth != "undefined" && this.naturalWidth == 0 ) || this.readyState == 'uninitialized' ) {
+         $(this).addClass('is-broken');
+       }
+     });
+   });
+ *
+ * @ireaderinokun http://bitsofco.de/styling-broken-images/
+ */
+img.is-broken {
+  display: block;
+  position: relative;
+  outline: none;
+}
+img.is-broken:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: attr(alt);
+  z-index: 1;
+  font-size: 0.75rem;
+  line-height: 1.5rem;
+  font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  text-align: center;
+  text-shadow: 0 1px #fff;
+  color: inherit;
+  background-color: #f2f2f2;
+}
+img.is-broken:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "⚠" " image non disponible";
+  z-index: 2;
+  font-size: 0.75rem;
+  line-height: 1.5rem;
+  font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  text-shadow: 0 1px #fff;
+  color: inherit;
+  background-color: transparent;
+}
+
+/*------------------------------------*\
+    ELEMENTS / SELECTIONS
+\*------------------------------------*/
+/**
+ * 1. Customize `background` for text selections.
+ * 2. Remove `text-shadow` selection highlight - http://cbrac.co/Q6swON
+ */
+::-moz-selection {
+  color: #fff;
+  background-color: #329af0;
+  /* 1 */
+  text-shadow: none;
+  /* 2 */
+}
+
+::selection {
+  color: #fff;
+  background-color: #329af0;
+  /* 1 */
+  text-shadow: none;
+  /* 2 */
+}
+
+/**
+ * Change `background` for text selections when browser is unfocused.
+ */
+::selection:window-inactive {
+  background-color: #d0d0d0;
+}
+
+/**
+* Remove `background` on images when selected.
+*/
+img::selection {
+  background-color: transparent;
+}
+
+img::-moz-selection {
+  background-color: transparent;
+}
+
+/*------------------------------------*\
+    LAYOUT / GRID
+\*------------------------------------*/
+/**
+ * Basic grid.
+ *
+ * By default, each grid cell is the same width and height as every other cell
+ * in the row. Basically they all size to fit by default. For finer control, you
+ * can add sizing classes to individual cells. Without these classes, the cells
+ * simply divide up the available space as usual. For responsive grids, you can
+ * add media query-specific classes to the cells. Individual cells can be aligned
+ * vertically to the top, bottom, or middle. When you want all of the cells in a
+ * grid to have the same sizing, media, or alignment values, you should be able
+ * to just add a single class to the container to avoid unnecessary repetition.
+ * Grids can be nested as many levels deep as needed.
+ *
+ * @philwalton https://github.com/philipwalton/solved-by-flexbox/blob/master/assets/css/components/grid.css
+ */
+.l-grid {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 0;
+  margin-left: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.l-grid__item {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -moz-box-flex: 1;
+  -moz-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin-left: 0;
+}
+
+/* Individual Sizing
+   ========================================================================== */
+/**
+ * When equal widths are not what you want, you can add sizing classes to
+ * individual cells. Cells without sizing classes simply divide up the
+ * remaining space as normal.
+ */
+/**
+ * A mobile-first approach.
+ */
+.l-grid__item.is-1\/1 {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 calc(100% - 0);
+  -moz-box-flex: 0;
+  -moz-flex: 0 0 calc(100% - 0);
+  -ms-flex: 0 0 calc(100% - 0);
+  flex: 0 0 calc(100% - 0);
+}
+
+.l-grid__item.is-1\/2 {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 calc(50% - 0);
+  -moz-box-flex: 0;
+  -moz-flex: 0 0 calc(50% - 0);
+  -ms-flex: 0 0 calc(50% - 0);
+  flex: 0 0 calc(50% - 0);
+}
+
+.l-grid__item.is-1\/3 {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 calc(33.3333% - 0);
+  -moz-box-flex: 0;
+  -moz-flex: 0 0 calc(33.3333% - 0);
+  -ms-flex: 0 0 calc(33.3333% - 0);
+  flex: 0 0 calc(33.3333% - 0);
+}
+
+.l-grid__item.is-1\/4 {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 calc(25% - 0);
+  -moz-box-flex: 0;
+  -moz-flex: 0 0 calc(25% - 0);
+  -ms-flex: 0 0 calc(25% - 0);
+  flex: 0 0 calc(25% - 0);
+}
+
+/**
+ * Responsive modifiers.
+ */
+@media (min-width: 45em) {
+  .l-grid__item.is-1\/1\@medium {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 calc(100% - 0);
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 calc(100% - 0);
+    -ms-flex: 0 0 calc(100% - 0);
+    flex: 0 0 calc(100% - 0);
+  }
+
+  .l-grid__item.is-1\/2\@medium {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 calc(50% - 0);
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 calc(50% - 0);
+    -ms-flex: 0 0 calc(50% - 0);
+    flex: 0 0 calc(50% - 0);
+  }
+
+  .l-grid__item.is-1\/3\@medium {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 calc(33.3333% - 0);
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 calc(33.3333% - 0);
+    -ms-flex: 0 0 calc(33.3333% - 0);
+    flex: 0 0 calc(33.3333% - 0);
+  }
+
+  .l-grid__item.is-1\/4\@medium {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 calc(25% - 0);
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 calc(25% - 0);
+    -ms-flex: 0 0 calc(25% - 0);
+    flex: 0 0 calc(25% - 0);
+  }
+}
+@media (min-width: 60em) {
+  .l-grid__item.is-1\/1\@large {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 calc(100% - 0);
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 calc(100% - 0);
+    -ms-flex: 0 0 calc(100% - 0);
+    flex: 0 0 calc(100% - 0);
+  }
+
+  .l-grid__item.is-1\/2\@large {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 calc(50% - 0);
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 calc(50% - 0);
+    -ms-flex: 0 0 calc(50% - 0);
+    flex: 0 0 calc(50% - 0);
+  }
+
+  .l-grid__item.is-1\/3\@large {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 calc(33.3333% - 0);
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 calc(33.3333% - 0);
+    -ms-flex: 0 0 calc(33.3333% - 0);
+    flex: 0 0 calc(33.3333% - 0);
+  }
+
+  .l-grid__item.is-1\/4\@large {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 calc(25% - 0);
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 calc(25% - 0);
+    -ms-flex: 0 0 calc(25% - 0);
+    flex: 0 0 calc(25% - 0);
+  }
+}
+/* Alignment features
+   ========================================================================== */
+/**
+ * Top-aligned grid cells.
+ */
+.l-grid--up {
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  -webkit-align-items: flex-start;
+  -moz-align-items: flex-start;
+  align-items: flex-start;
+}
+
+/**
+ * Bottom-aligned grid cells.
+ */
+.l-grid--down {
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  -webkit-align-items: flex-end;
+  -moz-align-items: flex-end;
+  align-items: flex-end;
+}
+
+/**
+ * Vertically centered grid cells.
+ */
+.l-grid--between {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+}
+
+/**
+ * Justified grid cells.
+ */
+.l-grid--justified {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+}
+
+/**
+ * Top-aligned cell.
+ */
+.l-grid__item--up {
+  -webkit-align-self: flex-start;
+  -moz-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+}
+
+/**
+ * Bottom-aligned cell.
+ */
+.l-grid__item--down {
+  -webkit-align-self: flex-end;
+  -moz-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+}
+
+/**
+ * Vertically centered cell.
+ */
+.l-grid__item--between {
+  -webkit-align-self: center;
+  -moz-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+/**
+ * The cell takes all of the available space inside the flex container.
+ */
+.l-grid__item--adapted {
+  -webkit-box-flex: none;
+  -webkit-flex: none;
+  -moz-box-flex: none;
+  -moz-flex: none;
+  -ms-flex: none;
+  flex: none;
+}
+
+/*------------------------------------*\
+    LAYOUT / WRAPPERS
+\*------------------------------------*/
+/**
+ * Use wrappers when you need a content area that is a standardized width and centered on the page.
+ */
+.l-wrapper {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+/**
+ * Size variants.
+ */
+.l-wrapper--large {
+  max-width: 74.551em;
+}
+
+.l-wrapper--medium {
+  max-width: 55.927em;
+}
+
+.l-wrapper--narrow {
+  max-width: 48em;
+}
+
+/*------------------------------------*\
+    OBJECTS / BOX
+\*------------------------------------*/
+/**
+ * The box object simply boxes off content. Extend with cosmetic styles in the
+ * Components layer.
+ *
+ * 1. So we can apply the `.o-box` class to naturally-inline elements.
+ */
+.o-box {
+  display: block;
+  /* [1] */
+  padding: 1.5rem;
+}
+.o-box:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.o-box > :last-child {
+  margin-bottom: 0;
+}
+
+/* Size variants
+   ========================================================================== */
+.o-box--flush {
+  padding: 0;
+}
+
+.o-box--tiny {
+  padding: 0.375rem;
+}
+
+.o-box--small {
+  padding: 0.75rem;
+}
+
+.o-box--large {
+  padding: 2.25rem;
+}
+
+.o-box--huge {
+  padding: 3rem;
+}
+
+/*------------------------------------*\
+    OBJECTS / FORM-FIELDS
+\*------------------------------------*/
+/**
+ * Group sets of form fields in a list, e.g.:
+ *
+   <div>
+     <label />
+     <input />
+   </div>
+   <div>
+     <label />
+     <select />
+   </div>
+   <div>
+     <label />
+     <input />
+   </div>
+ *
+ */
+.o-form-field {
+  margin-bottom: 0.75rem;
+}
+
+/*------------------------------------*\
+    OBJECTS / FORM-HELPERS
+\*------------------------------------*/
+/**
+ * Extra help text displayed after a field when that field is in focus and invalid, e.g.:
+ *
+   <label for="email">Email:</label>
+   <input id="email" type="email">
+   <span class="o-form-requirement">.edu emails only</small>
+ *
+ * We leave the help text in the document flow and merely set it to
+ * `visibility:hidden;`. This means that it wonÔÇÖt interfere with anything once
+ * it reappears.
+ *
+ */
+.o-form-helper {
+  display: block;
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+  color: #fa5252;
+}
+
+:invalid:focus:not(:placeholder-shown) ~ .o-form-helper {
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  margin: auto !important;
+  overflow: visible !important;
+  clip: auto !important;
+  margin-top: -1.5rem !important;
+  padding-left: 0.375rem;
+}
+
+/*------------------------------------*\
+    OBJECTS / ICONS
+\*------------------------------------*/
+/**
+ * Using locally defined (inlined) SVG graphics.
+ * The storage limit is usually 5 MB per domain. This is more than enough for
+ * storing SVG sprites. A tiny piece of JavaScript code to handle this part. You
+ * can safely place this code anywhere in the document as the SVG file scanning
+ * works asynchronously. If you put the code at the head of the document, the
+ * icons will load a little bit faster.
+ *
+	<script>
+		// Storing SVG Sprite in localStorage
+		;( function( window, document )
+		{
+			'use strict';
+			var file	 = 'img/icons/svg/svg.html',
+				revision = 2;
+			if( !document.createElementNS || !document.createElementNS( 'http://www.w3.org/2000/svg', 'svg' ).createSVGRect )
+				return true;
+			var isLocalStorage = 'localStorage' in window && window[ 'localStorage' ] !== null,
+				request,
+				data,
+				insertIT = function()
+				{
+					document.body.insertAdjacentHTML( 'afterbegin', data );
+				},
+				insert = function()
+				{
+					if( document.body ) insertIT();
+					else document.addEventListener( 'DOMContentLoaded', insertIT );
+				};
+			if( isLocalStorage && localStorage.getItem( 'inlineSVGrev' ) == revision )
+			{
+				data = localStorage.getItem( 'inlineSVGdata' );
+				if( data )
+				{
+					insert();
+					return true;
+				}
+			}
+			try
+			{
+				request = new XMLHttpRequest();
+				request.open( 'GET', file, true );
+				request.onload = function()
+				{
+					if( request.status >= 200 && request.status < 400 )
+					{
+						data = request.responseText;
+						insert();
+						if( isLocalStorage )
+						{
+							localStorage.setItem( 'inlineSVGdata',	data );
+							localStorage.setItem( 'inlineSVGrev',	revision );
+						}
+					}
+				}
+				request.send();
+			}
+			catch( e ){}
+		}( window, document ) );
+	</script>
+ *
+ * There are two lines you need to configure on your own:
+ *
+	var file     = 'img/icons/svg/svg.html',
+		revision = 1;
+ *
+ * The svg.html usually looks this:
+ *
+	<svg style="display: none;" aria-hidden="true">
+		<symbol id="svg-plane" viewbox="0 0 510 510"><path d="..." /></symbol>
+		<symbol id="svg-close" viewbox="0 0 357 357"><path d="..." /></symbol>
+		<symbol id="svg-fav" viewbox="0 0 510 510"><path d="..." /></symbol>
+		<symbol id="svg-share" viewbox="0 0 459 459"><path d="..." /></symbol>
+		<symbol id="svg-cart" viewbox="0 0 510 510"><path d="..." /></symbol>
+		<symbol id="svg-tick" viewbox="0 0 510 510"><path d="..." /></symbol>
+	</svg>
+ *
+ * If a browser does not support SVG, we can rely on raster images and JavaScript
+ * fallback. We need data-img attribute for specifying the location of raster
+ * image, for example:
+ *
+	<svg><use xlink:href="#svg-cart" data-img="img/icons/png/cart.png"></use></svg>
+ *
+ * You have to register svg and use elements so that the fallback code can later
+ * operate them. This should be placed at the document head, best before the first
+ * <script> occurence:
+ *
+	;( function( window, document ) {
+		if( document.createElementNS && document.createElementNS( 'http://www.w3.org/2000/svg', 'svg' ).createSVGRect ) return true;
+		var uses = document.getElementsByTagName( 'use' ), use;
+		while( ( use = uses[ 0 ] ) )
+		{
+			var svg = use.parentNode, img = new Image();
+			img.src = use.getAttribute( 'data-img' );
+			svg.parentNode.replaceChild( img, svg );
+		}
+	}( window, document ) );
+ *
+ * Finally, the fallback itself ÔÇô it should be placed at the end of the document:
+ *
+	;( function( window, document )
+	{
+    	if( document.createElementNS && document.createElementNS( 'http://www.w3.org/2000/svg', 'svg' ).createSVGRect ) return true;
+    	var uses = document.getElementsByTagName( 'use' ), use;
+    	while( ( use = uses[ 0 ] ) )
+    	{
+        	var svg = use.parentNode, img = new Image();
+        	img.src = use.getAttribute( 'data-img' );
+        	svg.parentNode.replaceChild( img, svg );
+    	}
+	}( window, document ) );
+ *
+ * The worst part about this technique is that you cannot get SVG sprite
+ * functioning if JavaScript is disabled in userÔÇÖs browser. But, like in ÔÇ£no SVG
+ * supportÔÇØ case, we can rely on raster images, for example:
+ *
+	<svg><use xlink:href="#svg-cart"></use></svg><noscript><img src="img/icons/png/cart.png" alt="" /></noscript>
+ *
+ * @oswaldas http://osvaldas.info/caching-svg-sprite-in-localstorage
+ */
+.o-icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overlow: hidden;
+}
+
+/**
+ * Example showing how to change the color/size of the icons:
+ *
+   .o-icon--icon-name {
+      font-size: 32px; // works because "width" & "height" were set using em units.
+      color    : red;  // works for single-colored icons, because "fill" was set to "currentColor".
+   }
+*/
+/*------------------------------------*\
+   OBJECTS / RATIOS
+\*------------------------------------*/
+/**
+ * Create ratio-bound content blocks, to keep media (e.g. images, videos) in
+ * their correct aspect ratios.
+ *
+ * http://alistapart.com/article/creating-intrinsic-ratios-for-video
+ *
+ * 1. Default cropping is a 1:1 ratio (i.e. a perfect square).
+ */
+.o-ratio {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+.o-ratio:before {
+  content: "";
+  display: block;
+  width: 100%;
+  padding-bottom: 100%;
+  /* [1] */
+}
+
+.o-ratio__content,
+.o-ratio > iframe,
+.o-ratio > embed,
+.o-ratio > object {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+/* Ratio variants.
+   ========================================================================== */
+/**
+ * Generate a series of ratio classes to be used like so:
+ *
+ *   <div class="o-ratio  o-ratio--16:9">
+ *
+ */
+.o-ratio--2\:1:before {
+  padding-bottom: 50%;
+}
+
+.o-ratio--4\:3:before {
+  padding-bottom: 75%;
+}
+
+.o-ratio--16\:9:before {
+  padding-bottom: 56.25%;
+}
+
+/*------------------------------------*\
+    OBJECTS / TABLES
+\*------------------------------------*/
+/* Equal-width table cells.
+   ========================================================================== */
+/**
+ * `table-layout: fixed` forces all cells within a table to occupy the same
+ * width as each other. This also has performance benefits: because the browser
+ * does not need to (re)calculate cell dimensions based on content it discovers,
+ * the table can be rendered very quickly. Further reading:
+ * https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout#Values
+ */
+.o-table--fixed {
+  table-layout: fixed;
+}
+
+/* Style variants
+   ========================================================================== */
+/**
+ * Bordered tables.
+ *
+   <table class="o-table--bordered">
+     ...
+   </table>
+ */
+.o-table--bordered {
+  position: relative;
+  border-style: solid;
+  border-color: #e9ecef;
+}
+.o-table--bordered:before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, transparent 50%, #e9ecef 50%);
+  /* [1] */
+  background-position: 0 top;
+  /* [1] */
+  background-repeat: repeat-x;
+  /* [1] */
+  background-size: 100% 0.1rem;
+  /* [1] */
+}
+.o-table--bordered thead > tr > th {
+  position: relative;
+  border-style: solid;
+  border-color: #e9ecef;
+}
+.o-table--bordered thead > tr > th:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, transparent 50%, #e9ecef 50%);
+  /* [1] */
+  background-position: 0 bottom;
+  /* [1] */
+  background-repeat: repeat-x;
+  /* [1] */
+  background-size: 100% 0.1rem;
+  /* [1] */
+}
+.o-table--bordered tbody > tr td {
+  position: relative;
+  border-style: solid;
+  border-color: #e9ecef;
+}
+.o-table--bordered tbody > tr td:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, transparent 50%, #e9ecef 50%);
+  /* [1] */
+  background-position: 0 bottom;
+  /* [1] */
+  background-repeat: repeat-x;
+  /* [1] */
+  background-size: 100% 0.1rem;
+  /* [1] */
+}
+.o-table--bordered th, .o-table--bordered td {
+  position: relative;
+  border-style: solid;
+  border-color: #e9ecef;
+  border-left-width: 1px;
+}
+.o-table--bordered tr > th:last-child, .o-table--bordered tr > td:last-child {
+  position: relative;
+  border-style: solid;
+  border-color: #e9ecef;
+  border-right-width: 1px;
+}
+
+/**
+ * Striped tables.
+ *
+   <table class="o-table--striped">
+     ...
+   </table>
+ */
+.o-table--striped tbody > tr:nth-child(odd) {
+  background-color: #f1f3f5;
+}
+
+/*------------------------------------*\
+    COMPONENTS / BUTTONS
+\*------------------------------------*/
+/**
+ * 1. Allow us to style box model properties.
+ * 2. Line different sized buttons up a little nicer.
+ * 3. Make buttons inherit font styles (often necessary when styling `input`s as
+ *    buttons).
+ * 4. Reset/normalize some styles.
+ * 5. Force all button-styled elements to appear clickable.
+ * 6. Subtract the border size from the padding value so that buttons do not
+ *    grow larger as we add borders.
+ */
+.c-button {
+  display: inline-block;
+  /* [1] */
+  vertical-align: middle;
+  /* [2] */
+  margin: 0;
+  /* [4] */
+  margin-right: 0.375rem;
+  padding: 0.75rem 1.5rem;
+  font: inherit;
+  /* [3] */
+  font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+  text-align: center;
+  /* [4] */
+  cursor: pointer;
+  /* [5] */
+  transition: all 0.25s ease-out;
+}
+
+/* Style variants
+   ========================================================================== */
+.c-button--round {
+  border-radius: .375rem;
+}
+
+.c-button--pill {
+  border-radius: 3rem;
+}
+
+.c-button--outlined {
+  color: currentColor;
+  box-shadow: 0px 0px 0px 1px currentColor;
+}
+.c-button--outlined:hover, .c-button--outlined:active, .c-button--outlined:focus {
+  color: #0a0c0d;
+  border-color-color: #0a0c0d;
+}
+
+.c-button--disabled,
+.c-button[disabled] {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Size variants
+   ========================================================================== */
+.c-button--huge {
+  padding: 1.5rem 1.5rem;
+}
+
+.c-button--large {
+  padding: 1.125rem 1.5rem;
+}
+
+.c-button--small {
+  padding: 0.375rem 1.5rem;
+}
+
+.c-button--tiny {
+  padding: 0.1875rem 0.5rem;
+}
+
+.c-button--full {
+  display: block;
+  width: 100%;
+  margin-right: 0;
+  margin-left: 0;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+/* Color variants
+   ========================================================================== */
+.c-button--action {
+  color: #fff;
+  background-color: #329af0;
+  border-color: #329af0;
+}
+.c-button--action:hover, .c-button--action:active, .c-button--action:focus {
+  color: #fff;
+  background-color: #1a8eee;
+  border-color: #1a8eee;
+}
+.c-button--action.c-button--outlined {
+  color: #329af0;
+  background-color: transparent;
+}
+.c-button--action.c-button--outlined:hover, .c-button--action.c-button--outlined:active, .c-button--action.c-button--outlined:focus {
+  color: #1081df;
+  box-shadow-color: #1081df;
+}
+
+.c-button--success {
+  color: #fff;
+  background-color: #51cf66;
+  border-color: #51cf66;
+}
+.c-button--success:hover, .c-button--success:active, .c-button--success:focus {
+  color: #fff;
+  background-color: #3dc954;
+  border-color: #3dc954;
+}
+.c-button--success.c-button--outlined {
+  color: #51cf66;
+  background-color: transparent;
+}
+.c-button--success.c-button--outlined:hover, .c-button--success.c-button--outlined:active, .c-button--success.c-button--outlined:focus {
+  color: #33ba4a;
+  box-shadow-color: #33ba4a;
+}
+
+.c-button--error {
+  color: #fff;
+  background-color: #fa5252;
+  border-color: #fa5252;
+}
+.c-button--error:hover, .c-button--error:active, .c-button--error:focus {
+  color: #fff;
+  background-color: #f93939;
+  border-color: #f93939;
+}
+.c-button--error.c-button--outlined {
+  color: #fa5252;
+  background-color: transparent;
+}
+.c-button--error.c-button--outlined:hover, .c-button--error.c-button--outlined:active, .c-button--error.c-button--outlined:focus {
+  color: #f92020;
+  box-shadow-color: #f92020;
+}
+
+.c-button--warning {
+  color: #fff;
+  background-color: #ffa94d;
+  border-color: #ffa94d;
+}
+.c-button--warning:hover, .c-button--warning:active, .c-button--warning:focus {
+  color: #fff;
+  background-color: #ff9d34;
+  border-color: #ff9d34;
+}
+.c-button--warning.c-button--outlined {
+  color: #ffa94d;
+  background-color: transparent;
+}
+.c-button--warning.c-button--outlined:hover, .c-button--warning.c-button--outlined:active, .c-button--warning.c-button--outlined:focus {
+  color: #ff901a;
+  box-shadow-color: #ff901a;
+}
+
+.c-button--info {
+  color: #fff;
+  background-color: #4dadf7;
+  border-color: #4dadf7;
+}
+.c-button--info:hover, .c-button--info:active, .c-button--info:focus {
+  color: #fff;
+  background-color: #35a2f6;
+  border-color: #35a2f6;
+}
+.c-button--info.c-button--outlined {
+  color: #4dadf7;
+  background-color: transparent;
+}
+.c-button--info.c-button--outlined:hover, .c-button--info.c-button--outlined:active, .c-button--info.c-button--outlined:focus {
+  color: #1c97f5;
+  box-shadow-color: #1c97f5;
+}
+
+/*------------------------------------*\
+    THEME / ECSSENTIAL
+\*------------------------------------*/
+main {
+  counter-reset: headings;
+}
+
+h2 {
+  counter-increment: headings;
+}
+
+h2:before {
+  content: counter(headings) ". ";
+}
+
+/*------------------------------------*\
+    TRUMPS / HEADINGS
+\*------------------------------------*/
+/**
+ * Headings 1–6’s corresponding Greek-alphabet abstract classes for double-
+ * stranded heading hierarchy: csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css
+ *
+ * Use these helper classes to cause other elements to adopt the styling of the
+ * respective heading, e.g.:
+ *
+   <h2 class="u-h1-size">Lorem ipsum</h2>
+ *
+ */
+.u-h1-size {
+  margin-bottom: 1.5rem;
+  font-size: 3.1875rem;
+  line-height: 4.5rem;
+}
+
+.u-h2-size {
+  margin-bottom: 1.5rem;
+  font-size: 2.375rem;
+  line-height: 3rem;
+}
+
+.u-h3-size {
+  font-size: 1.75rem;
+  line-height: 3rem;
+}
+
+.u-h4-size {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.u-h5-size {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.u-h6-size {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+/*------------------------------------*\
+    TRUMPS / TEXT
+\*------------------------------------*/
+/**
+ * Text adjustments.
+ *
+ * `Can you just make that text a little bigger?`
+ *
+ * Sure! Use these utilities to adjust the size of a span of text by a little
+ * bit more, or a little bit less, e.g.:
+ *
+     <p class="u-text-large">A little bit bigger.</p>
+ *
+ */
+.u-text--xx-large {
+  font-size: 5.625rem;
+  line-height: 6rem;
+}
+
+.u-text--x-large {
+  font-size: 4.1875rem;
+  line-height: 4.5rem;
+}
+
+.u-text--large {
+  font-size: 3.1875rem;
+  line-height: 4.5rem;
+}
+
+.u-text--small {
+  font-size: 0.75rem;
+  line-height: 1.5rem;
+}
+
+.u-text--x-small {
+  font-size: 0.5625rem;
+  line-height: 1.5rem;
+}
+
+/*------------------------------------*\
+    TRUMPS / PROSE
+\*------------------------------------*/
+.u-prose {
+  /**
+   * Country / language version.
+   */
+  /**
+   * External links.
+   */
+  /**
+   * Mailto.
+   */
+  /**
+   * Telephone.
+   */
+  /**
+   * Documents.
+   */
+  /**
+   * Audio.
+   */
+}
+.u-prose a[hreflang]:not([hreflang="fr"]):lang(fr):after,
+.u-prose a[lang^="fr"]:after,
+.u-prose a[hreflang]:not([hreflang^="en"]):lang(en):after,
+.u-prose a[lang^="en"]:after {
+  content: " [" attr(hreflang) "]";
+  vertical-align: baseline;
+}
+.u-prose :lang(en) > a[lang]:not([hreflang]):after,
+.u-prose :lang(fr) > a[lang]:not([hreflang]):after,
+.u-prose :lang(en) > a[lang^="en"]:after,
+.u-prose :lang(fr) > a[lang^="fr"]:after {
+  content: none;
+}
+.u-prose a[hreflang=""]:after,
+.u-prose h1 > a[hreflang]:after,
+.u-prose h2 > a[hreflang]:after,
+.u-prose h3 > a[hreflang]:after {
+  content: none !important;
+}
+.u-prose a:not([href*="yourdomain.com"]):not([href^="#"]):not([href^="mailto"]):not([href^="tel"])::after {
+  content: "\0020\279A";
+}
+.u-prose a[hreflang]:not([href*="yourdomain.com"]):not([href^="#"]):not([href^="mailto"]):not([href^="tel"])::after {
+  content: " [" attr(hreflang) "] ➚";
+}
+.u-prose a[href^="mailto"]::after {
+  content: "\0020\2709";
+}
+.u-prose a[href^="tel"]::after {
+  content: "\0020\2706";
+}
+.u-prose a[download]::after {
+  content: "\0020\21A7";
+}
+.u-prose a[hreflang][download]::after {
+  content: " [" attr(hreflang) "] ↧";
+}
+.u-prose a[href$=".mp3"]::after,
+.u-prose a[href$=".wma"]::after,
+.u-prose a[href$=".ogg"]::after,
+.u-prose a[href$=".flac"]::after {
+  content: "\0020\266B";
+}
+.u-prose a[hreflang][href$=".mp3"]::after,
+.u-prose a[hreflang][href$=".wma"]::after,
+.u-prose a[hreflang][href$=".ogg"]::after,
+.u-prose a[hreflang][href$=".flac"]::after {
+  content: " [" attr(hreflang) "] ♫";
+}
+
+/*------------------------------------*\
+    TRUMPS / HELPERS
+\*------------------------------------*/
+/**
+ * A series of classes to use arbitrarily.
+ */
+.is-static {
+  position: static;
+}
+
+.is-relative {
+  position: relative;
+}
+
+.is-absolute {
+  position: absolute;
+}
+
+.is-pushed-right {
+  float: right;
+}
+
+.is-pulled-left {
+  float: left;
+}
+
+.is-centered {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.is-aligned-left {
+  text-align: left;
+}
+
+.is-aligned-center {
+  text-align: center;
+}
+
+.is-aligned-right {
+  text-align: right;
+}
+
+.is-justified {
+  text-align: justify;
+}
+
+.is-aligned-top {
+  vertical-align: top;
+}
+
+.is-aligned-middle {
+  vertical-align: middle;
+}
+
+.is-aligned-left-bottom {
+  vertical-align: bottom;
+}
+
+.is-inline {
+  display: inline;
+}
+
+.is-block {
+  display: block;
+}
+
+.is-inline-block {
+  display: inline-block;
+}
+
+/*------------------------------------*\
+    TRUMPS / PRINT
+\*------------------------------------*/
+/**
+ * Very crude, reset-like styles taken from the HTML5 Boilerplate:
+ * https://github.com/h5bp/html5-boilerplate/blob/3c3c5e64604209a4d63e1e4c48dd245d45fadfd9/css/main.css#L200-L234
+ */
+@media print {
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster: h5bp.com/s */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  /**
+   * Don’t show links that are fragment identifiers, or use the `javascript:`
+   * pseudo protocol.
+   */
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+}

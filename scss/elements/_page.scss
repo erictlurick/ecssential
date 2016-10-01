@@ -1,0 +1,66 @@
+@if (elements(page) == true) {
+
+/*------------------------------------*\
+    ELEMENTS / PAGE
+\*------------------------------------*/
+
+/**
+ * Simple page-level setup.
+ *
+ * 1. Ensure the page always fills at least the entire height of the viewport.
+ * 2. Clip the left/right edges if it overflows the area
+ * 3. Force scrollbars to always be visible to prevent awkward ‘jumps’ when
+ * 4. Set the default `font-size` and `line-height` for the entire project,
+ *    sourced from our default variables. The `font-size` is calculated to exist
+ *    in ems, the `line-height` is calculated to exist unitlessly.
+ *    navigating between pages that do/do not have enough content to produce
+ *    scrollbars naturally.
+ * 5. Prevent certain mobile browsers from automatically zooming fonts.
+ * 6. Fonts on OSX will look more consistent with other systems that do not
+ *    render text using sub-pixel anti-aliasing.
+ */
+
+html {
+  min-height              : 100%;                         /* [1] */
+  overflow-x              : hidden;                       /* [2] */
+  overflow-y              : scroll;                       /* [3] */
+  font-family             : $font-family-body;
+  font-size               : ($base-font-size / 16) * 1em; /* [4] */
+
+  @include breakpoint(large) {
+    font-size: $base-font-size-large;                     /* [4] */
+  }
+
+  line-height             : $base-line-height;            /* [4] */
+  font-weight             : $font-weight-body;
+  color                   : color(text);
+  background-color        : color(background);
+  -webkit-text-size-adjust: 100%;                         /* [5] */
+  -ms-text-size-adjust    : 100%;                         /* [5] */
+
+  @if (typography(smooth) == true) {
+    -moz-osx-font-smoothing: grayscale;                   /* [6] */
+    -webkit-font-smoothing: antialiased;                  /* [6] */
+  }//endif
+}
+
+@if (debugging(baseline) == true) {
+  @include baseline();
+}//endif
+
+@if (typography(hyphens) == true) {
+  body {
+    @include hyphens(auto);
+  }
+}//endif
+
+
+// Set a common bottom margin between all our sibling flow elements.
+//
+// @heydonworks http://alistapart.com/article/axiomatic-css-and-lobotomized-owls
+//
+// body * + * {
+//  @include space(margin-bottom);
+// }
+
+}//endif

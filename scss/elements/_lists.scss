@@ -1,0 +1,30 @@
+@if (elements(lists) == true) {
+
+/*------------------------------------*\
+    ELEMENTS / LISTS
+\*------------------------------------*/
+
+/**
+ * Remove trailing margins from nested lists.
+ */
+
+li > {
+  ul,
+  ol {
+    margin-bottom: 0;
+    margin-left  : 0;
+  }
+}
+
+
+/**
+ * Navigation lists.
+ */
+
+nav ul,
+nav ol {
+  margin-left: 0;
+  list-style : none;
+}
+
+}//endif

@@ -1,0 +1,37 @@
+//------------------------------------\\
+    // MIXINS / PREFIX
+//------------------------------------\\
+
+// Prefix properties to make them work across browsers because they are
+// non-standard. Allows you to prefix multiple properties at once.
+//
+//	.foo {
+//		@include prefix((transform: translate(-50%, -50%)), webkit ms);
+//  }
+//
+//  .foo {
+//    @include prefix((
+//      column-count: 3,
+//      column-gap: 1em,
+//      column-rule: 1px solid silver,
+//      column-width: 20em
+//    )), webkit moz);
+//  }
+//
+// @HugoGireaudel http://www.sitepoint.com/sass-mixins-kickstart-project/
+@mixin prefix($prefixes, $vendors: webkit moz ms o) {
+
+	@each $property, $value in $prefixes {
+
+		@if $vendors {
+			@each $vendor in $vendors {
+				#{"-" + $vendor + "-" + $property}: #{$value};
+			}
+		}
+
+		// Dump regular property anyway
+		#{$property}: #{$value};
+
+	}
+
+}

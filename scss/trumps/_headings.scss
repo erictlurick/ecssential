@@ -1,0 +1,24 @@
+﻿@if (trumps(headings) == true) {
+
+/*------------------------------------*\
+    TRUMPS / HEADINGS
+\*------------------------------------*/
+
+/**
+ * Headings 1–6’s corresponding Greek-alphabet abstract classes for double-
+ * stranded heading hierarchy: csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css
+ *
+ * Use these helper classes to cause other elements to adopt the styling of the
+ * respective heading, e.g.:
+ *
+   <h2 class="u-h1-size">Lorem ipsum</h2>
+ *
+ */
+.u-h1-size, %u-h1-size { @extend %headings; @include type(4, 0, 1); }
+.u-h2-size, %u-h2-size { @extend %headings; @include type(3, 0, 1); }
+.u-h3-size, %u-h3-size { @extend %headings; @include type(2, 0, 0); }
+.u-h4-size, %u-h4-size { @extend %headings; @include type(0, 0, 0); }
+.u-h5-size, %u-h5-size { @extend %headings; @include type(0, 0, 0); }
+.u-h6-size, %u-h6-size { @extend %headings; @include type(0, 0, 0); }
+
+}//endif

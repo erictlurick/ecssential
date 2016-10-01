@@ -1,0 +1,27 @@
+/*------------------------------------*\
+    GENERIC / SHARED
+\*------------------------------------*/
+
+/**
+ * Where `margin-bottom` is concerned,this value will be the same as the
+ * base line-height. This allows us to keep a consistent vertical rhythm.
+ * As per: csswizardry.com/2012/06/single-direction-margin-declarations
+ */
+
+ul, ol, dl,
+blockquote, p, address,
+table,
+fieldset, legend, figure, details,
+pre {
+  @include space(margin-bottom);
+}
+
+
+/**
+ * Where `margin-left` is concerned we want to try and indent certain elements
+ * by a consistent amount. Define that amount once,here.
+ */
+
+ul, ol {
+  @include space(margin-left);
+}

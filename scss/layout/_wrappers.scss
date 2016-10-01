@@ -1,0 +1,42 @@
+@if (layout(wrappers) == true) {
+
+/*------------------------------------*\
+    LAYOUT / WRAPPERS
+\*------------------------------------*/
+
+/**
+ * Use wrappers when you need a content area that is a standardized width and centered on the page.
+ */
+
+// Predefine the variables below in order to alter and enable specific features.
+$wrapper-prefix      : 'l-wrapper' !default;
+$wrapper-width-large : 74.551em !default;
+$wrapper-width-medium: 55.927em !default;
+$wrapper-width-narrow: 33em !default;
+
+
+.#{$namespace}#{$wrapper-prefix} {
+  margin-right: auto;
+  margin-left: auto;
+  @include space(padding-right);
+  @include space(padding-left);
+}
+
+
+  /**
+   * Size variants.
+   */
+
+  .#{$namespace}#{$wrapper-prefix}--large {
+    max-width: $wrapper-width-large;
+  }
+
+  .#{$namespace}#{$wrapper-prefix}--medium {
+    max-width: $wrapper-width-medium;
+  }
+
+  .#{$namespace}#{$wrapper-prefix}--narrow {
+    max-width: $wrapper-width-narrow;
+  }
+
+}//endif

@@ -1,0 +1,119 @@
+//------------------------------------\\
+    // SETTINGS / CONFIGURATION
+//------------------------------------\\
+
+// Would you like classes to be prepended with a namespace? If so, define it
+// here.
+$namespace: null !default;
+
+
+// Maps of global config settings. Define any project-level configuration,
+// feature switches, etc. in here.
+
+$fallbacks: (
+  'pixels'           : false
+);
+
+$typography: (
+  'dividers'         : true,
+  'dropcaps'         : true,
+  'glyphs'           : false,
+  'hyphens'          : true,
+  'indent'           : false,
+  'lede'             : true,
+  'small-caps'       : false,
+  'smooth'           : true
+) !default;
+
+$elements: (
+  'anchors'          : true,
+  'code'             : true,
+  'forms'            : true,
+  'headings'         : true,
+  'lists'            : true,
+  'media'            : true,
+  'page'             : true,
+  'quotes'           : true,
+  'selections'       : true,
+  'tables'           : true,
+  'typography'       : true
+) !default;
+
+$layout: (
+  'content'          : false,
+  'grid'             : true,
+  'wrappers'         : true
+) !default;
+
+$objects: (
+  'box'              : true,
+  'buttons'          : true,
+  'form-fields'      : true,
+  'form-requirements': true,
+  'icons'            : true,
+  'ratios'           : true,
+  'tables'           : true
+) !default;
+
+$components: (
+  'buttons'          : true,
+) !default;
+
+$trumps: (
+  'broken-images'    : true,
+  'headings'         : true,
+  'helpers'          : true,
+  'image-placements' : true,
+  'print'            : true,
+  'prose'            : true,
+  'states'           : true,
+  'text'             : true
+) !default;
+
+$debugging: (
+  'baseline'         : false,
+  'baseline-checks'  : false,
+  'breakpoint-checks': false,
+  'health-checks'    : false
+) !default;
+
+
+// You can access data in those maps using the following function:
+//
+//  config(<key>)
+//
+// Example usage:
+//
+//  @if (inuit-config(debug) == true) { ...  }
+
+@function fallback($key) {
+  @return map-get($fallbacks, $key);
+}
+
+@function typography($key) {
+  @return map-get($typography, $key);
+}
+
+@function elements($key) {
+  @return map-get($elements, $key);
+}
+
+@function layout($key) {
+  @return map-get($layout, $key);
+}
+
+@function objects($key) {
+  @return map-get($objects, $key);
+}
+
+@function components($key) {
+  @return map-get($components, $key);
+}
+
+@function trumps($key) {
+  @return map-get($trumps, $key);
+}
+
+@function debugging($key) {
+  @return map-get($debugging, $key);
+}

@@ -1,0 +1,26 @@
+//------------------------------------\\
+    // MIXINS / ATTENTION
+//------------------------------------\\
+
+// Apply ‘attention’ styles in one go.
+// @csswizardry https://github.com/csswizardry/csswizardry.github.com/blob/master/css/_tools.mixins.scss
+@mixin attention($self: false) {
+
+  @if($self != false) {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  }
+
+  @else {
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  }
+
+}

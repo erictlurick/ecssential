@@ -1,0 +1,136 @@
+@if (components(buttons) == true) {
+
+/*------------------------------------*\
+    COMPONENTS / BUTTONS
+\*------------------------------------*/
+
+// Predefine the variable below in order to alter and enable specific features.
+$buttons-namespace           : 'c-button' !default;
+$button-outlined-border-width: 1px !default;
+
+
+/**
+ * 1. Allow us to style box model properties.
+ * 2. Line different sized buttons up a little nicer.
+ * 3. Make buttons inherit font styles (often necessary when styling `input`s as
+ *    buttons).
+ * 4. Reset/normalize some styles.
+ * 5. Force all button-styled elements to appear clickable.
+ * 6. Subtract the border size from the padding value so that buttons do not
+ *    grow larger as we add borders.
+ */
+
+.#{$namespace}#{$buttons-namespace} {
+  display         : inline-block; /* [1] */
+  vertical-align  : middle; /* [2] */
+  margin          : 0; /* [4] */
+  @include space(margin-right, 0.25);
+  padding         : rem($base-font-size * $base-line-height / 2)  rem($base-font-size * $base-line-height);
+  font            : inherit; /* [3] */
+  font-family: $font-family-sans-serif;
+  text-align      : center; /* [4] */
+  cursor          : pointer; /* [5] */
+  transition      : all $base-ui-transition;
+}
+
+
+
+
+
+/* Style variants
+   ========================================================================== */
+
+.#{$namespace}#{$buttons-namespace}--round {
+  border-radius: .375rem;
+}
+
+.#{$namespace}#{$buttons-namespace}--pill {
+  border-radius: 3rem;
+}
+
+.#{$namespace}#{$buttons-namespace}--outlined {
+  color           : currentColor;
+  box-shadow      : 0px 0px 0px $button-outlined-border-width currentColor;
+
+  @include attention(){
+    color             : darken(color(text), 10%);
+    border-color-color: darken(color(text), 10%);
+  }
+}
+
+.#{$namespace}#{$buttons-namespace}--disabled,
+.#{$namespace}#{$buttons-namespace}[disabled] {
+  opacity       : 0.5;
+  pointer-events: none;
+}
+
+
+
+
+
+/* Size variants
+   ========================================================================== */
+
+.#{$namespace}#{$buttons-namespace}--huge {
+  padding: rem($base-font-size * ($base-line-height * 2) / 2)  rem($base-font-size * $base-line-height);
+}
+
+.#{$namespace}#{$buttons-namespace}--large {
+  padding: rem($base-font-size * ($base-line-height * 1.5) / 2)  rem($base-font-size * $base-line-height);
+}
+
+.#{$namespace}#{$buttons-namespace}--small {
+  padding: rem($base-font-size * ($base-line-height / 2) / 2)  rem($base-font-size * $base-line-height);
+}
+
+.#{$namespace}#{$buttons-namespace}--tiny {
+  padding: rem($base-font-size * ($base-line-height / 4) / 2)  rem($base-font-size * ($base-line-height / 3));
+}
+
+.#{$namespace}#{$buttons-namespace}--full {
+  display      : block;
+  width        : 100%;
+  margin-right : 0;
+  margin-left  : 0;
+  padding-right: 0;
+  padding-left : 0;
+}
+
+
+
+
+
+/* Color variants
+   ========================================================================== */
+
+@each $type, $color in $colors {
+
+  @if ($type == action) or ($type == success) or ($type == error) or ($type == warning) or ($type == info) {
+
+    .#{$namespace}#{$buttons-namespace}--#{$type} {
+      color           : color-invert($color);
+      background-color: $color;
+      border-color    : $color;
+
+      @include attention(){
+        color           : color-invert($color);
+        background-color: darken($color, 5%);
+        border-color    : darken($color, 5%);
+      }
+
+      &.#{$namespace}#{$buttons-namespace}--outlined {
+        color           : $color;
+        background-color: transparent;
+
+        @include attention(){
+          color           : darken($color, 10%);
+          box-shadow-color: darken($color, 10%);
+        }
+      }
+    }
+
+  }//endif
+
+}
+
+}//endif

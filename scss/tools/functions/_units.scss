@@ -1,0 +1,22 @@
+//------------------------------------\\
+    // FUNCTIONS / UNITS
+//------------------------------------\\
+
+// A small, internally-used function to remove the units from a given value.
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+
+// Get the em value based on the pixel value that has been passed in.
+// @ijy https://gist.github.com/ijy/1441967
+@function em($target, $context: $base-font-size) {
+  @if $target == 0 { @return 0 }
+  @return strip-units($target) / strip-units($context) + em;
+}
+
+// Get the rem value based on the pixel value that has been passed in.
+// @stubbornella http://www.stubbornella.org/content/2013/07/01/easy-peasy-rem-conversion-with-sass/
+@function rem($target, $context: $base-font-size) {
+  $value: strip-units($target) / strip-units($context);
+  @return $value + rem;
+}

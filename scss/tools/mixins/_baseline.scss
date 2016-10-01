@@ -1,0 +1,29 @@
+//------------------------------------\\
+    // MIXINS / BASELINE
+//------------------------------------\\
+
+// Due to sub-pixel rounding, the grid will not align perfectly with certain
+// sizes and should only be used as a reference, not a holy truth.
+@mixin baseline($color-line-1: #ffcadf, $color-line-2: #e2d1fb, $font-size: $base-font-size, $line-height: $base-line-height) {
+
+  // Predefine the variable below in order to alter and enable specific features.
+  $rhythm: ($font-size * $line-height) / 2;
+
+  html {
+    position: relative;
+  }
+
+  html::after {
+    content         :  "";
+    display         :  block;
+    position        :  absolute;
+    top             :  0;
+    bottom          :  0;
+    z-index         : -1;
+    width           :  100%;
+    height          :  auto;
+    background-image:  linear-gradient($color-line-1 1px, transparent 1px, transparent rem($rhythm), $color-line-2 rem($rhythm), transparent rem($rhythm + 1));
+    background-size :  100% #{$line-height}em;
+  }
+
+}

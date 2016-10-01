@@ -1,0 +1,1211 @@
+<!doctype html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+
+	<!-- Document settings and metadata. -->
+	<title>eCSSential</title>
+
+	<!-- Don't forget to set your site up: http://google.com/webmasters -->
+	<meta name="google-site-verification" content="" />
+
+	<!-- Who owns the content of this site? -->
+	<meta name="Copyright" content="" />
+
+	<!--  Mobile Viewport
+	http://j.mp/mobileviewport & http://davidbcalhoun.com/2010/viewport-metatag
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width (wrong for most sites)
+	-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Use Iconifyer to generate all the favicons and touch icons you need: http://iconifier.net
+	<link rel="icon" href="" />
+	-->
+
+	<!-- Prefetch DNS for external assets. -->
+	<link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+	<link rel="dns-prefetch" href="//placehold.it" />
+
+	<!-- SVG local storage -->
+	<script src="js/lib/svgstorage.js"></script>
+
+	<!-- Stylesheets go here. Concatenate and minify for production -->
+	<link rel="stylesheet" href="css/styles.min.css" />
+
+	<!--[if lt IE 9]>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<![endif]-->
+
+	<!-- Lea Verou's Prefix Free, lets you use un-prefixed properties in your CSS files
+	<script src="//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+	-->
+
+	<!-- This is an un-minified, complete version of Modernizr. Before you move to production, you should generate a custom build that only has the detects you need.
+	<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+	-->
+
+	<!-- replace the class of `no-js` to `js` on the HTML element
+	<script>
+		(function(h){h.className = h.className.replace('no-js', 'js')})(document.documentElement)
+	</script>
+	-->
+
+	<!-- Adobe Edge Web Fonts https://edgewebfonts.adobe.com/index
+	<script src="//use.edgefonts.net/raleway.js"></script>
+	-->
+
+	<!-- Application-specific meta tags -->
+
+	<!-- Windows 8: see http://msdn.microsoft.com/en-us/library/ie/dn255024%28v=vs.85%29.aspx for details -->
+	<!--
+	<meta name="application-name" content="" />
+	<meta name="msapplication-TileColor" content="" />
+	<meta name="msapplication-TileImage" content="" />
+	<meta name="msapplication-square150x150logo" content="" />
+	<meta name="msapplication-square310x310logo" content="" />
+	<meta name="msapplication-square70x70logo" content="" />
+	<meta name="msapplication-wide310x150logo" content="" />
+	-->
+
+	<!-- Twitter: see https://dev.twitter.com/docs/cards/types/summary-card for details -->
+	<!--
+	<meta name="twitter:card" content="">
+	<meta name="twitter:site" content="">
+	<meta name="twitter:title" content="">
+	<meta name="twitter:description" content="">
+	<meta name="twitter:url" content="">
+	-->
+
+	<!-- Facebook (and some others) use the Open Graph protocol: see http://ogp.me/ for details -->
+	<!--
+	<meta property="og:title" content="" />
+	<meta property="og:description" content="" />
+	<meta property="og:url" content="" />
+	<meta property="og:image" content="" />
+	-->
+
+	<!-- Google+ Metadata -->
+	<!--
+	<meta itemprop="name" content="">
+	<meta itemprop="description" content="">
+	<meta itemprop="image" content="">
+	-->
+
+	<!--
+	When you look at documentation from Facebook and Twitter for sharing
+	Web pages, there are many other <meta> tags available that can be used to
+	specify different types of content. But, in general, the following will
+	suffice
+
+	Reconciling the guidelines for the image is simple: follow Facebook's
+	recommendation of a minimum dimension of 1200x630 pixels and an aspect ratio
+	of 1.91:1, but adhere to Twitter's file size requirement of less than 1MB.
+
+	See: https://css-tricks.com/essential-meta-tags-social-media/
+	-->
+
+	<!--  Essential meta tags -->
+	<meta property="og:title" content="">
+	<meta property="og:description" content="">
+	<meta property="og:image" content="">
+	<meta property="og:url" content="">
+	<meta name="twitter:card" content="e">
+
+	<!--  Non essential, but recommended -->
+	<meta name="og:site_name" content="">
+	<meta name="twitter:image:alt" content="">
+
+	<!--  Non essential, but required for Analytics -->
+	<meta property="fb:app_id" content="" />
+	<meta name="twitter:site" content="">
+
+</head>
+
+<body class="[ l-wrapper  l-wrapper--narrow ]" id="top">
+
+	<!--[if lt IE 10]>
+	<p role="alert">Votre logiciel de navigation est <strong>obsolète</strong>. Il contient des failles de sécurité et pourrait ne pas afficher certaines fonctionnalités. Découvrez <a href="http://browsehappy.com/">comment le mettre à jour</a> et profiter d&rsquo;une meilleure expérience d&rsquo;Internet.</p>
+	<![endif]-->
+
+	<header class="is-aligned-center">
+		<h1>eCSSential</h1>
+
+		<p>Base <abbr title="Cascading Style Sheets">css</abbr> respectueuse des standards <a href="//www.w3.org/" hreflang="en"><abbr title="World Wide Web Consortium">w3c</abbr></a>, soucieuse d'accessibilité, et, naturellement adaptative pour démarrer un projet de site internet.</p>
+	</header>
+
+
+
+
+	<nav>
+
+		<h2 aria-hidden="true">Sommaire</h2>
+
+		<ol role="directory">
+			<li><a href="#installation">Installation</a></li>
+			<li><a href="#headings">Titraille</a></li>
+			<li><a href="#text">Texte</a></li>
+			<li><a href="#links">Ancres et liens</a></li>
+			<li><a href="#code">Code</a></li>
+			<li><a href="#lists">Listes</a></li>
+			<li><a href="#tables">Tableaux</a></li>
+			<li><a href="#forms">Formulaires</a></li>
+			<li><a href="#medias">Medias</a></li>
+			<li><a href="#layout">Mise en page</a></li>
+			<li><a href="#buttons">Boutons</a></li>
+			<li><a href="#icons">Icônographie</a></li>
+		</ol>
+
+	</nav>
+
+
+
+
+
+	<main class="u-prose">
+
+		<section id="installation">
+
+			<h2 id="installation">Installation</h2>
+
+			<h3>Version pré compilée</h3>
+
+			<p>Une version standard et une version minifiée du fichier <abbr title="Cascading Style Sheets">css</abbr> sont disponibles à votre convenance dans le répertoire <samp>css/</samp> prêts à être insérés dans votre fichier <abbr title="Hyper Text Markup Language">html</abbr>.</p>
+
+			<pre><code>ecssential/
+├── css/
+│   ├── styles.css
+│   └── styles.min.css</code></pre>
+
+			<p>À vous de compléter ou de modifier les styles prédéfinis en ajoutant vos propres déclarations <abbr title="Cascading Style Sheets">css</abbr> dans un nouveau fichier nommé, par exemple, <samp>theme.css</samp> et de l&rsquo;appeler à la suite.</p>
+
+			<pre><code>&lt;html&gt;
+  &lt;head&gt;
+    ...
+    &lt;link rel="stylesheet" href="css/styles.min.css"&gt;
+    &lt;link rel="stylesheet" href="css/theme.css"&gt;
+    ...
+  &lt;/head&gt;
+  ...
+&lt;/html&gt;</code></pre>
+
+			<h3>Version <abbr title="Syntactically Awesome Stylesheets">sass</abbr></h3>
+
+			<p>Cette option permet un paramétrage plus poussé en donnant la possibilité d&rsquo;activer ou désactiver certaines fonctionalités dans le fichier <samp>configuration.scss</samp> mais également de modifier les variables prédéfinies dans les fichiers <samp>global.scss</samp> et <samp>colors.scss</samp> situés dans le répertoire <code>settings/</code>. Il faudra ensuite compiler le fichier <code>styles.scss</code> pour rafraîchir vos déclarations de style.</p>
+
+			<h4>Organisation des fichiers</h4>
+
+			<p>Les préprocesseurs <abbr title="Cascading Style Sheets">css</abbr> comme <abbr title="Syntactically Awesome Stylesheets">sass</abbr> nous donnent la possibilité de fractionner notre code dans plusieurs dossiers et fichiers sans affecter les performances.</p>
+
+			<p><abbr title="Block, Element, Modifier">bem</abbr> est la convention utilisée pour nommer et classifier les sélecteurs <abbr title="Cascading Style Sheets">css</abbr> de façon à les rendre plus stricts, transparents et informatifs. La structure globale est inspirée de celle préconisée par <a href="//www.creativebloq.com/web-design/manage-large-scale-web-projects-new-css-architecture-itcss-41514731" hreflang="en"><abbr title="Inverted Triangle CSS">itcss</abbr></a>.</p>
+
+			<pre><code>ecssential/
+├── scss/
+│   ├── components/
+│   │   ├── all.scss
+│   │   └── buttons.scss
+│   ├── elements/
+│   │   ├── all.scss
+│   │   ├── anchors.scss
+│   │   ├── code.scss
+│   │   ├── forms.scss
+│   │   ├── headings.scss
+│   │   ├── lists.scss
+│   │   ├── media.scss
+│   │   ├── page.scss
+│   │   ├── selections.scss
+│   │   └── typography.scss
+│   ├── generic/
+│   │   ├── all.scss
+│   │   ├── baseline-checks.scss
+│   │   ├── box-sizing.scss
+│   │   ├── breakpoint-checks.scss
+│   │   ├── health-checks.scss
+│   │   ├── reset.scss
+│   │   └── shared.scss
+│   ├── layout/
+│   │   ├── all.scss
+│   │   └── wrappers.scss
+│   ├── objects/
+│   │   ├── all.scss
+│   │   ├── form-fields.scss
+│   │   ├── form-helpers.scss
+│   │   └── icons.scss
+│   │   └── ratios.scss
+│   ├── settings/
+│   │   ├── all.scss
+│   │   ├── breakpoints.scss
+│   │   ├── colors-ui.scss
+│   │   ├── colors.scss
+│   │   ├── configuration.scss
+│   │   ├── font-stacks.scss
+│   │   ├── font-weight.scss
+│   │   ├── global.scss
+│   │   ├── layers.scss
+│   │   ├── scales.scss
+│   │   └── typography.scss
+│   ├── tools/
+│   │   ├── functions/
+│   │   │   ├── colors.scss
+│   │   │   ├── exponent.scss
+│   │   │   └── units.scss
+│   │   ├── mixins/
+│   │   │   ├── attention.scss
+│   │   │   ├── baseline.scss
+│   │   │   ├── borders.scss
+│   │   │   ├── breakpoints.scss
+│   │   │   ├── clearfix.scss
+│   │   │   ├── hide.scss
+│   │   │   ├── palette.scss
+│   │   │   ├── prefix.scss
+│   │   │   ├── pseudo-elements.scss
+│   │   │   ├── space.scss
+│   │   │   └── typography.scss
+│   │   └── all.scss
+│   ├── trumps/
+│   │   ├── all.scss
+│   │   ├── headings.scss
+│   │   ├── print.scss
+│   │   ├── states.scss
+│   │   └── text.scss
+│   └── styles.scss
+└── index.html</code></pre>
+
+			<h4>Ressources</h4>
+
+			<ul>
+
+				<li><a href="//guidecss.fr/">Feuilles de styles <abbr title="Cascading Style Sheets">css</abbr></a>, conseils et bonnes pratiques,</li>
+
+				<li><a href="//medium.com/@ricardozea/sass-for-beginners-the-friendliest-guide-about-how-to-install-use-sass-on-windows-22ff4a32c1f7#.5j7qypbo9" hreflang="en"><abbr title="Syntactically Awesome Stylesheets">Sass</abbr> for beginners</a>, un guide pour installer et utiliser <abbr title="Syntactically Awesome Stylesheets">Sass</abbr> sur Windows.</li>
+
+			</ul>
+
+			<small><a href="#top">[Haut de page]</a></small>
+
+		</section>
+
+		<hr>
+
+		<section id="headings">
+
+			<h2>Titraille</h2>
+
+			<p>Une échelle de taille pour les titres maintient la cohérence de votre mise en page et permet de les différencier facilement.</p>
+
+			<figure class="is-aligned-left">
+				<p class="u-h1-size">Titre de niveau 1</p>
+				<p class="u-h2-size">Titre de niveau 2</p>
+				<p class="u-h3-size">Titre de niveau 3</p>
+				<p class="u-h4-size">Titre de niveau 4</p>
+				<p class="u-h5-size">Titre de niveau 5</p>
+				<p class="u-h6-size">Titre de niveau 6</p>
+			</figure>
+
+			<figure class="is-aligned-left">
+
+				<p class="u-h1-size">Titre 1 avec <a href="#">lien</a> et <small>sous-titre</small></p>
+				<p>Titre de niveau 1 contenant un lien et un sous-titre avec les balises <samp>&lt;h1&gt;</samp>, <samp>&lt;a&gt;</samp> et <samp>&lt;small&gt;</samp></p>
+
+				<p class="u-h2-size">Titre 2 avec <a href="#">lien</a> et <small>sous-titre</small></p>
+				<p>Titre de niveau 2 contenant un lien et un sous-titre avec les balises <samp>&lt;h2&gt;</samp>, <samp>&lt;a&gt;</samp> et <samp>&lt;small&gt;</samp></p>
+
+				<p class="u-h3-size">Titre 3 avec <a href="#">lien</a> et <small>sous-titre</small></p>
+				<p>Titre de niveau 3 contenant un lien et un sous-titre avec les balises <samp>&lt;h3&gt;</samp>, <samp>&lt;a&gt;</samp> et <samp>&lt;small&gt;</samp></p>
+
+				<p class="u-h4-size">Titre 4 avec <a href="#">lien</a> et <small>sous-titre</small></p>
+				<p>Titre de niveau 4 contenant un lien et un sous-titre avec les balises <samp>&lt;h4&gt;</samp>, <samp>&lt;a&gt;</samp> et <samp>&lt;small&gt;</samp></p>
+
+				<p class="u-h5-size">Titre 5 avec <a href="#">lien</a> et <small>sous-titre</small></p>
+				<p>Titre de niveau 5 contenant un lien et un sous-titre avec les balises <samp>&lt;h5&gt;</samp>, <samp>&lt;a&gt;</samp> et <samp>&lt;small&gt;</samp></p>
+
+				<p class="u-h6-size">Titre 6 avec <a href="#">lien</a> et <small>sous-titre</small></p>
+				<p>Titre de niveau 6 contenant un lien et un sous-titre avec les balises <samp>&lt;h6&gt;</samp>, <samp>&lt;a&gt;</samp> et <samp>&lt;small&gt;</samp></p>
+
+			</figure>
+
+			<p role="note"><mark>Afin de respecter scrupuleusement une charte graphique dont la hiérarchie visuelle des titres ne coïncide pas avec le balisage sémantique du document <abbr title="Hyper Text Markup Language">html</abbr> il est possible d&rsquo;utiliser les classes <abbr title="Cascading Style Sheets">css</abbr> <samp>.u-h1-size</samp>, <samp>.u-h2-size</samp>, <samp>.u-h3-size</samp>, <samp>.u-h4-size</samp>, <samp>.u-h5-size</samp>, <samp>.u-h6-size</samp>.</mark></p>
+
+			<small><a href="#top">[Haut de page]</a></small>
+
+		</section>
+
+		<hr>
+
+		<section id="text">
+
+			<h2>Texte</h2>
+
+			<h3>Chapeau</h3>
+
+			<p class="u-lede">Le chapeau (souvent écrit <em>chapô</em> est un texte généralement court, précédant le corps d&rsquo;un article, et dont le but est d&rsquo;en encourager la lecture en résumant le propos qui va être développé.</p>
+
+			<pre><code>&lt;p class="u-lede"&gt;&hellip;&lt;/p&gt;</code></pre>
+
+			<h3>Paragraphes</h3>
+
+			<p>Une suite de 45 &agrave; 75 caractères est communément considérée comme suffisante pour constituer une longueur de ligne de texte. La ligne de 66 caractères (en comptant &agrave; la fois les lettres et les espaces) représente un idéal souvent utilisé qui est possible avec les classes <abbr title="Cascading Style Sheets">css</abbr> <samp>.l-wrapper</samp> et <samp>.l-wrapper--narrow</samp> combinées.</p>
+
+			<p class="u-dropcap">Les lettrines sont composées d&rsquo;une lettre initiale majuscule décorée placée en tête d&rsquo;un texte et occupant une hauteur supérieure à la ligne courante. Les autres lettres du premier mot sont généralement en petites capitales. Comme lettre ornée, elle commence et décore une inscription, un paragraphe ou un chapitre d&rsquo;ouvrage. Les moines du Moyen Âge cultivaient l&rsquo;art de la lettrine dans leurs enluminures. Avec l&rsquo;invention de l'imprimerie, la lettrine est devenue un ornement typographique. Elle peut provenir d&rsquo;une vignette conçue à cet effet ou d&rsquo;un caractère plus grand de la même police d&rsquo;écriture ou d&rsquo;une autre sorte.</p>
+
+			<pre><code>&lt;p class="u-dropcap"&gt;&hellip;&lt;/p&gt;</code></pre>
+
+			<p role="note"><mark>Pour une présentation des paragraphes en alinéa activez là avec <samp>'indent': true</samp> dans la liste de variables <samp>$typography</samp> qui se trouve dans le fichier <samp>scss/settings/configuration.scss</samp></mark></p>
+
+			<h3>Taille du texte</h3>
+
+			<figure class="is-aligned-left">
+				<p class="u-text--x-small">Petit-romain</p>
+				<p class="u-text--small">Cicéro</p>
+				<p class="u-text--large">Double-canon</p>
+				<p class="u-text--x-large">Triple-canon</p>
+				<p class="u-text--xx-large">Grosse-nompareille</p>
+			</figure>
+
+			<pre><code>&lt;p class="u-text--x-small"&gt;Petit-romain&lt;/p&gt;<br>&lt;p class="u-text--small"&gt;Cicéro&lt;/p&gt;<br>&lt;p class="u-text--large"&gt;Double-canon&lt;/p&gt;<br>&lt;p class="u-text--x-large"&gt;Triple-canon&lt;/p&gt;<br>&lt;p class="u-text--xx-large"&gt;Grosse-nompareille&lt;/p&gt;</code></pre>
+
+			<h3>Citations</h3>
+
+			<p><q>Exemple de citation au fil du texte avec la balise <code>&lt;q&gt;</code>.</q></p>
+			<p><q>Exemple de <q>citation imbriquée</q> dans une citation au fil du texte avec les balises <code>&lt;q&gt;</code>.</q></p>
+
+			<p>Example de citation avec la balise <code>&lt;blockquote&gt;</code> dans laquelle la source est précisée avec <code>&lt;footer&gt;</code>&#8202;:</p>
+
+			<blockquote>
+				<p>On peut aussi faire remarquer que les formules conçues avec du faux-texte ont tendance à sous-estimer l&rsquo;espace nécessaire à une titraille immédiatement intelligible, ce qui oblige les rédactions à formuler ensuite des titres simplificateurs, voire inexacts, pour ne pas dépasser l&rsquo;espace imparti&hellip;</p>
+				<footer><cite><a href="//www.amazon.fr/Conception-sites-web-Lart-simplicit%C3%A9/dp/2744008877">Conception de sites web</a></cite> par Jakob Nielsen</footer>
+			</blockquote>
+
+			<pre><code>&lt;q&gt;Exemple de citation au fil du texte.&lt;/q&gt;<br><br>&lt;q&gt;Exemple de &lt;q&gt;citation imbriquée&lt;/q&gt; dans une citation au fil du texte&lt;/q&gt;<br><br>&lt;blockquote>
+  &lt;p&gt;On peut aussi faire remarquer que les formules conçues avec du faux-texte&hellip;&lt;/p&gt;
+  &lt;footer&gt;&lt;cite&gt;&lt;a href="http://www.amazon.fr/Conception-sites-web-Lart-simplicit%C3%A9/dp/2744008877"&gt;Conception de sites web&lt;/a&gt;&lt;/cite&gt; par Jakob Nielsen&lt;/footer&gt;
+&lt;/blockquote&gt;</code></pre>
+
+			<h3>Marquage sémantique</h3>
+
+			<ul>
+
+				<li>L&rsquo;element <code>&lt;a&gt;</code> est utilisé pour les <a href="#!">hyperliens</a>,</li>
+
+				<li>L&rsquo;élément <code>&lt;abbr&gt;</code> est utlisé pour les abbréviations et les acronymes sont attribut title ne doit être utilisé que pour l&rsquo;extension de l&rsquo;abbréviation. Example&#8202;: <abbr title="Abbreviation">abbr</abbr>,</li>
+
+				<li>L&rsquo;élément <code>&lt;b&gt;</code> est utilisé dans une partie de texte <b>en gras</b> sémantiquement faible,</li>
+
+				<li>L&rsquo;élément <code>&lt;strong&gt;</code> est utilisé pour donner de <strong>l&rsquo;importance</strong> au texte,</li>
+
+				<li>L&rsquo;élément <code>&lt;i&gt;</code> est utilisé pour <i>différencier</i> une partie du texte,</li>
+
+				<li>L&rsquo;élément <code>&lt;cite&gt;</code> est utilisé pour citer <cite>le titre</cite> d&rsquo;une oeuvre, d&rsquo;un document ou d&rsquo;un évènement,</li>
+
+				<li>L&rsquo;élément <code>&lt;code&gt;</code> est utlisé pour déclarer du <code>code informatique</code>,</li>
+
+				<li>L&rsquo;élément <code>&lt;del&gt;</code> est utilisé pour indiquer qu&rsquo;une partie de texte est <del>supprimée</del>,</li>
+
+				<li>L&rsquo;élément <code>&lt;dfn&gt;</code> est utilisé dans un paragraphe ou une liste de définitions pour représenter le <dfn title="Définition du terme">terme d&rsquo;une définition</dfn>,</li>
+
+				<li>L&rsquo;élément <code>&lt;em&gt;</code> est utilisé pour mettre <em>une partie du texte</em> en emphase,</li>
+
+				<li>L&rsquo;élément <code>&lt;ins&gt;</code> est utilisé pour insérer un nouveau texte dans un <ins>document révisé</ins>,</li>
+
+				<li>L&rsquo;élément <code>&lt;kbd&gt;</code> est utilisé lorsque le texte est utilisé pour définir des <kbd>actions</kbd> au clavier,</li>
+
+				<li>L&rsquo;élément <code>&lt;mark&gt;</code> est utilisé pour marquer du texte, par exemple <mark>surligner</mark> un résultat de recherche,</li>
+
+				<li>L&rsquo;élément <code>&lt;q&gt;</code> est utilisé pour une <q>citation courte</q> provenant d&rsquo;une ressource externe,</li>
+
+				<li>L&rsquo;élément <code>&lt;s&gt;</code> est utilisé pour identifier une partie de texte qui n&rsquo;est pas <s>correct</s> ou non pertinent,</li>
+
+				<li>L&rsquo;élément <code>&lt;samp&gt;</code> est utilisé dans un paragraphe pour écrire un <samp>échantillon</samp> de code,</li>
+
+				<li>L&rsquo;élément <code>&lt;small&gt;</code> est utilisée comme <small>contenu relatif</small> mais non essentiel,</li>
+
+				<li>L&rsquo;élément <code>&lt;span&gt;</code> est utilisé pour mettre en style une <span>portion de texte</span> qui se différencie des autres,</li>
+
+				<li>L&rsquo;élément <code>&lt;sub&gt;</code> est utlisé pour déclarer un indice,</li>
+
+				<li>L&rsquo;élément <code>&lt;sup&gt;</code> est utlisé pour déclarer un exposant,</li>
+
+				<li>L&rsquo;élément <code>&lt;var&gt;</code> est utilisé pour déclarer une <var>variable</var>.</li>
+
+			</ul>
+
+			<h3>Espaces</h3>
+
+			<p>Toute combinaison d&rsquo;espace, de rentrée d&rsquo;alinéa ou de retour à la ligne, est automatiquement comprise comme une espace mot. Si vous devez insérer plus qu&rsquo;un espace mot entre deux phrases, ou tout autre caractère, utilisez alors l&rsquo;un des caractères d&rsquo;espace disponible en Unicode. Même si le caractère lui-même n&rsquo;est pas présent dans le fichier de la police de caratères utilisée, les navigateurs qui comprennent l&rsquo;Unicode pourront en afficher une bonne approximation. Résistez à la tentation d&rsquo;utiliser l&rsquo;espace insécable <code>&amp;nbsp;</code> qui n&rsquo;a de signification que pour lui-même.</p>
+
+			<ul>
+
+				<li><span>Espace d&rsquo;un em ou d&rsquo;un cadratin avec <code>&amp;#8195;</code></span> <ins>&#8195;</ins></li>
+
+				<li><span>Espace num&eacute;rique (&eacute;gale &agrave; la chasse d&rsquo;un z&eacute;ro) avec <code>&amp;#8199;</code></span> <mark>&#8199;</mark></li>
+
+				<li><span>Espace d&rsquo;un tiers de cadratin avec <code>&amp;#8196;</code></span> <mark>&#8196;</mark></li>
+
+				<li><span>Espace d&rsquo;un quart de cadratin avec <code>&amp;#8197;</code></span> <mark>&#8197;</mark></li>
+
+				<li><span>Espace ponctuation (&eacute;gale &agrave; la chasse d&rsquo;une virgule) avec <code>&amp;#8200;</code></span> <mark>&#8200;</mark></li>
+
+				<li><span>Espace fine (1/5 cadratin, 1/8 en fran&ccedil;ais) avec <code>&amp;#8201;</code></span> <mark>&#8201;</mark></li>
+
+				<li><span>Espace d&rsquo;un sixi&egrave;me de cadratin avec<code>&amp;#8198;</code></span> <mark>&#8198;</mark></li>
+
+				<li><span>Espace ultra fine (de 1/10 &agrave; 1/16 de cadratin) avec <code>&amp;#8202;</code></span> <mark>&#8202;</mark></li>
+
+			</ul>
+
+			<small><a href="#top">[Haut de page]</a></small>
+
+		</section>
+
+		<hr>
+
+		<section id="links">
+
+			<h2>Ancres et liens</h2>
+
+			<h3>Liens internes</h3>
+
+			<p>Les hyperliens <code>&lt;a&gt;</code> doivent être visuellement distingués du reste du contenu. Les hyperliens de même nature ont des couleurs, des formes et des comportements identiques sur toutes les pages.</p>
+
+			<ul>
+
+				<li><a href="#!">Lien interne</a></li>
+
+				<li><a href="mailto:adresse@courriel.net" title="Écrire à adresse@courriel.net">Ecrivez-nous&#8202;!</a></li>
+
+				<li><a href="tel:+33141592653">+33 1 41 59 26 53</a></li>
+
+				<li><a href="#!" download>Document à télécharger <small>(<abbr title="Document PDF">PDF</abbr> &ndash; 215&nbsp;Ko)</small></a></li>
+
+				<li><a href="#!">Document audio <small>(<abbr title="Fichier MP3">mp3</abbr> &ndash; 12&nbsp;min.)</small></a></li>
+
+			</ul>
+
+			<pre><code>&lt;a href="#!"&gt;Lien interne&lt;/a&gt;<br><br>&lt;a href="mailto:adresse@courriel.net" title="Écrire à adresse@courriel.net"&gt;Ecrivez-nous&amp;#8202;!&lt;/a&gt;<br><br>&lt;a href="#!" download>Document à télécharger &lt;small&gt;(&lt;abbr title="Document PDF">PDF&lt;/abbr&gt; &ndash; 215&nbsp;Ko)&lt;/small&gt;&lt;/a&gt;<br><br>&lt;a href="//url.com/file.mp3">Document audio &lt;small&gt;(&lt;abbr title="Fichier Ogg"&gt;Ogg&lt;/abbr&gt; &ndash; 12&nbsp;min.)&lt;/small&gt;&lt;/a&gt;</code></pre>
+
+			<h3>Liens externes</h3>
+
+			<p>Les <a href="#!">liens internes</a> et les <a href="http://checklists.opquast.com/11/criteria/687/" title="Bonne pratique Opquast N&#176;188">liens externes</a> sont différenciés. Lorsqu&rsquo;elle différe de la page d&rsquo;origine, mieux vaut spécifier la langue de destination&#8202;: voici la <a href="http://www.w3.org/Translations/WCAG20-fr/">version française</a> des <a href="http://www.w3.org/TR/WCAG20/" title="Web Content Accessibility Guidelines" hreflang="en"><abbr title="Web Content Accessibility Guidelines" lang="en">WCAG</abbr>&nbsp;2.0</a>. Pour en savoir plus, voir cet article sur la <a href="http://letrainde13h37.fr/43/signaletique-hyperliens/">signalétique des hyperliens</a>.</p>
+
+			<ul>
+
+				<li><a href="//url.com" hreflang="en">Lien externe</a></li>
+
+				<li><a href="//url.com/file.pdf" download>Document à télécharger <small>(<abbr title="Document PDF">PDF</abbr> &ndash; 215&nbsp;Ko)</small></a></li>
+
+				<li><a href="//url.com/file.mp3">Document audio <small>(<abbr title="Fichier MP3">mp3</abbr> &ndash; 12&nbsp;min.)</small></a></li>
+
+			</ul>
+
+			<pre><code>&lt;a href="//url.com"&gt;Lien externe&lt;/a&gt;<br><br>&lt;a href="mailto:adresse@courriel.net" title="Écrire à adresse@courriel.net"&gt;Ecrivez-nous&amp;#8202;!&lt;/a&gt;<br><br>&lt;a href="//url.com/file.pdf" download>Document à télécharger &lt;small&gt;(&lt;abbr title="Document PDF">PDF&lt;/abbr&gt; &ndash; 215&nbsp;Ko)&lt;/small&gt;&lt;/a&gt;<br><br>&lt;a href="//url.com/file.mp3">Document audio &lt;small&gt;(&lt;abbr title="Fichier Ogg"&gt;Ogg&lt;/abbr&gt; &ndash; 12&nbsp;min.)&lt;/small&gt;&lt;/a&gt;</code></pre>
+
+			<small><a href="#top">[Haut de page]</a></small>
+
+		</section>
+
+		<hr>
+
+		<section id="code">
+
+			<h2>Code</h2>
+
+			<ul>
+
+				<li>La balise <code>&lt;code&gt;</code> représente un <code>bloc de code</code>,</li>
+
+				<li>La balise <code>&lt;samp&gt;</code> indique que l&rsquo;ordinateur produit <samp>un texte</samp>,</li>
+
+				<li>La balise <code>&lt;kbd&gt;</code> représente une <kbd>entrée</kbd> saisie au clavier,</li>
+
+				<li>La balise <code>&lt;var&gt;</code> permet d&rsquo;écrire des <var>variables</var> pour des formules simples.</li>
+
+			</ul>
+
+			<p>Lorsqu&rsquo;on veut afficher du texte tel qu&rsquo;il serait dans un éditeur de texte on utilisera la balise <code>&lt;pre&gt;</code></p>
+
+			<pre><code>! " # $ % &amp; ' ( ) * + , - . /
+0 1 2 3 4 5 6 7 8 9 : ; &lt; = &gt; ?
+@ A B C D E F G H I J K L M N O
+P Q R S T U V W X Y Z [ \ ] ^ _
+` a b c d e f g h i j k l m n o
+p q r s t u v w x y z { | } ~</code></pre>
+
+			<p role="note"><mark>Si vous mentionnez du code informatique dans votre texte préformaté vous devriez également imbriquer la balise <code>&lt;code&gt;</code> dans la balise <code>&lt;pre&gt;</code></mark></p>
+
+			<small><a href="#top">[Haut de page]</a></small>
+
+		</section>
+
+		<hr>
+
+		<section id="lists">
+
+			<h2>Listes</h2>
+
+			<p>Liste avec <code>&lt;ul&gt;</code>&#8202;:</p>
+
+			<ul>
+				<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,</li>
+				<li>Aliquam tincidunt mauris eu risus.</li>
+			</ul>
+
+			<p>&Eacute;numération avec <code>&lt;ol&gt;</code>&#8202;:</p>
+
+			<ol>
+				<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,</li>
+				<li>Aliquam tincidunt mauris eu risus.</li>
+			</ol>
+
+			<p>Liste de définition avec <code>&lt;dl&gt;</code>, <code>&lt;dt&gt;</code> et <code>&lt;dd&gt;</code>&#8202;:</p>
+
+			<dl>
+				<dt>Terme de définition</dt>
+				<dd>Description du terme de définition.</dd>
+				<dt>Terme de définition</dt>
+				<dd>Description du terme de définition.</dd>
+			</dl>
+
+			<small><a href="#top">[Haut de page]</a></small>
+
+		</section>
+
+		<hr>
+
+		<section id="tables">
+
+			<h2>Tableaux</h2>
+
+			<p>Il est souvent utile de présenter des informations structurées avec des tableaux qui permettent de les afficher en lignes et en colonnes.</p>
+
+			<table>
+				<thead>
+					<tr>
+						<th>Colonne 1</th>
+						<th>Colonne 2</th>
+						<th>Colonne 3</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Cellule 1</td>
+						<td><em>Cellule 2</em></td>
+						<td><strong>Cellule 3</strong></td>
+					</tr>
+					<tr>
+						<td>Cellule 4</td>
+						<td>Cellule 5</td>
+						<td>Cellule 6</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h3>Modificateurs</h3>
+
+			<p>Largeur de colonnes fixes avec la classe <abbr title="Cascading Style Sheets">css</abbr> <code>.o-table--fixed</code>&#8202;:</p>
+
+			<table class="o-table--fixed">
+				<thead>
+					<tr>
+						<th>Colonne 1</th>
+						<th>Colonne 2</th>
+						<th>Colonne 3</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Cellule 1</td>
+						<td><em>Cellule 2</em></td>
+						<td><strong>Cellule 3</strong></td>
+					</tr>
+					<tr>
+						<td>Cellule 4</td>
+						<td>Cellule 5</td>
+						<td>Cellule 6</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<p>Bordures avec la classe <abbr title="Cascading Style Sheets">css</abbr> <code>.o-table--bordered</code>&#8202;:</p>
+
+			<table class="o-table--bordered">
+				<thead>
+					<tr>
+						<th>Colonne 1</th>
+						<th>Colonne 2</th>
+						<th>Colonne 3</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Cellule 1</td>
+						<td><em>Cellule 2</em></td>
+						<td><strong>Cellule 3</strong></td>
+					</tr>
+					<tr>
+						<td>Cellule 4</td>
+						<td>Cellule 5</td>
+						<td>Cellule 6</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<p>Bandes avec la classe <abbr title="Cascading Style Sheets">css</abbr> <code>.o-table--striped</code>&#8202;:</p>
+
+
+			<table class="o-table--striped">
+				<thead>
+					<tr>
+						<th>Colonne 1</th>
+						<th>Colonne 2</th>
+						<th>Colonne 3</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Cellule 1</td>
+						<td><em>Cellule 2</em></td>
+						<td><strong>Cellule 3</strong></td>
+					</tr>
+					<tr>
+						<td>Cellule 4</td>
+						<td>Cellule 5</td>
+						<td>Cellule 6</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<p>Les classes <abbr title="Cascading Style Sheets">css</abbr> <code>.o-table--fixed</code>, <code>.o-table--bordered</code> et <code>.o-table--striped</code> peuvent être combinées&#8202;:</p>
+
+			<table class="[ o-table--fixed  o-table--striped  o-table--bordered ]">
+				<thead>
+					<tr>
+						<th>Colonne 1</th>
+						<th>Colonne 2</th>
+						<th>Colonne 3</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Cellule 1</td>
+						<td><em>Cellule 2</em></td>
+						<td><strong>Cellule 3</strong></td>
+					</tr>
+					<tr>
+						<td>Cellule 4</td>
+						<td>Cellule 5</td>
+						<td>Cellule 6</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<p role="note"><mark>Activez ou désactivez ces modificateurs avec <samp>'tables': true</samp> ou <samp>'tables': false</samp> dans la liste de variables <samp>$objects</samp> qui se trouve dans le fichier <samp>scss/settings/configuration.scss</samp></mark></p>
+
+
+			<small><a href="#top">[Haut de page]</a></small>
+
+		</section>
+
+		<hr>
+
+		<section id="forms">
+
+			<h2>Formulaires</h2>
+
+			<form>
+
+				<fieldset>
+
+					<legend>Affichage en ligne par défaut&#8202;:</legend>
+
+					<label>
+						<strong>Text input</strong>
+						<input type="text" value="default value">
+					</label>
+
+					<label>
+						<strong>Email input</strong>
+						<input type="email">
+					</label>
+
+					<label>
+						<strong>URL input</strong>
+						<input type="url" placeholder="http://">
+					</label>
+
+					<label>
+						<strong>Password input</strong>
+						<input type="password" value="password">
+					</label>
+
+					<label>
+						<strong>File input</strong>
+						<input type="file">
+					</label>
+
+					<label>
+						<strong>Radio input</strong>
+						<input type="radio" name="rad">
+					</label>
+
+					<label>
+						<b>Checkbox input</b>
+						<input type="checkbox">
+					</label>
+
+					<label>
+						<strong>Disabled input</strong>
+						<input type="text" disabled value="disabled value">
+					</label>
+
+					<label>
+						<strong>Readonly input</strong>
+						<input type="text" readonly value="readonly value">
+					</label>
+
+					<label>
+						<strong>Select field</strong>
+						<select>
+							<option>Option 01</option>
+							<option>Option 02</option>
+						</select>
+					</label>
+
+					<label>
+						<strong>Textarea</strong>
+						<textarea>Textarea text</textarea>
+					</label>
+
+					<input class="[ c-button  c-button--info ]" type="submit" value="Input Submit">
+					<input class="[ c-button  c-button--outlined ]" type="reset" value="Input Reset">
+
+				</fieldset>
+
+			</form>
+
+			<!--<form>
+
+				<fieldset>
+
+					<div class="o-form-field">
+						<label for="name">Nom</label>
+						<input id="name" type="text" placeholder=" " pattern="^([a-zA-Z\s]{3,})$" required aria-required="true" aria-describedby="name-format" title="Votre prénom et votre nom" />
+						<span id="name-format" class="o-form-helper">Votre nom doit comporter au moins trois lettres</span>
+					</div>
+
+					<div class="o-form-field">
+						<label for="email">Email</label>
+						<input id="email" type="email" placeholder=" " required aria-required="true" aria-describedby="email-format" title="Votre adresse email" />
+						<span id="email-format" class="o-form-helper">Veuillez saisir une adresse email valide</span>
+					</div>
+
+					<div class="o-form-field">
+						<label for="url">Site</label>
+						<input id="url" type="url" placeholder=" " pattern="(http|https)://.+" aria-describedby="url-format" title="L'adresse de votre site internet" />
+						<span id="url-format" class="o-form-helper">Veuillez saisir une adresse internet valide</span>
+					</div>
+
+					<div class="o-form-field">
+						<label for="message">Message</label>
+						<textarea id="message" placeholder=" " required aria-required="true"></textarea>
+					</div>
+
+					<input class="[ c-button  c-button--rounded  c-button--small  c-button--action ]" type="submit" value="Envoyer">
+
+				</fieldset>
+
+			</form>
+
+			-->
+
+			<small><a href="#top">[Haut de page]</a></small>
+
+		</section>
+
+		<hr>
+
+		<section id="media">
+
+			<h2>Médias</h2>
+
+			<h3>Images</h3>
+
+			<img class="is-centered" src="//placehold.it/800x600/ced4da/868e96?text=image" alt="" />
+
+			<p><strong>Paragraphe précédé d&rsquo;une image centrée</strong>. Praesent egestas turpis ut risus lacinia eu cursus urna dapibus. Donec nibh enim, pulvinar vitae ornare ut, ultrices sit amet neque. Quisque ultrices venenatis mi, id fringilla eros malesuada a. Curabitur sagittis mollis arcu, sit amet scelerisque magna varius ac. Vivamus ullamcorper vulputate ipsum, adipiscing varius leo porttitor a. Curabitur luctus gravida nibh, sit amet auctor metus vulputate quis. Aliquam eu nulla risus. Cras in suscipit odio. Etiam ut nisl ut velit ornare pharetra a sed lacus.</p>
+
+			<img class="is-pulled-left" src="//placehold.it/300x200/ced4da/868e96?text=image" alt="" />
+
+			<p><strong>Paragraphe précédé d&rsquo;une image positionnée à gauche</strong>. Mauris lacinia, ante id sodales pretium, eros est gravida sapien, nec auctor dolor massa a dui. Vivamus consequat suscipit elit in imperdiet. In consectetur varius tortor, vel dictum ipsum dignissim vel. Nulla faucibus suscipit ipsum non porttitor. Fusce non ante non mi adipiscing faucibus. Sed odio risus, malesuada eget placerat id, semper eget turpis. Cras ante lorem, pretium ut vestibulum nec, vehicula eget orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel lectus eget tortor cursus dapibus sit amet imperdiet lacus. Nullam purus ipsum, aliquet eget imperdiet scelerisque, interdum in felis. Maecenas dolor eros, iaculis et pretium ac, eleifend sit amet lacus. Etiam a lacus eget dui aliquet tempor. Duis dapibus magna dictum enim ultrices ac pharetra lacus convallis. Donec felis ipsum, tristique ornare fermentum quis, fringilla nec arcu. Nunc tortor arcu, fermentum in dictum sit amet, aliquam eu ante. Integer volutpat, erat cursus posuere rutrum, erat tellus varius erat, quis tempus eros risus a lacus.</p>
+
+			<img class="is-pushed-right" src="//placehold.it/300x200/ced4da/868e96?text=image" alt="" />
+
+			<p><strong>Paragraphe précédé d&rsquo;une image positionnée à droite</strong>. Mauris lacinia, ante id sodales pretium, eros est gravida sapien, nec auctor dolor massa a dui. Vivamus consequat suscipit elit in imperdiet. In consectetur varius tortor, vel dictum ipsum dignissim vel. Nulla faucibus suscipit ipsum non porttitor. Fusce non ante non mi adipiscing faucibus. Sed odio risus, malesuada eget placerat id, semper eget turpis. Cras ante lorem, pretium ut vestibulum nec, vehicula eget orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel lectus eget tortor cursus dapibus sit amet imperdiet lacus. Nullam purus ipsum, aliquet eget imperdiet scelerisque, interdum in felis. Maecenas dolor eros, iaculis et pretium ac, eleifend sit amet lacus. Etiam a lacus eget dui aliquet tempor. Duis dapibus magna dictum enim ultrices ac pharetra lacus convallis. Donec felis ipsum, tristique ornare fermentum quis, fringilla nec arcu. Nunc tortor arcu, fermentum in dictum sit amet, aliquam eu ante. Integer volutpat, erat cursus posuere rutrum, erat tellus varius erat, quis tempus eros risus a lacus.</p>
+
+			<pre><code>&lt;img class="is-centered" src="//placehold.it/800x600/ced4da/868e96?text=image"&gt;
+&lt;p&gt;&hellip;&lt;/p&gt;
+
+&lt;img class="is-pulled-left" src="//placehold.it/300x200/ced4da/868e96?text=image"&gt;
+&lt;p&gt;&hellip;&lt;/p&gt;
+
+&lt;img class="is-pushed-right" src="//placehold.it/300x200/ced4da/868e96?text=image"&gt;
+&lt;p&gt;&hellip;&lt;/p&gt;</code></pre>
+
+			<h3>Images non disponibles</h3>
+
+			<p>Affichage par défaut si l&rsquo;image distante est momentanément indisponible ou n&rsquo;existe plus.</p>
+
+			<p class="is-aligned-center"><img src="url.com/broken.jpg" alt="Description de l'image" /></p>
+
+			<h3>Figures</h3>
+
+			<figure>
+				<img class="is-centered" src="//placehold.it/800x600/ced4da/868e96?text=image" alt="Description de l'image" />
+				<figcaption>La légende est un court texte accompagnant une photo ou un dessin et vise à lui donner un sens. Elle peut se placer avant ou après le media principal.</figcaption>
+			</figure>
+
+			<p><strong>Paragraphe précédé d&rsquo;une figure centrée</strong>. Mauris lacinia, ante id sodales pretium, eros est gravida sapien, nec auctor dolor massa a dui. Vivamus consequat suscipit elit in imperdiet. In consectetur varius tortor, vel dictum ipsum dignissim vel. Nulla faucibus suscipit ipsum non porttitor. Fusce non ante non mi adipiscing faucibus. Sed odio risus, malesuada eget placerat id, semper eget turpis. Cras ante lorem, pretium ut vestibulum nec, vehicula eget orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel lectus eget tortor cursus dapibus sit amet imperdiet lacus. Nullam purus ipsum, aliquet eget imperdiet scelerisque, interdum in felis. Maecenas dolor eros, iaculis et pretium ac, eleifend sit amet lacus. Etiam a lacus eget dui aliquet tempor. Duis dapibus magna dictum enim ultrices ac pharetra lacus convallis. Donec felis ipsum, tristique ornare fermentum quis, fringilla nec arcu. Nunc tortor arcu, fermentum in dictum sit amet, aliquam eu ante. Integer volutpat, erat cursus posuere rutrum, erat tellus varius erat, quis tempus eros risus a lacus.</p>
+
+			<figure class="is-pulled-left">
+				<img src="//placehold.it/300x200/ced4da/868e96?text=image" alt="Description de l'image" />
+				<figcaption>La légende est un court texte accompagnant une photo ou un dessin et vise à lui donner un sens. Elle peut se placer avant ou après le media principal.</figcaption>
+			</figure>
+
+			<p><strong>Paragraphe précédé d&rsquo;une figure positionnée à gauche</strong>. Mauris lacinia, ante id sodales pretium, eros est gravida sapien, nec auctor dolor massa a dui. Vivamus consequat suscipit elit in imperdiet. In consectetur varius tortor, vel dictum ipsum dignissim vel. Nulla faucibus suscipit ipsum non porttitor. Fusce non ante non mi adipiscing faucibus. Sed odio risus, malesuada eget placerat id, semper eget turpis. Cras ante lorem, pretium ut vestibulum nec, vehicula eget orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel lectus eget tortor cursus dapibus sit amet imperdiet lacus. Nullam purus ipsum, aliquet eget imperdiet scelerisque, interdum in felis. Maecenas dolor eros, iaculis et pretium ac, eleifend sit amet lacus. Etiam a lacus eget dui aliquet tempor. Duis dapibus magna dictum enim ultrices ac pharetra lacus convallis. Donec felis ipsum, tristique ornare fermentum quis, fringilla nec arcu. Nunc tortor arcu, fermentum in dictum sit amet, aliquam eu ante. Integer volutpat, erat cursus posuere rutrum, erat tellus varius erat, quis tempus eros risus a lacus.</p>
+
+			<figure class="is-pushed-right">
+				<img src="//placehold.it/300x200/ced4da/868e96?text=image" alt="Description de l'image" />
+				<figcaption>La légende est un court texte accompagnant une photo ou un dessin et vise à lui donner un sens. Elle peut se placer avant ou après le media principal.</figcaption>
+			</figure>
+
+			<p><strong>Paragraphe précédé d&rsquo;une figure positionnée à droite</strong>. Mauris lacinia, ante id sodales pretium, eros est gravida sapien, nec auctor dolor massa a dui. Vivamus consequat suscipit elit in imperdiet. In consectetur varius tortor, vel dictum ipsum dignissim vel. Nulla faucibus suscipit ipsum non porttitor. Fusce non ante non mi adipiscing faucibus. Sed odio risus, malesuada eget placerat id, semper eget turpis. Cras ante lorem, pretium ut vestibulum nec, vehicula eget orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel lectus eget tortor cursus dapibus sit amet imperdiet lacus. Nullam purus ipsum, aliquet eget imperdiet scelerisque, interdum in felis. Maecenas dolor eros, iaculis et pretium ac, eleifend sit amet lacus. Etiam a lacus eget dui aliquet tempor. Duis dapibus magna dictum enim ultrices ac pharetra lacus convallis. Donec felis ipsum, tristique ornare fermentum quis, fringilla nec arcu. Nunc tortor arcu, fermentum in dictum sit amet, aliquam eu ante. Integer volutpat, erat cursus posuere rutrum, erat tellus varius erat, quis tempus eros risus a lacus.</p>
+
+			<p role="note"><mark>les éléments <code>&lt;figure&gt;</code> et <code>&lt;figcaption&gt;</code> fonctionnent ensemble pour associer une légende à une image ou autre média. La légende peut se placer avant ou après le media principal. Ces illustrations peuvent être positionnées avec <code>.is-centred</code>, <code>.is-pulled-left</code> et <code>.is-pushed-right</code>.</mark></p>
+
+			<h3>Vidéos</h3>
+
+			<p>Affichage de vidéos en <samp>iframe</samp> par défaut&#8202;:</p>
+
+			<figure>
+				<iframe width="853" height="480" src="https://www.youtube.com/embed/8FqZZrbnwkM?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+			</figure>
+
+			<pre><code>&lt;figure&gt;
+  &lt;iframe width="853" height="480" src="https://www.youtube.com/embed/8FqZZrbnwkM?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen>&lt;/iframe&gt;
+&lt;/figure&gt;</code></pre>
+
+			<h4>Modificateurs</h4>
+
+			<p>Conserver le ratio de vidéos adaptatives en <samp>iframe</samp> avec la classe <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-ratio</samp>&#8202;:</p>
+
+			<figure class="[ o-ratio  o-ratio--16:9 ]">
+				<iframe width="853" height="480" src="https://www.youtube.com/embed/8FqZZrbnwkM?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+			</figure>
+
+			<pre><code>&lt;figure class="[ o-ratio  o-ratio--16:9 ]"&gt;
+  &lt;iframe width="853" height="480" src="https://www.youtube.com/embed/8FqZZrbnwkM?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen>&lt;/iframe&gt;
+&lt;/figure&gt;</code></pre>
+
+			<p role="note"><mark>Par défaut le ratio est de 1:1 avec la classe <abbr title="Cascading Style Sheets">css</abbr> <samp>o-ratio</samp>. La série de classes additionelles <samp>.o-ratio--2:1</samp>, <samp>.o-ratio--4:3</samp> et <samp>o-ratio--16:9</samp> permettent de le modifier. Activez ou désactivez ces modificateurs avec <samp>'ratios': true</samp> ou <samp>'ratios': false</samp> dans la liste de variables <samp>$objects</samp> qui se trouve dans le fichier <samp>scss/settings/configuration.scss</samp></mark></p>
+
+			<small><a href="#top">[Haut de page]</a></small>
+
+		</section>
+
+		<hr>
+
+		<section id="layout">
+
+			<h2>Mise en page</h2>
+
+			<h3>Conteneurs</h3>
+
+			<ul>
+				<li>La classe <code>l-wrapper</code> est utilisée pour définir un cadre fluide avec marges internes horizontales.</li>
+				<li>La classe modificatrice <code>l-wrapper--wide</code> est utilisée pour définir la largeur maximale du cadre à 1193px pour une taille de caractère de base de 16px.</li>
+				<li>la classe modificatrice <code>l-wrapper--medium</code> est utilisée pour définir la largeur maximale du cadre à 895px pour une taille de caractère de base de  16px.</li>
+				<li>La classe modificatrice <code>l-wrapper--narrow</code> est utilisée pour définir la largeur maximale du conteneur à 528px pour une taille de caractère de base de  16px.</li>
+			</ul>
+
+			<p role="note"><mark>Les valeurs de largeur maximale sont définies d&rsquo;après l&rsquo;échelle typographique en fonction de la taille de caractère et de l&rsquo;interligne par défaut, voir <a href="//www.modularscale.com/" hreflang="en">modularscale.com</a>.</mark></p>
+
+			<h3>Grille</h3>
+
+			<p>La grille est totalement implicite de sorte que les colonnes seront de longueurs égales par rapport au conteneur.</p>
+
+			<div class="l-grid">
+				<div class="l-grid__item">
+					<p><strong>Colonne 1&#8202;:</strong> pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+				</div>
+				<div class="l-grid__item">
+					<p><strong>Colonne 2&#8202;:</strong> pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+				</div>
+				<div class="l-grid__item">
+					<p><strong>Colonne 3&#8202;:</strong> pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+				</div>
+				<div class="l-grid__item">
+					<p><strong>Colonne 4&#8202;:</strong> pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+				</div>
+			</div>
+
+			<h4>Modificateurs</h4>
+
+			<p>Pour un contrôle plus fin des cellules individuelles vous pouvez utiliser les classes de dimensionnement <code>.is-1/1</code>, <code>.is-1/2</code>, <code>.is-1/3</code> et <code>.is-1/4</code>.</p>
+
+			<div class="l-grid">
+				<div class="[ l-grid__item  is-1/2 ]">
+					<p><strong>Colonne 1&#8202;:</strong> pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+				</div>
+				<div class="[ l-grid__item  is-1/2 ]">
+					<p><strong>Colonne 2&#8202;:</strong> pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+				</div>
+			</div>
+
+			<p>Pour une mise en page adaptative vous pouvez combiner des classes en leur ajoutant les suffixes <code>@medium</code> ou <code>@large</code> en fonction de la résolution d'écran.</p>
+
+			<div class="l-grid">
+				<div class="[ l-grid__item  is-1/1  is-1/3@medium ]">
+					<p><strong>Colonne 1&#8202;:</strong> pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+				</div>
+				<div class="[ l-grid__item  is-1/1  is-1/3@medium ]">
+					<p><strong>Colonne 2&#8202;:</strong> pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+				</div>
+				<div class="[ l-grid__item  is-1/1  is-1/3@medium ]">
+					<p><strong>Colonne 3&#8202;:</strong> pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+				</div>
+			</div>
+
+			<div class="l-grid">
+				<div class="[ l-grid__item  is-1/1  is-1/2@medium  is-1/4@large ]">
+					<p><strong>Colonne 1&#8202;:</strong> pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+				</div>
+				<div class="[ l-grid__item  is-1/1  is-1/2@medium  is-1/4@large ]">
+					<p><strong>Colonne 2&#8202;:</strong> pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+				</div>
+				<div class="[ l-grid__item  is-1/1  is-1/2@medium  is-1/4@large ]">
+					<p><strong>Colonne 3&#8202;:</strong> pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+				</div>
+				<div class="[ l-grid__item  is-1/1  is-1/2@medium  is-1/4@large ]">
+					<p><strong>Colonne 4&#8202;:</strong> pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+				</div>
+			</div>
+
+			<pre><code>&lt;div class="l-grid"&gt;
+  &lt;div class="l-grid__item"&gt;&hellip;&lt;/div&gt;
+  &lt;div class="l-grid__item"&gt;&hellip;&lt;/div&gt;
+  &lt;div class="l-grid__item"&gt;&hellip;&lt;/div&gt;
+  &lt;div class="l-grid__item"&gt;&hellip;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="l-grid"&gt;
+  &lt;div class="[ l-grid__item  is-1/1  is-1/2@medium ]"&gt;&hellip;&lt;/div&gt;
+  &lt;div class="[ l-grid__item  is-1/1  is-1/2@medium ]"&gt;&hellip;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="l-grid"&gt;
+  &lt;div class="[ l-grid__item  is-1/1  is-1/3@medium ]"&gt;&hellip;&lt;/div&gt;
+  &lt;div class="[ l-grid__item  is-1/1  is-1/3@medium ]"&gt;&hellip;&lt;/div&gt;
+  &lt;div class="[ l-grid__item  is-1/1  is-1/3@medium ]"&gt;&hellip;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="l-grid"&gt;
+  &lt;div class="[ l-grid__item  is-1/1  is-1/2@medium  is-1/4@large ]"&gt;&hellip;&lt;/div&gt;
+  &lt;div class="[ l-grid__item  is-1/1  is-1/2@medium  is-1/4@large ]"&gt;&hellip;&lt;/div&gt;
+  &lt;div class="[ l-grid__item  is-1/1  is-1/2@medium  is-1/4@large ]"&gt;&hellip;&lt;/div&gt;
+  &lt;div class="[ l-grid__item  is-1/1  is-1/2@medium  is-1/4@large ]"&gt;&hellip;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+			<small><a href="#top">[Haut de page]</a></small>
+
+		</section>
+
+		<hr>
+
+		<section id="buttons">
+
+			<h2>Boutons</h2>
+
+			<p><button class="c-button">Bouton</button></p>
+
+			<pre><code>&lt;button class="c-button"&gt;Bouton&lt;/button&gt;</code></pre>
+
+			<h3>Modificateurs</h3>
+
+			<h4>Emphase</h4>
+
+			<p>
+				<button class="[ c-button c-button--info ]">Information</button>
+				<button class="[ c-button c-button--success ]">Succès</button>
+				<button class="[ c-button c-button--warning ]">Alerte</button>
+				<button class="[ c-button c-button--error ]">Erreur</button>
+			</p>
+
+			<pre><code>&lt;button class="[ c-button  c-button--info ]"&gt;Information&lt;/button>
+&lt;button class="[ c-button  c-button--success ]">Succès&lt;/button&gt;
+&lt;button class="[ c-button  c-button--warning ]">Alerte&lt;/button&gt;
+&lt;button class="[ c-button  c-button--error ]">Erreur&lt;/button&gt;</code></pre>
+
+			<h4>Dimensions</h4>
+
+			<p>
+				<button class="[ c-button c-button--info c-button--full ]">Information</button>
+			</p>
+
+			<pre><code>&lt;button class="[ c-button  c-button--info  c-button--full ]"&gt;Information&lt;/button&gt;</code></pre>
+
+			<p>
+				<button class="[ c-button c-button--info c-button--tiny ]">Information</button>
+				<button class="[ c-button c-button--info c-button--small ]">Information</button>
+				<button class="[ c-button c-button--info c-button--large ]">Information</button>
+				<button class="[ c-button c-button--info c-button--huge ]">Information</button>
+			</p>
+
+			<pre><code>&lt;button class="[ c-button c-button--info c-button--tiny ]"&gt;Information&lt;/button&gt;
+&lt;button class="[ c-button c-button--info c-button--small ]"&gt;Information&lt;/button&gt;
+&lt;button class="[ c-button c-button--info c-button--large ]"&gt;Information&lt;/button&gt;
+&lt;button class="[ c-button c-button--info c-button--huge ]"&gt;Information&lt;/button&gt;</code></pre>
+
+			<h4>Apparence</h4>
+
+			<p>
+				<button class="[ c-button c-button--outlined ]">Défaut</button>
+				<button class="[ c-button c-button--info c-button--outlined ]">Information</button>
+				<button class="[ c-button c-button--success c-button--outlined ]">Succès</button>
+				<button class="[ c-button c-button--warning c-button--outlined ]">Alerte</button>
+				<button class="[ c-button c-button--error c-button--outlined ]">Erreur</button>
+			</p>
+
+			<pre><code>&lt;button class="[ c-button  c-button--outlined ]"&gt;Button&gt;/button&gt;
+&lt;button class="[ c-button  c-button--info  c-button--outlined ]"&gt;Information&lt;/button&gt;
+&lt;button class="[ c-button  c-button--success  c-button--outlined ]"&gt;Succès&lt;/button&gt;
+&lt;button class="[ c-button  c-button--warning  c-button--outlined ]"&gt;Alerte&lt;/button&gt;
+&lt;button class="[ c-button  c-button--error  c-button--outlined ]"&gt;Erreur&lt;/button&gt;</code></pre>
+
+			<p>
+				<button class="[ c-button c-button--info c-button--disabled ]">Information</button>
+				<button class="[ c-button c-button--success c-button--disabled ]">Succès</button>
+				<button class="[ c-button c-button--warning c-button--disabled ]">Alerte</button>
+				<button class="[ c-button c-button--error c-button--disabled ]">Erreur</button>
+			</p>
+
+			<pre><code>&lt;button class="[ c-button  c-button--info  c-button--disabled ]"&gt;Information&lt;/button&gt;
+&lt;button class="[ c-button  c-button--success  c-button--disabled ]"&gt;Succès&lt;/button&gt;
+&lt;button class="[ c-button  c-button--warning  c-button--disabled ]"&gt;Alerte&lt;/button&gt;
+&lt;button class="[ c-button  c-button--error  c-button--disabled ]"&gt;Erreur&lt;/button&gt;</code></pre
+
+			<p>
+				<button class="[ c-button c-button--info c-button--round ]">Information</button>
+				<button class="[ c-button c-button--info c-button--pill ]">Information</button>
+			</p>
+
+			<pre><code>&lt;button class="[ c-button  c-button--info  c-button--tiny ]"&gt;Information&lt;/button&gt;
+&lt;button class="[ c-button  c-button--info  c-button--small ]"&gt;Information&lt;/button&gt;
+&lt;button class="[ c-button  c-button--info  c-button--round ]"&gt;Information&lt;/button&gt;
+&lt;button class="[ c-button  c-button--info  c-button--pill ]"&gt;Information&lt;/button&gt;</code></pre>
+
+			<small><a href="#top">[Haut de page]</a></small>
+
+		</section>
+
+		<hr>
+
+		<section id="icons">
+
+			<h2>Icônographie</h2>
+
+			<p><abbr title="Scalable Vector Graphic">SVG</abbr> est un format d&rsquo;image vectoriel reposant sur une syntaxe <abbr title="Extensible Markup Language">XML</abbr> qui lui confère l&rsquo;avantage d&rsquo;être redimensionable sans perte de qualité. Avec <abbr title="HyperText Markup Language">Html</abbr> 5 l&rsquo;élément <code>&lt;svg&gt;</code> permet de définir un ensemble de pictogrammes directement dans une page. Il existe des outils permettant d&rsquo;automatiser le processus dont <a href="//icomoon.io/" hreflang="en">Icomoon</a>. Pour en savoir plus, voir cet article qui explique <a href="//la-cascade.io/comment-travailler-avec-des-icones-en-svg/#firefox">comment travailler avec des icônes en <abbr title="Scalable Vector Graphic">SVG</abbr></a>.</p>
+
+			<p role="note">Note&#8202;: il est conseillé d&rsquo;utiliser <code>aria-hidden="true"</code> pour garantir que les lecteurs d&rsquo;écran ne liront pas l&rsquo;icône à haute voix. Pour un lien ou un bouton dont le seul contenu est une icône il est recommandé de spécifier un texte accessible avec <code>aria-label</code> sur l&rsquo;élément <code>&lt;a&gt;</code> ou <code>&lt;button&gt;</code>. Les définitions graphiques <abbr title="Scalable Vector Graphic">SVG</abbr> font parti du document et ne seront pas mises en cache par le navigateur comme un sujet distinct ce qui signifie qu&rsquo;elles ne seront pas réutilisable à travers les pages mais il est possible de <a href="//osvaldas.info/caching-svg-sprite-in-localstorage" hreflang="en">stocker les données dans le navigateur de l&rsquo;utilisateur</a> avec javascript. La limite de stockage est habituellement de 5 Mo par domaine.</p>
+
+			<figure class="is-aligned-center">
+
+				<div>
+					<svg class="o-icon" aria-hidden="true"><use xlink:href="#home"></use></svg><noscript><img src="img/icons/font-awesome/png/home.png" alt="" /></noscript>
+					<svg class="o-icon" aria-hidden="true"><use xlink:href="#search"></use></svg><noscript><img src="img/icons/font-awesome/png/search.png" alt="" /></noscript>
+					<svg class="o-icon" aria-hidden="true"><use xlink:href="#close"></use></svg><noscript><img src="img/icons/font-awesome/png/close.png" alt="" /></noscript>
+					<svg class="o-icon" aria-hidden="true"><use xlink:href="#file"></use></svg><noscript><img src="img/icons/font-awesome/png/file.png" alt="" /></noscript>
+					<svg class="o-icon" aria-hidden="true"><use xlink:href="#download"></use></svg><noscript><img src="img/icons/font-awesome/png/download.png" alt="" /></noscript>
+					<svg class="o-icon" aria-hidden="true"><use xlink:href="#tags"></use></svg><noscript><img src="img/icons/font-awesome/png/tags.png" alt="" /></noscript>
+					<svg class="o-icon" aria-hidden="true"><use xlink:href="#calendar"></use></svg><noscript><img src="img/icons/font-awesome/png/calendar.png" alt="" /></noscript>
+					<svg class="o-icon" aria-hidden="true"><use xlink:href="#comments"></use></svg><noscript><img src="img/icons/font-awesome/png/comments.png" alt="" /></noscript>
+					<svg class="o-icon" aria-hidden="true"><use xlink:href="#envelope"></use></svg><noscript><img src="img/icons/font-awesome/png/envelope.png" alt="" /></noscript>
+					<svg class="o-icon" aria-hidden="true"><use xlink:href="#print"></use></svg><noscript><img src="img/icons/font-awesome/png/print.png" alt="" /></noscript>
+					<svg class="o-icon" aria-hidden="true"><use xlink:href="#eye"></use></svg><noscript><img src="img/icons/font-awesome/png/eye.png" alt="" /></noscript>
+					<svg class="o-icon" aria-hidden="true"><use xlink:href="#camera"></use></svg><noscript><img src="img/icons/font-awesome/png/camera.png" alt="" /></noscript>
+					<svg class="o-icon" aria-hidden="true"><use xlink:href="#video-camera"></use></svg><noscript><img src="img/icons/font-awesome/png/video-camera.png" alt="" /></noscript>
+					<svg class="o-icon" aria-hidden="true"><use xlink:href="#share-alt"></use></svg><noscript><img src="img/icons/font-awesome/png/share-alt.png" alt="" /></noscript>
+					<svg class="o-icon" aria-hidden="true"><use xlink:href="#feed"></use></svg><noscript><img src="img/icons/font-awesome/png/feed.png" alt="" /></noscript>
+					<svg class="o-icon" aria-hidden="true"><use xlink:href="#twitter"></use></svg><noscript><img src="img/icons/font-awesome/png/twitter.png" alt="" /></noscript>
+					<svg class="o-icon" aria-hidden="true"><use xlink:href="#facebook"></use></svg><noscript><img src="img/icons/font-awesome/png/facebook.png" alt="" /></noscript>
+					<svg class="o-icon" aria-hidden="true"><use xlink:href="#github"></use></svg><noscript><img src="img/icons/font-awesome/png/github.png" alt="" /></noscript>
+					<svg class="o-icon" aria-hidden="true"><use xlink:href="#soundcloud"></use></svg><noscript><img src="img/icons/font-awesome/png/soundcloud.png" alt="" /></noscript>
+					<svg class="o-icon" aria-hidden="true"><use xlink:href="#youtube"></use></svg><noscript><img src="img/icons/font-awesome/png/youtube.png" alt="" /></noscript>
+				</div>
+
+				<figcaption>&Eacute;chantillon d&rsquo;icônes extrait de la librarie <a href="https://fortawesome.github.io/Font-Awesome/icons/" hreflang="en">Font Awesome</a> (628 icônes)</figcaption>
+
+			</figure>
+
+			<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &hellip;
+        &lt;style&gt;
+            .o-icon {
+                display       : inline-block;
+                width         : 1em;
+                height        : 1em;
+                vertical-align: -0.15em;
+                fill          : currentColor;
+                overlow       : hidden;
+            }
+        &lt;/style&gt;
+        &hellip;
+    &lt;/head&gt;
+
+    &lt;body&gt;
+
+        &lt;svg style="position:absolute;width:0;height:0;" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"&gt;
+            &lt;defs&gt;
+                &lt;symbol id="glass" viewBox="0 0 16 16"&gt;
+                    &lt;title&gt;glass&lt;/title&gt;
+                    &lt;path class="path1" d="M15.17 1.661q0 0.313-0.384 0.696l-5.643 5.643v6.857h2.857q0.232 0 0.402 0.17t0.17 0.402-0.17 0.402-0.402 0.17h-8q-0.232 0-0.402-0.17t-0.17-0.402 0.17-0.402 0.402-0.17h2.857v-6.857l-5.643-5.643q-0.384-0.384-0.384-0.696 0-0.205 0.161-0.326t0.339-0.156 0.384-0.036h12.571q0.205 0 0.384 0.036t0.339 0.156 0.161 0.326z"&gt;&lt;/path&gt;
+                &lt;/symbol&gt;
+            &lt;/defs&gt;
+        &lt;/svg&gt;
+
+        &hellip;
+
+        &lt;svg class="o-icon" aria-hidden="true"&gt;
+            &lt;use xlink:href="#glass"&gt;&lt;/use&gt;
+        &lt;/svg&gt;
+        &lt;noscript&gt;
+            &lt;img src="img/icons/font-awesome/png/glass.png" alt="" /&gt;
+        &lt;/noscript&gt;
+
+        &hellip;
+
+    &lt;body&gt;
+&lt;/html&gt;</code></pre>
+
+			<small><a href="#top">[Haut de page]</a></small>
+
+		</section>
+
+		<hr>
+
+	</main>
+
+
+
+
+
+	<footer class="is-aligned-center">
+		<small>Ecssential &copy; 2016 &mdash; Made with &hearts; by &Eacute;ric Mutschler</small>
+	</footer>
+
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/min/jquery-2.1.3.min.js"><\/script>')</script>
+    <script src="js/application.js"></script>
+
+</body>
+</html>

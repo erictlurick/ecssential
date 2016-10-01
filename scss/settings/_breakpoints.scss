@@ -1,0 +1,36 @@
+//------------------------------------\\
+    // SETTINGS / BREAKPOINTS
+//------------------------------------\\
+
+// Define our breakpoints for later use. The key (e.g. `small`) becomes the
+// alias for a breakpoint; the value (e.g. `480px`) is that point at which that
+// breakpoint kicks in. These pixel values will be conveted into ems.
+//
+// Make use of these breakpoints like so:
+//
+//	.foo {
+//    color: red;
+//
+//    @include breakpoint(small) {
+//      color: green;
+//    }
+//
+//  }
+//
+// This will compile to:
+//
+//  .foo {
+//    color: red;
+//  }
+//
+//  @media (min-width: 20em) {
+//    .foo {
+//      color: green;
+//    }
+//  }
+$breakpoints: (
+  'small'  : 480px,
+  'medium' : 720px,
+  'large'  : 960px,
+  'x-large': 1280px
+) !default;

@@ -1,0 +1,54 @@
+@if (elements(code) == true) {
+
+/*------------------------------------*\
+    ELEMENTS / CODE
+\*------------------------------------*/
+
+// Predefine the variables below in order to alter and enable specific features.
+$code-border-radius: .375rem !default;
+
+
+/**
+ * 1. Fix an odd quirk whereby, without this, code blocks are rendered at a
+ *    font-size smaller than 1rem.
+ */
+
+code,
+kbd,
+pre,
+samp {
+  font-family     : $font-family-monospace; /* [1] */
+  font-size       : 1rem;                   /* [1] */
+  text-shadow     : 0 1px #fff;
+  color           : color(text);
+  background-color: color(ui-light);
+  border-radius   : $code-border-radius;
+}
+
+code,
+kbd,
+samp {
+  padding  : .1em;
+  font-size: 90%;
+}
+
+
+/**
+ * 1. Contain overflow in all browsers.
+ */
+
+pre {
+  @include space(padding);
+  white-space: pre;        /* [1] */
+  white-space: pre-wrap;   /* [1] */
+  word-break : break-all;  /* [1] */
+  word-wrap  : break-word; /* [1] */
+}
+
+  pre code {
+    padding         : 0;
+    background-color: transparent;
+    border-radius   : none;
+  }
+
+}//endif

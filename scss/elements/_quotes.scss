@@ -1,0 +1,81 @@
+/*------------------------------------*\
+    #QUOTES
+\*------------------------------------*/
+
+:lang(fr) q {
+  quotes: "\00AB\00A0" "\00A0\00BB" "\201C" "\201D" "\2018" "\2019"; // « » “ ” ‘ ’
+}
+
+:lang(fr) blockquote {
+  quotes: "\00AB\00A0" "\00A0\00BB"; // « »
+}
+
+:lang(en) q {
+  quotes: "\201C" "\201D" "\2018" "\2019"; // “ ” ‘ ’
+}
+
+:lang(en) blockquote {
+  quotes: "\201C" "\201D"; // “ ”
+}
+
+
+q:before {
+  content: open-quote;
+}
+
+q:after {
+  content: close-quote;
+}
+
+  q q:before {
+    content: open-quote;
+  }
+
+  q q:after{
+    content: close-quote;
+  }
+
+blockquote p:before {
+    content: open-quote;
+}
+
+blockquote p + p:before {
+  content: '';
+  content: no-open-quote;
+}
+
+blockquote p:after {
+  content: '';
+  content: no-close-quote;
+}
+
+blockquote p:last-of-type:after{
+  content: close-quote;
+}
+
+blockquote q:before{
+  content:open-quote;
+}
+
+blockquote q:after{
+  content:close-quote;
+}
+
+blockquote p:last-of-type {
+  margin-bottom: 0;
+}
+
+blockquote footer {
+  @include type(-1);
+}
+
+
+/**
+ * 1. Hang the opening quote of the english blockquotes.
+ */
+
+:lang(en) blockquote {
+  p:first-child {
+    text-indent: -.41em; /* 1 */
+  }
+}

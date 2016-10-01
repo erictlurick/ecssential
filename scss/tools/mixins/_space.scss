@@ -1,0 +1,21 @@
+//------------------------------------\\
+    // MIXINS / SPACE
+//------------------------------------\\
+
+// Space elements by an amount based on your magic number. Pass in the property
+// to be indented as a paramater, e.g.:
+//
+//	.foo {
+//		@include space(padding-left);
+//	}
+//
+// @csswizardry https://github.com/csswizardry/typecsset/blob/master/typecsset.scss
+@mixin space($property, $lines: 1, $font-size: $base-font-size, $line-height: $base-line-height) {
+
+    @if (fallback(pixels) == true) {
+		#{$property}: $lines * ($spacing-unit - $border-width) + px;
+	}//endif
+
+    #{$property}: $lines * $line-height + rem;
+
+}

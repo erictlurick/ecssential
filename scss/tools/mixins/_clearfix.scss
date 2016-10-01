@@ -1,0 +1,33 @@
+//------------------------------------\\
+    // MIXINS / CLEARFIX
+//------------------------------------\\
+
+// Mixin to drop micro clearfix into a selector.
+//
+// .simple-usage {
+//   @include clearfix();
+// }
+//
+// .detailed-usage {
+//   @include clearfix(important);
+// }
+//
+// @csswizardry https://github.com/csswizardry/discovr/blob/master/css/_tools.mixins.scss
+@mixin clearfix($important: false) {
+
+    // Determine whether or not to make declarations important.
+    @if ($important == false) {
+        $important: null;
+    }
+
+    @else {
+        $important: !important;
+    }
+
+    &:after {
+        content: "" $important;
+        display: table $important;
+        clear  : both $important;
+    }
+
+}

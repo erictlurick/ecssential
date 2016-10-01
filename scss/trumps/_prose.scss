@@ -1,0 +1,93 @@
+@if (trumps(prose) == true) {
+
+/*------------------------------------*\
+    TRUMPS / PROSE
+\*------------------------------------*/
+
+// Predefine the variable below in order to alter and enable specific features.
+$prose-namespace: 'u-prose' !default;
+
+
+.#{$namespace}#{$prose-namespace} {
+
+  /**
+   * Country / language version.
+   */
+  a[hreflang]:not([hreflang="fr"]):lang(fr):after,
+  a[lang^="fr"]:after,
+  a[hreflang]:not([hreflang^="en"]):lang(en):after,
+  a[lang^="en"]:after{
+    content       : " ["attr(hreflang)"]";
+    vertical-align: baseline;
+  }
+
+  :lang(en)>a[lang]:not([hreflang]):after,
+  :lang(fr)>a[lang]:not([hreflang]):after,
+  :lang(en)>a[lang^="en"]:after,
+  :lang(fr)>a[lang^="fr"]:after{
+    content: none;
+  }
+
+  a[hreflang=""]:after,
+  h1 > a[hreflang]:after,
+  h2 > a[hreflang]:after,
+  h3 > a[hreflang]:after{
+    content: none !important;
+  }
+
+  /**
+   * External links.
+   */
+  a:not([href*="yourdomain.com"]):not([href^="#"]):not([href^="mailto"]):not([href^="tel"])::after {
+    content: "\0020\279A";
+  }
+
+  a[hreflang]:not([href*="yourdomain.com"]):not([href^="#"]):not([href^="mailto"]):not([href^="tel"])::after {
+    content: "\0020[" attr(hreflang) "]\0020\279A";
+  }
+
+  /**
+   * Mailto.
+   */
+  a[href^="mailto"]::after {
+    content: "\0020\2709";
+  }
+
+  /**
+   * Telephone.
+   */
+  a[href^="tel"]::after {
+    content: "\0020\2706";
+  }
+
+  /**
+   * Documents.
+   */
+  a[download]::after {
+    content: "\0020\21A7";
+  }
+
+  a[hreflang][download]::after {
+    content: "\0020[" attr(hreflang) "]\0020\21A7";
+  }
+
+  /**
+   * Audio.
+   */
+  a[href$=".mp3"]::after,
+  a[href$=".wma"]::after,
+  a[href$=".ogg"]::after,
+  a[href$=".flac"]::after {
+    content: "\0020\266B";
+  }
+
+  a[hreflang][href$=".mp3"]::after,
+  a[hreflang][href$=".wma"]::after,
+  a[hreflang][href$=".ogg"]::after,
+  a[hreflang][href$=".flac"]::after {
+    content: "\0020[" attr(hreflang) "]\0020\266B";
+  }
+
+}
+
+}//endif

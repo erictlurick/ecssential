@@ -1,0 +1,59 @@
+@if (elements(tables) == true) {
+
+/*------------------------------------*\
+    ELEMENTS / TABLES
+\*------------------------------------*/
+
+// Predefine the variable below in order to alter and enable specific features.
+$table-color-background: color(ui-light) !default;
+
+
+/**
+ * Crude table styles; tables are very difficult to keep on the baseline.
+ *
+ * 1. Turns on tabular, lining numerals and slashed zero
+ */
+
+table {
+    width: 100%;
+
+    @if (typography(smooth) == true) {
+        font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0; /* [1] */
+    }
+
+    border-collapse: collapse;
+    border-spacing : 0;
+}
+
+thead {
+    font-weight: $font-weight-bold;
+
+    & > tr > th {
+        @include border(bottom);
+    }
+}
+
+tr:hover {
+    background-color: rgba($table-color-background, 0.5);
+}
+
+th, td {
+    @include space(padding, 0.5);
+    text-align    : center;
+    vertical-align: inherit;
+}
+
+@if (typography(smooth) == true) {
+
+    /**
+     * 1. Turns on tabular, lining numerals and slashed zero
+     */
+
+    tbody,
+    caption {
+        font-feature-settings: "kern" 1,  "liga" 1,  "calt" 1,  "pnum" 0,  "tnum" 1,  "onum" 0,  "lnum" 1, "zero" 1; /* [1] */
+    }
+
+}//endif
+
+}//endif

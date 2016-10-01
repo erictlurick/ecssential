@@ -1,0 +1,28 @@
+//------------------------------------\\
+    // SETTINGS / COLORS
+//------------------------------------\\
+
+// Our brand and project colours are held in maps. Access these colours using:
+//
+//  color($key)
+//
+// For example:
+//
+//  .foo {
+//    color: color(brand);
+//  }
+$colors: (
+  'primary'   : $color-blue-5, // #03a9f4,
+  'text'      : $color-gray-9, // rgba(0,0,0,.8),
+  'muted'     : $color-gray-6, // rgba(0,0,0,.44),
+  'heading'   : $color-gray-7, // rgba(0,0,0,.7),
+  'background': $color-white, // #f9f9f9,
+  'ui-dark'   : $color-gray-3, // rgba(0,0,0,.08),
+  'ui-medium' : $color-gray-2, // rgba(0,0,0,.05),
+  'ui-light'  : $color-gray-1, // rgba(0,0,0,.03),
+  'action'    : $color-blue-5, // $color-primary,
+  'success'   : $color-green-5,
+	'error'     : $color-red-6,// #e82110,
+	'warning'   : $color-orange-4, // #ffeb3b,
+	'info'      : $color-blue-4
+) !default;

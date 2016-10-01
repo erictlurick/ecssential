@@ -1,0 +1,39 @@
+//------------------------------------\\
+    // SETTINGS / TYPOGRAPHY
+//------------------------------------\\
+
+// Base typographical styles and baseline grid.
+// ==============================================
+
+// What would you like your base font-size to be? Value in px.
+$base-font-size        : 16 !default;
+
+// What would you like your base font-size for large screens (> 960px) to be? Value in %.
+$base-font-size-large  : 125% !default;
+
+// What would you like your base line height to be? See `variables/scales.scss`.
+$base-line-height      : $perfect-fifth !default;
+
+// What would you like your scale factor to be? See `variables/scales.scss`
+// http://webdesign.tutsplus.com/articles/how-to-establish-a-modular-typographic-scale--webdesign-14927
+$base-scale-factor     : $perfect-fourth !default;
+
+
+// Font family settings.
+// ==============================================
+
+@import 'https://fonts.googleapis.com/css?family=Gentium+Basic:400,400i,700,700i|Open+Sans+Condensed:700&subset=latin-ext';
+
+$font-family-serif     : $georgia !default;
+$font-family-sans-serif: $segoe-ui !default;
+$font-family-monospace : $consolas !default;
+
+$font-family-body      : 'Gentium Basic', $font-family-serif !default;
+$font-family-headings  : 'Open Sans Condensed', $font-family-sans-serif !default;
+
+
+// Font weight settings.
+// ==============================================
+
+$font-weight-body      : $font-weight-regular !default;
+$font-weight-headings  : $font-weight-medium !default;

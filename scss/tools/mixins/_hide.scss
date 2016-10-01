@@ -1,0 +1,61 @@
+//------------------------------------\\
+    // MIXINS / HIDE
+//------------------------------------\\
+
+// Text
+// ===========================================
+
+// 1. Shorthand property that reduces the font-size andvline-height to 0. The `a`
+//    value acts as a font-family. The CSS validator complains that using `0/0`
+//    in the shorthand `font` property is not valid, but every browser accepts it.
+// 2. Makes sure than any inherited text shadow is removed, otherwise it will
+//    show over the image.
+// 3. Only really needed in browsers than don't completely crush the text to the
+//    point of being invisible. Safari 4 is such a browser (but extremely rare).
+//    Leaving it in for now in case there are any mobile browsers that require it.
+// 4. The border and background resets are useful when using IR on form submit
+//    inputs or buttons, as well as when links use default borders or backgrounds.
+@mixin hide-text() {
+  font            : 0/0 a;       /* [1] */
+  text-shadow     : none;        /* [2] */
+  color           : transparent; /* [3] */
+  background-color: transparent; /* [4] */
+  border          : 0;           /* [4] */
+}
+
+
+// Content
+// ===========================================
+
+// Visually hide content, leaving it accessible to screenreaders and ATs.
+// snook.ca/archives/html_and_css/hiding-content-for-accessibility
+@mixin visually-hidden($state: hidden) {
+
+  @if ($state == undo) {
+    position: static !important;
+    width   : auto !important;
+    height  : auto !important;
+    margin  : auto !important;
+    overflow: visible !important;
+    clip    : auto !important;
+  }
+
+  @else {
+    position: absolute !important;
+    width   : 1px !important;
+    height  : 1px !important;
+    margin  : -1px !important;
+    padding : 0 !important;
+    border  : 0 !important;
+    clip    : rect(0 0 0 0) !important;
+    overflow: hidden !important;
+  }
+
+}
+
+
+// Completely hide content both visually from the screen, and from screenreaders
+// and ATs.
+@mixin hide() {
+  display: none !important;
+}

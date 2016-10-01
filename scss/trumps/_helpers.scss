@@ -1,0 +1,31 @@
+@if (trumps(helpers) == true) {
+
+/*------------------------------------*\
+    TRUMPS / HELPERS
+\*------------------------------------*/
+
+/**
+ * A series of classes to use arbitrarily.
+ */
+.is-static              { position: static; }
+.is-relative            { position: relative; }
+.is-absolute            { position: absolute; }
+
+.is-pushed-right        { float: right }
+.is-pulled-left         { float: left }
+.is-centered            { display: block; margin-right: auto; margin-left: auto; }
+
+.is-aligned-left        { text-align: left; }
+.is-aligned-center      { text-align: center; }
+.is-aligned-right       { text-align: right; }
+.is-justified           { text-align: justify; }
+
+.is-aligned-top         { vertical-align: top; }
+.is-aligned-middle      { vertical-align: middle; }
+.is-aligned-left-bottom { vertical-align: bottom; }
+
+.is-inline              { display: inline; }
+.is-block               { display: block; }
+.is-inline-block        { display: inline-block; }
+
+}//endif

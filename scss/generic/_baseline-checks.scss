@@ -1,0 +1,21 @@
+@if (debugging(baseline-checks) == true) {
+
+/*------------------------------------*\
+    GENERIC / BASELINE-CHECKS
+\*------------------------------------*/
+
+/**
+ * Quickly debug and fix the baseline by adding a noticeable background color to
+ * block level elements.
+ */
+
+h1, h2, h3, h4, h5, h6,
+ul, ol, dl,
+blockquote, p, address, hr,
+table,
+fieldset, figure,
+pre {
+    background-color: rgba(0,0,0, 0.1);
+}
+
+}//endif

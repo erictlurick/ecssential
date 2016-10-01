@@ -1,0 +1,78 @@
+@if (elements(headings) == true) {
+
+/*------------------------------------*\
+    ELEMENTS / HEADINGS
+\*------------------------------------*/
+
+// Predefine the variable below in order to alter and enable specific features.
+$heading-subtitle-inline: true !default;
+
+
+%headings {
+  font-family   : $font-family-headings;
+  font-weight   : $font-weight-headings;
+  letter-spacing: -.028em;
+  word-wrap     : break-word;
+  color         : color(heading);
+
+  // Turn on discretionary ligatures for larger headings.
+  @if (typography(glyphs) == true) {
+    font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 1;
+  }
+
+  a {
+    font-weight: inherit;
+  }
+
+  small {
+
+    display: table;
+
+    @include breakpoint(medium) {
+      @if $heading-subtitle-inline == true {
+        display: inline;
+      }
+    }
+
+    @include space(height);
+    vertical-align: baseline;
+    font-size     : 75%;
+    line-height   : 1;
+    color         : color(muted);
+
+  }
+}
+
+h1 { @extend %headings; @include type(4, 0, 1); }
+h2 { @extend %headings; @include type(3, 0, 1); }
+h3 { @extend %headings; @include type(2, 0, 0.5); }
+h4 { @extend %headings; @include type(1, 0, 0.5); }
+h5 { @extend %headings; @include type(0, 0, 0); }
+h6 { @extend %headings; @include type(0, 0, 0); }
+
+
+/**
+ * Set space between headings.
+ */
+
+h3 + h4,
+h4 + h5,
+h5 + h6 {
+  @include space(margin-top);
+}
+
+
+/**
+ * Off screen content.
+ */
+
+h1[aria-hidden],
+h2[aria-hidden],
+h3[aria-hidden],
+h4[aria-hidden],
+h5[aria-hidden],
+h6[aria-hidden] {
+  @include visually-hidden();
+}
+
+}//endif

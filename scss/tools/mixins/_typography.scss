@@ -1,0 +1,239 @@
+//------------------------------------\\
+    // MIXINS / TYPOGRAPHY
+//------------------------------------\\
+
+// Font-sizing and vertical rhythm
+// ===========================================
+
+// Create a fully formed type style (sizing and vertical rhythm).
+//
+// @sevenupcan https://github.com/sevenupcan/gridlover-mixin/blob/master/sass/rhythm.sass
+@mixin type($scale, $before: 0, $after: 0, $line-height: auto, $fallback: false) {
+
+  @if $scale == 0 and $before == 0 and $after == 0 {
+
+    @if $fallback != false {
+      font-size: $base-font-size + px;
+    }
+
+    font-size: rem($base-font-size);
+
+    @if $line-height == auto {
+      line-height: rem($base-font-size * $base-line-height);
+    }
+
+    @else {
+
+      @if (type-of($line-height) == number or $line-height == inherit or $line-height == normal) {
+        line-height: $line-height;
+      }
+
+      @elseif ($line-height != none and $line-height != false) {
+        @warn "D’oh! ‘#{$inuit-line-height}’ is not a valid value for `line-height`."
+      }
+
+    }
+
+  }
+
+  @else {
+
+    @if $before != 0 {
+
+      @if $fallback != false {
+        margin-top: $base-font-size * ($base-line-height * $before) + px;
+      }
+
+      margin-top: rem($base-font-size * ($base-line-height * $before));
+    }
+
+    @if $after != 0 {
+
+      @if $fallback != false {
+        margin-bottom: $base-font-size * ($base-line-height * $after) + px;
+      }
+
+      margin-bottom: rem($base-font-size * ($base-line-height * $after));
+    }
+
+    @if $scale == 0 {
+
+      @if $fallback != false {
+        font-size: $base-font-size + px;
+      }
+
+      font-size: rem($base-font-size);
+
+      @if $line-height == auto {
+        line-height: rem($base-font-size * $base-line-height);
+      }
+
+      @else {
+
+        @if (type-of($line-height) == number or $line-height == inherit or $line-height == normal) {
+          line-height: $line-height;
+        }
+
+        @elseif ($line-height != none and $line-height != false) {
+          @warn "D’oh! ‘#{$inuit-line-height}’ is not a valid value for `line-height`."
+        }
+
+      }
+
+    }
+
+    @else {
+
+      $new-font-size: round($base-font-size * exponent($base-scale-factor, $scale));
+
+      @if $fallback != false {
+        font-size: $new-font-size + px;
+      }
+
+      font-size: rem($new-font-size);
+
+      @if $line-height == auto {
+        line-height: rem(ceil(($new-font-size / ($base-line-height * $base-font-size))) * ($base-line-height * $base-font-size));
+      }
+
+      @else {
+
+        @if (type-of($line-height) == number or $line-height == inherit or $line-height == normal) {
+          line-height: $line-height;
+        }
+
+        @elseif ($line-height != none and $line-height != false) {
+          @warn "D’oh! ‘#{$line-height}’ is not a valid value for `line-height`."
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+
+// Font face.
+// ==============================================
+
+// Will import a new font named MyFont with the eot/woff/ttf/svg font files to
+// be located/named as font/myfont.(eot|woff|ttf|svg), e.g.:
+//
+//  @include font-face('MyFont','font/myfont');
+//
+// @magnetikonline https://github.com/magnetikonline/sassboilerplate/blob/master/fontface.scss
+@mixin font-face($family, $src, $weight: normal, $style: normal) {
+  @font-face {
+    font-family : $family;
+    src: url('#{$src}.eot');                                    // IE9
+    src: url('#{$src}.eot?#iefix') format('embedded-opentype'), // IE8 and below
+         url('#{$src}.svg##{$family}') format('svg'),           // legacy iOS
+         url('#{$src}.woff') format('woff'),                    // standards
+         url('#{$src}.ttf') format('truetype');                 // Safari, Android, iOS
+    font-style  : $style;
+    font-weight : $weight;
+    font-display: swap;
+  }
+}
+
+
+// Font family.
+// ==============================================
+
+// @csswizardry https://github.com/csswizardry/discovr/blob/master/css/_tools.typography.scss
+@mixin font-family($family) {
+
+  @if ($family == "sans-serif") {
+    font-family: $font-family-sans-serif;
+  }
+
+  @elseif ($family == "serif") {
+    font-family: $font-family-serif;
+  }
+
+  @elseif ($family == "monospace") {
+    font-family: $font-family-monospace;
+  }
+
+  @else {
+    @warn "#{$family} is not a valid font-family."
+  }
+
+}
+
+
+// Font weight.
+// ==============================================
+
+// Map keywords onto our numbered weights for convenience.
+// @csswizardry https://github.com/csswizardry/discovr/blob/master/css/_tools.typography.scss
+
+@mixin font-weight($weight) {
+
+  @if ($weight == normal) {
+    font-weight: 400 !important;
+  }
+
+  @elseif ($weight == thin) {
+    font-weight: $font-weight-thin !important;
+  }
+
+  @elseif ($weight == light) {
+    font-weight: $font-weight-light !important;
+  }
+
+  @elseif ($weight == medium) {
+    font-weight: $font-weight-medium !important;
+  }
+
+  @elseif ($weight == bold) {
+    font-weight: $font-weight-bold !important;
+  }
+
+  @elseif ($weight == ultra-bold) {
+    font-weight: $font-weight-ultra-bold !important;
+  }
+
+  @else {
+    @warn "#{$weight} is not a valid font-weight."
+  }
+
+}
+
+
+// Hyphens.
+// ==============================================
+
+// Show hyphens for every browser supporting it and break lines in every other
+// browser.
+//
+// Accepted values: none, manual, auto.
+//
+// @TrentWalton http://trentwalton.com/2011/09/07/css-hyphenation
+// @justmarkup https://justmarkup.com/log/2015/07/dealing-with-long-words-in-css/
+@mixin hyphens($value) {
+
+  @if $value == auto {
+    overflow-wrap  : break-word;
+    word-wrap      : break-word;
+    @include prefix((hyphen: $value), webkit ms moz);
+  }
+
+  @else {
+    @include prefix((hyphen: $value), webkit ms moz);
+  }
+
+}
+
+
+// Text truncate.
+// ==============================================
+
+// An easy way to truncate text with an ellipsis. Requires the element to be block or inline-block.
+@mixin text-truncate {
+  overflow     : hidden;
+  text-overflow: ellipsis;
+  white-space  : nowrap;
+}

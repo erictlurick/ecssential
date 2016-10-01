@@ -1,0 +1,34 @@
+@if (objects(form-fields) == true) {
+
+/*------------------------------------*\
+    OBJECTS / FORM-FIELDS
+\*------------------------------------*/
+
+/**
+ * Group sets of form fields in a list, e.g.:
+ *
+   <div>
+     <label />
+     <input />
+   </div>
+   <div>
+     <label />
+     <select />
+   </div>
+   <div>
+     <label />
+     <input />
+   </div>
+ *
+ */
+
+// Predefine the variables below in order to alter and enable specific features.
+$form-fields-namespace: 'o-form-field' !default;
+$form-field-space-bottom: 0.5 !default; // Space elements by an amount based on your magic number.
+
+
+.#{$namespace}#{$form-fields-namespace} {
+  @include space(margin-bottom, $form-field-space-bottom);
+}
+
+}//endif
