@@ -6,7 +6,7 @@
 
 // Predefine the variable below in order to alter and enable specific features.
 $buttons-namespace           : 'c-button' !default;
-$button-outlined-border-width: 1px !default;
+$buttons-outlined-border-width: 1px !default;
 
 
 /**
@@ -27,7 +27,7 @@ $button-outlined-border-width: 1px !default;
   @include space(margin-right, 0.25);
   padding         : rem($base-font-size * $base-line-height / 2)  rem($base-font-size * $base-line-height);
   font            : inherit; /* [3] */
-  font-family: $font-family-sans-serif;
+  font-family     : $font-family-sans-serif;
   text-align      : center; /* [4] */
   cursor          : pointer; /* [5] */
   transition      : all $base-ui-transition;
@@ -49,12 +49,12 @@ $button-outlined-border-width: 1px !default;
 }
 
 .#{$namespace}#{$buttons-namespace}--outlined {
-  color           : currentColor;
-  box-shadow      : 0px 0px 0px $button-outlined-border-width currentColor;
+  color     : currentColor;
+  box-shadow: 0px 0px 0px $buttons-outlined-border-width currentColor;
 
   @include attention(){
-    color             : darken(color(text), 10%);
-    border-color-color: darken(color(text), 10%);
+    color       : darken(color(text), 10%);
+    border-color: darken(color(text), 10%);
   }
 }
 
