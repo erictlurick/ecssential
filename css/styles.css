@@ -2135,7 +2135,7 @@ img::-moz-selection {
 }
 .c-button--outlined:hover, .c-button--outlined:active, .c-button--outlined:focus {
   color: #0a0c0d;
-  border-color-color: #0a0c0d;
+  border-color: #0a0c0d;
 }
 
 .c-button--disabled,
