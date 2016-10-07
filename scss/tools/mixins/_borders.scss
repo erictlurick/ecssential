@@ -4,6 +4,7 @@
 
 // 1. Where horizontal borders are concerned we want to keep a consistent baseline
 //    by using `background-image` instead of `border-top` or `border-bottom`.
+
 @mixin border($direction: all, $width: 1px, $style: solid, $color: color(ui-medium), $radius: 0) {
 
   position    : relative;

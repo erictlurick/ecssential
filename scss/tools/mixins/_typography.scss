@@ -8,6 +8,7 @@
 // Create a fully formed type style (sizing and vertical rhythm).
 //
 // @sevenupcan https://github.com/sevenupcan/gridlover-mixin/blob/master/sass/rhythm.sass
+
 @mixin type($scale, $before: 0, $after: 0, $line-height: auto, $fallback: false) {
 
   @if $scale == 0 and $before == 0 and $after == 0 {
@@ -124,6 +125,7 @@
 //  @include font-face('MyFont','font/myfont');
 //
 // @magnetikonline https://github.com/magnetikonline/sassboilerplate/blob/master/fontface.scss
+
 @mixin font-face($family, $src, $weight: normal, $style: normal) {
   @font-face {
     font-family : $family;
@@ -143,6 +145,7 @@
 // ==============================================
 
 // @csswizardry https://github.com/csswizardry/discovr/blob/master/css/_tools.typography.scss
+
 @mixin font-family($family) {
 
   @if ($family == "sans-serif") {
@@ -213,6 +216,7 @@
 //
 // @TrentWalton http://trentwalton.com/2011/09/07/css-hyphenation
 // @justmarkup https://justmarkup.com/log/2015/07/dealing-with-long-words-in-css/
+
 @mixin hyphens($value) {
 
   @if $value == auto {
@@ -232,6 +236,7 @@
 // ==============================================
 
 // An easy way to truncate text with an ellipsis. Requires the element to be block or inline-block.
+
 @mixin text-truncate {
   overflow     : hidden;
   text-overflow: ellipsis;

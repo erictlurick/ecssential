@@ -4,6 +4,7 @@
  *
  * SETTINGS
  * Breakpoints..........Define our breakpoints for later use.
+ * Colors UI............Color scheme for UI design.
  * Colors...............Our brand and project colours.
  * Configuration........Define any project-level configuration, feature
  *                      switches, etc. in here.
@@ -26,6 +27,7 @@
  * Borders..............Apply borders and keep a consistent baseline.
  * Breakpoints..........Responsive breakpoints.
  * Clearfix.............Drop micro clearfix into a selector.
+ * Flexbox..............Easily generate flexbox layouts.
  * Hide.................Hide content.
  * Palette..............A whole bunch of friendly color variables.
  * Prefix...............Allows you to prefix multiple properties at once.
@@ -52,6 +54,7 @@
  * Headings.............Set up our document's default for headings 1 through 6.
  * Typography...........Set up our document's default for typography.
  * Anchors..............Set up our document's default for links.
+ * Quotes...............Set up our document's default for quotes.
  * Code.................Set up our document's default for code.
  * Forms................Set up our document's default for forms.
  * Lists................Set up our document's default for lists.
@@ -74,6 +77,7 @@
  * Icons................Set up SVG icons.
  * Ratios...............Create ratio-bound content blocks, to keep media (e.g.
  *                      images, videos) in their correct aspect ratios.
+ * Tables...............Table styles variants.
  *
  * COMPONENTS
  * Buttons..............Set up various button styles.
@@ -81,18 +85,13 @@
  * TRUMPS
  * Headings.............Headings 1-6's corresponding Greek-alphabet abstract
                         classes for double- stranded heading hierarchy.
+ * Text.................Utilities to adjust the size of a span of text by a
+                        little bit more, or a little bit less.
+ * Prose................
  * Helpers..............A series of classes to use arbitrarily.
  * Print................Very crude, reset-like styles taken from the HTML5
                         Boilerplate.
- * Text.................Utilities to adjust the size of a span of text by a
-                        little bit more, or a little bit less.
- */
-/**
- * Color scheme for UI design. You can use it for font, background, border, etc.
- * It contains a gray and twelve colors. All the colors are perceptible by color
- * blind (specifically deuteranopia and protanopia) people.
- *
- * Source: https://yeun.github.io/open-color/
+
  */
 @import "https://fonts.googleapis.com/css?family=Gentium+Basic:400,400i,700,700i|Open+Sans+Condensed:700&subset=latin-ext";
 /*------------------------------------*\
@@ -364,7 +363,7 @@ html {
   line-height: 1.5;
   /* [4] */
   font-weight: 400;
-  color: #212529;
+  color: rgba(33, 37, 41, 0.9);
   background-color: #fff;
   -webkit-text-size-adjust: 100%;
   /* [5] */
@@ -416,7 +415,7 @@ h1, h2, h3, h4, h5, h6, .u-h1-size, .u-h2-size, .u-h3-size, .u-h4-size, .u-h5-si
   font-weight: 600;
   letter-spacing: -.028em;
   word-wrap: break-word;
-  color: #495057;
+  color: rgba(73, 80, 87, 0.9);
 }
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, .u-h1-size a, .u-h2-size a, .u-h3-size a, .u-h4-size a, .u-h5-size a, .u-h6-size a {
   font-weight: inherit;
@@ -427,7 +426,7 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .u-h1-size small, .u
   vertical-align: baseline;
   font-size: 75%;
   line-height: 1;
-  color: #868e96;
+  color: rgba(134, 142, 150, 0.9);
 }
 @media (min-width: 45em) {
   h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .u-h1-size small, .u-h2-size small, .u-h3-size small, .u-h4-size small, .u-h5-size small, .u-h6-size small {
@@ -552,7 +551,7 @@ b,
 strong {
   font-weight: 700;
   /* [1] */
-  color: #495057;
+  color: rgba(73, 80, 87, 0.9);
 }
 
 /**
@@ -571,7 +570,7 @@ dfn {
 mark {
   padding-right: 0.1em;
   padding-left: 0.1em;
-  color: #212529;
+  color: rgba(33, 37, 41, 0.9);
   /* [1] */
   background-color: transparent !important;
   /* [1] */
@@ -590,7 +589,7 @@ ins {
   padding-right: 0.1em;
   padding-left: 0.1em;
   text-decoration: none;
-  color: #212529;
+  color: rgba(33, 37, 41, 0.9);
   background-color: transparent !important;
   background-image: linear-gradient(to bottom, #e0f4ff, #e0f4ff);
 }
@@ -602,14 +601,14 @@ del {
   padding-right: 0.1em;
   padding-left: 0.1em;
   text-decoration: none;
-  color: #212529;
+  color: rgba(33, 37, 41, 0.9);
   background-color: transparent !important;
   background-image: linear-gradient(to bottom, #ffa8a8, #ffa8a8);
 }
 
 s {
   text-decoration: line-through;
-  color: #212529;
+  color: rgba(33, 37, 41, 0.9);
   opacity: .5;
 }
 
@@ -727,7 +726,7 @@ hr:after {
   margin-bottom: 1.5rem;
   font-size: 1.3125rem;
   line-height: 1.5rem;
-  color: #495057;
+  color: rgba(73, 80, 87, 0.9);
 }
 
 /*------------------------------------*\
@@ -740,7 +739,7 @@ hr:after {
 a {
   font-weight: 700;
   text-decoration: none;
-  color: #329af0;
+  color: #228ae6;
   background-color: transparent;
   /* [1] */
   border-bottom-width: 1px;
@@ -748,7 +747,7 @@ a {
 }
 
 a:hover, a:active, a:focus {
-  color: #1a8eee;
+  color: #187dd6;
   outline: 0;
   /* [2] */
 }
@@ -758,14 +757,17 @@ a:active {
   top: 1px;
 }
 
-a small,
 a:before,
 a:after {
   font-size: 0.75rem;
   line-height: 1;
   font-weight: 400;
+  vertical-align: baseline;
 }
 
+/**
+ * Remove borders.
+ */
 a img,
 a abbr {
   border: 0 !important;
@@ -865,7 +867,7 @@ samp {
   font-size: 1rem;
   /* [1] */
   text-shadow: 0 1px #fff;
-  color: #212529;
+  color: rgba(33, 37, 41, 0.9);
   background-color: #f1f3f5;
   border-radius: 0;
 }
@@ -949,10 +951,10 @@ textarea {
   height: 1.5rem;
   padding-right: 0.375rem;
   padding-left: 0.375rem;
-  color: #212529;
+  color: rgba(33, 37, 41, 0.9);
   background-color: #fff;
   border: none;
-  border-radius: none;
+  border-radius: 0;
   box-shadow: 0px 0px 0px 1px #e9ecef;
   transition: all 0.25s ease-out;
   -webkit-appearance: none;
@@ -978,7 +980,7 @@ input[type="color"]:focus,
 select:focus,
 textarea:focus {
   outline: 0;
-  box-shadow: 0px 0px 0px 1px #dee2e6;
+  box-shadow: 0px 0px 0px 1px #ced4da;
 }
 input[type="text"]:invalid:focus:not(:placeholder-shown),
 input[type="password"]:invalid:focus:not(:placeholder-shown),
@@ -1089,7 +1091,7 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  -webkit-text-fill-color: #212529 !important;
+  -webkit-text-fill-color: rgba(33, 37, 41, 0.9) !important;
   /* [1] */
   -webkit-box-shadow: 0 0 0px 1000px white inset !important;
   /* [2] */
@@ -2134,8 +2136,8 @@ img::-moz-selection {
   box-shadow: 0px 0px 0px 1px currentColor;
 }
 .c-button--outlined:hover, .c-button--outlined:active, .c-button--outlined:focus {
-  color: #0a0c0d;
-  border-color: #0a0c0d;
+  color: rgba(10, 12, 13, 0.9);
+  border-color: rgba(10, 12, 13, 0.9);
 }
 
 .c-button--disabled,
@@ -2175,21 +2177,21 @@ img::-moz-selection {
    ========================================================================== */
 .c-button--action {
   color: #fff;
-  background-color: #329af0;
-  border-color: #329af0;
+  background-color: #228ae6;
+  border-color: #228ae6;
 }
 .c-button--action:hover, .c-button--action:active, .c-button--action:focus {
   color: #fff;
-  background-color: #1a8eee;
-  border-color: #1a8eee;
+  background-color: #187dd6;
+  border-color: #187dd6;
 }
 .c-button--action.c-button--outlined {
-  color: #329af0;
+  color: #228ae6;
   background-color: transparent;
 }
 .c-button--action.c-button--outlined:hover, .c-button--action.c-button--outlined:active, .c-button--action.c-button--outlined:focus {
-  color: #1081df;
-  box-shadow-color: #1081df;
+  color: #1670bf;
+  box-shadow-color: #1670bf;
 }
 
 .c-button--success {
@@ -2372,22 +2374,14 @@ h2:before {
 \*------------------------------------*/
 .u-prose {
   /**
-   * Country / language version.
-   */
-  /**
-   * External links.
-   */
-  /**
-   * Mailto.
-   */
-  /**
-   * Telephone.
-   */
-  /**
-   * Documents.
-   */
-  /**
-   * Audio.
+   * Links.
+   *
+   * 1. Country / language version.
+   * 2. External links.
+   * 3. Mailto.
+   * 4. Telephone.
+   * 5. Documents.
+   * 6. Audio.
    */
 }
 .u-prose a[hreflang]:not([hreflang="fr"]):lang(fr):after,
@@ -2395,49 +2389,59 @@ h2:before {
 .u-prose a[hreflang]:not([hreflang^="en"]):lang(en):after,
 .u-prose a[lang^="en"]:after {
   content: " [" attr(hreflang) "]";
-  vertical-align: baseline;
+  /* [1] */
 }
 .u-prose :lang(en) > a[lang]:not([hreflang]):after,
 .u-prose :lang(fr) > a[lang]:not([hreflang]):after,
 .u-prose :lang(en) > a[lang^="en"]:after,
 .u-prose :lang(fr) > a[lang^="fr"]:after {
   content: none;
+  /* [1] */
 }
 .u-prose a[hreflang=""]:after,
 .u-prose h1 > a[hreflang]:after,
 .u-prose h2 > a[hreflang]:after,
 .u-prose h3 > a[hreflang]:after {
   content: none !important;
+  /* [1] */
 }
 .u-prose a:not([href*="yourdomain.com"]):not([href^="#"]):not([href^="mailto"]):not([href^="tel"])::after {
   content: "\0020\279A";
+  /* [2] */
 }
 .u-prose a[hreflang]:not([href*="yourdomain.com"]):not([href^="#"]):not([href^="mailto"]):not([href^="tel"])::after {
   content: " [" attr(hreflang) "] ➚";
+  /* [2] */
 }
 .u-prose a[href^="mailto"]::after {
   content: "\0020\2709";
+  /* [3] */
 }
 .u-prose a[href^="tel"]::after {
   content: "\0020\2706";
+  /* [4] */
 }
 .u-prose a[download]::after {
   content: "\0020\21A7";
+  /* [5] */
 }
 .u-prose a[hreflang][download]::after {
   content: " [" attr(hreflang) "] ↧";
+  /* [5] */
 }
 .u-prose a[href$=".mp3"]::after,
 .u-prose a[href$=".wma"]::after,
 .u-prose a[href$=".ogg"]::after,
 .u-prose a[href$=".flac"]::after {
   content: "\0020\266B";
+  /* [6] */
 }
 .u-prose a[hreflang][href$=".mp3"]::after,
 .u-prose a[hreflang][href$=".wma"]::after,
 .u-prose a[hreflang][href$=".ogg"]::after,
 .u-prose a[hreflang][href$=".flac"]::after {
   content: " [" attr(hreflang) "] ♫";
+  /* [6] */
 }
 
 /*------------------------------------*\

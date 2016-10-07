@@ -14,6 +14,7 @@
    <h2 class="u-h1-size">Lorem ipsum</h2>
  *
  */
+
 .u-h1-size, %u-h1-size { @extend %headings; @include type(4, 0, 1); }
 .u-h2-size, %u-h2-size { @extend %headings; @include type(3, 0, 1); }
 .u-h3-size, %u-h3-size { @extend %headings; @include type(2, 0, 0); }

@@ -9,6 +9,7 @@
 /**
  * Indented (rather than spaced) paragraph delimiting.
  */
+
 p + p {
   @include space(margin-top, 1);
   text-indent: 1em;
@@ -22,6 +23,7 @@ p + p {
 /**
  * http://meyerweb.com/eric/thoughts/2012/12/17/where-to-avoid-css-hyphenation
  */
+
 abbr,
 acronym,
 blockquote,
@@ -44,6 +46,7 @@ xmp {
 /**
  * For use in smallprint etc.
  */
+
 small {
   @include type(-1, $line-height: 1);
 }
@@ -54,6 +57,7 @@ small {
  * 2. Address styling not present in IE 8/9/10/11, Safari, and Chrome.
  * 3. Turn on small caps for upper and lowercase letters
  */
+
 abbr[title] {
   text-transform: uppercase;  /* [1] */
   letter-spacing: 0.05em;
@@ -69,6 +73,7 @@ abbr[title] {
 /**
  * 1. Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
  */
+
 b,
 strong {
   font-weight: $font-weight-bold; /* [1] */
@@ -79,6 +84,7 @@ strong {
 /**
  * 1. Address styling not present in Safari and Chrome.
  */
+
 dfn {
   font-style: italic; /* [1] */
   cursor    : help;   /* [1] */
@@ -88,6 +94,7 @@ dfn {
 /**
  * 1. Address styling not present in IE 8/9.
  */
+
 mark {
   padding-right   : 0.1em;
   padding-left    : 0.1em;
@@ -105,6 +112,7 @@ mark {
 /**
  * Avoid confusion with links.
  */
+
 ins {
   padding-right   : 0.1em;
   padding-left    : 0.1em;
@@ -118,6 +126,7 @@ ins {
 /**
  * Use color to differentiate from `s`.
  */
+
 del {
   padding-right   : 0.1em;
   padding-left    : 0.1em;
@@ -141,11 +150,16 @@ address {
 }
 
 
-// Turn on discretionary ligatures.
 @if (typography(glyphs) == true) {
+
+    /**
+     * Turn on discretionary ligatures.
+     */
+
     time {
         font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0;
     }
+
 }//endif
 
 
@@ -161,6 +175,7 @@ address {
  * 6. Move the subscripted text down, but only half as far down as the
  *    superscript moved up.
  */
+
 sub,
 sup {
   position      : relative;   /* [1] */
@@ -185,6 +200,7 @@ sub {
 /**
  * Details.
  */
+
 summary {
   cursor : pointer;
   outline: 0;
@@ -382,6 +398,7 @@ $small-caps-namespace: 'u-small-caps' !default;
 /**
  * For browsers that don't support OpenType, features, use all caps.
  */
+
 .#{$namespace}#{$small-caps-namespace} {
   text-transform: uppercase;
   -ms-font-feature-settings: "lnum", "smcp", "c2sc" 0;
@@ -392,6 +409,7 @@ $small-caps-namespace: 'u-small-caps' !default;
  * Progressively enhance with `font-feature-settings` if `font-variant-caps`
  * isn't supported.
  */
+
 @supports not (font-variant-caps: small-caps) {
 
   .#{$namespace}#{$small-caps-namespace} {
@@ -406,6 +424,7 @@ $small-caps-namespace: 'u-small-caps' !default;
 /**
  * Otherwise, and ideally, use `font-variant-caps`.
  */
+
 @supports (font-variant-caps: small-caps) {
 
   .#{$namespace}#{$small-caps-namespace} {

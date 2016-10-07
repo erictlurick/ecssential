@@ -3,7 +3,7 @@
 //------------------------------------\\
 
 // Base typographical styles and baseline grid.
-// ==============================================
+// ==========================================================================
 
 // What would you like your base font-size to be? Value in px.
 $base-font-size        : 16 !default;
@@ -20,7 +20,7 @@ $base-scale-factor     : $perfect-fourth !default;
 
 
 // Font family settings.
-// ==============================================
+// ==========================================================================
 
 @import 'https://fonts.googleapis.com/css?family=Gentium+Basic:400,400i,700,700i|Open+Sans+Condensed:700&subset=latin-ext';
 
@@ -33,7 +33,7 @@ $font-family-headings  : 'Open Sans Condensed', $font-family-sans-serif !default
 
 
 // Font weight settings.
-// ==============================================
+// ==========================================================================
 
 $font-weight-body      : $font-weight-regular !default;
 $font-weight-headings  : $font-weight-medium !default;

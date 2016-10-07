@@ -5,6 +5,7 @@
 // Responsive breakpoints.
 //
 // @HugoGiraudel http://www.sitepoint.com/managing-responsive-breakpoints-sass/
+
 @mixin breakpoint($breakpoint) {
 
   // Retrieves the value from the key

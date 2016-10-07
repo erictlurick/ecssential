@@ -15,6 +15,7 @@
 //    Leaving it in for now in case there are any mobile browsers that require it.
 // 4. The border and background resets are useful when using IR on form submit
 //    inputs or buttons, as well as when links use default borders or backgrounds.
+
 @mixin hide-text() {
   font            : 0/0 a;       /* [1] */
   text-shadow     : none;        /* [2] */
@@ -29,6 +30,7 @@
 
 // Visually hide content, leaving it accessible to screenreaders and ATs.
 // snook.ca/archives/html_and_css/hiding-content-for-accessibility
+
 @mixin visually-hidden($state: hidden) {
 
   @if ($state == undo) {
@@ -56,6 +58,7 @@
 
 // Completely hide content both visually from the screen, and from screenreaders
 // and ATs.
+
 @mixin hide() {
   display: none !important;
 }

@@ -13,6 +13,7 @@
 //    color: color(<key>);
 //  }
 //
+
 @function color($key) {
 
 	@if map-has-key($colors, $key) {
@@ -30,6 +31,7 @@
 
 // Dynamically change text color based on its background.
 // @seb_ekstrom http://zerosixthree.se/dynamically-change-text-color-with-sass/
+
 @function color-invert($color) {
 
   @if (lightness( $color ) > 70) {
@@ -55,6 +57,7 @@
 //
 // http://codepen.io/MadeByMike/pen/sDpxg/
 // For loop inumerator
+
 @function luma($color){
   // Adapted from: https://gist.github.com/voxpelli/6304812
   $rgba: red($color), green($color), blue($color);

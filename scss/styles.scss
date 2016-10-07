@@ -7,6 +7,7 @@
  *
  * SETTINGS
  * Breakpoints..........Define our breakpoints for later use.
+ * Colors UI............Color scheme for UI design.
  * Colors...............Our brand and project colours.
  * Configuration........Define any project-level configuration, feature
  *                      switches, etc. in here.
@@ -29,6 +30,7 @@
  * Borders..............Apply borders and keep a consistent baseline.
  * Breakpoints..........Responsive breakpoints.
  * Clearfix.............Drop micro clearfix into a selector.
+ * Flexbox..............Easily generate flexbox layouts.
  * Hide.................Hide content.
  * Palette..............A whole bunch of friendly color variables.
  * Prefix...............Allows you to prefix multiple properties at once.
@@ -55,6 +57,7 @@
  * Headings.............Set up our document's default for headings 1 through 6.
  * Typography...........Set up our document's default for typography.
  * Anchors..............Set up our document's default for links.
+ * Quotes...............Set up our document's default for quotes.
  * Code.................Set up our document's default for code.
  * Forms................Set up our document's default for forms.
  * Lists................Set up our document's default for lists.
@@ -77,6 +80,7 @@
  * Icons................Set up SVG icons.
  * Ratios...............Create ratio-bound content blocks, to keep media (e.g.
  *                      images, videos) in their correct aspect ratios.
+ * Tables...............Table styles variants.
  *
  * COMPONENTS
  * Buttons..............Set up various button styles.
@@ -84,11 +88,13 @@
  * TRUMPS
  * Headings.............Headings 1-6's corresponding Greek-alphabet abstract
                         classes for double- stranded heading hierarchy.
+ * Text.................Utilities to adjust the size of a span of text by a
+                        little bit more, or a little bit less.
+ * Prose................
  * Helpers..............A series of classes to use arbitrarily.
  * Print................Very crude, reset-like styles taken from the HTML5
                         Boilerplate.
- * Text.................Utilities to adjust the size of a span of text by a
-                        little bit more, or a little bit less.
+
  */
 
 // TOOLS

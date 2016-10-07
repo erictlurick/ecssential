@@ -4,6 +4,7 @@
 
 // Due to sub-pixel rounding, the grid will not align perfectly with certain
 // sizes and should only be used as a reference, not a holy truth.
+
 @mixin baseline($color-line-1: #ffcadf, $color-line-2: #e2d1fb, $font-size: $base-font-size, $line-height: $base-line-height) {
 
   // Predefine the variable below in order to alter and enable specific features.

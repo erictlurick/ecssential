@@ -14,6 +14,7 @@
 // Predefine the variable below in order to alter and enable specific features.
 $box-namespace: 'o-box' !default;
 
+
 .#{$namespace}#{$box-namespace} {
   @include clearfix();
   display: block; /* [1] */

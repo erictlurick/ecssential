@@ -5,7 +5,7 @@
 \*------------------------------------*/
 
 // Predefine the variable below in order to alter and enable specific features.
-$heading-subtitle-inline: true !default;
+$headings-subtitles-inline: true !default;
 
 
 %headings {
@@ -29,7 +29,7 @@ $heading-subtitle-inline: true !default;
     display: table;
 
     @include breakpoint(medium) {
-      @if $heading-subtitle-inline == true {
+      @if $headings-subtitles-inline == true {
         display: inline;
       }
     }

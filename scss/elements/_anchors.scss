@@ -30,12 +30,17 @@ a:active {
   top     : 1px;
 }
 
-a small,
 a:before,
 a:after {
   @include type(-1, $line-height: 1);
   font-weight: $font-weight-regular;
+  vertical-align: baseline;
 }
+
+
+/**
+ * Remove borders.
+ */
 
 a img,
 a abbr {

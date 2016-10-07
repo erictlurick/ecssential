@@ -3,6 +3,7 @@
 //------------------------------------\\
 
 // Easily generate pseudo-elements.
+
 @mixin pseudo-element($element, $width: 100%, $height: 100%, $top: 0, $left: 0) {
 
   @if $element == "before" or $element == "after" {

@@ -5,19 +5,8 @@
 // The global settings file contains any project-wide variables; things that
 // need to be made available to the entire codebase.
 
-// Spacing
-// ==============================================
-
-// How many times larger/smaller than the default should our spacing unit
-// variants be?
-
-$base-spacing-unit-factor-tiny        : 0.25 !default;
-$base-spacing-unit-factor-small       : 0.5  !default;
-$base-spacing-unit-factor-large       : 2    !default;
-$base-spacing-unit-factor-huge        : 4    !default;
-
 // Global animation settings
-// ==============================================
+// ==========================================================================
 
 $base-transition-speed                : 0.5s !default;
 $base-transition-speed-fast           : $base-transition-speed / 2 !default;
@@ -25,7 +14,7 @@ $base-transition-speed-slow           : $base-transition-speed * 2 !default;
 $base-transition-type                 : ease-out !default;
 
 // Global shadow settings
-// ==============================================
+// ==========================================================================
 
 $base-shadow-color                    : #999;
 $base-shadow-intensity                : 0.75;
@@ -35,50 +24,52 @@ $base-shadow-blur                     : 3px;
 $base-shadow-spread                   : 0;
 
 // High-level UI settings
-// ==============================================
+// ==========================================================================
 
 $base-ui-radius                      : 0 !default;
 $base-ui-shadow                      : unquote($base-shadow-x + " " + $base-shadow-y + " " + $base-shadow-blur + " " + $base-shadow-spread + " " + rgba($base-shadow-color, $base-shadow-intensity));
 $base-ui-transition                  : $base-transition-speed-fast $base-transition-type !default;
 
 // Headings
-// ==============================================
+// ==========================================================================
 
-$heading-subtitle-inline             : true;
+$headings-subtitles-inline           : true;
 
 // Wrappers
-// ==============================================
+// ==========================================================================
 
 $wrapper-width-large                 : 74.551em;
 $wrapper-width-medium                : 55.927em;
 $wrapper-width-narrow                : 48em;
 
 // Grid
-// ==============================================
+// ==========================================================================
 
 $grid-gutter                         : 0; // Space elements by an amount based on your magic number.
 
 // Forms settings
-// ==============================================
+// ==========================================================================
 
-$input-color-text                    : color(text);
-$input-color-text-disabled           : darken(color(ui-light), 15%);
-$input-color-background              : #fff;
-$input-color-border                  : rgba(0,0,0,0.09);
-$input-border-radius                 : none;
+$label-color              : color(muted);
+$input-color-text         : color(text);
+$input-color-text-disabled: darken(color(ui-light), 15%);
+$input-color-background   : #fff;
+$input-color-border       : color(ui-medium);
+$input-color-border-focus : color(ui-dark);
+$input-border-radius      : $base-ui-radius;
 
 // Forms fields
-// ==============================================
+// ==========================================================================
 
 $form-field-space-bottom             : 0.5;
 
 // Code settings
-// ==============================================
+// ==========================================================================
 
 $code-border-radius                  : $base-ui-radius;
 
 // Images
-// ==============================================
+// ==========================================================================
 
 $broken-image-font-family            : $font-family-sans-serif;
 $broken-image-text-shadow            : 0 1px #fff;
@@ -96,7 +87,7 @@ $broken-image-info-text-align        : center;
 $broken-image-info-color             : inherit;
 
 // Dividers
-// ==============================================
+// ==========================================================================
 
 $divider-width                       : 100%;
 $divider-height                      : 1px; // Value in pixels.
