@@ -1,8 +1,8 @@
 @if (elements(anchors) == true) {
 
-/*------------------------------------*\
-    ELEMENTS / ANCHORS
-\*------------------------------------*/
+/* ==========================================================================
+   ELEMENTS / ANCHORS
+   ========================================================================== */
 
 /**
  * 1. Remove the gray background color from active links in IE 10.
@@ -10,30 +10,46 @@
  */
 
 a {
-  font-weight        : $font-weight-bold;
   text-decoration    : none;
   color              : color(action);
   background-color   : transparent; /* [1] */
-  border-bottom-width: 1px;
+  border-bottom      : 1px solid currentColor;
   transition         : all $base-ui-transition;
 }
 
-a {
-  @include attention() {
-    color  : darken(color(action), 5%);
-    outline: 0; /* [2] */
-  }
+a:hover,
+a:active,
+a:focus {
+  color  : darken(color(action), 5%);
+  outline: 0; /* [2] */
 }
+
+
+/**
+ * Make all links feel subtly more button-like.
+ *
+ * Setting a different positioning value for the active state of a link is
+ * something you need to be very careful about. If you have any links on your
+ * site that are absolutely positioned, having the active state change to
+ * relative position will (probably) make them go flying away and render them
+ * unclickable. You can fix this on a case-by-case basis by making the active
+ * state of those links retain absolute positioning, and even make their top
+ * value one higher (or bottom value one lower).
+ */
 
 a:active {
   position: relative;
   top     : 1px;
 }
 
+
+/**
+ * Additional info.
+ */
+
 a:before,
 a:after {
   @include type(-1, $line-height: 1);
-  font-weight: $font-weight-regular;
   vertical-align: baseline;
 }
 
