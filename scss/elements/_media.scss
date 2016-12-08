@@ -1,8 +1,8 @@
 @if (elements(media) == true) {
 
-/*------------------------------------*\
-    ELEMENTS / MEDIA
-\*------------------------------------*/
+/* ==========================================================================
+   ELEMENTS / MEDIA
+   ========================================================================== */
 
 /**
  * 1. Fluid images for responsive purposes.
@@ -13,11 +13,6 @@
  *    elements when they are dropped into a page as-is. Safer alternative to
  *    using `display: block;`.
  * 6. Remove border when inside `a` element in IE 8/9/10.
- * 7. Broken images are ugly. But they don't always have to be. We can use CSS
- *    to apply styles to the <img> element to provide a better experience than
- *    the default. when the image is broken and not loaded, the
- *    pseudo-elements can appear.
- *    @ireaderinokun http://bitsofco.de/styling-broken-images/
  */
 
 img,
@@ -70,6 +65,7 @@ figure {
     vertical-align: top;          /* [2] */
     @include type(-1);
     text-align    : left;         /* [1] */
+    color         : color(text-soft);
   }
 
 
@@ -86,7 +82,7 @@ figure {
 
   img,
   figure {
-    &.is-pushed-right {
+    &.u-pushed-right {
       float: right;
       width: 33.333%;
       @include space(margin-left);
@@ -95,7 +91,7 @@ figure {
 
   img,
   figure {
-    &.is-pulled-left {
+    &.u-pulled-left {
       float: left;
       width: 33.333%;
       @include space(margin-right);
@@ -133,7 +129,7 @@ figure {
 
 // Predefine the variables below in order to alter and enable specific features.
 $broken-image-font-family            : $font-family-sans-serif !default;
-$broken-image-color-background       : #f2f2f2 !default;
+$broken-image-color-background       : color(ui-light) !default;
 $broken-image-text-shadow            : 0 1px #fff !default;
 
 $broken-image-description-font-weight: $font-weight-bold !default;
