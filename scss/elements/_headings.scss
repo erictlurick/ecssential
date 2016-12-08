@@ -1,8 +1,8 @@
 @if (elements(headings) == true) {
 
-/*------------------------------------*\
-    ELEMENTS / HEADINGS
-\*------------------------------------*/
+/* ==========================================================================
+   ELEMENTS / HEADINGS
+   ========================================================================== */
 
 // Predefine the variable below in order to alter and enable specific features.
 $headings-subtitles-inline: true !default;
@@ -11,9 +11,8 @@ $headings-subtitles-inline: true !default;
 %headings {
   font-family   : $font-family-headings;
   font-weight   : $font-weight-headings;
-  letter-spacing: -.028em;
   word-wrap     : break-word;
-  color         : color(heading);
+  color         : color(headings);
 
   // Turn on discretionary ligatures for larger headings.
   @if (typography(glyphs) == true) {
@@ -38,10 +37,11 @@ $headings-subtitles-inline: true !default;
     vertical-align: baseline;
     font-size     : 75%;
     line-height   : 1;
-    color         : color(muted);
+    color         : color(text-soft);
 
   }
 }
+
 
 h1 { @extend %headings; @include type(4, 0, 1); }
 h2 { @extend %headings; @include type(3, 0, 1); }
