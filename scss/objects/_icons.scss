@@ -1,8 +1,8 @@
 @if (objects(icons) == true) {
 
-/*------------------------------------*\
-    OBJECTS / ICONS
-\*------------------------------------*/
+/* ==========================================================================
+   OBJECTS / ICONS
+   ========================================================================== */
 
 /**
  * Using locally defined (inlined) SVG graphics.
@@ -12,115 +12,115 @@
  * works asynchronously. If you put the code at the head of the document, the
  * icons will load a little bit faster.
  *
-	<script>
-		// Storing SVG Sprite in localStorage
-		;( function( window, document )
-		{
-			'use strict';
-			var file	 = 'img/icons/svg/svg.html',
-				revision = 2;
-			if( !document.createElementNS || !document.createElementNS( 'http://www.w3.org/2000/svg', 'svg' ).createSVGRect )
-				return true;
-			var isLocalStorage = 'localStorage' in window && window[ 'localStorage' ] !== null,
-				request,
-				data,
-				insertIT = function()
-				{
-					document.body.insertAdjacentHTML( 'afterbegin', data );
-				},
-				insert = function()
-				{
-					if( document.body ) insertIT();
-					else document.addEventListener( 'DOMContentLoaded', insertIT );
-				};
-			if( isLocalStorage && localStorage.getItem( 'inlineSVGrev' ) == revision )
-			{
-				data = localStorage.getItem( 'inlineSVGdata' );
-				if( data )
-				{
-					insert();
-					return true;
-				}
-			}
-			try
-			{
-				request = new XMLHttpRequest();
-				request.open( 'GET', file, true );
-				request.onload = function()
-				{
-					if( request.status >= 200 && request.status < 400 )
-					{
-						data = request.responseText;
-						insert();
-						if( isLocalStorage )
-						{
-							localStorage.setItem( 'inlineSVGdata',	data );
-							localStorage.setItem( 'inlineSVGrev',	revision );
-						}
-					}
-				}
-				request.send();
-			}
-			catch( e ){}
-		}( window, document ) );
-	</script>
+  <script>
+    // Storing SVG Sprite in localStorage
+    ;( function( window, document )
+    {
+      'use strict';
+      var file   = 'img/icons/svg/svg.html',
+        revision = 2;
+      if( !document.createElementNS || !document.createElementNS( 'http://www.w3.org/2000/svg', 'svg' ).createSVGRect )
+        return true;
+      var isLocalStorage = 'localStorage' in window && window[ 'localStorage' ] !== null,
+        request,
+        data,
+        insertIT = function()
+        {
+          document.body.insertAdjacentHTML( 'afterbegin', data );
+        },
+        insert = function()
+        {
+          if( document.body ) insertIT();
+          else document.addEventListener( 'DOMContentLoaded', insertIT );
+        };
+      if( isLocalStorage && localStorage.getItem( 'inlineSVGrev' ) == revision )
+      {
+        data = localStorage.getItem( 'inlineSVGdata' );
+        if( data )
+        {
+          insert();
+          return true;
+        }
+      }
+      try
+      {
+        request = new XMLHttpRequest();
+        request.open( 'GET', file, true );
+        request.onload = function()
+        {
+          if( request.status >= 200 && request.status < 400 )
+          {
+            data = request.responseText;
+            insert();
+            if( isLocalStorage )
+            {
+              localStorage.setItem( 'inlineSVGdata',  data );
+              localStorage.setItem( 'inlineSVGrev', revision );
+            }
+          }
+        }
+        request.send();
+      }
+      catch( e ){}
+    }( window, document ) );
+  </script>
  *
  * There are two lines you need to configure on your own:
  *
-	var file     = 'img/icons/svg/svg.html',
-		revision = 1;
+  var file     = 'img/icons/svg/svg.html',
+    revision = 1;
  *
  * The svg.html usually looks this:
  *
-	<svg style="display: none;" aria-hidden="true">
-		<symbol id="svg-plane" viewbox="0 0 510 510"><path d="..." /></symbol>
-		<symbol id="svg-close" viewbox="0 0 357 357"><path d="..." /></symbol>
-		<symbol id="svg-fav" viewbox="0 0 510 510"><path d="..." /></symbol>
-		<symbol id="svg-share" viewbox="0 0 459 459"><path d="..." /></symbol>
-		<symbol id="svg-cart" viewbox="0 0 510 510"><path d="..." /></symbol>
-		<symbol id="svg-tick" viewbox="0 0 510 510"><path d="..." /></symbol>
-	</svg>
+  <svg style="display: none;" aria-hidden="true">
+    <symbol id="svg-plane" viewbox="0 0 510 510"><path d="..." /></symbol>
+    <symbol id="svg-close" viewbox="0 0 357 357"><path d="..." /></symbol>
+    <symbol id="svg-fav" viewbox="0 0 510 510"><path d="..." /></symbol>
+    <symbol id="svg-share" viewbox="0 0 459 459"><path d="..." /></symbol>
+    <symbol id="svg-cart" viewbox="0 0 510 510"><path d="..." /></symbol>
+    <symbol id="svg-tick" viewbox="0 0 510 510"><path d="..." /></symbol>
+  </svg>
  *
  * If a browser does not support SVG, we can rely on raster images and JavaScript
  * fallback. We need data-img attribute for specifying the location of raster
  * image, for example:
  *
-	<svg><use xlink:href="#svg-cart" data-img="img/icons/png/cart.png"></use></svg>
+  <svg><use xlink:href="#svg-cart" data-img="img/icons/png/cart.png"></use></svg>
  *
  * You have to register svg and use elements so that the fallback code can later
  * operate them. This should be placed at the document head, best before the first
  * <script> occurence:
  *
-	;( function( window, document ) {
-		if( document.createElementNS && document.createElementNS( 'http://www.w3.org/2000/svg', 'svg' ).createSVGRect ) return true;
-		var uses = document.getElementsByTagName( 'use' ), use;
-		while( ( use = uses[ 0 ] ) )
-		{
-			var svg = use.parentNode, img = new Image();
-			img.src = use.getAttribute( 'data-img' );
-			svg.parentNode.replaceChild( img, svg );
-		}
-	}( window, document ) );
+  ;( function( window, document ) {
+    if( document.createElementNS && document.createElementNS( 'http://www.w3.org/2000/svg', 'svg' ).createSVGRect ) return true;
+    var uses = document.getElementsByTagName( 'use' ), use;
+    while( ( use = uses[ 0 ] ) )
+    {
+      var svg = use.parentNode, img = new Image();
+      img.src = use.getAttribute( 'data-img' );
+      svg.parentNode.replaceChild( img, svg );
+    }
+  }( window, document ) );
  *
  * Finally, the fallback itself – it should be placed at the end of the document:
  *
-	;( function( window, document )
-	{
-    	if( document.createElementNS && document.createElementNS( 'http://www.w3.org/2000/svg', 'svg' ).createSVGRect ) return true;
-    	var uses = document.getElementsByTagName( 'use' ), use;
-    	while( ( use = uses[ 0 ] ) )
-    	{
-        	var svg = use.parentNode, img = new Image();
-        	img.src = use.getAttribute( 'data-img' );
-        	svg.parentNode.replaceChild( img, svg );
-    	}
-	}( window, document ) );
+  ;( function( window, document )
+  {
+      if( document.createElementNS && document.createElementNS( 'http://www.w3.org/2000/svg', 'svg' ).createSVGRect ) return true;
+      var uses = document.getElementsByTagName( 'use' ), use;
+      while( ( use = uses[ 0 ] ) )
+      {
+          var svg = use.parentNode, img = new Image();
+          img.src = use.getAttribute( 'data-img' );
+          svg.parentNode.replaceChild( img, svg );
+      }
+  }( window, document ) );
  *
  * The worst part about this technique is that you cannot get SVG sprite
  * functioning if JavaScript is disabled in user’s browser. But, like in “no SVG
  * support” case, we can rely on raster images, for example:
  *
-	<svg><use xlink:href="#svg-cart"></use></svg><noscript><img src="img/icons/png/cart.png" alt="" /></noscript>
+  <svg><use xlink:href="#svg-cart"></use></svg><noscript><img src="img/icons/png/cart.png" alt="" /></noscript>
  *
  * @oswaldas http://osvaldas.info/caching-svg-sprite-in-localstorage
  */
@@ -130,12 +130,12 @@ $icons-namespace: 'o-icon' !default;
 
 
 .#{$namespace}#{$icons-namespace} {
-	display       : inline-block;
-	width         : 1em;
-	height        : 1em;
-	vertical-align: -0.15em;
-	fill          : currentColor;
-	overlow       : hidden;
+  display       : inline-block;
+  width         : 1em;
+  height        : 1em;
+  vertical-align: -0.15em;
+  fill          : currentColor;
+  overlow       : hidden;
 }
 
 /**
