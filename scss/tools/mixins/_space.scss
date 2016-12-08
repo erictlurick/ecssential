@@ -14,7 +14,7 @@
 @mixin space($property, $lines: 1, $font-size: $base-font-size, $line-height: $base-line-height) {
 
     @if (fallback(pixels) == true) {
-		#{$property}: $lines * ($spacing-unit - $border-width) + px;
+		#{$property}: $lines * ($base-font-size * $base-line-height) + px;
 	}//endif
 
     #{$property}: $lines * $line-height + rem;
