@@ -1,0 +1,38 @@
+@if (trumps(show-hide) == true) {
+
+/* ==========================================================================
+   TRUMPS / SHOW-HIDE
+   ========================================================================== */
+
+.u-text-hidden { @include hide-text(); }
+.u-shown       { @include hide(undo); }
+.u-hidden      { @include hide; }
+.u-visible     { @include visibility(undo); }
+.u-invisible   { @include visibility; }
+.u-off-screen  { @include visually-hidden(); }
+
+@include breakpoint(small) {
+  .u-hide\@small {
+    @include visually-hidden();
+  }
+}
+
+@include breakpoint(medium) {
+  .u-hide\@medium {
+    @include visually-hidden();
+  }
+}
+
+@include breakpoint(large) {
+  .u-hide\@arge {
+    @include visually-hidden();
+  }
+}
+
+@include breakpoint(x-large) {
+  .u-hide\@huge {
+    @include visually-hidden();
+  }
+}
+
+}//endif
