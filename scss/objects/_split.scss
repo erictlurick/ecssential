@@ -1,0 +1,49 @@
+@if (objects(split) == true) {
+
+/* ==========================================================================
+   OBJECTS / SPLIT
+   ========================================================================== */
+
+/**
+ * Simple split item for creating two elements floated away from one another,
+ * e.g.:
+ *
+    <dl class=split>
+        <dt class=split__title>Burger and fries</dt>
+        <dd>&pound;5.99</dd>
+        <dt class=split__title>Fillet steak</dt>
+        <dd>&pound;19.99</dd>
+        <dt class=split__title>Ice cream</dt>
+        <dd>&pound;2.99</dd>
+    </dl>
+ *
+    <ol class="split  results">
+        <li class=first><b class=split__title>1st place</b> Bob</li>
+        <li class=second><b class=split__title>2nd place</b> Lilly</li>
+        <li class=third><b class=split__title>3rd place</b> Ted</li>
+    </ol>​
+ *
+ * Demo: jsfiddle.net/inuitcss/9gZW7
+ */
+
+// Predefine the variable below in order to alter and enable specific features.
+$split-namespace: 'o-split' !default;
+
+
+.#{$namespace}#{$split-namespace} {
+
+  &#{&} {
+    margin-left: 0;
+    text-align : right;
+    list-style : none;
+  }
+
+  .o-split__title {
+    float     : left;
+    clear     : left;
+    text-align: left;
+  }
+
+}
+
+}//endif
