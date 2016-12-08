@@ -25,6 +25,12 @@ $typography: (
   'smooth'           : true
 ) !default;
 
+$generic: (
+  'box-sizing'       : true,
+  'reset'            : true,
+  'shared'           : true
+) !default;
+
 $elements: (
   'anchors'          : true,
   'code'             : true,
@@ -48,10 +54,20 @@ $layout: (
 $objects: (
   'box'              : true,
   'buttons'          : true,
+  'elevation'        : true,
   'form-fields'      : true,
   'form-requirements': true,
   'icons'            : true,
+  'list-banner'      : true,
+  'list-bare'        : true,
+  'list-fit'         : true,
+  'list-inline'      : true,
+  'list-ordered'     : true,
+  'list-ui'          : true,
+  'pullquote'        : true,
+  'quotes'           : true,
   'ratios'           : true,
+  'split'            : true,
   'tables'           : true
 ) !default;
 
@@ -61,17 +77,19 @@ $components: (
 
 $trumps: (
   'broken-images'    : true,
+  'colors'           : true,
   'headings'         : true,
   'helpers'          : true,
   'image-placements' : true,
   'print'            : true,
   'prose'            : true,
-  'states'           : true,
+  'show-hide'        : true,
+  'spacings'         : true,
   'text'             : true
 ) !default;
 
 $debugging: (
-  'baseline'         : true,
+  'baseline'         : false,
   'baseline-checks'  : false,
   'breakpoint-checks': false,
   'health-checks'    : false
@@ -88,32 +106,63 @@ $debugging: (
 
 @function fallback($key) {
   @return map-get($fallbacks, $key);
+
+  @warn "Unknown `#{$key}` in $fallbacks.";
+  @return null;
 }
 
 @function typography($key) {
   @return map-get($typography, $key);
+
+  @warn "Unknown `#{$key}` in $typography.";
+  @return null;
+}
+
+@function generic($key) {
+  @return map-get($generic, $key);
+
+  @warn "Unknown `#{$key}` in $generic.";
+  @return null;
 }
 
 @function elements($key) {
   @return map-get($elements, $key);
+
+  @warn "Unknown `#{$key}` in $elements.";
+  @return null;
 }
 
 @function layout($key) {
   @return map-get($layout, $key);
+
+  @warn "Unknown `#{$key}` in $layout.";
+  @return null;
 }
 
 @function objects($key) {
   @return map-get($objects, $key);
+
+  @warn "Unknown `#{$key}` in $objects.";
+  @return null;
 }
 
 @function components($key) {
   @return map-get($components, $key);
+
+  @warn "Unknown `#{$key}` in $components.";
+  @return null;
 }
 
 @function trumps($key) {
   @return map-get($trumps, $key);
+
+  @warn "Unknown `#{$key}` in $trumps.";
+  @return null;
 }
 
 @function debugging($key) {
   @return map-get($debugging, $key);
+
+  @warn "Unknown `#{$key}` in $debugging.";
+  @return null;
 }
