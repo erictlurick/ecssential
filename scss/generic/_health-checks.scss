@@ -1,8 +1,8 @@
 @if (debugging(health-checks) == true) {
 
-/*------------------------------------*\
-    GENERIC / HEALTH-CHECKS
-\*------------------------------------*/
+/* ==========================================================================
+   GENERIC / HEALTH-CHECKS
+   ========================================================================== */
 
 /**
  * By using substring selectors, we can target and then visualise the general
