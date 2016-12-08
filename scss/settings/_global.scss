@@ -5,6 +5,15 @@
 // The global settings file contains any project-wide variables; things that
 // need to be made available to the entire codebase.
 
+// Global spacing settings
+// ==========================================================================
+
+$base-spacing-unit                    : 1 !default;
+$base-spacing-unit-tiny               : 0.25 !default;
+$base-spacing-unit-small              : 0.5 !default;
+$base-spacing-unit-large              : 1.5 !default;
+$base-spacing-unit-huge               : 2 !default;
+
 // Global animation settings
 // ==========================================================================
 
@@ -26,7 +35,7 @@ $base-shadow-spread                   : 0;
 // High-level UI settings
 // ==========================================================================
 
-$base-ui-radius                      : 0 !default;
+$base-ui-radius                      : 3px !default;
 $base-ui-shadow                      : unquote($base-shadow-x + " " + $base-shadow-y + " " + $base-shadow-blur + " " + $base-shadow-spread + " " + rgba($base-shadow-color, $base-shadow-intensity));
 $base-ui-transition                  : $base-transition-speed-fast $base-transition-type !default;
 
@@ -45,18 +54,19 @@ $wrapper-width-narrow                : 48em;
 // Grid
 // ==========================================================================
 
-$grid-gutter                         : 0; // Space elements by an amount based on your magic number.
+$grid-gutter                         : $base-line-height + rem; // Value in rem.
 
 // Forms settings
 // ==========================================================================
 
-$label-color              : color(muted);
-$input-color-text         : color(text);
-$input-color-text-disabled: darken(color(ui-light), 15%);
-$input-color-background   : #fff;
-$input-color-border       : color(ui-medium);
-$input-color-border-focus : color(ui-dark);
-$input-border-radius      : $base-ui-radius;
+$label-color                         : color(muted);
+$input-color-text                    : color(text);
+$input-color-text-disabled           : color(ui-disabled);
+$input-color-placeholder             : color(muted);
+$input-color-background              : #fff !default;
+$input-color-border                  : color(ui-medium);
+$input-color-border-focus            : color(ui-dark);
+$input-border-radius                 : $base-ui-radius;
 
 // Forms fields
 // ==========================================================================
@@ -67,6 +77,12 @@ $form-field-space-bottom             : 0.5;
 // ==========================================================================
 
 $code-border-radius                  : $base-ui-radius;
+
+// tables
+// ==========================================================================
+
+$table-color-background              : color(ui-light);
+$table-color-border                  : color(ui-medium);
 
 // Images
 // ==========================================================================
@@ -97,6 +113,6 @@ $divider-color                       : transparent;
 
 $enable-divider-ornaments            : true;
 $divider-ornament                    : "\2022\0020\2022\0020\2022";
-$divider-ornament-space-top          : 1.02; // Space elements by an amount based on your magic number.
+$divider-ornament-space-top          : 0.95; // Space elements by an amount based on your magic number.
 $divider-ornament-letter-spacing     : 0.6em;
 $divider-ornament-color              : $color-gray-7; // rgba(0, 0, 0, 0.44);
