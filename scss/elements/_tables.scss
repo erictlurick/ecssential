@@ -1,11 +1,11 @@
 @if (elements(tables) == true) {
 
-/*------------------------------------*\
-    ELEMENTS / TABLES
-\*------------------------------------*/
+/* ==========================================================================
+   ELEMENTS / TABLES
+   ========================================================================== */
 
 // Predefine the variable below in order to alter and enable specific features.
-$table-color-background: color(ui-light) !default;
+$table-color-background-hover: $color-gray-0 !default;
 
 
 /**
@@ -34,7 +34,7 @@ thead {
 }
 
 tr:hover {
-    background-color: rgba($table-color-background, 0.5);
+    background-color: rgba($table-color-background-hover, 0.5);
 }
 
 th, td {
