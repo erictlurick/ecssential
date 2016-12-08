@@ -1,8 +1,8 @@
 @if (elements(selections) == true) {
 
-/*------------------------------------*\
-    ELEMENTS / SELECTIONS
-\*------------------------------------*/
+/* ==========================================================================
+   ELEMENTS / SELECTIONS
+   ========================================================================== */
 
 /**
  * 1. Customize `background` for text selections.
@@ -10,14 +10,14 @@
  */
 
 ::-moz-selection {
-  color           : color-invert(color(primary));
-  background-color: color(primary); /* 1 */
+  color           : color-invert(color(action));
+  background-color: color(action); /* 1 */
   text-shadow     : none;           /* 2 */
 }
 
 ::selection {
-  color           : color-invert(color(primary));
-  background-color: color(primary); /* 1 */
+  color           : color-invert(color(action));
+  background-color: color(action); /* 1 */
   text-shadow     : none;           /* 2 */
 }
 
