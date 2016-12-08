@@ -705,11 +705,9 @@ hr:after {
  * of a document slightly larger: en.wikipedia.org/wiki/Lede_(news)
  */
 .u-lede {
-  font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
   margin-bottom: 1.5rem;
   font-size: 1.3125rem;
   line-height: 1.5rem;
-  color: #495057;
 }
 
 /* ==========================================================================
