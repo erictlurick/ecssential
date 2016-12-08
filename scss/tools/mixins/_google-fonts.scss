@@ -1,0 +1,127 @@
+//------------------------------------\\
+    // MIXINS / GOOGLE-FONTS
+//------------------------------------\\
+
+// When designing in the browser you often try out multiple fonts and weights,
+// and in the end you don't really remember which variations you're actually
+// using. The result: imported webfonts that take up bandwidth and HTTP-requests,
+// but aren't used. Sass to the rescue!
+//
+// http://advancedsass.com/articles/dynamically-import-only-used-google-webfonts.html
+
+// Predefine the variables below in order to alter and enable specific features.
+$google-fonts: (
+  "Open Sans": 400 700 600italic,
+  "PT Serif" : 700
+) !default;
+
+
+// Substring replacement function.
+//
+// http://sassmeister.com/gist/1b4f2da5527830088e4d
+
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
+
+
+
+
+// Import Google fonts
+// ===========================================
+
+// This mixin will take the contents of the `$google-fonts` variable, loop through it
+// and come up with a Google URL we can `@import`.
+
+@mixin import-google-fonts() {
+
+  $fonts: "";
+
+  @each $family, $variations in $google-fonts {
+
+    // Create url-friendly name (replace space with +):
+    $family-string: str-replace($family, ' ', '+');
+
+    // Combine variations into a comma separated string:
+    $variations-string: "";
+
+    @each $variation in $variations {
+      $variations-string: "#{$variations-string},#{$variation}";
+    }
+
+    // Cut of the first character (unwanted comma):
+    $variations-string: str-slice($variations-string, 2);
+
+    // Combine family and variatons in $fonts,
+    // separated by a pipe (for the Google URL):
+    $fonts: "#{$fonts}|#{$family-string}:#{$variations-string}";
+
+  }
+
+  // Cut of the first character (unwanted pipe):
+  $fonts: str-slice($fonts, 2);
+
+  // Import only the used Google fonts!
+  @import url(http://fonts.googleapis.com/css?family=#{$fonts});
+
+}
+
+
+
+
+
+// Utilities
+// ===========================================
+
+// These  "utility tasks" perform separately, so we can reuse them.
+
+@mixin track-google-fonts($family, $weight, $style) {
+
+  // First check if we already knew this one:
+  @if map-has-key($google-fonts, $family) == false {
+
+    // Font-family isn't in the map yet, so add it.
+    // The key for the nested map is the font name:
+    $google-fonts: map-merge($google-fonts, ($family: ())) !global;
+
+  }
+
+  // Now check if this weight and style are known,
+  // using Google's "400italic" notation.
+  // If style is "normal", only use the weight:
+  $weight-style: if($style == normal, $weight, #{$weight}#{$style});
+  $font-map: map-get($google-fonts, $family);
+
+  @if index($font-map, $weight-style) == null {
+
+    // Weight and style aren't in the map yet, so add it:
+    $variations: append($font-map, $weight-style);
+    $google-fonts: map-merge($google-fonts, ($family: $variations)) !global;
+
+  }
+
+}
+
+
+// Call our custom mixin to do the heavy lifting, e.g.:
+//
+// .bold {
+//   @include font("Open Sans", 700);
+// }
+//
+// .semi-bold-italic {
+//   @include font("Open Sans", 600, italic);
+// }
+@mixin google-font($family, $weight: 400, $style: normal) {
+  @include track-google-fonts($family, $weight, $style);
+  font-family: $family;
+  font-weight: $weight;
+  font-style: $style;
+}
