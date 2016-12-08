@@ -1,22 +1,8 @@
 @if (elements(typography) == true) {
 
-/*------------------------------------*\
-    ELEMENTS / TYPOGRAPHY
-\*------------------------------------*/
-
-@if (typography(indent) == true) {
-
-/**
- * Indented (rather than spaced) paragraph delimiting.
- */
-
-p + p {
-  @include space(margin-top, 1);
-  text-indent: 1em;
-}
-
-}//endif
-
+/* ==========================================================================
+   ELEMENTS / TYPOGRAPHY
+   ========================================================================== */
 
 @if (typography(hyphens) == true) {
 
@@ -77,7 +63,6 @@ abbr[title] {
 b,
 strong {
   font-weight: $font-weight-bold; /* [1] */
-  color: color(heading);
 }
 
 
@@ -224,7 +209,7 @@ $enable-divider-ornaments       : false !default;
 $divider-ornament               : "\00A7" !default;
 $divider-ornament-space-top     : 1 !default; // Space elements by an amount based on your magic number.
 $divider-ornament-letter-spacing: 0 !default;
-$divider-ornament-color         : $divider-color !default;
+$divider-ornament-color         : color(ui-medium) !default;
 
 
 hr {
@@ -261,11 +246,35 @@ hr {
 }//endif
 
 
-@if (typography(dropcaps) == true) {
+
+
+
+@if (typography(indent) == true) {
+
+/* Paragraphs
+   ========================================================================== */
 
 /**
- * Dropcaps.
- *
+ * Indented (rather than spaced) delimiting.
+ */
+
+p + p {
+  @include space(margin-top, 1);
+  text-indent: 1em;
+}
+
+}//endif
+
+
+
+
+
+@if (typography(dropcaps) == true) {
+
+/* Dropcaps
+   ========================================================================== */
+
+/**
  * The font size and margins used on lines 8 and 10 of the code above vary for
  * different typefaces. The following table provides values for two heights of
  * drop cap for each of four common typefaces.
@@ -365,7 +374,13 @@ $dropcap-font-family    : Georgia !default;
 }//endif
 
 
+
+
+
 @if (typography(lede) == true) {
+
+/* Lede
+   ========================================================================== */
 
 /**
  * The `.u-lede` class is used to make the introductory text (usually a paragraph)
@@ -379,17 +394,19 @@ $lede-namespace: 'u-lede' !default;
 .#{$namespace}#{$lede-namespace} {
   font-family: $font-family-headings;
   @include type(1, 0, 1);
-  color: color(heading);
+  color: color(headings);
 }
 
 }//endif
 
 
+
+
+
 @if (typography(small-caps) == true) {
 
-/**
-* Small caps.
-*/
+/* Small caps
+   ========================================================================== */
 
 // Predefine the variables below in order to alter and enable specific features.
 $small-caps-namespace: 'u-small-caps' !default;
