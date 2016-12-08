@@ -1,0 +1,58 @@
+@if (trumps(colors) == true) {
+
+/* ==========================================================================
+   TRUMPS / COLORS
+   ========================================================================== */
+
+// Predefine the variable below in order to alter and enable specific features.
+$color-spectrum: 7;
+
+
+.u-text-white {
+  color: $color-white;
+}
+
+.u-text-soft {
+  color: color(text-soft);
+}
+
+.u-text-muted {
+  color: color(muted);
+}
+
+// Loop trough the $colors map and set a class for text colors.
+@each $list, $color-name in $color-list {
+  .u-text-#{$color-name} {
+    color: map-get($list, #{$color-spectrum});
+  }
+}
+
+// Loop trough the $colors map and set a class for background colors.
+@each $list, $color-name in $color-list {
+  .u-background-#{$color-name} {
+    background-color: map-get($list, #{$color-spectrum});
+  }
+}
+
+// Loop trough the $colors map and set a class for border colors.
+@each $list, $color-name in $color-list {
+  .u-border-#{$color-name} {
+    border-color: map-get($list, #{$color-spectrum});
+  }
+}
+
+// Loop trough the $colors map and set a class for fill colors.
+@each $list, $color-name in $color-list {
+  .u-fill-#{$color-name} {
+    fill: map-get($list, #{$color-spectrum});
+  }
+}
+
+// Loop trough the $colors map and set a for stroke colors.
+@each $list, $color-name in $color-list {
+  .u-stroke-#{$color-name} {
+    stroke: map-get($list, #{$color-spectrum});
+  }
+}
+
+}//endif
