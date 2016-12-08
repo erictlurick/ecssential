@@ -1,0 +1,34 @@
+@if (objects(elevation) == true) {
+
+/* ==========================================================================
+   OBJECTS / ELEVATION
+   ========================================================================== */
+
+/**
+ * Three levels of consistent box-shadows for any element.
+ */
+
+// Predefine the variable below in order to alter and enable specific features.
+$elevation-namespace: 'o-elevation' !default;
+
+
+.#{$namespace}#{$elevation-namespace} {
+
+  &#{&} {
+    border    : none;
+    box-shadow: 0 0 1px color(ui-medium),0 5px 10px -3px color(ui-dark);
+  }
+
+  // Size variants.
+
+  &.#{$namespace}#{$elevation-namespace}--large {
+    box-shadow: 0 0 1px color(ui-medium),0 10px 25px -4px color(ui-dark);
+  }
+
+  &.#{$namespace}#{$elevation-namespace}--huge {
+    box-shadow: 0 0 1px color(ui-medium),0 20px 55px -8px color(ui-dark);
+  }
+
+}
+
+}//endif
