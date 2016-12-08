@@ -1,6 +1,8 @@
-/*------------------------------------*\
-    GENERIC / SHARED
-\*------------------------------------*/
+@if (generic(shared) == true) {
+
+/* ==========================================================================
+   GENERIC / SHARED
+   ========================================================================== */
 
 /**
  * Where `margin-bottom` is concerned,this value will be the same as the
@@ -25,3 +27,5 @@ pre {
 ul, ol {
   @include space(margin-left);
 }
+
+}//endif
