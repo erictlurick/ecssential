@@ -1,8 +1,8 @@
 @if (trumps(text) == true) {
 
-/*------------------------------------*\
-    TRUMPS / TEXT
-\*------------------------------------*/
+/* ==========================================================================
+   TRUMPS / TEXT
+   ========================================================================== */
 
 /**
  * Text adjustments.
@@ -16,10 +16,10 @@
  *
  */
 
-.u-text--xx-large, %u-text--xx-large { @include type(6,0,0); }
-.u-text--x-large, %u-text--x-large   { @include type(5,0,0); }
-.u-text--large, %u-text--large       { @include type(4,0,0); }
-.u-text--small, %u-text--small       { @include type(-1,0,0); }
-.u-text--x-small, %u-text--x-small   { @include type(-2,0,0); }
+.u-text--xx-large                  { @include type(6,0,0); }
+.u-text--x-large                   { @include type(5,0,0); }
+.u-text--large                     { @include type(4,0,0); }
+.u-text--small                     { @include type(-1,0,0); }
+.u-text--x-small, %u-text--x-small { @include type(-2,0,0); }
 
 }//endif
