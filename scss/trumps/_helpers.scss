@@ -1,32 +1,77 @@
 @if (trumps(helpers) == true) {
 
-/*------------------------------------*\
-    TRUMPS / HELPERS
-\*------------------------------------*/
+/* ==========================================================================
+   TRUMPS / HELPERS
+   ========================================================================== */
 
 /**
  * A series of classes to use arbitrarily.
  */
 
-.is-static              { position: static; }
-.is-relative            { position: relative; }
-.is-absolute            { position: absolute; }
+.u-static              { position: static; }
+.u-relative            { position: relative; }
+.u-absolute            { position: absolute; }
 
-.is-pushed-right        { float: right }
-.is-pulled-left         { float: left }
-.is-centered            { display: block; margin-right: auto; margin-left: auto; }
+.u-inline              { display: inline; }
+.u-block               { display: block; }
+.u-inline-block        { display: inline-block; }
 
-.is-aligned-left        { text-align: left; }
-.is-aligned-center      { text-align: center; }
-.is-aligned-right       { text-align: right; }
-.is-justified           { text-align: justify; }
+.u-pushed-right        { float: right }
+.u-pulled-left         { float: left }
+.u-centered            { display: block; margin-right: auto; margin-left: auto; }
 
-.is-aligned-top         { vertical-align: top; }
-.is-aligned-middle      { vertical-align: middle; }
-.is-aligned-left-bottom { vertical-align: bottom; }
+.u-aligned-left        { text-align: left; }
+.u-aligned-center      { text-align: center; }
+.u-aligned-right       { text-align: right; }
+.u-justified           { text-align: justify; }
 
-.is-inline              { display: inline; }
-.is-block               { display: block; }
-.is-inline-block        { display: inline-block; }
+.u-aligned-top         { vertical-align: top; }
+.u-aligned-middle      { vertical-align: middle; }
+.u-aligned-bottom      { vertical-align: bottom; }
+
+.u-border              { @include border($direction: all, $width: 1px, $style: solid, $color: color(ui-medium), $radius: $base-ui-radius); }
+.u-border-right        { @include border($direction: right, $width: 1px, $style: solid, $color: color(ui-medium), $radius: $base-ui-radius); }
+.u-border-bottom       { @include border($direction: bottom, $width: 1px, $style: solid, $color: color(ui-medium), $radius: $base-ui-radius); }
+.u-border-left         { @include border($direction: left, $width: 1px, $style: solid, $color: color(ui-medium), $radius: $base-ui-radius); }
+
+.u-rounded             { border-radius: $base-ui-radius; }
+.u-rounded-top         { border-radius: $base-ui-radius $base-ui-radius 0 0;}
+.u-rounded-right       { border-radius: 0 $base-ui-radius $base-ui-radius 0;}
+.u-rounded-bottom      { border-radius: 0 0 $base-ui-radius $base-ui-radius;}
+.u-rounded-left        { border-radius: $base-ui-radius 0 0 $base-ui-radius;}
+
+.u-circle              { border-radius: 50% }
+
+.u-list-circle         { list-style-type: circle; }
+.u-list-disc           { list-style-type: disc; }
+.u-list-square         { list-style-type: square; }
+.u-list-decimal        { list-style-type: decimal; }
+.u-list-leading-zero   { list-style-type: decimal-leading-zero; }
+.u-list-lower-alpha    { list-style-type: lower-alpha; }
+.u-list-upper-alpha    { list-style-type: upper-alpha; }
+.u-list-lower-roman    { list-style-type: lower-roman; }
+.u-list-upper-roman    { list-style-type: upper-roman; }
+
+.u-serif               { font-family: $font-family-serif; }
+.u-sans-serif          { font-family: $font-family-sans-serif; }
+
+.u-thin                { font-weight: 100; }
+.u-light               { font-weight: 300; }
+.u-regular             { font-weight: 400; }
+.u-medium              { font-weight: 600; }
+.u-bold                { font-weight: 700; }
+.u-ultra-bold          { font-weight: 900; }
+
+.u-normal              { font-style: normal; }
+.u-italic              { font-style: italic; }
+.u-oblique             { font-style: oblique; }
+
+.u-uppercase           { text-transform: uppercase; }
+.u-lowercase           { text-transform: lowercase; }
+
+.u-underline           { text-decoration: underline; }
+.u-overline            { text-decoration: overline; }
+.u-line-through        { text-decoration: line-through; }
+.u-no-decoration       { text-decoration: none; }
 
 }//endif
