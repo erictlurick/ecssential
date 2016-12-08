@@ -1,14 +1,14 @@
 @if (objects(tables) == true) {
 
-/*------------------------------------*\
-    OBJECTS / TABLES
-\*------------------------------------*/
+/* ==========================================================================
+   OBJECTS / TABLES
+   ========================================================================== */
 
 // Predefine the variables below in order to alter and enable specific features.
 $tables-namespace      : 'o-table' !default;
 
-$table-color-background: #f1f3f5!default;
-$table-color-border    : #e9ecef !default;
+$table-color-background: color(ui-light) !default;
+$table-color-border    : color(ui-medium) !default;
 
 
 /* Equal-width table cells.
