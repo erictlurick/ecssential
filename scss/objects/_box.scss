@@ -1,12 +1,22 @@
 @if (objects(box) == true) {
 
-/*------------------------------------*\
-    OBJECTS / BOX
-\*------------------------------------*/
+/* ==========================================================================
+   OBJECTS / BOX
+   ========================================================================== */
 
 /**
  * The box object simply boxes off content. Extend with cosmetic styles in the
  * Components layer.
+ *
+   <div class="o-box">
+     ...
+   </div>
+ *
+ * Size variant, e.g.:
+ *
+   <div class="[ o-box  o-box--small ]">
+     ...
+   </div>
  *
  * 1. So we can apply the `.o-box` class to naturally-inline elements.
  */
@@ -16,41 +26,39 @@ $box-namespace: 'o-box' !default;
 
 
 .#{$namespace}#{$box-namespace} {
-  @include clearfix();
-  display: block; /* [1] */
-  @include space(padding);
 
-  > :last-child {
+  &#{&} {
+    @include clearfix();
+    display: block; /* [1] */
+    @include space(padding);
+  }
+
+  & > :last-child {
     margin-bottom: 0;
   }
 
-}
+  // Size variants.
 
+  &.#{$namespace}#{$box-namespace}--flush {
+    padding: 0;
+  }
 
+  .#{$namespace}#{$box-namespace}--tiny {
+    @include space(padding, 0.25);
+  }
 
+  .#{$namespace}#{$box-namespace}--small {
+    @include space(padding, 0.5);
+  }
 
+  .#{$namespace}#{$box-namespace}--large {
+    @include space(padding, 1.5);
+  }
 
-/* Size variants
-   ========================================================================== */
+  .#{$namespace}#{$box-namespace}--huge {
+    @include space(padding, 2);
+  }
 
-.#{$namespace}#{$box-namespace}--flush {
-  padding: 0;
-}
-
-.#{$namespace}#{$box-namespace}--tiny {
-  @include space(padding, 0.25);
-}
-
-.#{$namespace}#{$box-namespace}--small {
-  @include space(padding, 0.5);
-}
-
-.#{$namespace}#{$box-namespace}--large {
-  @include space(padding, 1.5);
-}
-
-.#{$namespace}#{$box-namespace}--huge {
-  @include space(padding, 2);
 }
 
 }//endif
