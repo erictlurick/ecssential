@@ -13,17 +13,46 @@
 //  }
 
 $colors: (
-  'primary'   : $color-blue-5,
-  'text'      : rgba($color-gray-9, 0.9),
-  'muted'     : rgba($color-gray-6, 0.9),
-  'heading'   : rgba($color-gray-7, 0.9),
-  'background': $color-white,
-  'ui-dark'   : $color-gray-4,
-  'ui-medium' : $color-gray-2,
-  'ui-light'  : $color-gray-1,
-  'action'    : $color-blue-6,
-  'success'   : $color-green-5,
-	'error'     : $color-red-6,
-	'warning'   : $color-orange-4,
-	'info'      : $color-blue-4
+  'primary'    : $color-blue-5,
+  'text'       : $color-gray-7,
+  'text-soft'  : $color-gray-6,
+  'muted'      : $color-gray-5,
+  'headings'   : $color-gray-7,
+  'background' : $color-white,
+  'ui-dark'    : $color-gray-4,
+  'ui-medium'  : $color-gray-3,
+  'ui-light'   : $color-gray-1,
+  'ui-disabled': $color-gray-2,
+  'action'     : $color-blue-6,
+  'success'    : $color-green-5,
+	'error'      : $color-red-6,
+	'warning'    : $color-orange-4,
+	'info'       : $color-blue-4
 ) !default;
+
+
+
+
+
+// Colors map reader
+// ===========================================
+
+// Function to get colour values instead of using nested `map-gets`.
+//
+// Usage:
+//
+//  .foo {
+//    color: color(<key>);
+//  }
+//
+
+@function color($key) {
+
+  @if map-has-key($colors, $key) {
+    @return map-get($colors, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $colors.";
+  @return null;
+
+}
