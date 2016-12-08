@@ -1,0 +1,63 @@
+@if (trumps(spacings) == true) {
+
+/* ==========================================================================
+   TRUMPS / SPACINGS
+   ========================================================================== */
+
+/**
+ * Utility classes to put specific spacing values onto elements. The below loop
+ * will generate us a suite of classes like:
+ *
+ *   .u-margin-top {}
+ *   .u-padding-left-large {}
+ *   .u-margin-right-small {}
+ *   .u-padding {}
+ *   .u-padding-right-none {}
+ */
+
+$spacing-directions: (
+  null,
+  '-top',
+  '-right',
+  '-bottom',
+  '-left',
+);
+
+$spacing-properties: (
+  'margin',
+  'padding'
+);
+
+$spacing-sizes: (
+  null     : $base-spacing-unit,
+  '--tiny' : $base-spacing-unit-tiny,
+  '--small': $base-spacing-unit-small,
+  '--large': $base-spacing-unit-large,
+  '--huge' : $base-spacing-unit-huge,
+  '--none' : 0
+) !default;
+
+
+@each $property in $spacing-properties {
+
+  @each $direction in $spacing-directions {
+
+    @each $size, $value in $spacing-sizes {
+
+      .u-#{$property}#{$direction}#{$size} {
+
+        @if (fallback(pixels) == true) {
+          #{$property}#{$direction}: $value * ($base-font-size * $base-line-height) + px !important;
+        }//endif
+
+        #{$property}#{$direction}: $value * $base-line-height + rem !important;
+
+      }
+
+    }
+
+  }
+
+}
+
+}//endif
