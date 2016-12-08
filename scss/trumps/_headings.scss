@@ -1,8 +1,8 @@
 ﻿@if (trumps(headings) == true) {
 
-/*------------------------------------*\
-    TRUMPS / HEADINGS
-\*------------------------------------*/
+/* ==========================================================================
+   TRUMPS / HEADINGS
+   ========================================================================== */
 
 /**
  * Headings 1–6’s corresponding Greek-alphabet abstract classes for double-
@@ -15,11 +15,11 @@
  *
  */
 
-.u-h1-size, %u-h1-size { @extend %headings; @include type(4, 0, 1); }
-.u-h2-size, %u-h2-size { @extend %headings; @include type(3, 0, 1); }
-.u-h3-size, %u-h3-size { @extend %headings; @include type(2, 0, 0); }
-.u-h4-size, %u-h4-size { @extend %headings; @include type(0, 0, 0); }
-.u-h5-size, %u-h5-size { @extend %headings; @include type(0, 0, 0); }
-.u-h6-size, %u-h6-size { @extend %headings; @include type(0, 0, 0); }
+.u-h1-size { @extend %headings; @include type(4, 0, 1); }
+.u-h2-size { @extend %headings; @include type(3, 0, 1); }
+.u-h3-size { @extend %headings; @include type(2, 0, 0); }
+.u-h4-size { @extend %headings; @include type(0, 0, 0); }
+.u-h5-size { @extend %headings; @include type(0, 0, 0); }
+.u-h6-size { @extend %headings; @include type(0, 0, 0); }
 
 }//endif
