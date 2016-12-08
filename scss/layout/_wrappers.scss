@@ -1,8 +1,8 @@
 @if (layout(wrappers) == true) {
 
-/*------------------------------------*\
-    LAYOUT / WRAPPERS
-\*------------------------------------*/
+/* ==========================================================================
+   LAYOUT / WRAPPERS
+   ========================================================================== */
 
 /**
  * Use wrappers when you need a content area that is a standardized width and centered on the page.
@@ -16,27 +16,28 @@ $wrapper-width-narrow: 33em !default;
 
 
 .#{$namespace}#{$wrapper-prefix} {
-  margin-right: auto;
-  margin-left: auto;
-  @include space(padding-right);
-  @include space(padding-left);
-}
 
+  &#{&} {
+    margin-right: auto;
+    margin-left : auto;
+    @include space(padding-right);
+    @include space(padding-left);
+  }
 
-  /**
-   * Size variants.
-   */
+  // Size variants.
 
-  .#{$namespace}#{$wrapper-prefix}--large {
+  &.#{$namespace}#{$wrapper-prefix}--large {
     max-width: $wrapper-width-large;
   }
 
-  .#{$namespace}#{$wrapper-prefix}--medium {
+  &.#{$namespace}#{$wrapper-prefix}--medium {
     max-width: $wrapper-width-medium;
   }
 
-  .#{$namespace}#{$wrapper-prefix}--narrow {
+  &.#{$namespace}#{$wrapper-prefix}--narrow {
     max-width: $wrapper-width-narrow;
   }
+
+}
 
 }//endif
