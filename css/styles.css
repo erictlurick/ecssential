@@ -93,10 +93,10 @@
                         Boilerplate.
 
  */
-@import "https://fonts.googleapis.com/css?family=Gentium+Basic:400,400i,700,700i|Open+Sans+Condensed:700&subset=latin-ext";
-/*------------------------------------*\
-    GENERIC / RESET
-\*------------------------------------*/
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,600italic|PT+Serif:700);
+/* ==========================================================================
+   GENERIC / RESET
+   ========================================================================== */
 /*
  * Normalization
  */
@@ -287,9 +287,9 @@ select::-ms-value {
   vertical-align: middle !important;
 }
 
-/*------------------------------------*\
-    GENERIC / BOX-SIZING
-\*------------------------------------*/
+/* ==========================================================================
+   GENERIC / BOX-SIZING
+   ========================================================================== */
 /**
  * Set the global `box-sizing` state to `border-box`.
  *
@@ -308,9 +308,9 @@ html {
   box-sizing: inherit;
 }
 
-/*------------------------------------*\
-    GENERIC / SHARED
-\*------------------------------------*/
+/* ==========================================================================
+   GENERIC / SHARED
+   ========================================================================== */
 /**
  * Where `margin-bottom` is concerned,this value will be the same as the
  * base line-height. This allows us to keep a consistent vertical rhythm.
@@ -332,9 +332,9 @@ ul, ol {
   margin-left: 1.5rem;
 }
 
-/*------------------------------------*\
-    ELEMENTS / PAGE
-\*------------------------------------*/
+/* ==========================================================================
+   ELEMENTS / PAGE
+   ========================================================================== */
 /**
  * Simple page-level setup.
  *
@@ -357,13 +357,13 @@ html {
   /* [2] */
   overflow-y: scroll;
   /* [3] */
-  font-family: "Gentium Basic", Georgia, Times, "Times New Roman", serif;
+  font-family: Georgia, Times, "Times New Roman", serif;
   font-size: 1em;
   /* [4] */
   line-height: 1.5;
   /* [4] */
   font-weight: 400;
-  color: rgba(33, 37, 41, 0.9);
+  color: #495057;
   background-color: #fff;
   -webkit-text-size-adjust: 100%;
   /* [5] */
@@ -381,23 +381,6 @@ html {
   }
 }
 
-html {
-  position: relative;
-}
-
-html::after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  z-index: -1;
-  width: 100%;
-  height: auto;
-  background-image: linear-gradient(#ffcadf 1px, transparent 1px, transparent 0.75rem, #e2d1fb 0.75rem, transparent 0.8125rem);
-  background-size: 100% 1.5em;
-}
-
 body {
   overflow-wrap: break-word;
   word-wrap: break-word;
@@ -407,15 +390,14 @@ body {
   hyphen: auto;
 }
 
-/*------------------------------------*\
-    ELEMENTS / HEADINGS
-\*------------------------------------*/
+/* ==========================================================================
+   ELEMENTS / HEADINGS
+   ========================================================================== */
 h1, h2, h3, h4, h5, h6, .u-h1-size, .u-h2-size, .u-h3-size, .u-h4-size, .u-h5-size, .u-h6-size {
-  font-family: "Open Sans Condensed", "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
   font-weight: 600;
-  letter-spacing: -.028em;
   word-wrap: break-word;
-  color: rgba(73, 80, 87, 0.9);
+  color: #495057;
 }
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, .u-h1-size a, .u-h2-size a, .u-h3-size a, .u-h4-size a, .u-h5-size a, .u-h6-size a {
   font-weight: inherit;
@@ -426,7 +408,7 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .u-h1-size small, .u
   vertical-align: baseline;
   font-size: 75%;
   line-height: 1;
-  color: rgba(134, 142, 150, 0.9);
+  color: #868e96;
 }
 @media (min-width: 45em) {
   h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .u-h1-size small, .u-h2-size small, .u-h3-size small, .u-h4-size small, .u-h5-size small, .u-h6-size small {
@@ -496,9 +478,9 @@ h6[aria-hidden] {
   overflow: hidden !important;
 }
 
-/*------------------------------------*\
-    ELEMENTS / TYPOGRAPHY
-\*------------------------------------*/
+/* ==========================================================================
+   ELEMENTS / TYPOGRAPHY
+   ========================================================================== */
 /**
  * http://meyerweb.com/eric/thoughts/2012/12/17/where-to-avoid-css-hyphenation
  */
@@ -551,7 +533,6 @@ b,
 strong {
   font-weight: 700;
   /* [1] */
-  color: rgba(73, 80, 87, 0.9);
 }
 
 /**
@@ -570,7 +551,7 @@ dfn {
 mark {
   padding-right: 0.1em;
   padding-left: 0.1em;
-  color: rgba(33, 37, 41, 0.9);
+  color: #495057;
   /* [1] */
   background-color: transparent !important;
   /* [1] */
@@ -589,7 +570,7 @@ ins {
   padding-right: 0.1em;
   padding-left: 0.1em;
   text-decoration: none;
-  color: rgba(33, 37, 41, 0.9);
+  color: #495057;
   background-color: transparent !important;
   background-image: linear-gradient(to bottom, #e0f4ff, #e0f4ff);
 }
@@ -601,14 +582,14 @@ del {
   padding-right: 0.1em;
   padding-left: 0.1em;
   text-decoration: none;
-  color: rgba(33, 37, 41, 0.9);
+  color: #495057;
   background-color: transparent !important;
   background-image: linear-gradient(to bottom, #ffa8a8, #ffa8a8);
 }
 
 s {
   text-decoration: line-through;
-  color: rgba(33, 37, 41, 0.9);
+  color: #495057;
   opacity: .5;
 }
 
@@ -679,7 +660,7 @@ hr {
 hr:after {
   content: "• • •";
   position: absolute;
-  top: 1.53rem;
+  top: 1.425rem;
   right: 0;
   left: 0;
   line-height: 0;
@@ -688,9 +669,9 @@ hr:after {
   color: #495057;
 }
 
+/* Dropcaps
+   ========================================================================== */
 /**
- * Dropcaps.
- *
  * The font size and margins used on lines 8 and 10 of the code above vary for
  * different typefaces. The following table provides values for two heights of
  * drop cap for each of four common typefaces.
@@ -717,51 +698,67 @@ hr:after {
   color: inherit;
 }
 
+/* Lede
+   ========================================================================== */
 /**
  * The `.u-lede` class is used to make the introductory text (usually a paragraph)
  * of a document slightly larger: en.wikipedia.org/wiki/Lede_(news)
  */
 .u-lede {
-  font-family: "Open Sans Condensed", "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
   margin-bottom: 1.5rem;
   font-size: 1.3125rem;
   line-height: 1.5rem;
-  color: rgba(73, 80, 87, 0.9);
+  color: #495057;
 }
 
-/*------------------------------------*\
-    ELEMENTS / ANCHORS
-\*------------------------------------*/
+/* ==========================================================================
+   ELEMENTS / ANCHORS
+   ========================================================================== */
 /**
  * 1. Remove the gray background color from active links in IE 10.
  * 2. Improve readability when focused and also mouse hovered in all browsers.
  */
 a {
-  font-weight: 700;
   text-decoration: none;
   color: #228ae6;
   background-color: transparent;
   /* [1] */
-  border-bottom-width: 1px;
+  border-bottom: 1px solid currentColor;
   transition: all 0.25s ease-out;
 }
 
-a:hover, a:active, a:focus {
+a:hover,
+a:active,
+a:focus {
   color: #187dd6;
   outline: 0;
   /* [2] */
 }
 
+/**
+ * Make all links feel subtly more button-like.
+ *
+ * Setting a different positioning value for the active state of a link is
+ * something you need to be very careful about. If you have any links on your
+ * site that are absolutely positioned, having the active state change to
+ * relative position will (probably) make them go flying away and render them
+ * unclickable. You can fix this on a case-by-case basis by making the active
+ * state of those links retain absolute positioning, and even make their top
+ * value one higher (or bottom value one lower).
+ */
 a:active {
   position: relative;
   top: 1px;
 }
 
+/**
+ * Additional info.
+ */
 a:before,
 a:after {
   font-size: 0.75rem;
   line-height: 1;
-  font-weight: 400;
   vertical-align: baseline;
 }
 
@@ -773,9 +770,9 @@ a abbr {
   border: 0 !important;
 }
 
-/*------------------------------------*\
-    #QUOTES
-\*------------------------------------*/
+/* ==========================================================================
+   ELEMENTS / QUOTES
+   ========================================================================== */
 :lang(fr) q {
   quotes: "\00AB\00A0" "\00A0\00BB" "\201C" "\201D" "\2018" "\2019";
 }
@@ -851,9 +848,9 @@ blockquote footer {
   /* 1 */
 }
 
-/*------------------------------------*\
-    ELEMENTS / CODE
-\*------------------------------------*/
+/* ==========================================================================
+   ELEMENTS / CODE
+   ========================================================================== */
 /**
  * 1. Fix an odd quirk whereby, without this, code blocks are rendered at a
  *    font-size smaller than 1rem.
@@ -867,9 +864,9 @@ samp {
   font-size: 1rem;
   /* [1] */
   text-shadow: 0 1px #fff;
-  color: rgba(33, 37, 41, 0.9);
+  color: #495057;
   background-color: #f1f3f5;
-  border-radius: 0;
+  border-radius: 3px;
 }
 
 code,
@@ -900,9 +897,9 @@ pre code {
   border-radius: none;
 }
 
-/*------------------------------------*\
-    ELEMENTS / FORMS
-\*------------------------------------*/
+/* ==========================================================================
+   ELEMENTS / FORMS
+   ========================================================================== */
 label {
   display: block;
 }
@@ -951,11 +948,11 @@ textarea {
   height: 1.5rem;
   padding-right: 0.375rem;
   padding-left: 0.375rem;
-  color: rgba(33, 37, 41, 0.9);
+  color: #495057;
   background-color: #fff;
   border: none;
-  border-radius: 0;
-  box-shadow: 0px 0px 0px 1px #e9ecef;
+  border-radius: 3px;
+  box-shadow: 0px 0px 0px 1px #dee2e6;
   transition: all 0.25s ease-out;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -1033,7 +1030,7 @@ select[readonly],
 textarea[disabled],
 textarea[readonly] {
   font-style: italic;
-  color: #c4cdd5;
+  color: #e9ecef;
 }
 input[type="text"][disabled],
 input[type="password"][disabled],
@@ -1056,21 +1053,27 @@ textarea[disabled] {
 
 /**
  * Placeholder attribute text.
+ *
+ * 1. In Firefox, placeholder text has a default opacity of around 0.5 so setting
+ *    color: red on the placeholder will result in a muted color unless you also
+ *    set opacity: 1.
  */
 input::-webkit-input-placeholder {
-  color: #ccc;
+  color: #adb5bd;
 }
 
 input::-moz-placeholder {
-  color: #ccc;
+  color: #adb5bd;
+  opacity: 1;
 }
 
+/* [1] */
 input:-ms-input-placeholder {
-  color: #ccc;
+  color: #adb5bd;
 }
 
 input::placeholder {
-  color: #ccc;
+  color: #adb5bd;
 }
 
 /**
@@ -1091,7 +1094,7 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  -webkit-text-fill-color: rgba(33, 37, 41, 0.9) !important;
+  -webkit-text-fill-color: #495057 !important;
   /* [1] */
   -webkit-box-shadow: 0 0 0px 1000px white inset !important;
   /* [2] */
@@ -1111,16 +1114,16 @@ select {
   height: 1.5rem;
 }
 
-/*------------------------------------*\
-    ELEMENTS / LISTS
-\*------------------------------------*/
+/* ==========================================================================
+   ELEMENTS / LISTS
+   ========================================================================== */
 /**
  * Remove trailing margins from nested lists.
  */
 li > ul,
 li > ol {
   margin-bottom: 0;
-  margin-left: 0;
+  margin-left: 1em;
 }
 
 /**
@@ -1132,9 +1135,9 @@ nav ol {
   list-style: none;
 }
 
-/*------------------------------------*\
-    ELEMENTS / TABLES
-\*------------------------------------*/
+/* ==========================================================================
+   ELEMENTS / TABLES
+   ========================================================================== */
 /**
  * Crude table styles; tables are very difficult to keep on the baseline.
  *
@@ -1153,28 +1156,22 @@ thead {
 }
 thead > tr > th {
   position: relative;
-  border-style: solid;
-  border-color: #e9ecef;
 }
-thead > tr > th:after {
+thead > tr > th::after {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(to bottom, transparent 50%, #e9ecef 50%);
-  /* [1] */
+  background-image: linear-gradient(to bottom, transparent 50%, #ced4da 50%);
   background-position: 0 bottom;
-  /* [1] */
   background-repeat: repeat-x;
-  /* [1] */
-  background-size: 100% 0.1rem;
-  /* [1] */
+  background-size: 100% 2px;
 }
 
 tr:hover {
-  background-color: rgba(241, 243, 245, 0.5);
+  background-color: rgba(248, 249, 250, 0.5);
 }
 
 th, td {
@@ -1192,9 +1189,9 @@ caption {
   /* [1] */
 }
 
-/*------------------------------------*\
-    ELEMENTS / MEDIA
-\*------------------------------------*/
+/* ==========================================================================
+   ELEMENTS / MEDIA
+   ========================================================================== */
 /**
  * 1. Fluid images for responsive purposes.
  * 2. Preserve image ratio.
@@ -1204,11 +1201,6 @@ caption {
  *    elements when they are dropped into a page as-is. Safer alternative to
  *    using `display: block;`.
  * 6. Remove border when inside `a` element in IE 8/9/10.
- * 7. Broken images are ugly. But they don't always have to be. We can use CSS
- *    to apply styles to the <img> element to provide a better experience than
- *    the default. when the image is broken and not loaded, the
- *    pseudo-elements can appear.
- *    @ireaderinokun http://bitsofco.de/styling-broken-images/
  */
 img,
 canvas,
@@ -1267,21 +1259,22 @@ figcaption {
   line-height: 1.5rem;
   text-align: left;
   /* [1] */
+  color: #868e96;
 }
 
 /**
  * Image placement variations
  */
 @media (min-width: 45em) {
-  img.is-pushed-right,
-  figure.is-pushed-right {
+  img.u-pushed-right,
+  figure.u-pushed-right {
     float: right;
     width: 33.333%;
     margin-left: 1.5rem;
   }
 
-  img.is-pulled-left,
-  figure.is-pulled-left {
+  img.u-pulled-left,
+  figure.u-pulled-left {
     float: left;
     width: 33.333%;
     margin-right: 1.5rem;
@@ -1310,7 +1303,7 @@ img.is-broken {
   position: relative;
   outline: none;
 }
-img.is-broken:before {
+img.is-broken::before {
   content: '';
   position: absolute;
   top: 0;
@@ -1327,9 +1320,9 @@ img.is-broken:before {
   text-align: center;
   text-shadow: 0 1px #fff;
   color: inherit;
-  background-color: #f2f2f2;
+  background-color: #f1f3f5;
 }
-img.is-broken:after {
+img.is-broken::after {
   content: '';
   position: absolute;
   top: 50%;
@@ -1349,16 +1342,16 @@ img.is-broken:after {
   background-color: transparent;
 }
 
-/*------------------------------------*\
-    ELEMENTS / SELECTIONS
-\*------------------------------------*/
+/* ==========================================================================
+   ELEMENTS / SELECTIONS
+   ========================================================================== */
 /**
  * 1. Customize `background` for text selections.
  * 2. Remove `text-shadow` selection highlight - http://cbrac.co/Q6swON
  */
 ::-moz-selection {
   color: #fff;
-  background-color: #329af0;
+  background-color: #228ae6;
   /* 1 */
   text-shadow: none;
   /* 2 */
@@ -1366,7 +1359,7 @@ img.is-broken:after {
 
 ::selection {
   color: #fff;
-  background-color: #329af0;
+  background-color: #228ae6;
   /* 1 */
   text-shadow: none;
   /* 2 */
@@ -1390,9 +1383,9 @@ img::-moz-selection {
   background-color: transparent;
 }
 
-/*------------------------------------*\
-    LAYOUT / GRID
-\*------------------------------------*/
+/* ==========================================================================
+   LAYOUT / GRID
+   ========================================================================== */
 /**
  * Basic grid.
  *
@@ -1408,7 +1401,7 @@ img::-moz-selection {
  *
  * @philwalton https://github.com/philipwalton/solved-by-flexbox/blob/master/assets/css/components/grid.css
  */
-.l-grid {
+.l-grid.l-grid {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-flex;
@@ -1419,19 +1412,25 @@ img::-moz-selection {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin: 0;
-  margin-left: 0;
   padding: 0;
   list-style: none;
 }
-
-.l-grid__item {
+.l-grid .l-grid__item {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
   -moz-box-flex: 1;
   -moz-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  margin-left: 0;
+}
+
+/* Grid gutter
+   ========================================================================== */
+.l-grid--gutter.l-grid--gutter {
+  margin-left: -1.5rem;
+}
+.l-grid--gutter.l-grid--gutter .l-grid__item {
+  margin-left: 1.5rem;
 }
 
 /* Individual Sizing
@@ -1444,117 +1443,117 @@ img::-moz-selection {
 /**
  * A mobile-first approach.
  */
-.l-grid__item.is-1\/1 {
+.l-grid__item.l-1\/1 {
   -webkit-box-flex: 0;
-  -webkit-flex: 0 0 calc(100% - 0);
+  -webkit-flex: 0 0 calc(100% - 1.5rem);
   -moz-box-flex: 0;
-  -moz-flex: 0 0 calc(100% - 0);
-  -ms-flex: 0 0 calc(100% - 0);
-  flex: 0 0 calc(100% - 0);
+  -moz-flex: 0 0 calc(100% - 1.5rem);
+  -ms-flex: 0 0 calc(100% - 1.5rem);
+  flex: 0 0 calc(100% - 1.5rem);
 }
 
-.l-grid__item.is-1\/2 {
+.l-grid__item.l-1\/2 {
   -webkit-box-flex: 0;
-  -webkit-flex: 0 0 calc(50% - 0);
+  -webkit-flex: 0 0 calc(50% - 1.5rem);
   -moz-box-flex: 0;
-  -moz-flex: 0 0 calc(50% - 0);
-  -ms-flex: 0 0 calc(50% - 0);
-  flex: 0 0 calc(50% - 0);
+  -moz-flex: 0 0 calc(50% - 1.5rem);
+  -ms-flex: 0 0 calc(50% - 1.5rem);
+  flex: 0 0 calc(50% - 1.5rem);
 }
 
-.l-grid__item.is-1\/3 {
+.l-grid__item.l-1\/3 {
   -webkit-box-flex: 0;
-  -webkit-flex: 0 0 calc(33.3333% - 0);
+  -webkit-flex: 0 0 calc(33.3333% - 1.5rem);
   -moz-box-flex: 0;
-  -moz-flex: 0 0 calc(33.3333% - 0);
-  -ms-flex: 0 0 calc(33.3333% - 0);
-  flex: 0 0 calc(33.3333% - 0);
+  -moz-flex: 0 0 calc(33.3333% - 1.5rem);
+  -ms-flex: 0 0 calc(33.3333% - 1.5rem);
+  flex: 0 0 calc(33.3333% - 1.5rem);
 }
 
-.l-grid__item.is-1\/4 {
+.l-grid__item.l-1\/4 {
   -webkit-box-flex: 0;
-  -webkit-flex: 0 0 calc(25% - 0);
+  -webkit-flex: 0 0 calc(25% - 1.5rem);
   -moz-box-flex: 0;
-  -moz-flex: 0 0 calc(25% - 0);
-  -ms-flex: 0 0 calc(25% - 0);
-  flex: 0 0 calc(25% - 0);
+  -moz-flex: 0 0 calc(25% - 1.5rem);
+  -ms-flex: 0 0 calc(25% - 1.5rem);
+  flex: 0 0 calc(25% - 1.5rem);
 }
 
 /**
  * Responsive modifiers.
  */
 @media (min-width: 45em) {
-  .l-grid__item.is-1\/1\@medium {
+  .l-grid__item.l-1\/1\@medium {
     -webkit-box-flex: 0;
-    -webkit-flex: 0 0 calc(100% - 0);
+    -webkit-flex: 0 0 calc(100% - 1.5rem);
     -moz-box-flex: 0;
-    -moz-flex: 0 0 calc(100% - 0);
-    -ms-flex: 0 0 calc(100% - 0);
-    flex: 0 0 calc(100% - 0);
+    -moz-flex: 0 0 calc(100% - 1.5rem);
+    -ms-flex: 0 0 calc(100% - 1.5rem);
+    flex: 0 0 calc(100% - 1.5rem);
   }
 
-  .l-grid__item.is-1\/2\@medium {
+  .l-grid__item.l-1\/2\@medium {
     -webkit-box-flex: 0;
-    -webkit-flex: 0 0 calc(50% - 0);
+    -webkit-flex: 0 0 calc(50% - 1.5rem);
     -moz-box-flex: 0;
-    -moz-flex: 0 0 calc(50% - 0);
-    -ms-flex: 0 0 calc(50% - 0);
-    flex: 0 0 calc(50% - 0);
+    -moz-flex: 0 0 calc(50% - 1.5rem);
+    -ms-flex: 0 0 calc(50% - 1.5rem);
+    flex: 0 0 calc(50% - 1.5rem);
   }
 
-  .l-grid__item.is-1\/3\@medium {
+  .l-grid__item.l-1\/3\@medium {
     -webkit-box-flex: 0;
-    -webkit-flex: 0 0 calc(33.3333% - 0);
+    -webkit-flex: 0 0 calc(33.3333% - 1.5rem);
     -moz-box-flex: 0;
-    -moz-flex: 0 0 calc(33.3333% - 0);
-    -ms-flex: 0 0 calc(33.3333% - 0);
-    flex: 0 0 calc(33.3333% - 0);
+    -moz-flex: 0 0 calc(33.3333% - 1.5rem);
+    -ms-flex: 0 0 calc(33.3333% - 1.5rem);
+    flex: 0 0 calc(33.3333% - 1.5rem);
   }
 
-  .l-grid__item.is-1\/4\@medium {
+  .l-grid__item.l-1\/4\@medium {
     -webkit-box-flex: 0;
-    -webkit-flex: 0 0 calc(25% - 0);
+    -webkit-flex: 0 0 calc(25% - 1.5rem);
     -moz-box-flex: 0;
-    -moz-flex: 0 0 calc(25% - 0);
-    -ms-flex: 0 0 calc(25% - 0);
-    flex: 0 0 calc(25% - 0);
+    -moz-flex: 0 0 calc(25% - 1.5rem);
+    -ms-flex: 0 0 calc(25% - 1.5rem);
+    flex: 0 0 calc(25% - 1.5rem);
   }
 }
 @media (min-width: 60em) {
-  .l-grid__item.is-1\/1\@large {
+  .l-grid__item.l-1\/1\@large {
     -webkit-box-flex: 0;
-    -webkit-flex: 0 0 calc(100% - 0);
+    -webkit-flex: 0 0 calc(100% - 1.5rem);
     -moz-box-flex: 0;
-    -moz-flex: 0 0 calc(100% - 0);
-    -ms-flex: 0 0 calc(100% - 0);
-    flex: 0 0 calc(100% - 0);
+    -moz-flex: 0 0 calc(100% - 1.5rem);
+    -ms-flex: 0 0 calc(100% - 1.5rem);
+    flex: 0 0 calc(100% - 1.5rem);
   }
 
-  .l-grid__item.is-1\/2\@large {
+  .l-grid__item.l-1\/2\@large {
     -webkit-box-flex: 0;
-    -webkit-flex: 0 0 calc(50% - 0);
+    -webkit-flex: 0 0 calc(50% - 1.5rem);
     -moz-box-flex: 0;
-    -moz-flex: 0 0 calc(50% - 0);
-    -ms-flex: 0 0 calc(50% - 0);
-    flex: 0 0 calc(50% - 0);
+    -moz-flex: 0 0 calc(50% - 1.5rem);
+    -ms-flex: 0 0 calc(50% - 1.5rem);
+    flex: 0 0 calc(50% - 1.5rem);
   }
 
-  .l-grid__item.is-1\/3\@large {
+  .l-grid__item.l-1\/3\@large {
     -webkit-box-flex: 0;
-    -webkit-flex: 0 0 calc(33.3333% - 0);
+    -webkit-flex: 0 0 calc(33.3333% - 1.5rem);
     -moz-box-flex: 0;
-    -moz-flex: 0 0 calc(33.3333% - 0);
-    -ms-flex: 0 0 calc(33.3333% - 0);
-    flex: 0 0 calc(33.3333% - 0);
+    -moz-flex: 0 0 calc(33.3333% - 1.5rem);
+    -ms-flex: 0 0 calc(33.3333% - 1.5rem);
+    flex: 0 0 calc(33.3333% - 1.5rem);
   }
 
-  .l-grid__item.is-1\/4\@large {
+  .l-grid__item.l-1\/4\@large {
     -webkit-box-flex: 0;
-    -webkit-flex: 0 0 calc(25% - 0);
+    -webkit-flex: 0 0 calc(25% - 1.5rem);
     -moz-box-flex: 0;
-    -moz-flex: 0 0 calc(25% - 0);
-    -ms-flex: 0 0 calc(25% - 0);
-    flex: 0 0 calc(25% - 0);
+    -moz-flex: 0 0 calc(25% - 1.5rem);
+    -ms-flex: 0 0 calc(25% - 1.5rem);
+    flex: 0 0 calc(25% - 1.5rem);
   }
 }
 /* Alignment features
@@ -1645,49 +1644,53 @@ img::-moz-selection {
   flex: none;
 }
 
-/*------------------------------------*\
-    LAYOUT / WRAPPERS
-\*------------------------------------*/
+/* ==========================================================================
+   LAYOUT / WRAPPERS
+   ========================================================================== */
 /**
  * Use wrappers when you need a content area that is a standardized width and centered on the page.
  */
-.l-wrapper {
+.l-wrapper.l-wrapper {
   margin-right: auto;
   margin-left: auto;
   padding-right: 1.5rem;
   padding-left: 1.5rem;
 }
-
-/**
- * Size variants.
- */
-.l-wrapper--large {
+.l-wrapper.l-wrapper--large {
   max-width: 74.551em;
 }
-
-.l-wrapper--medium {
+.l-wrapper.l-wrapper--medium {
   max-width: 55.927em;
 }
-
-.l-wrapper--narrow {
+.l-wrapper.l-wrapper--narrow {
   max-width: 48em;
 }
 
-/*------------------------------------*\
-    OBJECTS / BOX
-\*------------------------------------*/
+/* ==========================================================================
+   OBJECTS / BOX
+   ========================================================================== */
 /**
  * The box object simply boxes off content. Extend with cosmetic styles in the
  * Components layer.
  *
+   <div class="o-box">
+     ...
+   </div>
+ *
+ * Size variant, e.g.:
+ *
+   <div class="[ o-box  o-box--small ]">
+     ...
+   </div>
+ *
  * 1. So we can apply the `.o-box` class to naturally-inline elements.
  */
-.o-box {
+.o-box.o-box {
   display: block;
   /* [1] */
   padding: 1.5rem;
 }
-.o-box:after {
+.o-box.o-box:after {
   content: "";
   display: table;
   clear: both;
@@ -1695,32 +1698,42 @@ img::-moz-selection {
 .o-box > :last-child {
   margin-bottom: 0;
 }
-
-/* Size variants
-   ========================================================================== */
-.o-box--flush {
+.o-box.o-box--flush {
   padding: 0;
 }
-
-.o-box--tiny {
+.o-box .o-box--tiny {
   padding: 0.375rem;
 }
-
-.o-box--small {
+.o-box .o-box--small {
   padding: 0.75rem;
 }
-
-.o-box--large {
+.o-box .o-box--large {
   padding: 2.25rem;
 }
-
-.o-box--huge {
+.o-box .o-box--huge {
   padding: 3rem;
 }
 
-/*------------------------------------*\
-    OBJECTS / FORM-FIELDS
-\*------------------------------------*/
+/* ==========================================================================
+   OBJECTS / ELEVATION
+   ========================================================================== */
+/**
+ * Three levels of consistent box-shadows for any element.
+ */
+.o-elevation.o-elevation {
+  border: none;
+  box-shadow: 0 0 1px #dee2e6, 0 5px 10px -3px #ced4da;
+}
+.o-elevation.o-elevation--large {
+  box-shadow: 0 0 1px #dee2e6, 0 10px 25px -4px #ced4da;
+}
+.o-elevation.o-elevation--huge {
+  box-shadow: 0 0 1px #dee2e6, 0 20px 55px -8px #ced4da;
+}
+
+/* ==========================================================================
+   OBJECTS / FORM-FIELDS
+   ========================================================================== */
 /**
  * Group sets of form fields in a list, e.g.:
  *
@@ -1742,9 +1755,9 @@ img::-moz-selection {
   margin-bottom: 0.75rem;
 }
 
-/*------------------------------------*\
-    OBJECTS / FORM-HELPERS
-\*------------------------------------*/
+/* ==========================================================================
+   OBJECTS / FORM-HELPERS
+   ========================================================================== */
 /**
  * Extra help text displayed after a field when that field is in focus and invalid, e.g.:
  *
@@ -1781,9 +1794,9 @@ img::-moz-selection {
   padding-left: 0.375rem;
 }
 
-/*------------------------------------*\
-    OBJECTS / ICONS
-\*------------------------------------*/
+/* ==========================================================================
+   OBJECTS / ICONS
+   ========================================================================== */
 /**
  * Using locally defined (inlined) SVG graphics.
  * The storage limit is usually 5 MB per domain. This is more than enough for
@@ -1792,115 +1805,115 @@ img::-moz-selection {
  * works asynchronously. If you put the code at the head of the document, the
  * icons will load a little bit faster.
  *
-	<script>
-		// Storing SVG Sprite in localStorage
-		;( function( window, document )
-		{
-			'use strict';
-			var file	 = 'img/icons/svg/svg.html',
-				revision = 2;
-			if( !document.createElementNS || !document.createElementNS( 'http://www.w3.org/2000/svg', 'svg' ).createSVGRect )
-				return true;
-			var isLocalStorage = 'localStorage' in window && window[ 'localStorage' ] !== null,
-				request,
-				data,
-				insertIT = function()
-				{
-					document.body.insertAdjacentHTML( 'afterbegin', data );
-				},
-				insert = function()
-				{
-					if( document.body ) insertIT();
-					else document.addEventListener( 'DOMContentLoaded', insertIT );
-				};
-			if( isLocalStorage && localStorage.getItem( 'inlineSVGrev' ) == revision )
-			{
-				data = localStorage.getItem( 'inlineSVGdata' );
-				if( data )
-				{
-					insert();
-					return true;
-				}
-			}
-			try
-			{
-				request = new XMLHttpRequest();
-				request.open( 'GET', file, true );
-				request.onload = function()
-				{
-					if( request.status >= 200 && request.status < 400 )
-					{
-						data = request.responseText;
-						insert();
-						if( isLocalStorage )
-						{
-							localStorage.setItem( 'inlineSVGdata',	data );
-							localStorage.setItem( 'inlineSVGrev',	revision );
-						}
-					}
-				}
-				request.send();
-			}
-			catch( e ){}
-		}( window, document ) );
-	</script>
+  <script>
+    // Storing SVG Sprite in localStorage
+    ;( function( window, document )
+    {
+      'use strict';
+      var file   = 'img/icons/svg/svg.html',
+        revision = 2;
+      if( !document.createElementNS || !document.createElementNS( 'http://www.w3.org/2000/svg', 'svg' ).createSVGRect )
+        return true;
+      var isLocalStorage = 'localStorage' in window && window[ 'localStorage' ] !== null,
+        request,
+        data,
+        insertIT = function()
+        {
+          document.body.insertAdjacentHTML( 'afterbegin', data );
+        },
+        insert = function()
+        {
+          if( document.body ) insertIT();
+          else document.addEventListener( 'DOMContentLoaded', insertIT );
+        };
+      if( isLocalStorage && localStorage.getItem( 'inlineSVGrev' ) == revision )
+      {
+        data = localStorage.getItem( 'inlineSVGdata' );
+        if( data )
+        {
+          insert();
+          return true;
+        }
+      }
+      try
+      {
+        request = new XMLHttpRequest();
+        request.open( 'GET', file, true );
+        request.onload = function()
+        {
+          if( request.status >= 200 && request.status < 400 )
+          {
+            data = request.responseText;
+            insert();
+            if( isLocalStorage )
+            {
+              localStorage.setItem( 'inlineSVGdata',  data );
+              localStorage.setItem( 'inlineSVGrev', revision );
+            }
+          }
+        }
+        request.send();
+      }
+      catch( e ){}
+    }( window, document ) );
+  </script>
  *
  * There are two lines you need to configure on your own:
  *
-	var file     = 'img/icons/svg/svg.html',
-		revision = 1;
+  var file     = 'img/icons/svg/svg.html',
+    revision = 1;
  *
  * The svg.html usually looks this:
  *
-	<svg style="display: none;" aria-hidden="true">
-		<symbol id="svg-plane" viewbox="0 0 510 510"><path d="..." /></symbol>
-		<symbol id="svg-close" viewbox="0 0 357 357"><path d="..." /></symbol>
-		<symbol id="svg-fav" viewbox="0 0 510 510"><path d="..." /></symbol>
-		<symbol id="svg-share" viewbox="0 0 459 459"><path d="..." /></symbol>
-		<symbol id="svg-cart" viewbox="0 0 510 510"><path d="..." /></symbol>
-		<symbol id="svg-tick" viewbox="0 0 510 510"><path d="..." /></symbol>
-	</svg>
+  <svg style="display: none;" aria-hidden="true">
+    <symbol id="svg-plane" viewbox="0 0 510 510"><path d="..." /></symbol>
+    <symbol id="svg-close" viewbox="0 0 357 357"><path d="..." /></symbol>
+    <symbol id="svg-fav" viewbox="0 0 510 510"><path d="..." /></symbol>
+    <symbol id="svg-share" viewbox="0 0 459 459"><path d="..." /></symbol>
+    <symbol id="svg-cart" viewbox="0 0 510 510"><path d="..." /></symbol>
+    <symbol id="svg-tick" viewbox="0 0 510 510"><path d="..." /></symbol>
+  </svg>
  *
  * If a browser does not support SVG, we can rely on raster images and JavaScript
  * fallback. We need data-img attribute for specifying the location of raster
  * image, for example:
  *
-	<svg><use xlink:href="#svg-cart" data-img="img/icons/png/cart.png"></use></svg>
+  <svg><use xlink:href="#svg-cart" data-img="img/icons/png/cart.png"></use></svg>
  *
  * You have to register svg and use elements so that the fallback code can later
  * operate them. This should be placed at the document head, best before the first
  * <script> occurence:
  *
-	;( function( window, document ) {
-		if( document.createElementNS && document.createElementNS( 'http://www.w3.org/2000/svg', 'svg' ).createSVGRect ) return true;
-		var uses = document.getElementsByTagName( 'use' ), use;
-		while( ( use = uses[ 0 ] ) )
-		{
-			var svg = use.parentNode, img = new Image();
-			img.src = use.getAttribute( 'data-img' );
-			svg.parentNode.replaceChild( img, svg );
-		}
-	}( window, document ) );
+  ;( function( window, document ) {
+    if( document.createElementNS && document.createElementNS( 'http://www.w3.org/2000/svg', 'svg' ).createSVGRect ) return true;
+    var uses = document.getElementsByTagName( 'use' ), use;
+    while( ( use = uses[ 0 ] ) )
+    {
+      var svg = use.parentNode, img = new Image();
+      img.src = use.getAttribute( 'data-img' );
+      svg.parentNode.replaceChild( img, svg );
+    }
+  }( window, document ) );
  *
  * Finally, the fallback itself ÔÇô it should be placed at the end of the document:
  *
-	;( function( window, document )
-	{
-    	if( document.createElementNS && document.createElementNS( 'http://www.w3.org/2000/svg', 'svg' ).createSVGRect ) return true;
-    	var uses = document.getElementsByTagName( 'use' ), use;
-    	while( ( use = uses[ 0 ] ) )
-    	{
-        	var svg = use.parentNode, img = new Image();
-        	img.src = use.getAttribute( 'data-img' );
-        	svg.parentNode.replaceChild( img, svg );
-    	}
-	}( window, document ) );
+  ;( function( window, document )
+  {
+      if( document.createElementNS && document.createElementNS( 'http://www.w3.org/2000/svg', 'svg' ).createSVGRect ) return true;
+      var uses = document.getElementsByTagName( 'use' ), use;
+      while( ( use = uses[ 0 ] ) )
+      {
+          var svg = use.parentNode, img = new Image();
+          img.src = use.getAttribute( 'data-img' );
+          svg.parentNode.replaceChild( img, svg );
+      }
+  }( window, document ) );
  *
  * The worst part about this technique is that you cannot get SVG sprite
  * functioning if JavaScript is disabled in userÔÇÖs browser. But, like in ÔÇ£no SVG
  * supportÔÇØ case, we can rely on raster images, for example:
  *
-	<svg><use xlink:href="#svg-cart"></use></svg><noscript><img src="img/icons/png/cart.png" alt="" /></noscript>
+  <svg><use xlink:href="#svg-cart"></use></svg><noscript><img src="img/icons/png/cart.png" alt="" /></noscript>
  *
  * @oswaldas http://osvaldas.info/caching-svg-sprite-in-localstorage
  */
@@ -1921,9 +1934,210 @@ img::-moz-selection {
       color    : red;  // works for single-colored icons, because "fill" was set to "currentColor".
    }
 */
-/*------------------------------------*\
+/* ==========================================================================
+   OBJECTS / LIST-BARE
+   ========================================================================== */
+/**
+ * Strip list-like appearance from lists by removing their bullets, and any
+ * indentation.
+ */
+.o-list-bare {
+  margin-left: 0;
+  list-style: none;
+}
+
+/* ==========================================================================
+   OBJECTS / LIST-FIT
+   ========================================================================== */
+/**
+ * Force a list to occupy 100% of the available width of its parent, e.g.:
+ *
+   <ul class="o-list-fit">
+     <li class="o-list-fit__item">├®l├®ment 1</li>
+     <li class="o-list-fit__item">├®l├®ment 2</li>
+     <li class="o-list-fit__item">├®l├®ment 3</li>
+     <li class="o-list-fit__item">├®l├®ment 4</li>
+   </ul>
+ */
+.o-list-fit.o-list-fit {
+  display: table;
+  width: 100%;
+  margin-left: 0;
+}
+.o-list-fit > .o-list-fit__item {
+  display: table-cell;
+}
+.o-list-fit > .o-list-fit__item > a {
+  display: block;
+}
+
+/* ==========================================================================
+   OBJECTS / LIST-INLINE
+   ========================================================================== */
+/**
+ * The list-inline object simply displays a list of items in one line with
+ * possible style variants, e.g.:
+ *
+   <ul class="o-list-inline">
+     <li class="o-list-inline__item">element 1</li>
+     <li class="o-list-inline__item">element 2</li>
+   </ul>
+
+   <ul class="[ o-list-inline  o-list-inline--banner ]">
+     <li class="o-list-inline__item">element 1</li>
+     <li class="o-list-inline__item">element 2</li>
+   </ul>
+
+   <ul class="[ o-list-inline  o-list-inline--comma ]">
+     <li class="o-list-inline__item">element 1</li>
+     <li class="o-list-inline__item">element 2</li>
+     <li class="o-list-inline__item">element 3</li>
+     <li class="o-list-inline__item">element 4</li>
+   </ul>
+
+   <ul class="[ o-list-inline  o-list-inline--dash ]">
+     <li class="o-list-inline__item">element 1</li>
+     <li class="o-list-inline__item">element 2</li>
+     <li class="o-list-inline__item">element 3</li>
+     <li class="o-list-inline__item">element 4</li>
+   </ul>
+
+   <ul class="[ o-list-inline  o-list-inline--pipe ]">
+     <li class="o-list-inline__item">element 1</li>
+     <li class="o-list-inline__item">element 2</li>
+     <li class="o-list-inline__item">element 3</li>
+     <li class="o-list-inline__item">element 4</li>
+   </ul>
+ */
+.o-list-inline.o-list-inline {
+  margin-left: 0;
+  list-style: none;
+}
+.o-list-inline .o-list-inline__item {
+  display: inline-block;
+}
+.o-list-inline.o-list-inline--banner {
+  text-align: center;
+}
+.o-list-inline.o-list-inline--comma > .o-list-inline__item::after {
+  content: '\002C\00A0';
+}
+.o-list-inline.o-list-inline--comma > .o-list-inline__item:last-child::after {
+  content: ', etc.';
+}
+.o-list-inline.o-list-inline--dash > .o-list-inline__item::after {
+  content: '\00A0\00A0\2013\00A0';
+}
+.o-list-inline.o-list-inline--dash > .o-list-inline__item:last-child::after {
+  content: '';
+}
+.o-list-inline.o-list-inline--pipe > .o-list-inline__item::after {
+  content: '\00A0\007C';
+}
+.o-list-inline.o-list-inline--pipe > .o-list-inline__item:last-child::after {
+  content: '';
+}
+
+/* ==========================================================================
+   OBJECTS / LIST-ORDERED
+   ========================================================================== */
+/**
+ * Apply correct numbering to ordered lists and nested lists, e.g.:
+ *
+   <ol class="o-list-ordered">
+     <li class="o-list-ordered__item">├®l├®ment 1</li>
+     <li class="o-list-ordered__item">├®l├®ment 2
+       <ol class="o-list-ordered">
+         <li class="o-list-ordered__item">├®l├®ment 3</li>
+         <li class="o-list-ordered__item">├®l├®ment 4</li>
+       </ol>
+     </li>
+     <li class="o-list-ordered__item">├®l├®ment 5</li>
+   </ol>
+ */
+.o-list-ordered.o-list-ordered {
+  margin-left: 0.75rem;
+  list-style: none;
+  counter-reset: ordered;
+}
+.o-list-ordered .o-list-ordered__item::before {
+  content: counters(ordered,".") " ";
+  counter-increment: ordered;
+}
+
+/* ==========================================================================
+   OBJECTS / LIST-UI
+   ========================================================================== */
+/**
+ * The UI list object creates blocky list items with a keyline separator out of
+ * a `ul` or `ol`.
+ */
+.o-list-ui.o-list-ui {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.o-list-ui > .o-list-ui__item {
+  padding: 1.5rem;
+  position: relative;
+}
+.o-list-ui > .o-list-ui__item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, transparent 50%, #dee2e6 50%);
+  background-position: 0 bottom;
+  background-repeat: repeat-x;
+  background-size: 100% 2px;
+}
+.o-list-ui > .o-list-ui__item:first-of-type {
+  position: relative;
+}
+.o-list-ui > .o-list-ui__item:first-of-type::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, transparent 50%, #dee2e6 50%);
+  background-position: 0 top;
+  background-repeat: repeat-x;
+  background-size: 100% 2px;
+}
+.o-list-ui.o-list-ui--tiny > .o-list-ui__item {
+  padding: 0.375rem;
+}
+.o-list-ui.o-list-ui--small > .o-list-ui__item {
+  padding: 0.75rem;
+}
+.o-list-ui.o-list-ui--large > .o-list-ui__item {
+  padding: 2.25rem;
+}
+.o-list-ui.o-list-ui--huge > .o-list-ui__item {
+  padding: 3rem;
+}
+
+/* ==========================================================================
+   OBJECTS / PULLQUOTE
+   ========================================================================== */
+.o-pullquote {
+  display: block;
+  margin-right: 3rem;
+  margin-bottom: 1.5rem;
+  margin-left: 3rem;
+  font-size: 1.3125rem;
+  line-height: 1.5rem;
+  font-style: italic;
+  text-align: center;
+}
+
+/* ==========================================================================
    OBJECTS / RATIOS
-\*------------------------------------*/
+   ========================================================================== */
 /**
  * Create ratio-bound content blocks, to keep media (e.g. images, videos) in
  * their correct aspect ratios.
@@ -1977,9 +2191,44 @@ img::-moz-selection {
   padding-bottom: 56.25%;
 }
 
-/*------------------------------------*\
-    OBJECTS / TABLES
-\*------------------------------------*/
+/* ==========================================================================
+   OBJECTS / SPLIT
+   ========================================================================== */
+/**
+ * Simple split item for creating two elements floated away from one another,
+ * e.g.:
+ *
+    <dl class=split>
+        <dt class=split__title>Burger and fries</dt>
+        <dd>&pound;5.99</dd>
+        <dt class=split__title>Fillet steak</dt>
+        <dd>&pound;19.99</dd>
+        <dt class=split__title>Ice cream</dt>
+        <dd>&pound;2.99</dd>
+    </dl>
+ *
+    <ol class="split  results">
+        <li class=first><b class=split__title>1st place</b> Bob</li>
+        <li class=second><b class=split__title>2nd place</b> Lilly</li>
+        <li class=third><b class=split__title>3rd place</b> Ted</li>
+    </ol>ÔÇï
+ *
+ * Demo: jsfiddle.net/inuitcss/9gZW7
+ */
+.o-split.o-split {
+  margin-left: 0;
+  text-align: right;
+  list-style: none;
+}
+.o-split .o-split__title {
+  float: left;
+  clear: left;
+  text-align: left;
+}
+
+/* ==========================================================================
+   OBJECTS / TABLES
+   ========================================================================== */
 /* Equal-width table cells.
    ========================================================================== */
 /**
@@ -2004,77 +2253,59 @@ img::-moz-selection {
  */
 .o-table--bordered {
   position: relative;
-  border-style: solid;
-  border-color: #e9ecef;
 }
-.o-table--bordered:before {
+.o-table--bordered::before {
   content: '';
   position: absolute;
   top: -1px;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(to bottom, transparent 50%, #e9ecef 50%);
-  /* [1] */
+  background-image: linear-gradient(to bottom, transparent 50%, #ced4da 50%);
   background-position: 0 top;
-  /* [1] */
   background-repeat: repeat-x;
-  /* [1] */
-  background-size: 100% 0.1rem;
-  /* [1] */
+  background-size: 100% 2px;
 }
 .o-table--bordered thead > tr > th {
   position: relative;
-  border-style: solid;
-  border-color: #e9ecef;
 }
-.o-table--bordered thead > tr > th:after {
+.o-table--bordered thead > tr > th::after {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(to bottom, transparent 50%, #e9ecef 50%);
-  /* [1] */
+  background-image: linear-gradient(to bottom, transparent 50%, #ced4da 50%);
   background-position: 0 bottom;
-  /* [1] */
   background-repeat: repeat-x;
-  /* [1] */
-  background-size: 100% 0.1rem;
-  /* [1] */
+  background-size: 100% 2px;
 }
 .o-table--bordered tbody > tr td {
   position: relative;
-  border-style: solid;
-  border-color: #e9ecef;
 }
-.o-table--bordered tbody > tr td:after {
+.o-table--bordered tbody > tr td::after {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(to bottom, transparent 50%, #e9ecef 50%);
-  /* [1] */
+  background-image: linear-gradient(to bottom, transparent 50%, #ced4da 50%);
   background-position: 0 bottom;
-  /* [1] */
   background-repeat: repeat-x;
-  /* [1] */
-  background-size: 100% 0.1rem;
-  /* [1] */
+  background-size: 100% 2px;
 }
 .o-table--bordered th, .o-table--bordered td {
   position: relative;
   border-style: solid;
-  border-color: #e9ecef;
+  border-color: #ced4da;
   border-left-width: 1px;
 }
 .o-table--bordered tr > th:last-child, .o-table--bordered tr > td:last-child {
   position: relative;
   border-style: solid;
-  border-color: #e9ecef;
+  border-color: #ced4da;
   border-right-width: 1px;
 }
 
@@ -2089,9 +2320,9 @@ img::-moz-selection {
   background-color: #f1f3f5;
 }
 
-/*------------------------------------*\
-    COMPONENTS / BUTTONS
-\*------------------------------------*/
+/* ==========================================================================
+   COMPONENTS / BUTTONS
+   ========================================================================== */
 /**
  * 1. Allow us to style box model properties.
  * 2. Line different sized buttons up a little nicer.
@@ -2116,6 +2347,7 @@ img::-moz-selection {
   font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
   text-align: center;
   /* [4] */
+  border-bottom: none;
   cursor: pointer;
   /* [5] */
   transition: all 0.25s ease-out;
@@ -2124,7 +2356,7 @@ img::-moz-selection {
 /* Style variants
    ========================================================================== */
 .c-button--round {
-  border-radius: .375rem;
+  border-radius: 3px;
 }
 
 .c-button--pill {
@@ -2136,8 +2368,8 @@ img::-moz-selection {
   box-shadow: 0px 0px 0px 1px currentColor;
 }
 .c-button--outlined:hover, .c-button--outlined:active, .c-button--outlined:focus {
-  color: rgba(10, 12, 13, 0.9);
-  border-color: rgba(10, 12, 13, 0.9);
+  color: #32373b;
+  border-color: #32373b;
 }
 
 .c-button--disabled,
@@ -2285,9 +2517,9 @@ h2:before {
   content: counter(headings) ". ";
 }
 
-/*------------------------------------*\
-    TRUMPS / HEADINGS
-\*------------------------------------*/
+/* ==========================================================================
+   TRUMPS / HEADINGS
+   ========================================================================== */
 /**
  * Headings 1–6’s corresponding Greek-alphabet abstract classes for double-
  * stranded heading hierarchy: csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css
@@ -2330,9 +2562,9 @@ h2:before {
   line-height: 1.5rem;
 }
 
-/*------------------------------------*\
-    TRUMPS / TEXT
-\*------------------------------------*/
+/* ==========================================================================
+   TRUMPS / TEXT
+   ========================================================================== */
 /**
  * Text adjustments.
  *
@@ -2369,9 +2601,9 @@ h2:before {
   line-height: 1.5rem;
 }
 
-/*------------------------------------*\
-    TRUMPS / PROSE
-\*------------------------------------*/
+/* ==========================================================================
+   TRUMPS / PROSE
+   ========================================================================== */
 .u-prose {
   /**
    * Links.
@@ -2444,81 +2676,885 @@ h2:before {
   /* [6] */
 }
 
-/*------------------------------------*\
-    TRUMPS / HELPERS
-\*------------------------------------*/
+/* ==========================================================================
+   TRUMPS / COLORS
+   ========================================================================== */
+.u-text-white {
+  color: #fff;
+}
+
+.u-text-soft {
+  color: #868e96;
+}
+
+.u-text-muted {
+  color: #adb5bd;
+}
+
+.u-text-gray {
+  color: #495057;
+}
+
+.u-text-red {
+  color: #f03e3e;
+}
+
+.u-text-pink {
+  color: #d6336c;
+}
+
+.u-text-grape {
+  color: #ae3ec9;
+}
+
+.u-text-violet {
+  color: #7048e8;
+}
+
+.u-text-indigo {
+  color: #4263eb;
+}
+
+.u-text-blue {
+  color: #1c7cd6;
+}
+
+.u-text-cyan {
+  color: #1098ad;
+}
+
+.u-text-teal {
+  color: #0ca678;
+}
+
+.u-text-green {
+  color: #37b24d;
+}
+
+.u-text-lime {
+  color: #74b816;
+}
+
+.u-text-yellow {
+  color: #f59f00;
+}
+
+.u-text-orange {
+  color: #f76707;
+}
+
+.u-background-gray {
+  background-color: #495057;
+}
+
+.u-background-red {
+  background-color: #f03e3e;
+}
+
+.u-background-pink {
+  background-color: #d6336c;
+}
+
+.u-background-grape {
+  background-color: #ae3ec9;
+}
+
+.u-background-violet {
+  background-color: #7048e8;
+}
+
+.u-background-indigo {
+  background-color: #4263eb;
+}
+
+.u-background-blue {
+  background-color: #1c7cd6;
+}
+
+.u-background-cyan {
+  background-color: #1098ad;
+}
+
+.u-background-teal {
+  background-color: #0ca678;
+}
+
+.u-background-green {
+  background-color: #37b24d;
+}
+
+.u-background-lime {
+  background-color: #74b816;
+}
+
+.u-background-yellow {
+  background-color: #f59f00;
+}
+
+.u-background-orange {
+  background-color: #f76707;
+}
+
+.u-border-gray {
+  border-color: #495057;
+}
+
+.u-border-red {
+  border-color: #f03e3e;
+}
+
+.u-border-pink {
+  border-color: #d6336c;
+}
+
+.u-border-grape {
+  border-color: #ae3ec9;
+}
+
+.u-border-violet {
+  border-color: #7048e8;
+}
+
+.u-border-indigo {
+  border-color: #4263eb;
+}
+
+.u-border-blue {
+  border-color: #1c7cd6;
+}
+
+.u-border-cyan {
+  border-color: #1098ad;
+}
+
+.u-border-teal {
+  border-color: #0ca678;
+}
+
+.u-border-green {
+  border-color: #37b24d;
+}
+
+.u-border-lime {
+  border-color: #74b816;
+}
+
+.u-border-yellow {
+  border-color: #f59f00;
+}
+
+.u-border-orange {
+  border-color: #f76707;
+}
+
+.u-fill-gray {
+  fill: #495057;
+}
+
+.u-fill-red {
+  fill: #f03e3e;
+}
+
+.u-fill-pink {
+  fill: #d6336c;
+}
+
+.u-fill-grape {
+  fill: #ae3ec9;
+}
+
+.u-fill-violet {
+  fill: #7048e8;
+}
+
+.u-fill-indigo {
+  fill: #4263eb;
+}
+
+.u-fill-blue {
+  fill: #1c7cd6;
+}
+
+.u-fill-cyan {
+  fill: #1098ad;
+}
+
+.u-fill-teal {
+  fill: #0ca678;
+}
+
+.u-fill-green {
+  fill: #37b24d;
+}
+
+.u-fill-lime {
+  fill: #74b816;
+}
+
+.u-fill-yellow {
+  fill: #f59f00;
+}
+
+.u-fill-orange {
+  fill: #f76707;
+}
+
+.u-stroke-gray {
+  stroke: #495057;
+}
+
+.u-stroke-red {
+  stroke: #f03e3e;
+}
+
+.u-stroke-pink {
+  stroke: #d6336c;
+}
+
+.u-stroke-grape {
+  stroke: #ae3ec9;
+}
+
+.u-stroke-violet {
+  stroke: #7048e8;
+}
+
+.u-stroke-indigo {
+  stroke: #4263eb;
+}
+
+.u-stroke-blue {
+  stroke: #1c7cd6;
+}
+
+.u-stroke-cyan {
+  stroke: #1098ad;
+}
+
+.u-stroke-teal {
+  stroke: #0ca678;
+}
+
+.u-stroke-green {
+  stroke: #37b24d;
+}
+
+.u-stroke-lime {
+  stroke: #74b816;
+}
+
+.u-stroke-yellow {
+  stroke: #f59f00;
+}
+
+.u-stroke-orange {
+  stroke: #f76707;
+}
+
+/* ==========================================================================
+   TRUMPS / HELPERS
+   ========================================================================== */
 /**
  * A series of classes to use arbitrarily.
  */
-.is-static {
+.u-static {
   position: static;
 }
 
-.is-relative {
+.u-relative {
   position: relative;
 }
 
-.is-absolute {
+.u-absolute {
   position: absolute;
 }
 
-.is-pushed-right {
+.u-inline {
+  display: inline;
+}
+
+.u-block {
+  display: block;
+}
+
+.u-inline-block {
+  display: inline-block;
+}
+
+.u-pushed-right {
   float: right;
 }
 
-.is-pulled-left {
+.u-pulled-left {
   float: left;
 }
 
-.is-centered {
+.u-centered {
   display: block;
   margin-right: auto;
   margin-left: auto;
 }
 
-.is-aligned-left {
+.u-aligned-left {
   text-align: left;
 }
 
-.is-aligned-center {
+.u-aligned-center {
   text-align: center;
 }
 
-.is-aligned-right {
+.u-aligned-right {
   text-align: right;
 }
 
-.is-justified {
+.u-justified {
   text-align: justify;
 }
 
-.is-aligned-top {
+.u-aligned-top {
   vertical-align: top;
 }
 
-.is-aligned-middle {
+.u-aligned-middle {
   vertical-align: middle;
 }
 
-.is-aligned-left-bottom {
+.u-aligned-bottom {
   vertical-align: bottom;
 }
 
-.is-inline {
-  display: inline;
+.u-border {
+  position: relative;
+  border-style: solid;
+  border-color: #dee2e6;
+  border-right-width: 1px;
+  border-left-width: 1px;
+}
+.u-border::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, transparent 50%, #dee2e6 50%);
+  background-position: 0 top;
+  background-repeat: repeat-x;
+  background-size: 100% 2px;
+}
+.u-border::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, transparent 50%, #dee2e6 50%);
+  background-position: 0 bottom;
+  background-repeat: repeat-x;
+  background-size: 100% 2px;
 }
 
-.is-block {
-  display: block;
+.u-border-right {
+  position: relative;
+  border-style: solid;
+  border-color: #dee2e6;
+  border-right-width: 1px;
 }
 
-.is-inline-block {
-  display: inline-block;
+.u-border-bottom {
+  position: relative;
+}
+.u-border-bottom::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, transparent 50%, #dee2e6 50%);
+  background-position: 0 bottom;
+  background-repeat: repeat-x;
+  background-size: 100% 2px;
 }
 
-/*------------------------------------*\
-    TRUMPS / PRINT
-\*------------------------------------*/
+.u-border-left {
+  position: relative;
+  border-style: solid;
+  border-color: #dee2e6;
+  border-left-width: 1px;
+}
+
+.u-rounded {
+  border-radius: 3px;
+}
+
+.u-rounded-top {
+  border-radius: 3px 3px 0 0;
+}
+
+.u-rounded-right {
+  border-radius: 0 3px 3px 0;
+}
+
+.u-rounded-bottom {
+  border-radius: 0 0 3px 3px;
+}
+
+.u-rounded-left {
+  border-radius: 3px 0 0 3px;
+}
+
+.u-circle {
+  border-radius: 50%;
+}
+
+.u-list-circle {
+  list-style-type: circle;
+}
+
+.u-list-disc {
+  list-style-type: disc;
+}
+
+.u-list-square {
+  list-style-type: square;
+}
+
+.u-list-decimal {
+  list-style-type: decimal;
+}
+
+.u-list-leading-zero {
+  list-style-type: decimal-leading-zero;
+}
+
+.u-list-lower-alpha {
+  list-style-type: lower-alpha;
+}
+
+.u-list-upper-alpha {
+  list-style-type: upper-alpha;
+}
+
+.u-list-lower-roman {
+  list-style-type: lower-roman;
+}
+
+.u-list-upper-roman {
+  list-style-type: upper-roman;
+}
+
+.u-serif {
+  font-family: Georgia, Times, "Times New Roman", serif;
+}
+
+.u-sans-serif {
+  font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+.u-thin {
+  font-weight: 100;
+}
+
+.u-light {
+  font-weight: 300;
+}
+
+.u-regular {
+  font-weight: 400;
+}
+
+.u-medium {
+  font-weight: 600;
+}
+
+.u-bold {
+  font-weight: 700;
+}
+
+.u-ultra-bold {
+  font-weight: 900;
+}
+
+.u-normal {
+  font-style: normal;
+}
+
+.u-italic {
+  font-style: italic;
+}
+
+.u-oblique {
+  font-style: oblique;
+}
+
+.u-uppercase {
+  text-transform: uppercase;
+}
+
+.u-lowercase {
+  text-transform: lowercase;
+}
+
+.u-underline {
+  text-decoration: underline;
+}
+
+.u-overline {
+  text-decoration: overline;
+}
+
+.u-line-through {
+  text-decoration: line-through;
+}
+
+.u-no-decoration {
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   TRUMPS / SHOW-HIDE
+   ========================================================================== */
+.u-text-hidden {
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
+  background-color: transparent;
+  border: 0;
+}
+
+.u-shown {
+  display: block !important;
+}
+
+.u-hidden {
+  display: none !important;
+}
+
+.u-visible {
+  visibility: visible !important;
+}
+
+.u-invisible {
+  visibility: hidden !important;
+}
+
+.u-off-screen {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+
+@media (min-width: 30em) {
+  .u-hide\@small {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+    overflow: hidden !important;
+  }
+}
+@media (min-width: 45em) {
+  .u-hide\@medium {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+    overflow: hidden !important;
+  }
+}
+@media (min-width: 60em) {
+  .u-hide\@arge {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+    overflow: hidden !important;
+  }
+}
+@media (min-width: 80em) {
+  .u-hide\@huge {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+    overflow: hidden !important;
+  }
+}
+/* ==========================================================================
+   TRUMPS / SPACINGS
+   ========================================================================== */
+/**
+ * Utility classes to put specific spacing values onto elements. The below loop
+ * will generate us a suite of classes like:
+ *
+ *   .u-margin-top {}
+ *   .u-padding-left-large {}
+ *   .u-margin-right-small {}
+ *   .u-padding {}
+ *   .u-padding-right-none {}
+ */
+.u-margin {
+  margin: 1.5rem !important;
+}
+
+.u-margin--tiny {
+  margin: 0.375rem !important;
+}
+
+.u-margin--small {
+  margin: 0.75rem !important;
+}
+
+.u-margin--large {
+  margin: 2.25rem !important;
+}
+
+.u-margin--huge {
+  margin: 3rem !important;
+}
+
+.u-margin--none {
+  margin: 0rem !important;
+}
+
+.u-margin-top {
+  margin-top: 1.5rem !important;
+}
+
+.u-margin-top--tiny {
+  margin-top: 0.375rem !important;
+}
+
+.u-margin-top--small {
+  margin-top: 0.75rem !important;
+}
+
+.u-margin-top--large {
+  margin-top: 2.25rem !important;
+}
+
+.u-margin-top--huge {
+  margin-top: 3rem !important;
+}
+
+.u-margin-top--none {
+  margin-top: 0rem !important;
+}
+
+.u-margin-right {
+  margin-right: 1.5rem !important;
+}
+
+.u-margin-right--tiny {
+  margin-right: 0.375rem !important;
+}
+
+.u-margin-right--small {
+  margin-right: 0.75rem !important;
+}
+
+.u-margin-right--large {
+  margin-right: 2.25rem !important;
+}
+
+.u-margin-right--huge {
+  margin-right: 3rem !important;
+}
+
+.u-margin-right--none {
+  margin-right: 0rem !important;
+}
+
+.u-margin-bottom {
+  margin-bottom: 1.5rem !important;
+}
+
+.u-margin-bottom--tiny {
+  margin-bottom: 0.375rem !important;
+}
+
+.u-margin-bottom--small {
+  margin-bottom: 0.75rem !important;
+}
+
+.u-margin-bottom--large {
+  margin-bottom: 2.25rem !important;
+}
+
+.u-margin-bottom--huge {
+  margin-bottom: 3rem !important;
+}
+
+.u-margin-bottom--none {
+  margin-bottom: 0rem !important;
+}
+
+.u-margin-left {
+  margin-left: 1.5rem !important;
+}
+
+.u-margin-left--tiny {
+  margin-left: 0.375rem !important;
+}
+
+.u-margin-left--small {
+  margin-left: 0.75rem !important;
+}
+
+.u-margin-left--large {
+  margin-left: 2.25rem !important;
+}
+
+.u-margin-left--huge {
+  margin-left: 3rem !important;
+}
+
+.u-margin-left--none {
+  margin-left: 0rem !important;
+}
+
+.u-padding {
+  padding: 1.5rem !important;
+}
+
+.u-padding--tiny {
+  padding: 0.375rem !important;
+}
+
+.u-padding--small {
+  padding: 0.75rem !important;
+}
+
+.u-padding--large {
+  padding: 2.25rem !important;
+}
+
+.u-padding--huge {
+  padding: 3rem !important;
+}
+
+.u-padding--none {
+  padding: 0rem !important;
+}
+
+.u-padding-top {
+  padding-top: 1.5rem !important;
+}
+
+.u-padding-top--tiny {
+  padding-top: 0.375rem !important;
+}
+
+.u-padding-top--small {
+  padding-top: 0.75rem !important;
+}
+
+.u-padding-top--large {
+  padding-top: 2.25rem !important;
+}
+
+.u-padding-top--huge {
+  padding-top: 3rem !important;
+}
+
+.u-padding-top--none {
+  padding-top: 0rem !important;
+}
+
+.u-padding-right {
+  padding-right: 1.5rem !important;
+}
+
+.u-padding-right--tiny {
+  padding-right: 0.375rem !important;
+}
+
+.u-padding-right--small {
+  padding-right: 0.75rem !important;
+}
+
+.u-padding-right--large {
+  padding-right: 2.25rem !important;
+}
+
+.u-padding-right--huge {
+  padding-right: 3rem !important;
+}
+
+.u-padding-right--none {
+  padding-right: 0rem !important;
+}
+
+.u-padding-bottom {
+  padding-bottom: 1.5rem !important;
+}
+
+.u-padding-bottom--tiny {
+  padding-bottom: 0.375rem !important;
+}
+
+.u-padding-bottom--small {
+  padding-bottom: 0.75rem !important;
+}
+
+.u-padding-bottom--large {
+  padding-bottom: 2.25rem !important;
+}
+
+.u-padding-bottom--huge {
+  padding-bottom: 3rem !important;
+}
+
+.u-padding-bottom--none {
+  padding-bottom: 0rem !important;
+}
+
+.u-padding-left {
+  padding-left: 1.5rem !important;
+}
+
+.u-padding-left--tiny {
+  padding-left: 0.375rem !important;
+}
+
+.u-padding-left--small {
+  padding-left: 0.75rem !important;
+}
+
+.u-padding-left--large {
+  padding-left: 2.25rem !important;
+}
+
+.u-padding-left--huge {
+  padding-left: 3rem !important;
+}
+
+.u-padding-left--none {
+  padding-left: 0rem !important;
+}
+
+/* ==========================================================================
+   TRUMPS / PRINT
+   ========================================================================== */
 /**
  * Very crude, reset-like styles taken from the HTML5 Boilerplate:
  * https://github.com/h5bp/html5-boilerplate/blob/3c3c5e64604209a4d63e1e4c48dd245d45fadfd9/css/main.css#L200-L234
