@@ -1,6 +1,8 @@
-/*------------------------------------*\
-    GENERIC / BOX-SIZING
-\*------------------------------------*/
+@if (generic(box-sizing) == true) {
+
+/* ==========================================================================
+   GENERIC / BOX-SIZING
+   ========================================================================== */
 
 /**
  * Set the global `box-sizing` state to `border-box`.
@@ -16,6 +18,7 @@ html {
 }
 
 * {
+
   &,
   &::before,
   &::after {
@@ -23,4 +26,7 @@ html {
        -moz-box-sizing: inherit;
             box-sizing: inherit;
   }
+
 }
+
+}//endif
