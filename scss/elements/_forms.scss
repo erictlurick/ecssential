@@ -1,13 +1,14 @@
 @if (elements(forms) == true) {
 
-/*------------------------------------*\
-    ELEMENTS / FORMS
-\*------------------------------------*/
+/* ==========================================================================
+   ELEMENTS / FORMS
+   ========================================================================== */
 
 // Predefine the variables below in order to alter and enable specific features.
 $label-color              : color(muted) !default;
 $input-color-text         : color(text) !default;
-$input-color-text-disabled: darken(color(ui-light), 15%) !default;
+$input-color-text-disabled: color(ui-disabled) !default;
+$input-color-placeholder  : color(muted) !default;
 $input-color-background   : #fff !default;
 $input-color-border       : color(ui-medium); // rgba(0,0,0,0.09) !default;
 $input-color-border-focus : color(ui-dark) !default;
@@ -97,7 +98,11 @@ textarea {
 
 
 @if (typography(glyphs) == true) {
-  //Turns on lining, proportional numerals without clarified zeroes
+
+  /**
+   * Turns on lining, proportional numerals without clarified zeroes.
+   */
+
   input[type="color"],
   input[type="date"],
   input[type="datetime"],
@@ -108,17 +113,22 @@ textarea {
   input[type="week"] {
     font-feature-settings: "kern" 0, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 0, "lnum" 1, "zero" 0; /* [1] */
   }
+
 }//endif
 
 
 /**
  * Placeholder attribute text.
+ *
+ * 1. In Firefox, placeholder text has a default opacity of around 0.5 so setting
+ *    color: red on the placeholder will result in a muted color unless you also
+ *    set opacity: 1.
  */
 
-input::-webkit-input-placeholder { color: #ccc; }
-input::-moz-placeholder          { color: #ccc; }
-input:-ms-input-placeholder      { color: #ccc; }
-input::placeholder               { color: #ccc; }
+input::-webkit-input-placeholder { color: $input-color-placeholder; }
+input::-moz-placeholder          { color: $input-color-placeholder; opacity: 1 } /* [1] */
+input:-ms-input-placeholder      { color: $input-color-placeholder; }
+input::placeholder               { color: $input-color-placeholder; }
 
 
 /**
