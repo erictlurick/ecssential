@@ -107,54 +107,111 @@
 	-->
 
 	<!--  Essential meta tags -->
+	<!--
 	<meta property="og:title" content="">
 	<meta property="og:description" content="">
 	<meta property="og:image" content="">
 	<meta property="og:url" content="">
 	<meta name="twitter:card" content="e">
+	-->
 
 	<!--  Non essential, but recommended -->
+	<!--
 	<meta name="og:site_name" content="">
 	<meta name="twitter:image:alt" content="">
+	-->
 
 	<!--  Non essential, but required for Analytics -->
+	<!--
 	<meta property="fb:app_id" content="" />
 	<meta name="twitter:site" content="">
+	-->
 
 </head>
 
-<body class="[ l-wrapper  l-wrapper--narrow ]" id="top">
+<body id="top">
 
 	<!--[if lt IE 10]>
 	<p role="alert">Votre logiciel de navigation est <strong>obsolète</strong>. Il contient des failles de sécurité et pourrait ne pas afficher certaines fonctionnalités. Découvrez <a href="http://browsehappy.com/">comment le mettre à jour</a> et profiter d&rsquo;une meilleure expérience d&rsquo;Internet.</p>
 	<![endif]-->
 
-	<header class="is-aligned-center">
-		<h1>eCSSential</h1>
+	<header>
+		<div class="[ l-wrapper  l-wrapper--narrow ] [ u-padding-top--huge  u-padding-bottom--huge ]  u-aligned-center ">
 
-		<p>Base <abbr title="Cascading Style Sheets">css</abbr> respectueuse des standards <a href="//www.w3.org/" hreflang="en"><abbr title="World Wide Web Consortium">w3c</abbr></a>, soucieuse d&rsquo;accessibilité, et, naturellement adaptative pour démarrer un projet de site internet.</p>
+			<h1>eCSSential</h1>
+
+			<p>Base <abbr title="Cascading Style Sheets">css</abbr> respectueuse des standards <a href="//www.w3.org/" hreflang="en"><abbr title="World Wide Web Consortium">w3c</abbr></a>, soucieuse d&rsquo;accessibilité, et, naturellement adaptative pour démarrer un projet de site internet.</p>
+
+			<a class="[ c-button  c-button--round  c-button--info ]" href="https://github.com/erictlurick/ecssential/archive/master.zip">
+				<svg class="o-icon" aria-hidden="true"><use xlink:href="#download"></use></svg><noscript><img src="img/icons/font-awesome/png/download.png" alt="" /></noscript>
+				Télécharger
+			</a>
+
+			<a class="[ c-button  c-button--info  c-button--outlined  c-button--round ]" href="https://github.com/erictlurick/ecssential/archive/master.zip">
+				<svg class="o-icon" aria-hidden="true"><use xlink:href="#github"></use></svg><noscript><img src="img/icons/font-awesome/png/github.png" alt="" /></noscript>
+				Github
+			</a>
+
+		</div>
 	</header>
 
 
 
 
-	<nav>
+	<nav class="[ l-wrapper  l-wrapper--large ]">
 
 		<h2 aria-hidden="true">Sommaire</h2>
 
-		<ol role="directory">
-			<li><a href="#installation">Installation</a></li>
-			<li><a href="#headings">Titraille</a></li>
-			<li><a href="#text">Texte</a></li>
-			<li><a href="#links">Ancres et liens</a></li>
-			<li><a href="#code">Code</a></li>
-			<li><a href="#lists">Listes</a></li>
-			<li><a href="#tables">Tableaux</a></li>
-			<li><a href="#forms">Formulaires</a></li>
-			<li><a href="#medias">Medias</a></li>
-			<li><a href="#layout">Mise en page</a></li>
-			<li><a href="#buttons">Boutons</a></li>
-			<li><a href="#icons">Icônographie</a></li>
+		<ol class="o-list-inline  o-list-inline--banner" role="directory">
+
+			<li class="o-list-inline__item  u-margin-right--small">
+				<a href="#installation">Installation</a>
+			</li>
+
+			<li class="o-list-inline__item  u-margin-right--small">
+				<a href="#headings">Titraille</a>
+			</li>
+
+			<li class="o-list-inline__item  u-margin-right--small">
+				<a href="#text">Texte</a>
+			</li>
+
+			<li class="o-list-inline__item  u-margin-right--small">
+				<a href="#links">Ancres et liens</a>
+			</li>
+
+			<li class="o-list-inline__item  u-margin-right--small">
+				<a href="#code">Code</a>
+			</li>
+
+			<li class="o-list-inline__item  u-margin-right--small">
+				<a href="#lists">Listes</a>
+			</li>
+
+			<li class="o-list-inline__item  u-margin-right--small">
+				<a href="#tables">Tableaux</a>
+			</li>
+
+			<li class="o-list-inline__item  u-margin-right--small">
+				<a href="#forms">Formulaires</a>
+			</li>
+
+			<li class="o-list-inline__item  u-margin-right--small">
+				<a href="#medias">Medias</a>
+			</li>
+
+			<li class="o-list-inline__item  u-margin-right--small">
+				<a href="#layout">Mise en page</a>
+			</li>
+
+			<li class="o-list-inline__item  u-margin-right--small">
+				<a href="#buttons">Boutons</a>
+			</li>
+
+			<li class="o-list-inline__item">
+				<a href="#icons">Icônographie</a>
+			</li>
+
 		</ol>
 
 	</nav>
@@ -163,7 +220,7 @@
 
 
 
-	<main class="u-prose">
+	<main class="[ l-wrapper  l-wrapper--narrow ] [ u-padding-top--huge  u-padding-bottom--huge ]  u-prose">
 
 		<section id="installation">
 
@@ -294,16 +351,14 @@
 
 			<p>Une échelle de taille pour les titres maintient la cohérence de votre mise en page et permet de les différencier facilement.</p>
 
-			<figure class="is-aligned-left">
+			<figure class="u-aligned-left">
+
 				<p class="u-h1-size">Titre de niveau 1</p>
 				<p class="u-h2-size">Titre de niveau 2</p>
 				<p class="u-h3-size">Titre de niveau 3</p>
 				<p class="u-h4-size">Titre de niveau 4</p>
 				<p class="u-h5-size">Titre de niveau 5</p>
 				<p class="u-h6-size">Titre de niveau 6</p>
-			</figure>
-
-			<figure class="is-aligned-left">
 
 				<p class="u-h1-size">Titre 1 avec <a href="#">lien</a> et <small>sous-titre</small></p>
 				<p>Titre de niveau 1 contenant un lien et un sous-titre avec les balises <samp>&lt;h1&gt;</samp>, <samp>&lt;a&gt;</samp> et <samp>&lt;small&gt;</samp></p>
@@ -321,7 +376,7 @@
 				<p>Titre de niveau 5 contenant un lien et un sous-titre avec les balises <samp>&lt;h5&gt;</samp>, <samp>&lt;a&gt;</samp> et <samp>&lt;small&gt;</samp></p>
 
 				<p class="u-h6-size">Titre 6 avec <a href="#">lien</a> et <small>sous-titre</small></p>
-				<p>Titre de niveau 6 contenant un lien et un sous-titre avec les balises <samp>&lt;h6&gt;</samp>, <samp>&lt;a&gt;</samp> et <samp>&lt;small&gt;</samp></p>
+				<p class="u-margin-bottom--none">Titre de niveau 6 contenant un lien et un sous-titre avec les balises <samp>&lt;h6&gt;</samp>, <samp>&lt;a&gt;</samp> et <samp>&lt;small&gt;</samp></p>
 
 			</figure>
 
@@ -355,22 +410,22 @@
 
 			<h3>Taille du texte</h3>
 
-			<figure class="is-aligned-left">
+			<figure class="u-aligned-left">
 				<p class="u-text--x-small">Petit-romain</p>
 				<p class="u-text--small">Cicéro</p>
 				<p class="u-text--large">Double-canon</p>
 				<p class="u-text--x-large">Triple-canon</p>
-				<p class="u-text--xx-large">Grosse-nompareille</p>
+				<p class="u-margin-bottom--none  u-text--xx-large">Grosse-nompareille</p>
 			</figure>
 
 			<pre><code>&lt;p class="u-text--x-small"&gt;Petit-romain&lt;/p&gt;<br>&lt;p class="u-text--small"&gt;Cicéro&lt;/p&gt;<br>&lt;p class="u-text--large"&gt;Double-canon&lt;/p&gt;<br>&lt;p class="u-text--x-large"&gt;Triple-canon&lt;/p&gt;<br>&lt;p class="u-text--xx-large"&gt;Grosse-nompareille&lt;/p&gt;</code></pre>
 
 			<h3>Citations</h3>
 
-			<p><q>Exemple de citation au fil du texte avec la balise <code>&lt;q&gt;</code>.</q></p>
-			<p><q>Exemple de <q>citation imbriquée</q> dans une citation au fil du texte avec les balises <code>&lt;q&gt;</code>.</q></p>
+			<p><q>Exemple de citation au fil du texte avec la balise <samp>&lt;q&gt;</samp>.</q></p>
+			<p><q>Exemple de <q>citation imbriquée</q> dans une citation au fil du texte avec les balises <samp>&lt;q&gt;</samp>.</q></p>
 
-			<p>Example de citation avec la balise <code>&lt;blockquote&gt;</code> dans laquelle la source est précisée avec <code>&lt;footer&gt;</code>&#8202;:</p>
+			<p>Example de citation avec la balise <samp>&lt;blockquote&gt;</samp> dans laquelle la source est précisée avec <samp>&lt;footer&gt;</samp>&#8202;:</p>
 
 			<blockquote>
 				<p>On peut aussi faire remarquer que les formules conçues avec du faux-texte ont tendance à sous-estimer l&rsquo;espace nécessaire à une titraille immédiatement intelligible, ce qui oblige les rédactions à formuler ensuite des titres simplificateurs, voire inexacts, pour ne pas dépasser l&rsquo;espace imparti&hellip;</p>
@@ -382,75 +437,81 @@
   &lt;footer&gt;&lt;cite&gt;&lt;a href="http://www.amazon.fr/Conception-sites-web-Lart-simplicit%C3%A9/dp/2744008877"&gt;Conception de sites web&lt;/a&gt;&lt;/cite&gt; par Jakob Nielsen&lt;/footer&gt;
 &lt;/blockquote&gt;</code></pre>
 
+			<h4>Modificateurs</h4>
+
+			<p>Avec la classe <samp>.o-pullquote</samp>&#8202;:</p>
+
+			<q class="o-pullquote">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</q>
+
 			<h3>Marquage sémantique</h3>
 
 			<ul>
 
-				<li>L&rsquo;element <code>&lt;a&gt;</code> est utilisé pour les <a href="#!">hyperliens</a>,</li>
+				<li>L&rsquo;element <samp>&lt;a&gt;</samp> est utilisé pour les <a href="#!">hyperliens</a>,</li>
 
-				<li>L&rsquo;élément <code>&lt;abbr&gt;</code> est utlisé pour les abbréviations et les acronymes sont attribut title ne doit être utilisé que pour l&rsquo;extension de l&rsquo;abbréviation. Example&#8202;: <abbr title="Abbreviation">abbr</abbr>,</li>
+				<li>L&rsquo;élément <samp>&lt;abbr&gt;</samp> est utlisé pour les abbréviations et les acronymes sont attribut title ne doit être utilisé que pour l&rsquo;extension de l&rsquo;abbréviation. Example&#8202;: <abbr title="Abbreviation">abbr</abbr>,</li>
 
-				<li>L&rsquo;élément <code>&lt;b&gt;</code> est utilisé dans une partie de texte <b>en gras</b> sémantiquement faible,</li>
+				<li>L&rsquo;élément <samp>&lt;b&gt;</samp> est utilisé dans une partie de texte <b>en gras</b> sémantiquement faible,</li>
 
-				<li>L&rsquo;élément <code>&lt;strong&gt;</code> est utilisé pour donner de <strong>l&rsquo;importance</strong> au texte,</li>
+				<li>L&rsquo;élément <samp>&lt;strong&gt;</samp> est utilisé pour donner de <strong>l&rsquo;importance</strong> au texte,</li>
 
-				<li>L&rsquo;élément <code>&lt;i&gt;</code> est utilisé pour <i>différencier</i> une partie du texte,</li>
+				<li>L&rsquo;élément <samp>&lt;i&gt;</samp> est utilisé pour <i>différencier</i> une partie du texte,</li>
 
-				<li>L&rsquo;élément <code>&lt;cite&gt;</code> est utilisé pour citer <cite>le titre</cite> d&rsquo;une oeuvre, d&rsquo;un document ou d&rsquo;un évènement,</li>
+				<li>L&rsquo;élément <samp>&lt;cite&gt;</samp> est utilisé pour citer <cite>le titre</cite> d&rsquo;une oeuvre, d&rsquo;un document ou d&rsquo;un évènement,</li>
 
-				<li>L&rsquo;élément <code>&lt;code&gt;</code> est utlisé pour déclarer du <code>code informatique</code>,</li>
+				<li>L&rsquo;élément <samp>&lt;code&gt;</samp> est utlisé pour déclarer du <code>code informatique</code>,</li>
 
-				<li>L&rsquo;élément <code>&lt;del&gt;</code> est utilisé pour indiquer qu&rsquo;une partie de texte est <del>supprimée</del>,</li>
+				<li>L&rsquo;élément <samp>&lt;del&gt;</samp> est utilisé pour indiquer qu&rsquo;une partie de texte est <del>supprimée</del>,</li>
 
-				<li>L&rsquo;élément <code>&lt;dfn&gt;</code> est utilisé dans un paragraphe ou une liste de définitions pour représenter le <dfn title="Définition du terme">terme d&rsquo;une définition</dfn>,</li>
+				<li>L&rsquo;élément <samp>&lt;dfn&gt;</samp> est utilisé dans un paragraphe ou une liste de définitions pour représenter le <dfn title="Définition du terme">terme d&rsquo;une définition</dfn>,</li>
 
-				<li>L&rsquo;élément <code>&lt;em&gt;</code> est utilisé pour mettre <em>une partie du texte</em> en emphase,</li>
+				<li>L&rsquo;élément <samp>&lt;em&gt;</samp> est utilisé pour mettre <em>une partie du texte</em> en emphase,</li>
 
-				<li>L&rsquo;élément <code>&lt;ins&gt;</code> est utilisé pour insérer un nouveau texte dans un <ins>document révisé</ins>,</li>
+				<li>L&rsquo;élément <samp>&lt;ins&gt;</samp> est utilisé pour insérer un nouveau texte dans un <ins>document révisé</ins>,</li>
 
-				<li>L&rsquo;élément <code>&lt;kbd&gt;</code> est utilisé lorsque le texte est utilisé pour définir des <kbd>actions</kbd> au clavier,</li>
+				<li>L&rsquo;élément <samp>&lt;kbd&gt;</samp> est utilisé lorsque le texte est utilisé pour définir des <kbd>actions</kbd> au clavier,</li>
 
-				<li>L&rsquo;élément <code>&lt;mark&gt;</code> est utilisé pour marquer du texte, par exemple <mark>surligner</mark> un résultat de recherche,</li>
+				<li>L&rsquo;élément <samp>&lt;mark&gt;</samp> est utilisé pour marquer du texte, par exemple <mark>surligner</mark> un résultat de recherche,</li>
 
-				<li>L&rsquo;élément <code>&lt;q&gt;</code> est utilisé pour une <q>citation courte</q> provenant d&rsquo;une ressource externe,</li>
+				<li>L&rsquo;élément <samp>&lt;q&gt;</samp> est utilisé pour une <q>citation courte</q> provenant d&rsquo;une ressource externe,</li>
 
-				<li>L&rsquo;élément <code>&lt;s&gt;</code> est utilisé pour identifier une partie de texte qui n&rsquo;est pas <s>correct</s> ou non pertinent,</li>
+				<li>L&rsquo;élément <samp>&lt;s&gt;</samp> est utilisé pour identifier une partie de texte qui n&rsquo;est pas <s>correct</s> ou non pertinent,</li>
 
-				<li>L&rsquo;élément <code>&lt;samp&gt;</code> est utilisé dans un paragraphe pour écrire un <samp>échantillon</samp> de code,</li>
+				<li>L&rsquo;élément <samp>&lt;samp&gt;</samp> est utilisé dans un paragraphe pour écrire un <samp>échantillon</samp> de code,</li>
 
-				<li>L&rsquo;élément <code>&lt;small&gt;</code> est utilisée comme <small>contenu relatif</small> mais non essentiel,</li>
+				<li>L&rsquo;élément <samp>&lt;small&gt;</samp> est utilisée comme <small>contenu relatif</small> mais non essentiel,</li>
 
-				<li>L&rsquo;élément <code>&lt;span&gt;</code> est utilisé pour mettre en style une <span>portion de texte</span> qui se différencie des autres,</li>
+				<li>L&rsquo;élément <samp>&lt;span&gt;</samp> est utilisé pour mettre en style une <span>portion de texte</span> qui se différencie des autres,</li>
 
-				<li>L&rsquo;élément <code>&lt;sub&gt;</code> est utlisé pour déclarer un indice,</li>
+				<li>L&rsquo;élément <samp>&lt;sub&gt;</samp> est utlisé pour déclarer un indice,</li>
 
-				<li>L&rsquo;élément <code>&lt;sup&gt;</code> est utlisé pour déclarer un exposant,</li>
+				<li>L&rsquo;élément <samp>&lt;sup&gt;</samp> est utlisé pour déclarer un exposant,</li>
 
-				<li>L&rsquo;élément <code>&lt;var&gt;</code> est utilisé pour déclarer une <var>variable</var>.</li>
+				<li>L&rsquo;élément <samp>&lt;var&gt;</samp> est utilisé pour déclarer une <var>variable</var>.</li>
 
 			</ul>
 
 			<h3>Espaces</h3>
 
-			<p>Toute combinaison d&rsquo;espace, de rentrée d&rsquo;alinéa ou de retour à la ligne, est automatiquement comprise comme une espace mot. Si vous devez insérer plus qu&rsquo;un espace mot entre deux phrases, ou tout autre caractère, utilisez alors l&rsquo;un des caractères d&rsquo;espace disponible en Unicode. Même si le caractère lui-même n&rsquo;est pas présent dans le fichier de la police de caratères utilisée, les navigateurs qui comprennent l&rsquo;Unicode pourront en afficher une bonne approximation. Résistez à la tentation d&rsquo;utiliser l&rsquo;espace insécable <code>&amp;nbsp;</code> qui n&rsquo;a de signification que pour lui-même.</p>
+			<p>Toute combinaison d&rsquo;espace, de rentrée d&rsquo;alinéa ou de retour à la ligne, est automatiquement comprise comme une espace mot. Si vous devez insérer plus qu&rsquo;un espace mot entre deux phrases, ou tout autre caractère, utilisez alors l&rsquo;un des caractères d&rsquo;espace disponible en Unicode. Même si le caractère lui-même n&rsquo;est pas présent dans le fichier de la police de caratères utilisée, les navigateurs qui comprennent l&rsquo;Unicode pourront en afficher une bonne approximation. Résistez à la tentation d&rsquo;utiliser l&rsquo;espace insécable <samp>&amp;nbsp;</samp> qui n&rsquo;a de signification que pour lui-même.</p>
 
 			<ul>
 
-				<li><span>Espace d&rsquo;un em ou d&rsquo;un cadratin avec <code>&amp;#8195;</code></span> <ins>&#8195;</ins></li>
+				<li class="o-split"><span class="o-split__title">Espace d&rsquo;un em ou d&rsquo;un cadratin avec <samp>&amp;#8195;</samp></span> <mark>&#8195;</mark></li>
 
-				<li><span>Espace num&eacute;rique (&eacute;gale &agrave; la chasse d&rsquo;un z&eacute;ro) avec <code>&amp;#8199;</code></span> <mark>&#8199;</mark></li>
+				<li class="o-split"><span class="o-split__title">Espace num&eacute;rique (&eacute;gale &agrave; la chasse d&rsquo;un z&eacute;ro) avec <samp>&amp;#8199;</samp></span> <mark>&#8199;</mark></li>
 
-				<li><span>Espace d&rsquo;un tiers de cadratin avec <code>&amp;#8196;</code></span> <mark>&#8196;</mark></li>
+				<li class="o-split"><span class="o-split__title">Espace d&rsquo;un tiers de cadratin avec <samp>&amp;#8196;</samp></span> <mark>&#8196;</mark></li>
 
-				<li><span>Espace d&rsquo;un quart de cadratin avec <code>&amp;#8197;</code></span> <mark>&#8197;</mark></li>
+				<li class="o-split"><span class="o-split__title">Espace d&rsquo;un quart de cadratin avec <samp>&amp;#8197;</samp></span> <mark>&#8197;</mark></li>
 
-				<li><span>Espace ponctuation (&eacute;gale &agrave; la chasse d&rsquo;une virgule) avec <code>&amp;#8200;</code></span> <mark>&#8200;</mark></li>
+				<li class="o-split"><span class="o-split__title">Espace ponctuation (&eacute;gale &agrave; la chasse d&rsquo;une virgule) avec <samp>&amp;#8200;</samp></span> <mark>&#8200;</mark></li>
 
-				<li><span>Espace fine (1/5 cadratin, 1/8 en fran&ccedil;ais) avec <code>&amp;#8201;</code></span> <mark>&#8201;</mark></li>
+				<li class="o-split"><span class="o-split__title">Espace fine (1/5 cadratin, 1/8 en fran&ccedil;ais) avec <samp>&amp;#8201;</samp></span> <mark>&#8201;</mark></li>
 
-				<li><span>Espace d&rsquo;un sixi&egrave;me de cadratin avec<code>&amp;#8198;</code></span> <mark>&#8198;</mark></li>
+				<li class="o-split"><span class="o-split__title">Espace d&rsquo;un sixi&egrave;me de cadratin avec<samp>&amp;#8198;</samp></span> <mark>&#8198;</mark></li>
 
-				<li><span>Espace ultra fine (de 1/10 &agrave; 1/16 de cadratin) avec <code>&amp;#8202;</code></span> <mark>&#8202;</mark></li>
+				<li class="o-split"><span class="o-split__title">Espace ultra fine (de 1/10 &agrave; 1/16 de cadratin) avec <samp>&amp;#8202;</samp></span> <mark>&#8202;</mark></li>
 
 			</ul>
 
@@ -466,7 +527,7 @@
 
 			<h3>Liens internes</h3>
 
-			<p>Les hyperliens <code>&lt;a&gt;</code> doivent être visuellement distingués du reste du contenu. Les hyperliens de même nature ont des couleurs, des formes et des comportements identiques sur toutes les pages.</p>
+			<p>Les hyperliens <samp>&lt;a&gt;</samp> doivent être visuellement distingués du reste du contenu. Les hyperliens de même nature ont des couleurs, des formes et des comportements identiques sur toutes les pages.</p>
 
 			<ul>
 
@@ -482,7 +543,7 @@
 
 			</ul>
 
-			<pre><code>&lt;a href="#!"&gt;Lien interne&lt;/a&gt;<br><br>&lt;a href="mailto:adresse@courriel.net" title="Écrire à adresse@courriel.net"&gt;Ecrivez-nous&amp;#8202;!&lt;/a&gt;<br><br>&lt;a href="#!" download>Document à télécharger &lt;small&gt;(&lt;abbr title="Document PDF">PDF&lt;/abbr&gt; &ndash; 215&nbsp;Ko)&lt;/small&gt;&lt;/a&gt;<br><br>&lt;a href="//url.com/file.mp3">Document audio &lt;small&gt;(&lt;abbr title="Fichier Ogg"&gt;Ogg&lt;/abbr&gt; &ndash; 12&nbsp;min.)&lt;/small&gt;&lt;/a&gt;</code></pre>
+			<pre><code>&lt;a href="#!"&gt;Lien interne&lt;/a&gt;<br><br>&lt;a href="mailto:adresse@courriel.net" title="Écrire à adresse@courriel.net"&gt;Ecrivez-nous&amp;#8202;!&lt;/a&gt;<br><br>&lt;a href="tel:+33141592653"&gt;+33 1 41 59 26 53&lt;/a&gt;<br><br>&lt;a href="#!" download>Document à télécharger &lt;small&gt;(&lt;abbr title="Document PDF">PDF&lt;/abbr&gt; &ndash; 215&nbsp;Ko)&lt;/small&gt;&lt;/a&gt;<br><br>&lt;a href="//url.com/file.mp3">Document audio &lt;small&gt;(&lt;abbr title="Fichier Ogg"&gt;Ogg&lt;/abbr&gt; &ndash; 12&nbsp;min.)&lt;/small&gt;&lt;/a&gt;</code></pre>
 
 			<h3>Liens externes</h3>
 
@@ -498,7 +559,7 @@
 
 			</ul>
 
-			<pre><code>&lt;a href="//url.com"&gt;Lien externe&lt;/a&gt;<br><br>&lt;a href="mailto:adresse@courriel.net" title="Écrire à adresse@courriel.net"&gt;Ecrivez-nous&amp;#8202;!&lt;/a&gt;<br><br>&lt;a href="//url.com/file.pdf" download>Document à télécharger &lt;small&gt;(&lt;abbr title="Document PDF">PDF&lt;/abbr&gt; &ndash; 215&nbsp;Ko)&lt;/small&gt;&lt;/a&gt;<br><br>&lt;a href="//url.com/file.mp3">Document audio &lt;small&gt;(&lt;abbr title="Fichier Ogg"&gt;Ogg&lt;/abbr&gt; &ndash; 12&nbsp;min.)&lt;/small&gt;&lt;/a&gt;</code></pre>
+			<pre><code>&lt;a href="//url.com" hreflang="en"&gt;Lien externe&lt;/a&gt;<br><br>&lt;a href="//url.com/file.pdf" download>Document à télécharger &lt;small&gt;(&lt;abbr title="Document PDF">PDF&lt;/abbr&gt; &ndash; 215&nbsp;Ko)&lt;/small&gt;&lt;/a&gt;<br><br>&lt;a href="//url.com/file.mp3">Document audio &lt;small&gt;(&lt;abbr title="Fichier Ogg"&gt;Ogg&lt;/abbr&gt; &ndash; 12&nbsp;min.)&lt;/small&gt;&lt;/a&gt;</code></pre>
 
 			<small><a href="#top">[Haut de page]</a></small>
 
@@ -512,13 +573,13 @@
 
 			<ul>
 
-				<li>La balise <code>&lt;code&gt;</code> représente un <code>bloc de code</code>,</li>
+				<li>La balise <samp>&lt;code&gt;</samp> représente un <code>bloc de code</code>,</li>
 
-				<li>La balise <code>&lt;samp&gt;</code> indique que l&rsquo;ordinateur produit <samp>un texte</samp>,</li>
+				<li>La balise <samp>&lt;samp&gt;</samp> indique que l&rsquo;ordinateur produit <samp>un texte</samp>,</li>
 
-				<li>La balise <code>&lt;kbd&gt;</code> représente une <kbd>entrée</kbd> saisie au clavier,</li>
+				<li>La balise <samp>&lt;kbd&gt;</samp> représente une <kbd>entrée</kbd> saisie au clavier,</li>
 
-				<li>La balise <code>&lt;var&gt;</code> permet d&rsquo;écrire des <var>variables</var> pour des formules simples.</li>
+				<li>La balise <samp>&lt;var&gt;</samp> permet d&rsquo;écrire des <var>variables</var> pour des formules simples.</li>
 
 			</ul>
 
@@ -531,7 +592,7 @@ P Q R S T U V W X Y Z [ \ ] ^ _
 ` a b c d e f g h i j k l m n o
 p q r s t u v w x y z { | } ~</code></pre>
 
-			<p role="note"><mark>Si vous mentionnez du code informatique dans votre texte préformaté vous devriez également imbriquer la balise <code>&lt;code&gt;</code> dans la balise <code>&lt;pre&gt;</code></mark></p>
+			<p role="note"><mark>Si vous mentionnez du code informatique dans votre texte préformaté vous devriez également imbriquer la balise <samp>&lt;code&gt;</samp> dans la balise <samp>&lt;pre&gt;</samp></mark></p>
 
 			<small><a href="#top">[Haut de page]</a></small>
 
@@ -543,21 +604,57 @@ p q r s t u v w x y z { | } ~</code></pre>
 
 			<h2>Listes</h2>
 
-			<p>Liste avec <code>&lt;ul&gt;</code>&#8202;:</p>
+			<p>Une liste comporte une phrase introductive suivie d&rsquo;une suite d'éléments. Si la phrase introductive est <em>ouverte</em> elle est marqué par un double point qui ouvre la liste dont les éléments commencent avec une minuscule et se terminent avec une virgule ou un point virgule. Si la phrase introductive est <em>fermée</em> par un point les éléments commencent avec une majuscule et se terminent par un point. Dans les deux cas le dernier élément se termine systématiquement par un point.</p>
+
+			<p class="u-margin-bottom--none">Les listes non-ordonnées avec l&rsquo;élément <samp>&lt;ul&gt;</samp> n&rsquo;ont pas de notion d&rsquo;ordre et on peut mélanger leurs éléments sans que cela modifie leur sens&#8202;:</p>
 
 			<ul>
-				<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,</li>
-				<li>Aliquam tincidunt mauris eu risus.</li>
+				<li>élément 1,</li>
+				<li>élément 2.</li>
 			</ul>
 
-			<p>&Eacute;numération avec <code>&lt;ol&gt;</code>&#8202;:</p>
+			<p class="u-margin-bottom--none">Listes non-ordonnées imbriquées&#8202;:</p>
+
+			<ul>
+
+				<li>élément 1,</li>
+
+				<li>liste imbriquée&#8202;:
+					<ul>
+						<li>élément 3,</li>
+						<li>élément 4,</li>
+					</ul>
+				</li>
+
+				<li>élément 5.</li>
+
+			</ul>
+
+			<p class="u-margin-bottom--none">Les énumération avec l&rsquo;élément <samp>&lt;ol&gt;</samp> sont numérotées et doivent être lues dans un ordre donné. On retrouve souvent ces listes pour décrire des processus pas-à-pas où chaque étape ne peut être réalisée que si l&rsquo;action précédente a été traitée&#8202;:</p>
 
 			<ol>
-				<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,</li>
-				<li>Aliquam tincidunt mauris eu risus.</li>
+				<li>élément 1,</li>
+				<li>élément 1.</li>
 			</ol>
 
-			<p>Liste de définition avec <code>&lt;dl&gt;</code>, <code>&lt;dt&gt;</code> et <code>&lt;dd&gt;</code>&#8202;:</p>
+			<p class="u-margin-bottom--none">&Eacute;numérations imbriquées&#8202;:</p>
+
+			<ol>
+
+				<li>élément 1,</li>
+
+				<li>énumération imbriquée&#8202;:
+					<ol>
+						<li>élément 2,</li>
+						<li>élément 3,</li>
+					</ol>
+				</li>
+
+				<li>élément 4.</li>
+
+			</ol>
+
+			<p>Les listes de définitions comportent deux parties. Un terme et une description. Pour marquer une liste de définitions il vous faut trois éléments <abbr title="Hyper Text Markup Language">html</abbr>&#8202;: un conteneur <samp>&lt;dl&gt;</samp>, un terme de définition <samp>&lt;dt&gt;</samp> et une description du terme de définition <samp>&lt;dd&gt;</samp>.</p>
 
 			<dl>
 				<dt>Terme de définition</dt>
@@ -565,6 +662,176 @@ p q r s t u v w x y z { | } ~</code></pre>
 				<dt>Terme de définition</dt>
 				<dd>Description du terme de définition.</dd>
 			</dl>
+
+			<h3>Modificateurs</h3>
+
+			<h4>Puces</h4>
+
+			<p class="u-margin-bottom--none">Avec la classe <samp>.u-list-circle</samp>&#8202;:</p>
+
+			<ul class="u-list-circle">
+				<li>élément 1,</li>
+				<li>élément 2.</li>
+			</ul>
+
+			<p class="u-margin-bottom--none">Avec la classe <samp>.u-list-disc</samp>&#8202;:</p>
+
+			<ul class="u-list-disc">
+				<li>élément 1,</li>
+				<li>élément 2.</li>
+			</ul>
+
+			<p class="u-margin-bottom--none">Avec la classe <samp>.u-list-square</samp>&#8202;:</p>
+
+			<ul class="u-list-square">
+				<li>élément 1,</li>
+				<li>élément 2.</li>
+			</ul>
+
+			<h4>&Eacute;numérations</h4>
+
+			<p class="u-margin-bottom--none">Avec la classe <samp>.u-list-decimal</samp>&#8202;:</p>
+
+			<ol class="u-list-decimal">
+				<li>élément 1,</li>
+				<li>élément 2.</li>
+			</ol>
+
+			<p class="u-margin-bottom--none">Avec la classe <samp>.u-list-leading-zero</samp>&#8202;:</p>
+
+			<ol class="u-list-leading-zero">
+				<li>élément 1,</li>
+				<li>élément 2.</li>
+			</ol>
+
+			<p class="u-margin-bottom--none">Avec la classe <samp>.u-list-upper-roman</samp>&#8202;:</p>
+
+			<ol class="u-list-upper-roman">
+				<li>élément 1,</li>
+				<li>élément 2.</li>
+			</ol>
+
+			<p class="u-margin-bottom--none">Avec la classe <samp>.u-list-lower-roman</samp>&#8202;:</p>
+
+			<ol class="u-list-lower-roman">
+				<li>élément 1,</li>
+				<li>élément 2.</li>
+			</ol>
+
+			<p class="u-margin-bottom--none">Avec la classe <samp>.u-list-upper-alpha</samp>&#8202;:</p>
+
+			<ol class="u-list-upper-alpha">
+				<li>élément 1,</li>
+				<li>élément 2.</li>
+			</ol>
+
+			<p class="u-margin-bottom--none">Avec la classe <samp>.u-list-lower-alpha</samp>&#8202;:</p>
+
+			<ol class="u-list-lower-alpha">
+				<li>élément 1,</li>
+				<li>élément 2.</li>
+			</ol>
+
+			<p class="u-margin-bottom--none">Appliquer des énumérations imbriquées avec une numérotation ordonnée avec la classe <samp>.o-list--ordered</samp>&#8202;:</p>
+
+			<ol class="o-list-ordered">
+
+				<li class="o-list-ordered__item">élément 1</li>
+
+				<li class="o-list-ordered__item">élément 2
+					<ol class="o-list-ordered">
+						<li class="o-list-ordered__item">élément 3</li>
+						<li class="o-list-ordered__item">élément 4</li>
+					</ol>
+				</li>
+
+				<li class="o-list-ordered__item">élément 5</li>
+
+			</ol>
+
+			<pre><code>&lt;ol class="o-list--ordered"&gt;
+  &lt;li class="o-list__item"&gt;élément 1&lt;/li&gt;
+  &lt;li class="o-list__item"&gt;élément 2
+    &lt;ol class="o-list--ordered"&gt;
+      &lt;li class="o-list__item"&gt;élément 3&lt;/li&gt;
+      &lt;li class="o-list__item"&gt;élément 4&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li class="o-list__item"&gt;élément 5&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+
+			<h4>Styles</h4>
+
+			<p>Un point de vue largement répandu consiste à considérer le menu de navigation comme une liste de liens et à utiliser la balise correspondant aux listes non ordonnées de manière appropriée.</p>
+
+			<p>Supprimer les puces et l&rsquo;indentation avec la classe <samp>.o-list-bare</samp>&#8202;:</p>
+
+			<ul class="o-list-bare">
+				<li>élément 1</li>
+				<li>élément 2</li>
+			</ul>
+
+			<p>Afficher une liste d&rsquo;élements à la verticale avec la classe <samp>.o-list-ui</samp>&#8202;:</p>
+
+			<ul class="o-list-ui  o-list-ui--small  u-margin-bottom">
+				<li class="o-list-ui__item">élément 1</li>
+				<li class="o-list-ui__item">élément 2</li>
+			</ul>
+
+			<p><mark>La classe <samp>.o-list-ui</samp> peut être complétée par une des quatre classes suivantes qui définissent les marges internes&#8202;: <samp>o-list-ui--tiny</samp>, <samp>o-list-ui--small</samp>, <samp>o-list-ui--large</samp>, <samp>o-list-ui--huge</samp>. Activez ou désactivez le séparateur avec la variable <samp>$show-list-ui-separator</samp> et modifiez sa couleur avec la variable <samp>$list-ui-color-separator</samp> qui se trouvent dans le fichier <samp>scss/objects/_lists.scss</samp>.</mark></p>
+
+			<p>Afficher une liste d&rsquo;élements à l&rsquo;horizontale avec la classe <samp>.o-list-inline</samp>&#8202;:</p>
+
+			<ul class="o-list-inline">
+				<li class="o-list-inline__item">élément 1</li>
+				<li class="o-list-inline__item">élément 2</li>
+			</ul>
+
+			<p>Une liste horizontale peut être complétée avec les classes <samp>.o-list-inline--banner</samp>, <samp>.o-list-inline--comma</samp>, <samp>.o-list-inline--dash</samp> et <samp>.o-list-inline--pipe</samp></p>
+
+
+			<p>Afficher une liste d&rsquo;élements centrés à l&rsquo;horizontale avec les classes <samp>.o-list-inline</samp> et <samp>.o-list-inline--banner</samp>&#8202;:</p>
+
+			<ul class="[ o-list-inline  o-list-inline--banner ]">
+				<li class="o-list-inline__item">élément 1</li>
+				<li class="o-list-inline__item">élément 2</li>
+			</ul>
+
+			<p>Délimiter les éléments de liste avec une virgule en combinant les classes <samp>.o-list-inline</samp> et <samp>.o-list-inline--comma</samp>&#8202;:</p>
+
+			<ul class="[ o-list-inline  o-list-inline--comma ]">
+				<li class="o-list-inline__item">élément 1</li>
+				<li class="o-list-inline__item">élément 2</li>
+				<li class="o-list-inline__item">élément 3</li>
+				<li class="o-list-inline__item">élément 4</li>
+			</ul>
+
+			<p>Délimiter les éléments de liste avec un tiret en combinant les classes <samp>.o-list-inline</samp> et <samp>.o-list-inline--dash</samp>&#8202;:</p>
+
+			<ul class="[ o-list-inline  o-list-inline--dash ]">
+				<li class="o-list-inline__item">élément 1</li>
+				<li class="o-list-inline__item">élément 2</li>
+				<li class="o-list-inline__item">élément 3</li>
+				<li class="o-list-inline__item">élément 4</li>
+			</ul>
+
+			<p>Délimiter les éléments de liste avec une barre verticale en combinant les classes <samp>.o-list-inline</samp> et <samp>.o-list-inline--pipe</samp>&#8202;:</p>
+
+			<ul class="[ o-list-inline  o-list-inline--pipe ]">
+				<li class="o-list-inline__item">élément 1</li>
+				<li class="o-list-inline__item">élément 2</li>
+				<li class="o-list-inline__item">élément 3</li>
+				<li class="o-list-inline__item">élément 4</li>
+			</ul>
+
+			<p>Forcer une liste à occuper 100% de la largeur disponible de son parent avec la classe <samp>.o-list-fit</samp>&#8202;:</p>
+
+			<ul class="o-list-fit">
+				<li class="o-list-fit__item">élément 1</li>
+				<li class="o-list-fit__item">élément 2</li>
+				<li class="o-list-fit__item">élément 3</li>
+				<li class="o-list-fit__item">élément 4</li>
+			</ul>
 
 			<small><a href="#top">[Haut de page]</a></small>
 
@@ -602,7 +869,7 @@ p q r s t u v w x y z { | } ~</code></pre>
 
 			<h3>Modificateurs</h3>
 
-			<p>Largeur de colonnes fixes avec la classe <abbr title="Cascading Style Sheets">css</abbr> <code>.o-table--fixed</code>&#8202;:</p>
+			<p>Largeur de colonnes fixes avec la classe <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-table--fixed</samp>&#8202;:</p>
 
 			<table class="o-table--fixed">
 				<thead>
@@ -626,7 +893,7 @@ p q r s t u v w x y z { | } ~</code></pre>
 				</tbody>
 			</table>
 
-			<p>Bordures avec la classe <abbr title="Cascading Style Sheets">css</abbr> <code>.o-table--bordered</code>&#8202;:</p>
+			<p>Bordures avec la classe <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-table--bordered</samp>&#8202;:</p>
 
 			<table class="o-table--bordered">
 				<thead>
@@ -650,7 +917,7 @@ p q r s t u v w x y z { | } ~</code></pre>
 				</tbody>
 			</table>
 
-			<p>Bandes avec la classe <abbr title="Cascading Style Sheets">css</abbr> <code>.o-table--striped</code>&#8202;:</p>
+			<p>Bandes avec la classe <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-table--striped</samp>&#8202;:</p>
 
 
 			<table class="o-table--striped">
@@ -675,7 +942,7 @@ p q r s t u v w x y z { | } ~</code></pre>
 				</tbody>
 			</table>
 
-			<p>Les classes <abbr title="Cascading Style Sheets">css</abbr> <code>.o-table--fixed</code>, <code>.o-table--bordered</code> et <code>.o-table--striped</code> peuvent être combinées&#8202;:</p>
+			<p>Les classes <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-table--fixed</samp>, <samp>.o-table--bordered</samp> et <samp>.o-table--striped</samp> peuvent être combinées&#8202;:</p>
 
 			<table class="[ o-table--fixed  o-table--striped  o-table--bordered ]">
 				<thead>
@@ -830,15 +1097,15 @@ p q r s t u v w x y z { | } ~</code></pre>
 
 			<h3>Images</h3>
 
-			<img class="is-centered" src="//placehold.it/800x600/ced4da/868e96?text=image" alt="" />
+			<img class="u-centered" src="//placehold.it/800x600/ced4da/868e96?text=image" alt="" />
 
 			<p><strong>Paragraphe précédé d&rsquo;une image centrée</strong>. Praesent egestas turpis ut risus lacinia eu cursus urna dapibus. Donec nibh enim, pulvinar vitae ornare ut, ultrices sit amet neque. Quisque ultrices venenatis mi, id fringilla eros malesuada a. Curabitur sagittis mollis arcu, sit amet scelerisque magna varius ac. Vivamus ullamcorper vulputate ipsum, adipiscing varius leo porttitor a. Curabitur luctus gravida nibh, sit amet auctor metus vulputate quis. Aliquam eu nulla risus. Cras in suscipit odio. Etiam ut nisl ut velit ornare pharetra a sed lacus.</p>
 
-			<img class="is-pulled-left" src="//placehold.it/300x200/ced4da/868e96?text=image" alt="" />
+			<img class="u-pulled-left" src="//placehold.it/300x200/ced4da/868e96?text=image" alt="" />
 
 			<p><strong>Paragraphe précédé d&rsquo;une image positionnée à gauche</strong>. Mauris lacinia, ante id sodales pretium, eros est gravida sapien, nec auctor dolor massa a dui. Vivamus consequat suscipit elit in imperdiet. In consectetur varius tortor, vel dictum ipsum dignissim vel. Nulla faucibus suscipit ipsum non porttitor. Fusce non ante non mi adipiscing faucibus. Sed odio risus, malesuada eget placerat id, semper eget turpis. Cras ante lorem, pretium ut vestibulum nec, vehicula eget orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel lectus eget tortor cursus dapibus sit amet imperdiet lacus. Nullam purus ipsum, aliquet eget imperdiet scelerisque, interdum in felis. Maecenas dolor eros, iaculis et pretium ac, eleifend sit amet lacus. Etiam a lacus eget dui aliquet tempor. Duis dapibus magna dictum enim ultrices ac pharetra lacus convallis. Donec felis ipsum, tristique ornare fermentum quis, fringilla nec arcu. Nunc tortor arcu, fermentum in dictum sit amet, aliquam eu ante. Integer volutpat, erat cursus posuere rutrum, erat tellus varius erat, quis tempus eros risus a lacus.</p>
 
-			<img class="is-pushed-right" src="//placehold.it/300x200/ced4da/868e96?text=image" alt="" />
+			<img class="u-pushed-right" src="//placehold.it/300x200/ced4da/868e96?text=image" alt="" />
 
 			<p><strong>Paragraphe précédé d&rsquo;une image positionnée à droite</strong>. Mauris lacinia, ante id sodales pretium, eros est gravida sapien, nec auctor dolor massa a dui. Vivamus consequat suscipit elit in imperdiet. In consectetur varius tortor, vel dictum ipsum dignissim vel. Nulla faucibus suscipit ipsum non porttitor. Fusce non ante non mi adipiscing faucibus. Sed odio risus, malesuada eget placerat id, semper eget turpis. Cras ante lorem, pretium ut vestibulum nec, vehicula eget orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel lectus eget tortor cursus dapibus sit amet imperdiet lacus. Nullam purus ipsum, aliquet eget imperdiet scelerisque, interdum in felis. Maecenas dolor eros, iaculis et pretium ac, eleifend sit amet lacus. Etiam a lacus eget dui aliquet tempor. Duis dapibus magna dictum enim ultrices ac pharetra lacus convallis. Donec felis ipsum, tristique ornare fermentum quis, fringilla nec arcu. Nunc tortor arcu, fermentum in dictum sit amet, aliquam eu ante. Integer volutpat, erat cursus posuere rutrum, erat tellus varius erat, quis tempus eros risus a lacus.</p>
 
@@ -855,25 +1122,25 @@ p q r s t u v w x y z { | } ~</code></pre>
 
 			<p>Affichage par défaut si l&rsquo;image distante est momentanément indisponible ou n&rsquo;existe plus.</p>
 
-			<p class="is-aligned-center"><img src="url.com/broken.jpg" alt="Description de l'image" /></p>
+			<p class="u-aligned-center"><img src="url.com/broken.jpg" alt="Description de l'image" /></p>
 
 			<h3>Figures</h3>
 
 			<figure>
-				<img class="is-centered" src="//placehold.it/800x600/ced4da/868e96?text=image" alt="Description de l'image" />
+				<img class="u-centered" src="//placehold.it/800x600/ced4da/868e96?text=image" alt="Description de l'image" />
 				<figcaption>La légende est un court texte accompagnant une photo ou un dessin et vise à lui donner un sens. Elle peut se placer avant ou après le media principal.</figcaption>
 			</figure>
 
 			<p><strong>Paragraphe précédé d&rsquo;une figure centrée</strong>. Mauris lacinia, ante id sodales pretium, eros est gravida sapien, nec auctor dolor massa a dui. Vivamus consequat suscipit elit in imperdiet. In consectetur varius tortor, vel dictum ipsum dignissim vel. Nulla faucibus suscipit ipsum non porttitor. Fusce non ante non mi adipiscing faucibus. Sed odio risus, malesuada eget placerat id, semper eget turpis. Cras ante lorem, pretium ut vestibulum nec, vehicula eget orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel lectus eget tortor cursus dapibus sit amet imperdiet lacus. Nullam purus ipsum, aliquet eget imperdiet scelerisque, interdum in felis. Maecenas dolor eros, iaculis et pretium ac, eleifend sit amet lacus. Etiam a lacus eget dui aliquet tempor. Duis dapibus magna dictum enim ultrices ac pharetra lacus convallis. Donec felis ipsum, tristique ornare fermentum quis, fringilla nec arcu. Nunc tortor arcu, fermentum in dictum sit amet, aliquam eu ante. Integer volutpat, erat cursus posuere rutrum, erat tellus varius erat, quis tempus eros risus a lacus.</p>
 
-			<figure class="is-pulled-left">
+			<figure class="u-pulled-left">
 				<img src="//placehold.it/300x200/ced4da/868e96?text=image" alt="Description de l'image" />
 				<figcaption>La légende est un court texte accompagnant une photo ou un dessin et vise à lui donner un sens. Elle peut se placer avant ou après le media principal.</figcaption>
 			</figure>
 
 			<p><strong>Paragraphe précédé d&rsquo;une figure positionnée à gauche</strong>. Mauris lacinia, ante id sodales pretium, eros est gravida sapien, nec auctor dolor massa a dui. Vivamus consequat suscipit elit in imperdiet. In consectetur varius tortor, vel dictum ipsum dignissim vel. Nulla faucibus suscipit ipsum non porttitor. Fusce non ante non mi adipiscing faucibus. Sed odio risus, malesuada eget placerat id, semper eget turpis. Cras ante lorem, pretium ut vestibulum nec, vehicula eget orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel lectus eget tortor cursus dapibus sit amet imperdiet lacus. Nullam purus ipsum, aliquet eget imperdiet scelerisque, interdum in felis. Maecenas dolor eros, iaculis et pretium ac, eleifend sit amet lacus. Etiam a lacus eget dui aliquet tempor. Duis dapibus magna dictum enim ultrices ac pharetra lacus convallis. Donec felis ipsum, tristique ornare fermentum quis, fringilla nec arcu. Nunc tortor arcu, fermentum in dictum sit amet, aliquam eu ante. Integer volutpat, erat cursus posuere rutrum, erat tellus varius erat, quis tempus eros risus a lacus.</p>
 
-			<figure class="is-pushed-right">
+			<figure class="u-pushed-right">
 				<img src="//placehold.it/300x200/ced4da/868e96?text=image" alt="Description de l'image" />
 				<figcaption>La légende est un court texte accompagnant une photo ou un dessin et vise à lui donner un sens. Elle peut se placer avant ou après le media principal.</figcaption>
 			</figure>
@@ -921,10 +1188,10 @@ p q r s t u v w x y z { | } ~</code></pre>
 			<h3>Conteneurs</h3>
 
 			<ul>
-				<li>La classe <code>l-wrapper</code> est utilisée pour définir un cadre fluide avec marges internes horizontales.</li>
-				<li>La classe modificatrice <code>l-wrapper--wide</code> est utilisée pour définir la largeur maximale du cadre à 1193px pour une taille de caractère de base de 16px.</li>
-				<li>la classe modificatrice <code>l-wrapper--medium</code> est utilisée pour définir la largeur maximale du cadre à 895px pour une taille de caractère de base de  16px.</li>
-				<li>La classe modificatrice <code>l-wrapper--narrow</code> est utilisée pour définir la largeur maximale du conteneur à 528px pour une taille de caractère de base de  16px.</li>
+				<li>La classe <samp>l-wrapper</samp> est utilisée pour définir un cadre fluide avec marges internes horizontales.</li>
+				<li>La classe modificatrice <samp>l-wrapper--wide</samp> est utilisée pour définir la largeur maximale du cadre à 1193px pour une taille de caractère de base de 16px.</li>
+				<li>la classe modificatrice <samp>l-wrapper--medium</samp> est utilisée pour définir la largeur maximale du cadre à 895px pour une taille de caractère de base de  16px.</li>
+				<li>La classe modificatrice <samp>l-wrapper--narrow</samp> est utilisée pour définir la largeur maximale du conteneur à 528px pour une taille de caractère de base de  16px.</li>
 			</ul>
 
 			<p role="note"><mark>Les valeurs de largeur maximale sont définies d&rsquo;après l&rsquo;échelle typographique en fonction de la taille de caractère et de l&rsquo;interligne par défaut, voir <a href="//www.modularscale.com/" hreflang="en">modularscale.com</a>.</mark></p>
@@ -950,42 +1217,42 @@ p q r s t u v w x y z { | } ~</code></pre>
 
 			<h4>Modificateurs</h4>
 
-			<p>Pour un contrôle plus fin des cellules individuelles vous pouvez utiliser les classes de dimensionnement <code>.is-1/1</code>, <code>.is-1/2</code>, <code>.is-1/3</code> et <code>.is-1/4</code>.</p>
+			<p>Pour un contrôle plus fin des cellules individuelles vous pouvez utiliser les classes de dimensionnement <samp>.l-1/1</samp>, <samp>.l-1/2</samp>, <samp>.l-1/3</samp> et <samp>.l-1/4</samp>.</p>
 
 			<div class="l-grid">
-				<div class="[ l-grid__item  is-1/2 ]">
+				<div class="[ l-grid__item  l-1/2 ]">
 					<p><strong>Colonne 1&#8202;:</strong> pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
 				</div>
-				<div class="[ l-grid__item  is-1/2 ]">
+				<div class="[ l-grid__item  l-1/2 ]">
 					<p><strong>Colonne 2&#8202;:</strong> pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
 				</div>
 			</div>
 
-			<p>Pour une mise en page adaptative vous pouvez combiner des classes en leur ajoutant les suffixes <code>@medium</code> ou <code>@large</code> en fonction de la résolution d'écran.</p>
+			<p>Pour une mise en page adaptative vous pouvez combiner des classes en leur ajoutant les suffixes <samp>@medium</samp> ou <samp>@large</samp> en fonction de la résolution d'écran.</p>
 
 			<div class="l-grid">
-				<div class="[ l-grid__item  is-1/1  is-1/3@medium ]">
+				<div class="[ l-grid__item  l-1/1  l-1/3@medium ]">
 					<p><strong>Colonne 1&#8202;:</strong> pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
 				</div>
-				<div class="[ l-grid__item  is-1/1  is-1/3@medium ]">
+				<div class="[ l-grid__item  l-1/1  l-1/3@medium ]">
 					<p><strong>Colonne 2&#8202;:</strong> pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
 				</div>
-				<div class="[ l-grid__item  is-1/1  is-1/3@medium ]">
+				<div class="[ l-grid__item  l-1/1  l-1/3@medium ]">
 					<p><strong>Colonne 3&#8202;:</strong> pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
 				</div>
 			</div>
 
 			<div class="l-grid">
-				<div class="[ l-grid__item  is-1/1  is-1/2@medium  is-1/4@large ]">
+				<div class="[ l-grid__item  l-1/1  l-1/2@medium  l-1/4@large ]">
 					<p><strong>Colonne 1&#8202;:</strong> pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
 				</div>
-				<div class="[ l-grid__item  is-1/1  is-1/2@medium  is-1/4@large ]">
+				<div class="[ l-grid__item  l-1/1  l-1/2@medium  l-1/4@large ]">
 					<p><strong>Colonne 2&#8202;:</strong> pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
 				</div>
-				<div class="[ l-grid__item  is-1/1  is-1/2@medium  is-1/4@large ]">
+				<div class="[ l-grid__item  l-1/1  l-1/2@medium  l-1/4@large ]">
 					<p><strong>Colonne 3&#8202;:</strong> pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
 				</div>
-				<div class="[ l-grid__item  is-1/1  is-1/2@medium  is-1/4@large ]">
+				<div class="[ l-grid__item  l-1/1  l-1/2@medium  l-1/4@large ]">
 					<p><strong>Colonne 4&#8202;:</strong> pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
 				</div>
 			</div>
@@ -998,21 +1265,21 @@ p q r s t u v w x y z { | } ~</code></pre>
 &lt;/div&gt;
 
 &lt;div class="l-grid"&gt;
-  &lt;div class="[ l-grid__item  is-1/1  is-1/2@medium ]"&gt;&hellip;&lt;/div&gt;
-  &lt;div class="[ l-grid__item  is-1/1  is-1/2@medium ]"&gt;&hellip;&lt;/div&gt;
+  &lt;div class="[ l-grid__item  l-1/1  l-1/2@medium ]"&gt;&hellip;&lt;/div&gt;
+  &lt;div class="[ l-grid__item  l-1/1  l-1/2@medium ]"&gt;&hellip;&lt;/div&gt;
 &lt;/div&gt;
 
 &lt;div class="l-grid"&gt;
-  &lt;div class="[ l-grid__item  is-1/1  is-1/3@medium ]"&gt;&hellip;&lt;/div&gt;
-  &lt;div class="[ l-grid__item  is-1/1  is-1/3@medium ]"&gt;&hellip;&lt;/div&gt;
-  &lt;div class="[ l-grid__item  is-1/1  is-1/3@medium ]"&gt;&hellip;&lt;/div&gt;
+  &lt;div class="[ l-grid__item  l-1/1  l-1/3@medium ]"&gt;&hellip;&lt;/div&gt;
+  &lt;div class="[ l-grid__item  l-1/1  l-1/3@medium ]"&gt;&hellip;&lt;/div&gt;
+  &lt;div class="[ l-grid__item  l-1/1  l-1/3@medium ]"&gt;&hellip;&lt;/div&gt;
 &lt;/div&gt;
 
 &lt;div class="l-grid"&gt;
-  &lt;div class="[ l-grid__item  is-1/1  is-1/2@medium  is-1/4@large ]"&gt;&hellip;&lt;/div&gt;
-  &lt;div class="[ l-grid__item  is-1/1  is-1/2@medium  is-1/4@large ]"&gt;&hellip;&lt;/div&gt;
-  &lt;div class="[ l-grid__item  is-1/1  is-1/2@medium  is-1/4@large ]"&gt;&hellip;&lt;/div&gt;
-  &lt;div class="[ l-grid__item  is-1/1  is-1/2@medium  is-1/4@large ]"&gt;&hellip;&lt;/div&gt;
+  &lt;div class="[ l-grid__item  l-1/1  l-1/2@medium  l-1/4@large ]"&gt;&hellip;&lt;/div&gt;
+  &lt;div class="[ l-grid__item  l-1/1  l-1/2@medium  l-1/4@large ]"&gt;&hellip;&lt;/div&gt;
+  &lt;div class="[ l-grid__item  l-1/1  l-1/2@medium  l-1/4@large ]"&gt;&hellip;&lt;/div&gt;
+  &lt;div class="[ l-grid__item  l-1/1  l-1/2@medium  l-1/4@large ]"&gt;&hellip;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
 			<small><a href="#top">[Haut de page]</a></small>
@@ -1113,9 +1380,9 @@ p q r s t u v w x y z { | } ~</code></pre>
 
 			<h2>Icônographie</h2>
 
-			<p><abbr title="Scalable Vector Graphic">SVG</abbr> est un format d&rsquo;image vectoriel reposant sur une syntaxe <abbr title="Extensible Markup Language">XML</abbr> qui lui confère l&rsquo;avantage d&rsquo;être redimensionable sans perte de qualité. Avec <abbr title="HyperText Markup Language">Html</abbr> 5 l&rsquo;élément <code>&lt;svg&gt;</code> permet de définir un ensemble de pictogrammes directement dans une page. Il existe des outils permettant d&rsquo;automatiser le processus dont <a href="//icomoon.io/" hreflang="en">Icomoon</a>. Pour en savoir plus, voir cet article qui explique <a href="//la-cascade.io/comment-travailler-avec-des-icones-en-svg/#firefox">comment travailler avec des icônes en <abbr title="Scalable Vector Graphic">SVG</abbr></a>.</p>
+			<p><abbr title="Scalable Vector Graphic">SVG</abbr> est un format d&rsquo;image vectoriel reposant sur une syntaxe <abbr title="Extensible Markup Language">XML</abbr> qui lui confère l&rsquo;avantage d&rsquo;être redimensionable sans perte de qualité. Avec <abbr title="HyperText Markup Language">Html</abbr> 5 l&rsquo;élément <samp>&lt;svg&gt;</samp> permet de définir un ensemble de pictogrammes directement dans une page. Il existe des outils permettant d&rsquo;automatiser le processus dont <a href="//icomoon.io/" hreflang="en">Icomoon</a>. Pour en savoir plus, voir cet article qui explique <a href="//la-cascade.io/comment-travailler-avec-des-icones-en-svg/#firefox">comment travailler avec des icônes en <abbr title="Scalable Vector Graphic">SVG</abbr></a>.</p>
 
-			<p role="note">Note&#8202;: il est conseillé d&rsquo;utiliser <code>aria-hidden="true"</code> pour garantir que les lecteurs d&rsquo;écran ne liront pas l&rsquo;icône à haute voix. Pour un lien ou un bouton dont le seul contenu est une icône il est recommandé de spécifier un texte accessible avec <code>aria-label</code> sur l&rsquo;élément <code>&lt;a&gt;</code> ou <code>&lt;button&gt;</code>. Les définitions graphiques <abbr title="Scalable Vector Graphic">SVG</abbr> font parti du document et ne seront pas mises en cache par le navigateur comme un sujet distinct ce qui signifie qu&rsquo;elles ne seront pas réutilisable à travers les pages mais il est possible de <a href="//osvaldas.info/caching-svg-sprite-in-localstorage" hreflang="en">stocker les données dans le navigateur de l&rsquo;utilisateur</a> avec javascript. La limite de stockage est habituellement de 5 Mo par domaine.</p>
+			<p role="note">Note&#8202;: il est conseillé d&rsquo;utiliser <samp>aria-hidden="true"</samp> pour garantir que les lecteurs d&rsquo;écran ne liront pas l&rsquo;icône à haute voix. Pour un lien ou un bouton dont le seul contenu est une icône il est recommandé de spécifier un texte accessible avec <samp>aria-label</samp> sur l&rsquo;élément <samp>&lt;a&gt;</samp> ou <samp>&lt;button&gt;</samp>. Les définitions graphiques <abbr title="Scalable Vector Graphic">SVG</abbr> font parti du document et ne seront pas mises en cache par le navigateur comme un sujet distinct ce qui signifie qu&rsquo;elles ne seront pas réutilisable à travers les pages mais il est possible de <a href="//osvaldas.info/caching-svg-sprite-in-localstorage" hreflang="en">stocker les données dans le navigateur de l&rsquo;utilisateur</a> avec javascript. La limite de stockage est habituellement de 5 Mo par domaine.</p>
 
 			<figure class="is-aligned-center">
 
@@ -1191,15 +1458,13 @@ p q r s t u v w x y z { | } ~</code></pre>
 
 		</section>
 
-		<hr>
-
 	</main>
 
 
 
 
 
-	<footer class="is-aligned-center">
+	<footer class="[ l-wrapper  l-wrapper--narrow ]  u-aligned-center">
 		<small>Ecssential &copy; 2016 &mdash; Made with &hearts; by &Eacute;ric Mutschler</small>
 	</footer>
 
