@@ -17,11 +17,11 @@
 //    inputs or buttons, as well as when links use default borders or backgrounds.
 
 @mixin hide-text() {
-  font            : 0/0 a;       /* [1] */
-  text-shadow     : none;        /* [2] */
-  color           : transparent; /* [3] */
-  background-color: transparent; /* [4] */
-  border          : 0;           /* [4] */
+  font            : 0/0 a;       // [1]
+  text-shadow     : none;        // [2]
+  color           : transparent; // [3]
+  background-color: transparent; // [4]
+  border          : 0;           // [4]
 }
 
 
@@ -59,6 +59,32 @@
 // Completely hide content both visually from the screen, and from screenreaders
 // and ATs.
 
-@mixin hide() {
-  display: none !important;
+@mixin hide($state: hidden) {
+
+  @if ($state == undo) {
+    display: block !important;
+  }
+
+  @else {
+    display: none !important;
+  }
+
+}
+
+
+
+
+
+// The content is rendered, it just isn't seen on the page.
+
+@mixin visibility($state: hidden) {
+
+  @if ($state == undo) {
+    visibility: visible !important;
+  }
+
+  @else {
+    visibility: hidden !important;
+  }
+
 }
