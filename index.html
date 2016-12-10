@@ -247,13 +247,13 @@
   ...
 &lt;/html&gt;</code></pre>
 
-			<h3>Version <abbr title="Syntactically Awesome Stylesheets">sass</abbr></h3>
+			<h3>Version <abbr title="Syntactically Awesome Style Sheets">sass</abbr></h3>
 
 			<p>Cette option permet un paramétrage plus poussé en donnant la possibilité d&rsquo;activer ou désactiver certaines fonctionalités dans le fichier <samp>configuration.scss</samp> mais également de modifier les variables prédéfinies dans les fichiers <samp>global.scss</samp> et <samp>colors.scss</samp> situés dans le répertoire <code>settings/</code>. Il faudra ensuite compiler le fichier <code>styles.scss</code> pour rafraîchir vos déclarations de style.</p>
 
 			<h4>Organisation des fichiers</h4>
 
-			<p>Les préprocesseurs <abbr title="Cascading Style Sheets">css</abbr> comme <abbr title="Syntactically Awesome Stylesheets">sass</abbr> nous donnent la possibilité de fractionner notre code dans plusieurs dossiers et fichiers sans affecter les performances.</p>
+			<p>Les préprocesseurs <abbr title="Cascading Style Sheets">css</abbr> comme <abbr title="Syntactically Awesome Style Sheets">sass</abbr> nous donnent la possibilité de fractionner notre code dans plusieurs dossiers et fichiers sans affecter les performances.</p>
 
 			<p><abbr title="Block, Element, Modifier">bem</abbr> est la convention utilisée pour nommer et classifier les sélecteurs <abbr title="Cascading Style Sheets">css</abbr> de façon à les rendre plus stricts, transparents et informatifs. La structure globale est inspirée par <a href="//www.creativebloq.com/web-design/manage-large-scale-web-projects-new-css-architecture-itcss-41514731" hreflang="en"><abbr title="Inverted Triangle CSS">itcss</abbr></a>.</p>
 
@@ -335,7 +335,7 @@
 
 				<li><a href="//guidecss.fr/">Feuilles de styles <abbr title="Cascading Style Sheets">css</abbr></a>, conseils et bonnes pratiques,</li>
 
-				<li><a href="//medium.com/@ricardozea/sass-for-beginners-the-friendliest-guide-about-how-to-install-use-sass-on-windows-22ff4a32c1f7#.5j7qypbo9" hreflang="en"><abbr title="Syntactically Awesome Stylesheets">Sass</abbr> for beginners</a>, un guide pour installer et utiliser <abbr title="Syntactically Awesome Stylesheets">Sass</abbr> sur Windows.</li>
+				<li><a href="//medium.com/@ricardozea/sass-for-beginners-the-friendliest-guide-about-how-to-install-use-sass-on-windows-22ff4a32c1f7#.5j7qypbo9" hreflang="en"><abbr title="Syntactically Awesome Stylesheets">Sass</abbr> for beginners</a>, un guide pour installer et utiliser <abbr title="Syntactically Awesome Style Sheets">Sass</abbr> sur Windows.</li>
 
 			</ul>
 
@@ -439,9 +439,15 @@
 
 			<h4>Modificateurs</h4>
 
-			<p>Avec la classe <samp>.o-pullquote</samp>&#8202;:</p>
+			<p>Avec la classe <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-pullquote</samp>&#8202;:</p>
 
-			<q class="o-pullquote">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</q>
+			<p>Généralement, on utilise un texte en faux latin (le texte ne veut rien dire, il a été modifié), le Lorem ipsum ou Lipsum, qui permet donc de faire office de texte d'attente. L'avantage de le mettre en latin est que l'opérateur sait au premier coup d'oeil que la page contenant ces lignes n'est pas valide, et surtout l'attention du client n'est pas dérangée par le contenu, il demeure concentré seulement sur l'aspect graphique.</p>
+
+			<p><q class="o-pullquote">Ce texte a pour autre avantage d'utiliser des mots de longueur variable, essayant de simuler une occupation normale.</q> La méthode simpliste consistant à copier-coller un court texte plusieurs fois (« ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ») a l'inconvénient de ne pas permettre une juste appréciation typographique du résultat final.</p>
+
+			<pre><code>&lt;p&gt;Généralement, on utilise un texte en faux latin (le texte ne veut rien dire, il a été modifié), le Lorem ipsum ou Lipsum, qui permet donc de faire office de texte d&rsquo;attente. L&rsquo;avantage de le mettre en latin est que l&rsquo;opérateur sait au premier coup d&rsquo;oeil que la page contenant ces lignes n&rsquo;est pas valide, et surtout l&rsquo;attention du client n&rsquo;est pas dérangée par le contenu, il demeure concentré seulement sur l&rsquo;aspect graphique.&lt;/p&gt;
+
+<p>&lt;q class="o-pullquote"&gt;Ce texte a pour autre avantage d&rsquo;utiliser des mots de longueur variable, essayant de simuler une occupation normale.&lt;/q&gt; La méthode simpliste consistant à copier-coller un court texte plusieurs fois (« ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ») a l&rsquo;inconvénient de ne pas permettre une juste appréciation typographique du résultat final.&lt;/p&gt;</code></pre>
 
 			<h3>Marquage sémantique</h3>
 
@@ -667,21 +673,21 @@ p q r s t u v w x y z { | } ~</code></pre>
 
 			<h4>Puces</h4>
 
-			<p class="u-margin-bottom--none">Avec la classe <samp>.u-list-circle</samp>&#8202;:</p>
+			<p class="u-margin-bottom--none">Avec la classe <abbr title="Cascading Style Sheets">css</abbr> <samp>.u-list-circle</samp>&#8202;:</p>
 
 			<ul class="u-list-circle">
 				<li>élément 1,</li>
 				<li>élément 2.</li>
 			</ul>
 
-			<p class="u-margin-bottom--none">Avec la classe <samp>.u-list-disc</samp>&#8202;:</p>
+			<p class="u-margin-bottom--none">Avec la classe <abbr title="Cascading Style Sheets">css</abbr> <samp>.u-list-disc</samp>&#8202;:</p>
 
 			<ul class="u-list-disc">
 				<li>élément 1,</li>
 				<li>élément 2.</li>
 			</ul>
 
-			<p class="u-margin-bottom--none">Avec la classe <samp>.u-list-square</samp>&#8202;:</p>
+			<p class="u-margin-bottom--none">Avec la classe <abbr title="Cascading Style Sheets">css</abbr> <samp>.u-list-square</samp>&#8202;:</p>
 
 			<ul class="u-list-square">
 				<li>élément 1,</li>
@@ -690,49 +696,49 @@ p q r s t u v w x y z { | } ~</code></pre>
 
 			<h4>&Eacute;numérations</h4>
 
-			<p class="u-margin-bottom--none">Avec la classe <samp>.u-list-decimal</samp>&#8202;:</p>
+			<p class="u-margin-bottom--none">Avec la classe <abbr title="Cascading Style Sheets">css</abbr> <samp>.u-list-decimal</samp>&#8202;:</p>
 
 			<ol class="u-list-decimal">
 				<li>élément 1,</li>
 				<li>élément 2.</li>
 			</ol>
 
-			<p class="u-margin-bottom--none">Avec la classe <samp>.u-list-leading-zero</samp>&#8202;:</p>
+			<p class="u-margin-bottom--none">Avec la classe <abbr title="Cascading Style Sheets">css</abbr> <samp>.u-list-leading-zero</samp>&#8202;:</p>
 
 			<ol class="u-list-leading-zero">
 				<li>élément 1,</li>
 				<li>élément 2.</li>
 			</ol>
 
-			<p class="u-margin-bottom--none">Avec la classe <samp>.u-list-upper-roman</samp>&#8202;:</p>
+			<p class="u-margin-bottom--none">Avec la classe <abbr title="Cascading Style Sheets">css</abbr><samp>.u-list-upper-roman</samp>&#8202;:</p>
 
 			<ol class="u-list-upper-roman">
 				<li>élément 1,</li>
 				<li>élément 2.</li>
 			</ol>
 
-			<p class="u-margin-bottom--none">Avec la classe <samp>.u-list-lower-roman</samp>&#8202;:</p>
+			<p class="u-margin-bottom--none">Avec la classe <abbr title="Cascading Style Sheets">css</abbr><samp>.u-list-lower-roman</samp>&#8202;:</p>
 
 			<ol class="u-list-lower-roman">
 				<li>élément 1,</li>
 				<li>élément 2.</li>
 			</ol>
 
-			<p class="u-margin-bottom--none">Avec la classe <samp>.u-list-upper-alpha</samp>&#8202;:</p>
+			<p class="u-margin-bottom--none">Avec la classe <abbr title="Cascading Style Sheets">css</abbr><samp>.u-list-upper-alpha</samp>&#8202;:</p>
 
 			<ol class="u-list-upper-alpha">
 				<li>élément 1,</li>
 				<li>élément 2.</li>
 			</ol>
 
-			<p class="u-margin-bottom--none">Avec la classe <samp>.u-list-lower-alpha</samp>&#8202;:</p>
+			<p class="u-margin-bottom--none">Avec la classe <abbr title="Cascading Style Sheets">css</abbr><samp>.u-list-lower-alpha</samp>&#8202;:</p>
 
 			<ol class="u-list-lower-alpha">
 				<li>élément 1,</li>
 				<li>élément 2.</li>
 			</ol>
 
-			<p class="u-margin-bottom--none">Appliquer des énumérations imbriquées avec une numérotation ordonnée avec la classe <samp>.o-list--ordered</samp>&#8202;:</p>
+			<p class="u-margin-bottom--none">Appliquer des énumérations imbriquées avec une numérotation ordonnée avec la classe <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-list--ordered</samp>&#8202;:</p>
 
 			<ol class="o-list-ordered">
 
@@ -764,40 +770,37 @@ p q r s t u v w x y z { | } ~</code></pre>
 
 			<p>Un point de vue largement répandu consiste à considérer le menu de navigation comme une liste de liens et à utiliser la balise correspondant aux listes non ordonnées de manière appropriée.</p>
 
-			<p>Supprimer les puces et l&rsquo;indentation avec la classe <samp>.o-list-bare</samp>&#8202;:</p>
+			<p>Supprimer les puces et l&rsquo;indentation avec la classe <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-list-bare</samp>&#8202;:</p>
 
 			<ul class="o-list-bare">
 				<li>élément 1</li>
 				<li>élément 2</li>
 			</ul>
 
-			<p>Afficher une liste d&rsquo;élements à la verticale avec la classe <samp>.o-list-ui</samp>&#8202;:</p>
+			<p>Afficher une liste d&rsquo;élements à la verticale avec la classe <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-list-ui</samp>&#8202;:</p>
 
 			<ul class="o-list-ui  o-list-ui--small  u-margin-bottom">
 				<li class="o-list-ui__item">élément 1</li>
 				<li class="o-list-ui__item">élément 2</li>
 			</ul>
 
-			<p><mark>La classe <samp>.o-list-ui</samp> peut être complétée par une des quatre classes suivantes qui définissent les marges internes&#8202;: <samp>o-list-ui--tiny</samp>, <samp>o-list-ui--small</samp>, <samp>o-list-ui--large</samp>, <samp>o-list-ui--huge</samp>. Activez ou désactivez le séparateur avec la variable <samp>$show-list-ui-separator</samp> et modifiez sa couleur avec la variable <samp>$list-ui-color-separator</samp> qui se trouvent dans le fichier <samp>scss/objects/_lists.scss</samp>.</mark></p>
+			<p><mark>La classe <samp>.o-list-ui</samp> peut être complétée par une des quatre classes <abbr title="Cascading Style Sheets">css</abbr> suivantes qui définissent les marges internes&#8202;: <samp>o-list-ui--tiny</samp>, <samp>o-list-ui--small</samp>, <samp>o-list-ui--large</samp>, <samp>o-list-ui--huge</samp>. Activez ou désactivez le séparateur avec la variable <samp>$show-list-ui-separator</samp> et modifiez sa couleur avec la variable <samp>$list-ui-color-separator</samp> qui se trouvent dans le fichier <samp>scss/objects/_lists.scss</samp>.</mark></p>
 
-			<p>Afficher une liste d&rsquo;élements à l&rsquo;horizontale avec la classe <samp>.o-list-inline</samp>&#8202;:</p>
+			<p>Afficher une liste d&rsquo;élements à l&rsquo;horizontale avec la classe <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-list-inline</samp>&#8202;:</p>
 
 			<ul class="o-list-inline">
 				<li class="o-list-inline__item">élément 1</li>
 				<li class="o-list-inline__item">élément 2</li>
 			</ul>
 
-			<p>Une liste horizontale peut être complétée avec les classes <samp>.o-list-inline--banner</samp>, <samp>.o-list-inline--comma</samp>, <samp>.o-list-inline--dash</samp> et <samp>.o-list-inline--pipe</samp></p>
-
-
-			<p>Afficher une liste d&rsquo;élements centrés à l&rsquo;horizontale avec les classes <samp>.o-list-inline</samp> et <samp>.o-list-inline--banner</samp>&#8202;:</p>
+			<p>Afficher une liste d&rsquo;élements centrés à l&rsquo;horizontale avec les classes <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-list-inline</samp> et <samp>.o-list-inline--banner</samp>&#8202;:</p>
 
 			<ul class="[ o-list-inline  o-list-inline--banner ]">
 				<li class="o-list-inline__item">élément 1</li>
 				<li class="o-list-inline__item">élément 2</li>
 			</ul>
 
-			<p>Délimiter les éléments de liste avec une virgule en combinant les classes <samp>.o-list-inline</samp> et <samp>.o-list-inline--comma</samp>&#8202;:</p>
+			<p>Délimiter les éléments de liste avec une virgule en combinant les classes <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-list-inline</samp> et <samp>.o-list-inline--comma</samp>&#8202;:</p>
 
 			<ul class="[ o-list-inline  o-list-inline--comma ]">
 				<li class="o-list-inline__item">élément 1</li>
@@ -806,7 +809,7 @@ p q r s t u v w x y z { | } ~</code></pre>
 				<li class="o-list-inline__item">élément 4</li>
 			</ul>
 
-			<p>Délimiter les éléments de liste avec un tiret en combinant les classes <samp>.o-list-inline</samp> et <samp>.o-list-inline--dash</samp>&#8202;:</p>
+			<p>Délimiter les éléments de liste avec un tiret en combinant les classes <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-list-inline</samp> et <samp>.o-list-inline--dash</samp>&#8202;:</p>
 
 			<ul class="[ o-list-inline  o-list-inline--dash ]">
 				<li class="o-list-inline__item">élément 1</li>
@@ -815,7 +818,7 @@ p q r s t u v w x y z { | } ~</code></pre>
 				<li class="o-list-inline__item">élément 4</li>
 			</ul>
 
-			<p>Délimiter les éléments de liste avec une barre verticale en combinant les classes <samp>.o-list-inline</samp> et <samp>.o-list-inline--pipe</samp>&#8202;:</p>
+			<p>Délimiter les éléments de liste avec une barre verticale en combinant les classes <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-list-inline</samp> et <samp>.o-list-inline--pipe</samp>&#8202;:</p>
 
 			<ul class="[ o-list-inline  o-list-inline--pipe ]">
 				<li class="o-list-inline__item">élément 1</li>
@@ -824,7 +827,7 @@ p q r s t u v w x y z { | } ~</code></pre>
 				<li class="o-list-inline__item">élément 4</li>
 			</ul>
 
-			<p>Forcer une liste à occuper 100% de la largeur disponible de son parent avec la classe <samp>.o-list-fit</samp>&#8202;:</p>
+			<p>Forcer une liste à occuper 100% de la largeur disponible de son parent avec la classe <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-list-fit</samp>&#8202;:</p>
 
 			<ul class="o-list-fit">
 				<li class="o-list-fit__item">élément 1</li>
@@ -869,7 +872,7 @@ p q r s t u v w x y z { | } ~</code></pre>
 
 			<h3>Modificateurs</h3>
 
-			<p>Largeur de colonnes fixes avec la classe <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-table--fixed</samp>&#8202;:</p>
+			<p>Largeur de colonnes fixes avec la classe <abbr title="Cascading Style Sheets">css</abbr> <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-table--fixed</samp>&#8202;:</p>
 
 			<table class="o-table--fixed">
 				<thead>
@@ -893,7 +896,7 @@ p q r s t u v w x y z { | } ~</code></pre>
 				</tbody>
 			</table>
 
-			<p>Bordures avec la classe <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-table--bordered</samp>&#8202;:</p>
+			<p>Bordures avec la classe <abbr title="Cascading Style Sheets">css</abbr> <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-table--bordered</samp>&#8202;:</p>
 
 			<table class="o-table--bordered">
 				<thead>
@@ -917,7 +920,7 @@ p q r s t u v w x y z { | } ~</code></pre>
 				</tbody>
 			</table>
 
-			<p>Bandes avec la classe <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-table--striped</samp>&#8202;:</p>
+			<p>Bandes avec la classe <abbr title="Cascading Style Sheets">css</abbr> <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-table--striped</samp>&#8202;:</p>
 
 
 			<table class="o-table--striped">
@@ -1099,15 +1102,15 @@ p q r s t u v w x y z { | } ~</code></pre>
 
 			<img class="u-centered" src="//placehold.it/800x600/ced4da/868e96?text=image" alt="" />
 
-			<p><strong>Paragraphe précédé d&rsquo;une image centrée</strong>. Praesent egestas turpis ut risus lacinia eu cursus urna dapibus. Donec nibh enim, pulvinar vitae ornare ut, ultrices sit amet neque. Quisque ultrices venenatis mi, id fringilla eros malesuada a. Curabitur sagittis mollis arcu, sit amet scelerisque magna varius ac. Vivamus ullamcorper vulputate ipsum, adipiscing varius leo porttitor a. Curabitur luctus gravida nibh, sit amet auctor metus vulputate quis. Aliquam eu nulla risus. Cras in suscipit odio. Etiam ut nisl ut velit ornare pharetra a sed lacus.</p>
+			<p><strong>Paragraphe précédé d&rsquo;une image centrée</strong>. Généralement, on utilise un texte en faux latin (le texte ne veut rien dire, il a été modifié), le Lorem ipsum ou Lipsum, qui permet donc de faire office de texte d'attente. L&rsquo;avantage de le mettre en latin est que l&rsquo;opérateur sait au premier coup d&rsquo;oeil que la page contenant ces lignes n&rsquo;est pas valide, et surtout l&rsquo;attention du client n&rsquo;est pas dérangée par le contenu, il demeure concentré seulement sur l&rsquo;aspect graphique.</p>
 
 			<img class="u-pulled-left" src="//placehold.it/300x200/ced4da/868e96?text=image" alt="" />
 
-			<p><strong>Paragraphe précédé d&rsquo;une image positionnée à gauche</strong>. Mauris lacinia, ante id sodales pretium, eros est gravida sapien, nec auctor dolor massa a dui. Vivamus consequat suscipit elit in imperdiet. In consectetur varius tortor, vel dictum ipsum dignissim vel. Nulla faucibus suscipit ipsum non porttitor. Fusce non ante non mi adipiscing faucibus. Sed odio risus, malesuada eget placerat id, semper eget turpis. Cras ante lorem, pretium ut vestibulum nec, vehicula eget orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel lectus eget tortor cursus dapibus sit amet imperdiet lacus. Nullam purus ipsum, aliquet eget imperdiet scelerisque, interdum in felis. Maecenas dolor eros, iaculis et pretium ac, eleifend sit amet lacus. Etiam a lacus eget dui aliquet tempor. Duis dapibus magna dictum enim ultrices ac pharetra lacus convallis. Donec felis ipsum, tristique ornare fermentum quis, fringilla nec arcu. Nunc tortor arcu, fermentum in dictum sit amet, aliquam eu ante. Integer volutpat, erat cursus posuere rutrum, erat tellus varius erat, quis tempus eros risus a lacus.</p>
+			<p><strong>Paragraphe précédé d&rsquo;une image positionnée à gauche</strong>. Ce texte a pour autre avantage d&rsquo;utiliser des mots de longueur variable, essayant de simuler une occupation normale. La méthode simpliste consistant à copier-coller un court texte plusieurs fois (« ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ») a l&rsquo;inconvénient de ne pas permettre une juste appréciation typographique du résultat final. Il circule des centaines de versions différentes du Lorem ipsum, mais ce texte aurait originellement été tiré de l'ouvrage de Cicéron, De Finibus Bonorum et Malorum (Liber Primus, 32), texte populaire à cette époque, dont l&rsquo;une des premières phrases est : « Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit... » (« Il n&rsquo;existe personne qui aime la souffrance pour elle-même, ni qui la recherche ni qui la veuille pour ce qu&rsquo;elle est... »).</p>
 
 			<img class="u-pushed-right" src="//placehold.it/300x200/ced4da/868e96?text=image" alt="" />
 
-			<p><strong>Paragraphe précédé d&rsquo;une image positionnée à droite</strong>. Mauris lacinia, ante id sodales pretium, eros est gravida sapien, nec auctor dolor massa a dui. Vivamus consequat suscipit elit in imperdiet. In consectetur varius tortor, vel dictum ipsum dignissim vel. Nulla faucibus suscipit ipsum non porttitor. Fusce non ante non mi adipiscing faucibus. Sed odio risus, malesuada eget placerat id, semper eget turpis. Cras ante lorem, pretium ut vestibulum nec, vehicula eget orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel lectus eget tortor cursus dapibus sit amet imperdiet lacus. Nullam purus ipsum, aliquet eget imperdiet scelerisque, interdum in felis. Maecenas dolor eros, iaculis et pretium ac, eleifend sit amet lacus. Etiam a lacus eget dui aliquet tempor. Duis dapibus magna dictum enim ultrices ac pharetra lacus convallis. Donec felis ipsum, tristique ornare fermentum quis, fringilla nec arcu. Nunc tortor arcu, fermentum in dictum sit amet, aliquam eu ante. Integer volutpat, erat cursus posuere rutrum, erat tellus varius erat, quis tempus eros risus a lacus.</p>
+			<p><strong>Paragraphe précédé d&rsquo;une image positionnée à droite</strong>. Expert en utilisabilité des sites web et des logiciels, Jakob Nielsen souligne que l&rsquo;une des limites de l&rsquo;utilisation du faux-texte dans la conception de sites web est que ce texte n&rsquo;étant jamais lu, il ne permet pas de vérifier sa lisibilité effective. La lecture à l&rsquo;écran étant plus difficile, cet aspect est pourtant essentiel. Nielsen préconise donc l&rsquo;utilisation de textes représentatifs plutôt que du lorem ipsum. On peut aussi faire remarquer que les formules conçues avec du faux-texte ont tendance à sous-estimer l&rsquo;espace nécessaire à une titraille immédiatement intelligible, ce qui oblige les rédactions à formuler ensuite des titres simplificateurs, voire inexacts, pour ne pas dépasser l&rsquo;espace imparti.</p>
 
 			<pre><code>&lt;img class="is-centered" src="//placehold.it/800x600/ced4da/868e96?text=image"&gt;
 &lt;p&gt;&hellip;&lt;/p&gt;
@@ -1131,23 +1134,23 @@ p q r s t u v w x y z { | } ~</code></pre>
 				<figcaption>La légende est un court texte accompagnant une photo ou un dessin et vise à lui donner un sens. Elle peut se placer avant ou après le media principal.</figcaption>
 			</figure>
 
-			<p><strong>Paragraphe précédé d&rsquo;une figure centrée</strong>. Mauris lacinia, ante id sodales pretium, eros est gravida sapien, nec auctor dolor massa a dui. Vivamus consequat suscipit elit in imperdiet. In consectetur varius tortor, vel dictum ipsum dignissim vel. Nulla faucibus suscipit ipsum non porttitor. Fusce non ante non mi adipiscing faucibus. Sed odio risus, malesuada eget placerat id, semper eget turpis. Cras ante lorem, pretium ut vestibulum nec, vehicula eget orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel lectus eget tortor cursus dapibus sit amet imperdiet lacus. Nullam purus ipsum, aliquet eget imperdiet scelerisque, interdum in felis. Maecenas dolor eros, iaculis et pretium ac, eleifend sit amet lacus. Etiam a lacus eget dui aliquet tempor. Duis dapibus magna dictum enim ultrices ac pharetra lacus convallis. Donec felis ipsum, tristique ornare fermentum quis, fringilla nec arcu. Nunc tortor arcu, fermentum in dictum sit amet, aliquam eu ante. Integer volutpat, erat cursus posuere rutrum, erat tellus varius erat, quis tempus eros risus a lacus.</p>
+			<p><strong>Paragraphe précédé d&rsquo;une figure centrée</strong>.  Généralement, on utilise un texte en faux latin (le texte ne veut rien dire, il a été modifié), le Lorem ipsum ou Lipsum, qui permet donc de faire office de texte d'attente. L&rsquo;avantage de le mettre en latin est que l&rsquo;opérateur sait au premier coup d&rsquo;oeil que la page contenant ces lignes n&rsquo;est pas valide, et surtout l&rsquo;attention du client n&rsquo;est pas dérangée par le contenu, il demeure concentré seulement sur l&rsquo;aspect graphique.</p>
 
 			<figure class="u-pulled-left">
 				<img src="//placehold.it/300x200/ced4da/868e96?text=image" alt="Description de l'image" />
 				<figcaption>La légende est un court texte accompagnant une photo ou un dessin et vise à lui donner un sens. Elle peut se placer avant ou après le media principal.</figcaption>
 			</figure>
 
-			<p><strong>Paragraphe précédé d&rsquo;une figure positionnée à gauche</strong>. Mauris lacinia, ante id sodales pretium, eros est gravida sapien, nec auctor dolor massa a dui. Vivamus consequat suscipit elit in imperdiet. In consectetur varius tortor, vel dictum ipsum dignissim vel. Nulla faucibus suscipit ipsum non porttitor. Fusce non ante non mi adipiscing faucibus. Sed odio risus, malesuada eget placerat id, semper eget turpis. Cras ante lorem, pretium ut vestibulum nec, vehicula eget orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel lectus eget tortor cursus dapibus sit amet imperdiet lacus. Nullam purus ipsum, aliquet eget imperdiet scelerisque, interdum in felis. Maecenas dolor eros, iaculis et pretium ac, eleifend sit amet lacus. Etiam a lacus eget dui aliquet tempor. Duis dapibus magna dictum enim ultrices ac pharetra lacus convallis. Donec felis ipsum, tristique ornare fermentum quis, fringilla nec arcu. Nunc tortor arcu, fermentum in dictum sit amet, aliquam eu ante. Integer volutpat, erat cursus posuere rutrum, erat tellus varius erat, quis tempus eros risus a lacus.</p>
+			<p><strong>Paragraphe précédé d&rsquo;une figure positionnée à gauche</strong>. Ce texte a pour autre avantage d&rsquo;utiliser des mots de longueur variable, essayant de simuler une occupation normale. La méthode simpliste consistant à copier-coller un court texte plusieurs fois (« ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ») a l&rsquo;inconvénient de ne pas permettre une juste appréciation typographique du résultat final. Il circule des centaines de versions différentes du Lorem ipsum, mais ce texte aurait originellement été tiré de l'ouvrage de Cicéron, De Finibus Bonorum et Malorum (Liber Primus, 32), texte populaire à cette époque, dont l&rsquo;une des premières phrases est : « Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit... » (« Il n&rsquo;existe personne qui aime la souffrance pour elle-même, ni qui la recherche ni qui la veuille pour ce qu&rsquo;elle est... »).</p>
 
 			<figure class="u-pushed-right">
 				<img src="//placehold.it/300x200/ced4da/868e96?text=image" alt="Description de l'image" />
 				<figcaption>La légende est un court texte accompagnant une photo ou un dessin et vise à lui donner un sens. Elle peut se placer avant ou après le media principal.</figcaption>
 			</figure>
 
-			<p><strong>Paragraphe précédé d&rsquo;une figure positionnée à droite</strong>. Mauris lacinia, ante id sodales pretium, eros est gravida sapien, nec auctor dolor massa a dui. Vivamus consequat suscipit elit in imperdiet. In consectetur varius tortor, vel dictum ipsum dignissim vel. Nulla faucibus suscipit ipsum non porttitor. Fusce non ante non mi adipiscing faucibus. Sed odio risus, malesuada eget placerat id, semper eget turpis. Cras ante lorem, pretium ut vestibulum nec, vehicula eget orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel lectus eget tortor cursus dapibus sit amet imperdiet lacus. Nullam purus ipsum, aliquet eget imperdiet scelerisque, interdum in felis. Maecenas dolor eros, iaculis et pretium ac, eleifend sit amet lacus. Etiam a lacus eget dui aliquet tempor. Duis dapibus magna dictum enim ultrices ac pharetra lacus convallis. Donec felis ipsum, tristique ornare fermentum quis, fringilla nec arcu. Nunc tortor arcu, fermentum in dictum sit amet, aliquam eu ante. Integer volutpat, erat cursus posuere rutrum, erat tellus varius erat, quis tempus eros risus a lacus.</p>
+			<p><strong>Paragraphe précédé d&rsquo;une figure positionnée à droite</strong>. Expert en utilisabilité des sites web et des logiciels, Jakob Nielsen souligne que l&rsquo;une des limites de l&rsquo;utilisation du faux-texte dans la conception de sites web est que ce texte n&rsquo;étant jamais lu, il ne permet pas de vérifier sa lisibilité effective. La lecture à l&rsquo;écran étant plus difficile, cet aspect est pourtant essentiel. Nielsen préconise donc l&rsquo;utilisation de textes représentatifs plutôt que du lorem ipsum. On peut aussi faire remarquer que les formules conçues avec du faux-texte ont tendance à sous-estimer l&rsquo;espace nécessaire à une titraille immédiatement intelligible, ce qui oblige les rédactions à formuler ensuite des titres simplificateurs, voire inexacts, pour ne pas dépasser l&rsquo;espace imparti. Contrairement à une idée répandue, le faux-texte ne donne même pas un aperçu réaliste du gris typographique, en particulier dans le cas des textes justifiés&#8202;: en effet, les mots fictifs employés dans le faux-texte ne faisant évidemment pas partie des dictionnaires des logiciels de PAO, les programmes de césure ne peuvent pas effectuer leur travail habituel sur de tels textes. Par conséquent, l&rsquo;interlettrage du faux-texte sera toujours quelque peu supérieur à ce qu&rsquo;il aurait été avec un texte réel, qui présentera donc un aspect plus sombre et moins lisible que le faux-texte avec lequel le graphiste a effectué ses essais. Un vrai texte pose aussi des problèmes de lisibilité spécifiques (noms propres, numéros de téléphone, retours à la ligne fréquents, composition des citations en italiques, intertitres de plus de deux lignes&hellip;) qu&rsquo;on n&rsquo;observe jamais dans le faux-texte.</p>
 
-			<p role="note"><mark>les éléments <code>&lt;figure&gt;</code> et <code>&lt;figcaption&gt;</code> fonctionnent ensemble pour associer une légende à une image ou autre média. La légende peut se placer avant ou après le media principal. Ces illustrations peuvent être positionnées avec <code>.is-centred</code>, <code>.is-pulled-left</code> et <code>.is-pushed-right</code>.</mark></p>
+			<p role="note"><mark>les éléments <code>&lt;figure&gt;</code> et <code>&lt;figcaption&gt;</code> fonctionnent ensemble pour associer une légende à une image ou autre média. La légende peut se placer avant ou après le media principal. Ces illustrations peuvent être positionnées avec <code>.u-centred</code>, <code>.u-pulled-left</code> et <code>.u-pushed-right</code>.</mark></p>
 
 			<h3>Vidéos</h3>
 
@@ -1188,10 +1191,10 @@ p q r s t u v w x y z { | } ~</code></pre>
 			<h3>Conteneurs</h3>
 
 			<ul>
-				<li>La classe <samp>l-wrapper</samp> est utilisée pour définir un cadre fluide avec marges internes horizontales.</li>
-				<li>La classe modificatrice <samp>l-wrapper--wide</samp> est utilisée pour définir la largeur maximale du cadre à 1193px pour une taille de caractère de base de 16px.</li>
-				<li>la classe modificatrice <samp>l-wrapper--medium</samp> est utilisée pour définir la largeur maximale du cadre à 895px pour une taille de caractère de base de  16px.</li>
-				<li>La classe modificatrice <samp>l-wrapper--narrow</samp> est utilisée pour définir la largeur maximale du conteneur à 528px pour une taille de caractère de base de  16px.</li>
+				<li>La classe <abbr title="Cascading Style Sheets">css</abbr> <samp>l-wrapper</samp> est utilisée pour définir un cadre fluide avec marges internes horizontales.</li>
+				<li>La classe <abbr title="Cascading Style Sheets">css</abbr> complémentaire <samp>l-wrapper--wide</samp> est utilisée pour définir la largeur maximale du cadre à 1193px pour une taille de caractère de base de 16px.</li>
+				<li>la classe <abbr title="Cascading Style Sheets">css</abbr> complémentaire <samp>l-wrapper--medium</samp> est utilisée pour définir la largeur maximale du cadre à 895px pour une taille de caractère de base de  16px.</li>
+				<li>La classe <abbr title="Cascading Style Sheets">css</abbr> complémentaire <samp>l-wrapper--narrow</samp> est utilisée pour définir la largeur maximale du conteneur à 528px pour une taille de caractère de base de  16px.</li>
 			</ul>
 
 			<p role="note"><mark>Les valeurs de largeur maximale sont définies d&rsquo;après l&rsquo;échelle typographique en fonction de la taille de caractère et de l&rsquo;interligne par défaut, voir <a href="//www.modularscale.com/" hreflang="en">modularscale.com</a>.</mark></p>
@@ -1217,7 +1220,7 @@ p q r s t u v w x y z { | } ~</code></pre>
 
 			<h4>Modificateurs</h4>
 
-			<p>Pour un contrôle plus fin des cellules individuelles vous pouvez utiliser les classes de dimensionnement <samp>.l-1/1</samp>, <samp>.l-1/2</samp>, <samp>.l-1/3</samp> et <samp>.l-1/4</samp>.</p>
+			<p>Pour un contrôle plus fin des cellules individuelles vous pouvez utiliser les classes <abbr title="Cascading Style Sheets">css</abbr> de dimensionnement <samp>.l-1/1</samp>, <samp>.l-1/2</samp>, <samp>.l-1/3</samp> et <samp>.l-1/4</samp>.</p>
 
 			<div class="l-grid">
 				<div class="[ l-grid__item  l-1/2 ]">
@@ -1470,7 +1473,7 @@ p q r s t u v w x y z { | } ~</code></pre>
 
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/min/jquery-2.1.3.min.js"><\/script>')</script>
-    <script src="js/application.js"></script>
+    <script src="js/application.min.js"></script>
 
 </body>
 </html>
