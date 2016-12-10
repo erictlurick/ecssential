@@ -16,6 +16,7 @@
 .u-block               { display: block; }
 .u-inline-block        { display: inline-block; }
 
+.u-clearfix            { @include clearfix; }
 .u-pushed-right        { float: right }
 .u-pulled-left         { float: left }
 .u-centered            { display: block; margin-right: auto; margin-left: auto; }
