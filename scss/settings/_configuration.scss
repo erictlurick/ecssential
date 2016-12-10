@@ -47,6 +47,7 @@ $elements: (
 
 $layout: (
   'content'          : false,
+  'flexbox'          : true,
   'grid'             : true,
   'wrappers'         : true
 ) !default;
