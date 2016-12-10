@@ -11,13 +11,24 @@ $pullquote-margin   : 2 !default; // Space elements by an amount based on your m
 
 
 .#{$namespace}#{$pullquote-namespace} {
+
   display   : block;
+  @include space(margin-top);
   @include space(margin-right, $pullquote-margin);
   @include space(margin-bottom);
   @include space(margin-left, $pullquote-margin);
   @include type(1);
   font-style: italic;
   text-align: center;
+
+  &::before {
+    content: '';
+  }
+
+  &::after {
+    content: '';
+  }
+
 }
 
 }//endif
