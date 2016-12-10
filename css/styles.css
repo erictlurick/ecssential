@@ -381,6 +381,23 @@ html {
   }
 }
 
+html {
+  position: relative;
+}
+
+html::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 100%;
+  height: auto;
+  background-image: linear-gradient(#ffcadf 1px, transparent 1px, transparent 0.75rem, #e2d1fb 0.75rem, transparent 0.8125rem);
+  background-size: 100% 1.5em;
+}
+
 body {
   overflow-wrap: break-word;
   word-wrap: break-word;
@@ -2124,6 +2141,7 @@ img::-moz-selection {
    ========================================================================== */
 .o-pullquote {
   display: block;
+  margin-top: 1.5rem;
   margin-right: 3rem;
   margin-bottom: 1.5rem;
   margin-left: 3rem;
@@ -2131,6 +2149,12 @@ img::-moz-selection {
   line-height: 1.5rem;
   font-style: italic;
   text-align: center;
+}
+.o-pullquote::before {
+  content: '';
+}
+.o-pullquote::after {
+  content: '';
 }
 
 /* ==========================================================================
