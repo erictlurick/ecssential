@@ -1,0 +1,75 @@
+@if (trumps(flexbox) == true) {
+
+/* ==========================================================================
+   LAYOUT / FLEXBOX
+   ========================================================================== */
+
+/**
+ * Flexbox helper classes.
+ *
+ * Source: https://codepen.io/thulstrup/pen/waJZBW/
+ */
+
+
+.l-horizontal,
+.l-horizontal-reverse,
+.l-vertical,
+.l-vertical-reverse   { @include flexbox; }
+
+.l-horizontal         { @include flex-direction(row); }
+.l-horizontal-reverse { @include flex-direction(row-reverse); }
+.l-vertical           { @include flex-direction(column); }
+.l-vertical-reverse   { @include flex-direction(column-reverse); }
+
+.l-inline             { @include inline-flex; }
+
+.l-wrap               { @include flex-wrap(wrap); }
+.l-wrap-reverse       { @include flex-wrap(wrap-reverse); }
+
+.l-flex-auto          { @include flex(1 1 auto) }
+.l-flex-none          { @include flex(none) }
+
+.l-flex-1             { @include flex(1); }
+.l-flex-2             { @include flex(2); }
+.l-flex-3             { @include flex(3); }
+.l-flex-4             { @include flex(4); }
+.l-flex-5             { @include flex(5); }
+.l-flex-6             { @include flex(6); }
+.l-flex-7             { @include flex(7); }
+.l-flex-8             { @include flex(8); }
+.l-flex-9             { @include flex(9); }
+.l-flex-10            { @include flex(10); }
+.l-flex-11            { @include flex(11); }
+.l-flex-12            { @include flex(12); }
+
+
+/**
+ * Alignments in cross axis.
+ */
+
+.l-start              { @include align-items(flex-start); }
+.l-center             { @include align-items(center); }
+.l-end                { @include align-items(flex-end); }
+
+
+/**
+ * Alignment in main axis
+ */
+
+.l-start-justified    { @include justify-content(flex-start); }
+.l-center-justified   { @include justify-content(center); }
+.l-end-justified      { @include justify-content(flex-end); }
+.l-around-justified   { @include justify-content(space-around); }
+.l-justified          { @include justify-content(space-between); }
+
+
+/**
+ * Self alignment
+ */
+
+.l-self-start         { @include align-self(flex-start); }
+.l-self-center        { @include align-self(center); }
+.l-self-end           { @include align-self(flex-end); }
+.l-self-stretch       { @include align-self(stretch); }
+
+}//endif
