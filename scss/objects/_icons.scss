@@ -125,6 +125,16 @@
  * @oswaldas http://osvaldas.info/caching-svg-sprite-in-localstorage
  */
 
+
+/**
+ * Example showing how to change the color/size of the icons:
+ *
+   .o-icon--icon-name {
+      font-size: 32px; // works because "width" & "height" were set using em units.
+      color    : red;  // works for single-colored icons, because "fill" was set to "currentColor".
+   }
+*/
+
 // Predefine the variable below in order to alter and enable specific features.
 $icons-namespace: 'o-icon' !default;
 
@@ -137,14 +147,5 @@ $icons-namespace: 'o-icon' !default;
   fill          : currentColor;
   overlow       : hidden;
 }
-
-/**
- * Example showing how to change the color/size of the icons:
- *
-   .o-icon--icon-name {
-      font-size: 32px; // works because "width" & "height" were set using em units.
-      color    : red;  // works for single-colored icons, because "fill" was set to "currentColor".
-   }
-*/
 
 }//endif
