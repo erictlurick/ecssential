@@ -23,8 +23,8 @@ $base-scale-factor       : $perfect-fourth !default;
 
 // Map of all fonts and variations used.
 $google-fonts: (
-	"Open Sans Condensed": 700,
-	"Gentium Basic"      : 400 400i 700 700i
+  "Open Sans Condensed": 700,
+  "Gentium Basic"      : 400 400i 700 700i
 ) !default;
 
 // This mixin will take the contents of the `$google-fonts` variable, loop through it
