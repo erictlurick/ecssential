@@ -8,17 +8,9 @@
 $color-spectrum: 7;
 
 
-.u-text-white {
-  color: $color-white;
-}
-
-.u-text-soft {
-  color: color(text-soft);
-}
-
-.u-text-muted {
-  color: color(muted);
-}
+.u-text-white { color: $color-white; }
+.u-text-soft  { color: color(text-soft); }
+.u-text-muted { color: color(muted); }
 
 // Loop trough the $colors map and set a class for text colors.
 @each $list, $color-name in $color-list {
