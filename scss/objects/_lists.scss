@@ -3,6 +3,8 @@
 // 1. List-bare
 // 2. List-fit
 // 3. List-inline
+// 4. List-ordered
+// 5. List-ui
 
 // Predefine the variable below in order to alter and enable specific features.
 $lists-namespace: 'o-list' !default;
@@ -270,13 +272,10 @@ $list-ui-color-separator: color(ui-medium) !default;
     @include space(padding);
 
     @if ($show-list-ui-separator == true) {
-
-      @include border(bottom, $color: $list-ui-color-separator);
-
-      &:first-of-type {
-        @include border(top, $color: $list-ui-color-separator);
-      }
-
+      background-image   : linear-gradient(to bottom, transparent 50%, $list-ui-color-separator 50%);
+      background-position: 0 100%;
+      background-repeat  : repeat-x;
+      background-size    : 100% rem(strip-units(1px) * ($base-font-size / 10));
     }//endif
 
   }
