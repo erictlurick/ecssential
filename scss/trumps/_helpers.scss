@@ -18,10 +18,10 @@
 .u-absolute            { position: absolute; }
 .u-fixed               { position: fixed; }
 
-.u-top--0              { top: 0 ;}
-.u-right--0            { right: 0; }
-.u-bottom--0           { bottom: 0; }
-.u-left--0             { left: 0; }
+.u-top-0px             { top: 0 ;}
+.u-right-0px           { right: 0; }
+.u-bottom-0px          { bottom: 0; }
+.u-left--0px           { left: 0; }
 
 .stack-order--1        { z-index: index($layers, level-1); }
 .stack-order--2        { z-index: index($layers, level-2); }
@@ -128,15 +128,5 @@
 
 .u-nowrap              { white-space: nowrap }
 .u-break-word          { word-wrap: break-word }
-
-.bg-darken-1 { background-color: rgba(0, 0, 0, .0625) }
-.bg-darken-2 { background-color: rgba(0, 0, 0, .125) }
-.bg-darken-3 { background-color: rgba(0, 0, 0, .25) }
-.bg-darken-4 { background-color: rgba(0, 0, 0, .5) }
-
-.bg-lighten-1 { background-color: rgba(255, 255, 255, .0625) }
-.bg-lighten-2 { background-color: rgba(255, 255, 255, .125) }
-.bg-lighten-3 { background-color: rgba(255, 255, 255, .25) }
-.bg-lighten-4 { background-color: rgba(255, 255, 255, .5) }
 
 }//endif
