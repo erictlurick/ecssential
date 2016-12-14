@@ -13,43 +13,43 @@
  */
 
 body:after {
-    content         : "less than 480px";
-    position        : fixed;
-    bottom          : 0;
-    width           : 100%;
-    font-size       : 300%;
-    font-weight     : bold;
-    text-align      : center;
-    color           : #fff;
-    background-color: hsla(1,60%,40%,0.7);
+  content         : "less than 480px";
+  position        : fixed;
+  bottom          : 0;
+  width           : 100%;
+  font-size       : 300%;
+  font-weight     : bold;
+  text-align      : center;
+  color           : #fff;
+  background-color: hsla(1,60%,40%,0.7);
 }
 
 @media only screen and (min-width: 480px) {
-    body:after {
-        content         :"480 to 719px";
-        background-color:hsla(180,60%,40%,0.7);
-    }
+  body:after {
+    content         :"480 to 719px";
+    background-color:hsla(180,60%,40%,0.7);
+  }
 }
 
 @media only screen and (min-width: 720px) {
-    body:after {
-        content         :"720 to 959px";
-        background-color: hsla(270,60%,40%,0.7);
-    }
+  body:after {
+    content         :"720 to 959px";
+    background-color: hsla(270,60%,40%,0.7);
+  }
 }
 
 @media only screen and (min-width: 960px) {
-    body:after {
-        content         :"960 to 1279px";
-        background-color:hsla(360,60%,40%,0.7);
-    }
+  body:after {
+    content         :"960 to 1279px";
+    background-color:hsla(360,60%,40%,0.7);
+  }
 }
 
 @media only screen and (min-width: 1280px) {
-    body:after {
-        content         :"1280 and up";
-        background-color:hsla(60,60%,40%,0.7);
-    }
+  body:after {
+    content         :"1280 and up";
+    background-color:hsla(60,60%,40%,0.7);
+  }
 }
 
 }//endif
