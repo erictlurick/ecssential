@@ -63,4 +63,15 @@ a abbr {
   border: 0 !important;
 }
 
+
+/**
+ * Fixing styles on `code` tags nested inside links.
+ */
+
+a code {
+  padding   : inherit;
+  color     : inherit;
+  background: inherit;
+}
+
 }//endif
