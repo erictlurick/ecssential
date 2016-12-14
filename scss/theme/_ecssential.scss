@@ -1,22 +1,15 @@
-/*------------------------------------*\
-    THEME / ECSSENTIAL
-\*------------------------------------*/
+/* ==========================================================================
+   THEME / ECSSENTIAL
+   ========================================================================== */
 
 main {
-	counter-reset: headings;
+  counter-reset: headings;
 }
 
 h2 {
-	counter-increment: headings;
+  counter-increment: headings;
 }
 
-	h2:before {
-		content: counter(headings) ". ";
-	}
-
-[role="note"] {
-	//@include border($direction: top, $style: dashed);
-	//@include border($direction: bottom, $style: dashed);
-	//@include space(padding-top);
-	//@include space(padding-bottom);
-}
+  h2:before {
+    content: counter(headings) ". ";
+  }
