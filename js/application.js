@@ -166,7 +166,7 @@ $(function() {
 $(window).bind('load', function() {
     $('img').each(function() {
         if((typeof this.naturalWidth != "undefined" && this.naturalWidth == 0 ) || this.readyState == 'uninitialized' ) {
-            $(this).addClass('is-broken');
+            $(this).addClass('js-img-broken');
         }
     });
 });
