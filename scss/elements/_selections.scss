@@ -12,13 +12,13 @@
 ::-moz-selection {
   color           : color-invert(color(action));
   background-color: color(action); /* 1 */
-  text-shadow     : none;           /* 2 */
+  text-shadow     : none;          /* 2 */
 }
 
 ::selection {
   color           : color-invert(color(action));
   background-color: color(action); /* 1 */
-  text-shadow     : none;           /* 2 */
+  text-shadow     : none;          /* 2 */
 }
 
 
