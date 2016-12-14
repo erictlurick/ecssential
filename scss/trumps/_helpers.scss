@@ -8,15 +8,39 @@
  * A series of classes to use arbitrarily.
  */
 
+
+/**
+ * Basic positioning to alter the default document flow.
+ */
+
 .u-static              { position: static; }
 .u-relative            { position: relative; }
 .u-absolute            { position: absolute; }
+.u-fixed               { position: fixed; }
+
+.u-top--0              { top: 0 ;}
+.u-right--0            { right: 0; }
+.u-bottom--0           { bottom: 0; }
+.u-left--0             { left: 0; }
+
+.stack-order--1        { z-index: index($layers, level-1); }
+.stack-order--2        { z-index: index($layers, level-2); }
+.stack-order--3        { z-index: index($layers, level-3); }
+.stack-order--4        { z-index: index($layers, level-4); }
+.stack-order--5        { z-index: index($layers, level-5); }
 
 .u-inline              { display: inline; }
 .u-block               { display: block; }
 .u-inline-block        { display: inline-block; }
+.u-table               { display: table; }
+.u-table-cell          { display: table-cell; }
+
+.u-overflow--hidden    { overflow: hidden; }
+.u-overflow--scroll    { overflow: scroll; }
+.u-overflow--auto      { overflow: auto; }
 
 .u-clearfix            { @include clearfix; }
+
 .u-pushed-right        { float: right }
 .u-pulled-left         { float: left }
 .u-centered            { display: block; margin-right: auto; margin-left: auto; }
@@ -26,22 +50,44 @@
 .u-aligned-right       { text-align: right; }
 .u-justified           { text-align: justify; }
 
+
+/**
+ * Adjust vertical alignment.
+ */
+
 .u-aligned-top         { vertical-align: top; }
 .u-aligned-middle      { vertical-align: middle; }
 .u-aligned-bottom      { vertical-align: bottom; }
+.u-aligned-baseline    { vertical-align: baseline; }
+
+
+/**
+ * Adjust borders and border radii.
+ */
 
 .u-border              { @include border($direction: all, $width: 1px, $style: solid, $color: color(ui-medium), $radius: $base-ui-radius); }
 .u-border-right        { @include border($direction: right, $width: 1px, $style: solid, $color: color(ui-medium), $radius: $base-ui-radius); }
 .u-border-bottom       { @include border($direction: bottom, $width: 1px, $style: solid, $color: color(ui-medium), $radius: $base-ui-radius); }
 .u-border-left         { @include border($direction: left, $width: 1px, $style: solid, $color: color(ui-medium), $radius: $base-ui-radius); }
 
+.u-border-right--none  { border-right: 0; }
+.u-border-bottom--none { border-bottom: 0; }
+.u-border-left--none   { border-left: 0; }
+.u-not-bordered        { border: 0; }
+
 .u-rounded             { border-radius: $base-ui-radius; }
 .u-rounded-top         { border-radius: $base-ui-radius $base-ui-radius 0 0;}
 .u-rounded-right       { border-radius: 0 $base-ui-radius $base-ui-radius 0;}
 .u-rounded-bottom      { border-radius: 0 0 $base-ui-radius $base-ui-radius;}
 .u-rounded-left        { border-radius: $base-ui-radius 0 0 $base-ui-radius;}
+.u-not-rounded         { border-radius: 0; }
 
 .u-circle              { border-radius: 50% }
+
+
+/**
+ * Adjust the type of list-item marker.
+ */
 
 .u-list-circle         { list-style-type: circle; }
 .u-list-disc           { list-style-type: disc; }
@@ -52,6 +98,11 @@
 .u-list-upper-alpha    { list-style-type: upper-alpha; }
 .u-list-lower-roman    { list-style-type: lower-roman; }
 .u-list-upper-roman    { list-style-type: upper-roman; }
+
+
+/**
+ * Adjust typographic weights and styles.
+ */
 
 .u-serif               { font-family: $font-family-serif; }
 .u-sans-serif          { font-family: $font-family-sans-serif; }
@@ -70,9 +121,22 @@
 .u-uppercase           { text-transform: uppercase; }
 .u-lowercase           { text-transform: lowercase; }
 
-.u-underline           { text-decoration: underline; }
-.u-overline            { text-decoration: overline; }
-.u-line-through        { text-decoration: line-through; }
-.u-no-decoration       { text-decoration: none; }
+.u-underline           { text-decoration: underline; color: inherit; }
+.u-underline--none     { text-decoration: none; }
+.u-overline            { text-decoration: overline; color: inherit; }
+.u-line-through        { text-decoration: line-through; color: inherit; }
+
+.u-nowrap              { white-space: nowrap }
+.u-break-word          { word-wrap: break-word }
+
+.bg-darken-1 { background-color: rgba(0, 0, 0, .0625) }
+.bg-darken-2 { background-color: rgba(0, 0, 0, .125) }
+.bg-darken-3 { background-color: rgba(0, 0, 0, .25) }
+.bg-darken-4 { background-color: rgba(0, 0, 0, .5) }
+
+.bg-lighten-1 { background-color: rgba(255, 255, 255, .0625) }
+.bg-lighten-2 { background-color: rgba(255, 255, 255, .125) }
+.bg-lighten-3 { background-color: rgba(255, 255, 255, .25) }
+.bg-lighten-4 { background-color: rgba(255, 255, 255, .5) }
 
 }//endif
