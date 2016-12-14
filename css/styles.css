@@ -785,6 +785,15 @@ a abbr {
   border: 0 !important;
 }
 
+/**
+ * Fixing styles on `code` tags nested inside links.
+ */
+a code {
+  padding: inherit;
+  color: inherit;
+  background: inherit;
+}
+
 /* ==========================================================================
    ELEMENTS / QUOTES
    ========================================================================== */
@@ -1179,7 +1188,8 @@ thead > tr > th::after {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(to bottom, transparent 50%, #ced4da 50%);
+  height: 1px;
+  background-image: linear-gradient(to bottom, transparent 50%, #dee2e6 50%);
   background-position: 0 bottom;
   background-repeat: repeat-x;
   background-size: 100% 2px;
@@ -1306,19 +1316,19 @@ figcaption {
    $(window).bind('load', function() {
      $('img').each(function() {
        if((typeof this.naturalWidth != "undefined" && this.naturalWidth == 0 ) || this.readyState == 'uninitialized' ) {
-         $(this).addClass('is-broken');
+         $(this).addClass('js-img-broken');
        }
      });
    });
  *
  * @ireaderinokun http://bitsofco.de/styling-broken-images/
  */
-img.is-broken {
+img.js-img-broken {
   display: block;
   position: relative;
   outline: none;
 }
-img.is-broken::before {
+img.js-img-broken::before {
   content: '';
   position: absolute;
   top: 0;
@@ -1337,7 +1347,7 @@ img.is-broken::before {
   color: inherit;
   background-color: #f1f3f5;
 }
-img.is-broken::after {
+img.js-img-broken::after {
   content: '';
   position: absolute;
   top: 50%;
@@ -1682,134 +1692,6 @@ img::-moz-selection {
 }
 
 /* ==========================================================================
-   OBJECTS / BOX
-   ========================================================================== */
-/**
- * The box object simply boxes off content. Extend with cosmetic styles in the
- * Components layer.
- *
-   <div class="o-box">
-     ...
-   </div>
- *
- * Size variant, e.g.:
- *
-   <div class="[ o-box  o-box--small ]">
-     ...
-   </div>
- *
- * 1. So we can apply the `.o-box` class to naturally-inline elements.
- */
-.o-box.o-box {
-  display: block;
-  /* [1] */
-  padding: 1.5rem;
-}
-.o-box.o-box:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.o-box > :last-child {
-  margin-bottom: 0;
-}
-.o-box.o-box--flush {
-  padding: 0;
-}
-.o-box .o-box--tiny {
-  padding: 0.375rem;
-}
-.o-box .o-box--small {
-  padding: 0.75rem;
-}
-.o-box .o-box--large {
-  padding: 2.25rem;
-}
-.o-box .o-box--huge {
-  padding: 3rem;
-}
-
-/* ==========================================================================
-   OBJECTS / ELEVATION
-   ========================================================================== */
-/**
- * Three levels of consistent box-shadows for any element.
- */
-.o-elevation.o-elevation {
-  border: none;
-  box-shadow: 0 0 1px #dee2e6, 0 5px 10px -3px #ced4da;
-}
-.o-elevation.o-elevation--large {
-  box-shadow: 0 0 1px #dee2e6, 0 10px 25px -4px #ced4da;
-}
-.o-elevation.o-elevation--huge {
-  box-shadow: 0 0 1px #dee2e6, 0 20px 55px -8px #ced4da;
-}
-
-/* ==========================================================================
-   OBJECTS / FORM-FIELDS
-   ========================================================================== */
-/**
- * Group sets of form fields in a list, e.g.:
- *
-   <div>
-     <label />
-     <input />
-   </div>
-   <div>
-     <label />
-     <select />
-   </div>
-   <div>
-     <label />
-     <input />
-   </div>
- *
- */
-.o-form-field {
-  margin-bottom: 0.75rem;
-}
-
-/* ==========================================================================
-   OBJECTS / FORM-HELPERS
-   ========================================================================== */
-/**
- * Extra help text displayed after a field when that field is in focus and invalid, e.g.:
- *
-   <label for="email">Email:</label>
-   <input id="email" type="email">
-   <span class="o-form-requirement">.edu emails only</small>
- *
- * We leave the help text in the document flow and merely set it to
- * `visibility:hidden;`. This means that it wonÔÇÖt interfere with anything once
- * it reappears.
- *
- */
-.o-form-helper {
-  display: block;
-  position: absolute !important;
-  width: 1px !important;
-  height: 1px !important;
-  margin: -1px !important;
-  padding: 0 !important;
-  border: 0 !important;
-  clip: rect(0 0 0 0) !important;
-  overflow: hidden !important;
-  color: #fa5252;
-}
-
-:invalid:focus:not(:placeholder-shown) ~ .o-form-helper {
-  position: static !important;
-  width: auto !important;
-  height: auto !important;
-  margin: auto !important;
-  overflow: visible !important;
-  clip: auto !important;
-  margin-top: -1.5rem !important;
-  padding-left: 0.375rem;
-}
-
-/* ==========================================================================
    OBJECTS / ICONS
    ========================================================================== */
 /**
@@ -1932,6 +1814,14 @@ img::-moz-selection {
  *
  * @oswaldas http://osvaldas.info/caching-svg-sprite-in-localstorage
  */
+/**
+ * Example showing how to change the color/size of the icons:
+ *
+   .o-icon--icon-name {
+      font-size: 32px; // works because "width" & "height" were set using em units.
+      color    : red;  // works for single-colored icons, because "fill" was set to "currentColor".
+   }
+*/
 .o-icon {
   display: inline-block;
   width: 1em;
@@ -1941,14 +1831,6 @@ img::-moz-selection {
   overlow: hidden;
 }
 
-/**
- * Example showing how to change the color/size of the icons:
- *
-   .o-icon--icon-name {
-      font-size: 32px; // works because "width" & "height" were set using em units.
-      color    : red;  // works for single-colored icons, because "fill" was set to "currentColor".
-   }
-*/
 /* ==========================================================================
    OBJECTS / LIST-BARE
    ========================================================================== */
@@ -2094,34 +1976,10 @@ img::-moz-selection {
 }
 .o-list-ui > .o-list-ui__item {
   padding: 1.5rem;
-  position: relative;
-}
-.o-list-ui > .o-list-ui__item::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   background-image: linear-gradient(to bottom, transparent 50%, #dee2e6 50%);
-  background-position: 0 bottom;
+  background-position: 0 100%;
   background-repeat: repeat-x;
-  background-size: 100% 2px;
-}
-.o-list-ui > .o-list-ui__item:first-of-type {
-  position: relative;
-}
-.o-list-ui > .o-list-ui__item:first-of-type::before {
-  content: '';
-  position: absolute;
-  top: -1px;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: linear-gradient(to bottom, transparent 50%, #dee2e6 50%);
-  background-position: 0 top;
-  background-repeat: repeat-x;
-  background-size: 100% 2px;
+  background-size: 100% 0.1rem;
 }
 .o-list-ui.o-list-ui--tiny > .o-list-ui__item {
   padding: 0.375rem;
@@ -2214,41 +2072,6 @@ img::-moz-selection {
 }
 
 /* ==========================================================================
-   OBJECTS / SPLIT
-   ========================================================================== */
-/**
- * Simple split item for creating two elements floated away from one another,
- * e.g.:
- *
-    <dl class=split>
-        <dt class=split__title>Burger and fries</dt>
-        <dd>&pound;5.99</dd>
-        <dt class=split__title>Fillet steak</dt>
-        <dd>&pound;19.99</dd>
-        <dt class=split__title>Ice cream</dt>
-        <dd>&pound;2.99</dd>
-    </dl>
- *
-    <ol class="split  results">
-        <li class=first><b class=split__title>1st place</b> Bob</li>
-        <li class=second><b class=split__title>2nd place</b> Lilly</li>
-        <li class=third><b class=split__title>3rd place</b> Ted</li>
-    </ol>ÔÇï
- *
- * Demo: jsfiddle.net/inuitcss/9gZW7
- */
-.o-split.o-split {
-  margin-left: 0;
-  text-align: right;
-  list-style: none;
-}
-.o-split .o-split__title {
-  float: left;
-  clear: left;
-  text-align: left;
-}
-
-/* ==========================================================================
    OBJECTS / TABLES
    ========================================================================== */
 /* Equal-width table cells.
@@ -2283,7 +2106,8 @@ img::-moz-selection {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(to bottom, transparent 50%, #ced4da 50%);
+  height: 1px;
+  background-image: linear-gradient(to bottom, transparent 50%, #dee2e6 50%);
   background-position: 0 top;
   background-repeat: repeat-x;
   background-size: 100% 2px;
@@ -2298,7 +2122,8 @@ img::-moz-selection {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(to bottom, transparent 50%, #ced4da 50%);
+  height: 1px;
+  background-image: linear-gradient(to bottom, transparent 50%, #dee2e6 50%);
   background-position: 0 bottom;
   background-repeat: repeat-x;
   background-size: 100% 2px;
@@ -2313,7 +2138,8 @@ img::-moz-selection {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(to bottom, transparent 50%, #ced4da 50%);
+  height: 1px;
+  background-image: linear-gradient(to bottom, transparent 50%, #dee2e6 50%);
   background-position: 0 bottom;
   background-repeat: repeat-x;
   background-size: 100% 2px;
@@ -2321,13 +2147,13 @@ img::-moz-selection {
 .o-table--bordered th, .o-table--bordered td {
   position: relative;
   border-style: solid;
-  border-color: #ced4da;
+  border-color: #dee2e6;
   border-left-width: 1px;
 }
 .o-table--bordered tr > th:last-child, .o-table--bordered tr > td:last-child {
   position: relative;
   border-style: solid;
-  border-color: #ced4da;
+  border-color: #dee2e6;
   border-right-width: 1px;
 }
 
@@ -2524,9 +2350,9 @@ img::-moz-selection {
   box-shadow-color: #1c97f5;
 }
 
-/*------------------------------------*\
-    THEME / ECSSENTIAL
-\*------------------------------------*/
+/* ==========================================================================
+   THEME / ECSSENTIAL
+   ========================================================================== */
 main {
   counter-reset: headings;
 }
@@ -2699,285 +2525,13 @@ h2:before {
 }
 
 /* ==========================================================================
-   TRUMPS / COLORS
-   ========================================================================== */
-.u-text-white {
-  color: #fff;
-}
-
-.u-text-soft {
-  color: #868e96;
-}
-
-.u-text-muted {
-  color: #adb5bd;
-}
-
-.u-text-gray {
-  color: #495057;
-}
-
-.u-text-red {
-  color: #f03e3e;
-}
-
-.u-text-pink {
-  color: #d6336c;
-}
-
-.u-text-grape {
-  color: #ae3ec9;
-}
-
-.u-text-violet {
-  color: #7048e8;
-}
-
-.u-text-indigo {
-  color: #4263eb;
-}
-
-.u-text-blue {
-  color: #1c7cd6;
-}
-
-.u-text-cyan {
-  color: #1098ad;
-}
-
-.u-text-teal {
-  color: #0ca678;
-}
-
-.u-text-green {
-  color: #37b24d;
-}
-
-.u-text-lime {
-  color: #74b816;
-}
-
-.u-text-yellow {
-  color: #f59f00;
-}
-
-.u-text-orange {
-  color: #f76707;
-}
-
-.u-background-gray {
-  background-color: #495057;
-}
-
-.u-background-red {
-  background-color: #f03e3e;
-}
-
-.u-background-pink {
-  background-color: #d6336c;
-}
-
-.u-background-grape {
-  background-color: #ae3ec9;
-}
-
-.u-background-violet {
-  background-color: #7048e8;
-}
-
-.u-background-indigo {
-  background-color: #4263eb;
-}
-
-.u-background-blue {
-  background-color: #1c7cd6;
-}
-
-.u-background-cyan {
-  background-color: #1098ad;
-}
-
-.u-background-teal {
-  background-color: #0ca678;
-}
-
-.u-background-green {
-  background-color: #37b24d;
-}
-
-.u-background-lime {
-  background-color: #74b816;
-}
-
-.u-background-yellow {
-  background-color: #f59f00;
-}
-
-.u-background-orange {
-  background-color: #f76707;
-}
-
-.u-border-gray {
-  border-color: #495057;
-}
-
-.u-border-red {
-  border-color: #f03e3e;
-}
-
-.u-border-pink {
-  border-color: #d6336c;
-}
-
-.u-border-grape {
-  border-color: #ae3ec9;
-}
-
-.u-border-violet {
-  border-color: #7048e8;
-}
-
-.u-border-indigo {
-  border-color: #4263eb;
-}
-
-.u-border-blue {
-  border-color: #1c7cd6;
-}
-
-.u-border-cyan {
-  border-color: #1098ad;
-}
-
-.u-border-teal {
-  border-color: #0ca678;
-}
-
-.u-border-green {
-  border-color: #37b24d;
-}
-
-.u-border-lime {
-  border-color: #74b816;
-}
-
-.u-border-yellow {
-  border-color: #f59f00;
-}
-
-.u-border-orange {
-  border-color: #f76707;
-}
-
-.u-fill-gray {
-  fill: #495057;
-}
-
-.u-fill-red {
-  fill: #f03e3e;
-}
-
-.u-fill-pink {
-  fill: #d6336c;
-}
-
-.u-fill-grape {
-  fill: #ae3ec9;
-}
-
-.u-fill-violet {
-  fill: #7048e8;
-}
-
-.u-fill-indigo {
-  fill: #4263eb;
-}
-
-.u-fill-blue {
-  fill: #1c7cd6;
-}
-
-.u-fill-cyan {
-  fill: #1098ad;
-}
-
-.u-fill-teal {
-  fill: #0ca678;
-}
-
-.u-fill-green {
-  fill: #37b24d;
-}
-
-.u-fill-lime {
-  fill: #74b816;
-}
-
-.u-fill-yellow {
-  fill: #f59f00;
-}
-
-.u-fill-orange {
-  fill: #f76707;
-}
-
-.u-stroke-gray {
-  stroke: #495057;
-}
-
-.u-stroke-red {
-  stroke: #f03e3e;
-}
-
-.u-stroke-pink {
-  stroke: #d6336c;
-}
-
-.u-stroke-grape {
-  stroke: #ae3ec9;
-}
-
-.u-stroke-violet {
-  stroke: #7048e8;
-}
-
-.u-stroke-indigo {
-  stroke: #4263eb;
-}
-
-.u-stroke-blue {
-  stroke: #1c7cd6;
-}
-
-.u-stroke-cyan {
-  stroke: #1098ad;
-}
-
-.u-stroke-teal {
-  stroke: #0ca678;
-}
-
-.u-stroke-green {
-  stroke: #37b24d;
-}
-
-.u-stroke-lime {
-  stroke: #74b816;
-}
-
-.u-stroke-yellow {
-  stroke: #f59f00;
-}
-
-.u-stroke-orange {
-  stroke: #f76707;
-}
-
-/* ==========================================================================
    TRUMPS / HELPERS
    ========================================================================== */
 /**
  * A series of classes to use arbitrarily.
+ */
+/**
+ * Basic positioning to alter the default document flow.
  */
 .u-static {
   position: static;
@@ -2991,6 +2545,46 @@ h2:before {
   position: absolute;
 }
 
+.u-fixed {
+  position: fixed;
+}
+
+.u-top--0 {
+  top: 0;
+}
+
+.u-right--0 {
+  right: 0;
+}
+
+.u-bottom--0 {
+  bottom: 0;
+}
+
+.u-left--0 {
+  left: 0;
+}
+
+.stack-order--1 {
+  z-index: 1;
+}
+
+.stack-order--2 {
+  z-index: 2;
+}
+
+.stack-order--3 {
+  z-index: 3;
+}
+
+.stack-order--4 {
+  z-index: 4;
+}
+
+.stack-order--5 {
+  z-index: 5;
+}
+
 .u-inline {
   display: inline;
 }
@@ -3001,6 +2595,26 @@ h2:before {
 
 .u-inline-block {
   display: inline-block;
+}
+
+.u-table {
+  display: table;
+}
+
+.u-table-cell {
+  display: table-cell;
+}
+
+.u-overflow--hidden {
+  overflow: hidden;
+}
+
+.u-overflow--scroll {
+  overflow: scroll;
+}
+
+.u-overflow--auto {
+  overflow: auto;
 }
 
 .u-clearfix:after {
@@ -3039,6 +2653,9 @@ h2:before {
   text-align: justify;
 }
 
+/**
+ * Adjust vertical alignment.
+ */
 .u-aligned-top {
   vertical-align: top;
 }
@@ -3051,6 +2668,13 @@ h2:before {
   vertical-align: bottom;
 }
 
+.u-aligned-baseline {
+  vertical-align: baseline;
+}
+
+/**
+ * Adjust borders and border radii.
+ */
 .u-border {
   position: relative;
   border-style: solid;
@@ -3065,6 +2689,7 @@ h2:before {
   left: 0;
   width: 100%;
   height: 100%;
+  height: 1px;
   background-image: linear-gradient(to bottom, transparent 50%, #dee2e6 50%);
   background-position: 0 top;
   background-repeat: repeat-x;
@@ -3077,6 +2702,7 @@ h2:before {
   left: 0;
   width: 100%;
   height: 100%;
+  height: 1px;
   background-image: linear-gradient(to bottom, transparent 50%, #dee2e6 50%);
   background-position: 0 bottom;
   background-repeat: repeat-x;
@@ -3100,6 +2726,7 @@ h2:before {
   left: 0;
   width: 100%;
   height: 100%;
+  height: 1px;
   background-image: linear-gradient(to bottom, transparent 50%, #dee2e6 50%);
   background-position: 0 bottom;
   background-repeat: repeat-x;
@@ -3111,6 +2738,22 @@ h2:before {
   border-style: solid;
   border-color: #dee2e6;
   border-left-width: 1px;
+}
+
+.u-border-right--none {
+  border-right: 0;
+}
+
+.u-border-bottom--none {
+  border-bottom: 0;
+}
+
+.u-border-left--none {
+  border-left: 0;
+}
+
+.u-not-bordered {
+  border: 0;
 }
 
 .u-rounded {
@@ -3133,10 +2776,17 @@ h2:before {
   border-radius: 3px 0 0 3px;
 }
 
+.u-not-rounded {
+  border-radius: 0;
+}
+
 .u-circle {
   border-radius: 50%;
 }
 
+/**
+ * Adjust the type of list-item marker.
+ */
 .u-list-circle {
   list-style-type: circle;
 }
@@ -3173,6 +2823,9 @@ h2:before {
   list-style-type: upper-roman;
 }
 
+/**
+ * Adjust typographic weights and styles.
+ */
 .u-serif {
   font-family: Georgia, Times, "Times New Roman", serif;
 }
@@ -3227,18 +2880,61 @@ h2:before {
 
 .u-underline {
   text-decoration: underline;
+  color: inherit;
+}
+
+.u-underline--none {
+  text-decoration: none;
 }
 
 .u-overline {
   text-decoration: overline;
+  color: inherit;
 }
 
 .u-line-through {
   text-decoration: line-through;
+  color: inherit;
 }
 
-.u-no-decoration {
-  text-decoration: none;
+.u-nowrap {
+  white-space: nowrap;
+}
+
+.u-break-word {
+  word-wrap: break-word;
+}
+
+.bg-darken-1 {
+  background-color: rgba(0, 0, 0, 0.0625);
+}
+
+.bg-darken-2 {
+  background-color: rgba(0, 0, 0, 0.125);
+}
+
+.bg-darken-3 {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.bg-darken-4 {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.bg-lighten-1 {
+  background-color: rgba(255, 255, 255, 0.0625);
+}
+
+.bg-lighten-2 {
+  background-color: rgba(255, 255, 255, 0.125);
+}
+
+.bg-lighten-3 {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.bg-lighten-4 {
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 /* ==========================================================================
@@ -3578,6 +3274,281 @@ h2:before {
 
 .u-padding-left--none {
   padding-left: 0rem !important;
+}
+
+/* ==========================================================================
+   TRUMPS / COLORS
+   ========================================================================== */
+.u-text-white {
+  color: #fff;
+}
+
+.u-text-soft {
+  color: #868e96;
+}
+
+.u-text-muted {
+  color: #adb5bd;
+}
+
+.u-text-gray {
+  color: #495057;
+}
+
+.u-text-red {
+  color: #f03e3e;
+}
+
+.u-text-pink {
+  color: #d6336c;
+}
+
+.u-text-grape {
+  color: #ae3ec9;
+}
+
+.u-text-violet {
+  color: #7048e8;
+}
+
+.u-text-indigo {
+  color: #4263eb;
+}
+
+.u-text-blue {
+  color: #1c7cd6;
+}
+
+.u-text-cyan {
+  color: #1098ad;
+}
+
+.u-text-teal {
+  color: #0ca678;
+}
+
+.u-text-green {
+  color: #37b24d;
+}
+
+.u-text-lime {
+  color: #74b816;
+}
+
+.u-text-yellow {
+  color: #f59f00;
+}
+
+.u-text-orange {
+  color: #f76707;
+}
+
+.u-background-gray {
+  background-color: #495057;
+}
+
+.u-background-red {
+  background-color: #f03e3e;
+}
+
+.u-background-pink {
+  background-color: #d6336c;
+}
+
+.u-background-grape {
+  background-color: #ae3ec9;
+}
+
+.u-background-violet {
+  background-color: #7048e8;
+}
+
+.u-background-indigo {
+  background-color: #4263eb;
+}
+
+.u-background-blue {
+  background-color: #1c7cd6;
+}
+
+.u-background-cyan {
+  background-color: #1098ad;
+}
+
+.u-background-teal {
+  background-color: #0ca678;
+}
+
+.u-background-green {
+  background-color: #37b24d;
+}
+
+.u-background-lime {
+  background-color: #74b816;
+}
+
+.u-background-yellow {
+  background-color: #f59f00;
+}
+
+.u-background-orange {
+  background-color: #f76707;
+}
+
+.u-border-gray {
+  border-color: #495057;
+}
+
+.u-border-red {
+  border-color: #f03e3e;
+}
+
+.u-border-pink {
+  border-color: #d6336c;
+}
+
+.u-border-grape {
+  border-color: #ae3ec9;
+}
+
+.u-border-violet {
+  border-color: #7048e8;
+}
+
+.u-border-indigo {
+  border-color: #4263eb;
+}
+
+.u-border-blue {
+  border-color: #1c7cd6;
+}
+
+.u-border-cyan {
+  border-color: #1098ad;
+}
+
+.u-border-teal {
+  border-color: #0ca678;
+}
+
+.u-border-green {
+  border-color: #37b24d;
+}
+
+.u-border-lime {
+  border-color: #74b816;
+}
+
+.u-border-yellow {
+  border-color: #f59f00;
+}
+
+.u-border-orange {
+  border-color: #f76707;
+}
+
+.u-fill-gray {
+  fill: #495057;
+}
+
+.u-fill-red {
+  fill: #f03e3e;
+}
+
+.u-fill-pink {
+  fill: #d6336c;
+}
+
+.u-fill-grape {
+  fill: #ae3ec9;
+}
+
+.u-fill-violet {
+  fill: #7048e8;
+}
+
+.u-fill-indigo {
+  fill: #4263eb;
+}
+
+.u-fill-blue {
+  fill: #1c7cd6;
+}
+
+.u-fill-cyan {
+  fill: #1098ad;
+}
+
+.u-fill-teal {
+  fill: #0ca678;
+}
+
+.u-fill-green {
+  fill: #37b24d;
+}
+
+.u-fill-lime {
+  fill: #74b816;
+}
+
+.u-fill-yellow {
+  fill: #f59f00;
+}
+
+.u-fill-orange {
+  fill: #f76707;
+}
+
+.u-stroke-gray {
+  stroke: #495057;
+}
+
+.u-stroke-red {
+  stroke: #f03e3e;
+}
+
+.u-stroke-pink {
+  stroke: #d6336c;
+}
+
+.u-stroke-grape {
+  stroke: #ae3ec9;
+}
+
+.u-stroke-violet {
+  stroke: #7048e8;
+}
+
+.u-stroke-indigo {
+  stroke: #4263eb;
+}
+
+.u-stroke-blue {
+  stroke: #1c7cd6;
+}
+
+.u-stroke-cyan {
+  stroke: #1098ad;
+}
+
+.u-stroke-teal {
+  stroke: #0ca678;
+}
+
+.u-stroke-green {
+  stroke: #37b24d;
+}
+
+.u-stroke-lime {
+  stroke: #74b816;
+}
+
+.u-stroke-yellow {
+  stroke: #f59f00;
+}
+
+.u-stroke-orange {
+  stroke: #f76707;
 }
 
 /* ==========================================================================
