@@ -2549,19 +2549,19 @@ h2:before {
   position: fixed;
 }
 
-.u-top--0 {
+.u-top-0px {
   top: 0;
 }
 
-.u-right--0 {
+.u-right-0px {
   right: 0;
 }
 
-.u-bottom--0 {
+.u-bottom-0px {
   bottom: 0;
 }
 
-.u-left--0 {
+.u-left--0px {
   left: 0;
 }
 
@@ -2903,38 +2903,6 @@ h2:before {
 
 .u-break-word {
   word-wrap: break-word;
-}
-
-.bg-darken-1 {
-  background-color: rgba(0, 0, 0, 0.0625);
-}
-
-.bg-darken-2 {
-  background-color: rgba(0, 0, 0, 0.125);
-}
-
-.bg-darken-3 {
-  background-color: rgba(0, 0, 0, 0.25);
-}
-
-.bg-darken-4 {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.bg-lighten-1 {
-  background-color: rgba(255, 255, 255, 0.0625);
-}
-
-.bg-lighten-2 {
-  background-color: rgba(255, 255, 255, 0.125);
-}
-
-.bg-lighten-3 {
-  background-color: rgba(255, 255, 255, 0.25);
-}
-
-.bg-lighten-4 {
-  background-color: rgba(255, 255, 255, 0.5);
 }
 
 /* ==========================================================================
@@ -3549,6 +3517,73 @@ h2:before {
 
 .u-stroke-orange {
   stroke: #f76707;
+}
+
+/**
+ * Gives us the ability to do color manipulations right in the browser.
+ */
+.u-color-darken-1 {
+  color: rgba(0, 0, 0, 0.0625);
+}
+
+.u-color-darken-2 {
+  color: rgba(0, 0, 0, 0.125);
+}
+
+.u-color-darken-3 {
+  color: rgba(0, 0, 0, 0.25);
+}
+
+.u-color-darken-4 {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.u-color-lighten-1 {
+  color: rgba(255, 255, 255, 0.0625);
+}
+
+.u-color-lighten-2 {
+  color: rgba(255, 255, 255, 0.125);
+}
+
+.u-color-lighten-3 {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.u-color-lighten-4 {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.u-background-darken-1 {
+  background-color: rgba(0, 0, 0, 0.0625);
+}
+
+.u-background-darken-2 {
+  background-color: rgba(0, 0, 0, 0.125);
+}
+
+.u-background-darken-3 {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.u-background-darken-4 {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.u-background-lighten-1 {
+  background-color: rgba(255, 255, 255, 0.0625);
+}
+
+.u-background-lighten-2 {
+  background-color: rgba(255, 255, 255, 0.125);
+}
+
+.u-background-lighten-3 {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.u-background-lighten-4 {
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 /* ==========================================================================
