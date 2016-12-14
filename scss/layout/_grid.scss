@@ -27,17 +27,17 @@ $grid-gutter: $base-line-height + rem !default;
 
 .#{$namespace}#{$grid-prefix} {
 
-    &#{&} {
-      @include flexbox();
-      @include flex-wrap(wrap);
-      margin     : 0;
-      padding    : 0;
-      list-style : none;
-    }
+  &#{&} {
+    @include flexbox();
+    @include flex-wrap(wrap);
+    margin     : 0;
+    padding    : 0;
+    list-style : none;
+  }
 
-    & &__item {
-      @include flex(1);
-    }
+  & &__item {
+    @include flex(1);
+  }
 
 }
 
