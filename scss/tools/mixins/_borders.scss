@@ -5,7 +5,7 @@
 // 1. Where horizontal borders are concerned we want to keep a consistent baseline
 //    by using `background-image` instead of `border-top` or `border-bottom`.
 
-@mixin border($direction: all, $width: 1px, $style: solid, $color: color(ui-medium), $radius: 0) {
+@mixin border($direction: all, $width: 1px, $style: solid, $color: color(ui-dark), $radius: 0) {
 
   position: relative;
 
@@ -17,15 +17,13 @@
     border-left-width : $width;
 
     @include pseudo-element(before, $top: -$width) {
-      height             : $width;
       background-image   : linear-gradient(to bottom, transparent 50%, $color 50%); // [1]
       background-position: 0 top;                                                   // [1]
       background-repeat  : repeat-x;                                                // [1]
       background-size    : 100% ($width * 2);                                       // [1]
     }
 
-    @include pseudo-element(after) {
-      height             : $width;
+    @include pseudo-element(after, $height: $width, $top: 100%) {
       background-image   : linear-gradient(to bottom, transparent 50%, $color 50%); // [1]
       background-position: 0 bottom;                                                // [1]
       background-repeat  : repeat-x;                                                // [1]
@@ -37,7 +35,6 @@
   @if ($direction == top) {
 
     @include pseudo-element(before, $top: -$width) {
-      height             : $width;
       background-image   : linear-gradient(to bottom, transparent 50%, $color 50%); // [1]
       background-position: 0 top;                                                   // [1]
       background-repeat  : repeat-x;                                                // [1]
@@ -48,10 +45,9 @@
 
   @if ($direction == bottom) {
 
-    @include pseudo-element(after) {
-      height             : $width;
+    @include pseudo-element(after, $height: $width, $top: 100%) {
       background-image   : linear-gradient(to bottom, transparent 50%, $color 50%); // [1]
-      background-position: 0 bottom;                                                // [1]
+      background-position: 0 100%;                                                // [1]
       background-repeat  : repeat-x;                                                // [1]
       background-size    : 100% ($width * 2);                                       // [1]
     }
