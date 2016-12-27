@@ -14,10 +14,10 @@
 
 $colors: (
   'primary'    : $color-blue-5,
-  'text'       : $color-gray-7,
-  'text-soft'  : $color-gray-6,
-  'muted'      : $color-gray-5,
-  'headings'   : $color-gray-7,
+  'text'       : rgba(0,0,0,0.8),
+  'text-soft'  : rgba(0,0,0,0.6),
+  'muted'      : rgba(0,0,0,0.44),
+  'headings'   : rgba(0,0,0,0.8),
   'background' : $color-white,
   'ui-dark'    : $color-gray-4,
   'ui-medium'  : $color-gray-3,
