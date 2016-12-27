@@ -28,6 +28,7 @@ $typography: (
 $generic: (
   'box-sizing'       : true,
   'reset'            : true,
+  'selections'       : true,
   'shared'           : true
 ) !default;
 
@@ -40,7 +41,6 @@ $elements: (
   'media'            : true,
   'page'             : true,
   'quotes'           : true,
-  'selections'       : true,
   'tables'           : true,
   'typography'       : true
 ) !default;
