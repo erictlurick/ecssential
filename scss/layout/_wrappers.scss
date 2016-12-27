@@ -14,6 +14,10 @@ $wrapper-width-large : 74.551em !default;
 $wrapper-width-medium: 55.927em !default;
 $wrapper-width-narrow: 33em !default;
 
+@if (type-of($wrapper-width-large) != number) or (type-of($wrapper-width-medium) != number) or (type-of($wrapper-width-narrow) != number) {
+  @error "`#{$wrapper-width-large}` or `#{$wrapper-width-medium}` or `#{$wrapper-width-narrow}`needs to be a number."
+}
+
 
 .#{$namespace}#{$wrapper-prefix} {
 
