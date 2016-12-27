@@ -75,6 +75,10 @@ textarea {
   transition      : all $base-ui-transition;
   @include prefix((appearance: none), webkit moz ms); /* [1] */
 
+  &:focus {
+    box-shadow: 0px 0px 0px 1px $input-color-border-focus;
+  }
+
   &:invalid:focus:not(:placeholder-shown) {
     box-shadow: 0px 0px 0px 1px color(error); /* [2] */
   }
