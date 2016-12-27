@@ -17,7 +17,7 @@ $fallbacks: (
 $typography: (
   'dividers'         : true,
   'dropcaps'         : true,
-  'glyphs'           : false,
+  'glyphs'           : true,
   'hyphens'          : true,
   'indent'           : false,
   'lede'             : true,
@@ -28,6 +28,7 @@ $typography: (
 $generic: (
   'box-sizing'       : true,
   'reset'            : true,
+  'outline'          : true,
   'shared'           : true
 ) !default;
 
@@ -82,7 +83,7 @@ $trumps: (
 ) !default;
 
 $debugging: (
-  'baseline'         : true,
+  'baseline'         : false,
   'baseline-checks'  : false,
   'breakpoint-checks': false,
   'health-checks'    : false
