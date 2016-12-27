@@ -8,6 +8,9 @@
  * The box object simply boxes off content. Extend with cosmetic styles in the
  * Components layer.
  *
+ * 1. So we can apply the `.o-box` class to naturally-inline elements.
+ *
+ *
    <div class="o-box">
      ...
    </div>
@@ -18,7 +21,6 @@
      ...
    </div>
  *
- * 1. So we can apply the `.o-box` class to naturally-inline elements.
  */
 
 // Predefine the variable below in order to alter and enable specific features.
