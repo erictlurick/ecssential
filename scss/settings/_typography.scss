@@ -6,7 +6,7 @@
 // ==========================================================================
 
 // What would you like your base font-size to be? Value in px.
-$base-font-size          : 16 !default;
+$base-font-size          : 18 !default;
 
 // What would you like your base font-size for large screens (> 960px) to be? Value in %.
 $base-font-size-large    : 125% !default;
@@ -29,14 +29,14 @@ $google-fonts: (
 
 // This mixin will take the contents of the `$google-fonts` variable, loop through it
 // and come up with a Google URL we can `@import`.
-@include import-google-fonts();
+// @include import-google-fonts();
 
 
 // Font family settings.
 // ==========================================================================
 
 $font-family-serif       : $georgia !default;
-$font-family-sans-serif  : $segoe-ui !default;
+$font-family-sans-serif  : $arial !default;
 $font-family-monospace   : $consolas !default;
 
 $font-family-body        : $font-family-serif !default;
