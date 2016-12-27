@@ -10,7 +10,7 @@
 
 a:focus,
 button:focus,
-input.c-button {
+input.c-button:focus {
   outline: 0; /* [1] */
 }
 
