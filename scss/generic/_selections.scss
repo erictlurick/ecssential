@@ -1,0 +1,46 @@
+@if (generic(selections) == true) {
+
+/* ==========================================================================
+   ELEMENTS / SELECTIONS
+   ========================================================================== */
+
+/**
+ * 1. Customize `background` for text selections.
+ * 2. Remove `text-shadow` selection highlight - http://cbrac.co/Q6swON
+ */
+
+::-moz-selection {
+  color           : color-invert(color(action));
+  background-color: color(action); /* 1 */
+  text-shadow     : none;          /* 2 */
+}
+
+::selection {
+  color           : color-invert(color(action));
+  background-color: color(action); /* 1 */
+  text-shadow     : none;          /* 2 */
+}
+
+
+/**
+ * Change `background` for text selections when browser is unfocused.
+ */
+
+::selection:window-inactive {
+  background-color: #d0d0d0;
+}
+
+
+ /**
+ * Remove `background` on images when selected.
+ */
+
+img::selection {
+  background-color: transparent;
+}
+
+img::-moz-selection {
+  background-color: transparent;
+}
+
+}//endif
