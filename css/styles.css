@@ -308,6 +308,47 @@ html {
 }
 
 /* ==========================================================================
+   ELEMENTS / SELECTIONS
+   ========================================================================== */
+/**
+ * 1. Customize `background` for text selections.
+ * 2. Remove `text-shadow` selection highlight - http://cbrac.co/Q6swON
+ */
+::-moz-selection {
+  color: #fff;
+  background-color: #228ae6;
+  /* 1 */
+  text-shadow: none;
+  /* 2 */
+}
+
+::selection {
+  color: #fff;
+  background-color: #228ae6;
+  /* 1 */
+  text-shadow: none;
+  /* 2 */
+}
+
+/**
+ * Change `background` for text selections when browser is unfocused.
+ */
+::selection:window-inactive {
+  background-color: #d0d0d0;
+}
+
+/**
+* Remove `background` on images when selected.
+*/
+img::selection {
+  background-color: transparent;
+}
+
+img::-moz-selection {
+  background-color: transparent;
+}
+
+/* ==========================================================================
    GENERIC / SHARED
    ========================================================================== */
 /**
@@ -1394,47 +1435,6 @@ img.js-img-broken::after {
   text-align: center;
   text-shadow: 0 1px #fff;
   color: inherit;
-  background-color: transparent;
-}
-
-/* ==========================================================================
-   ELEMENTS / SELECTIONS
-   ========================================================================== */
-/**
- * 1. Customize `background` for text selections.
- * 2. Remove `text-shadow` selection highlight - http://cbrac.co/Q6swON
- */
-::-moz-selection {
-  color: #fff;
-  background-color: #228ae6;
-  /* 1 */
-  text-shadow: none;
-  /* 2 */
-}
-
-::selection {
-  color: #fff;
-  background-color: #228ae6;
-  /* 1 */
-  text-shadow: none;
-  /* 2 */
-}
-
-/**
- * Change `background` for text selections when browser is unfocused.
- */
-::selection:window-inactive {
-  background-color: #d0d0d0;
-}
-
-/**
-* Remove `background` on images when selected.
-*/
-img::selection {
-  background-color: transparent;
-}
-
-img::-moz-selection {
   background-color: transparent;
 }
 
