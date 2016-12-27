@@ -116,8 +116,8 @@ $buttons-outlined-border-width: 1px !default;
 
       @include attention(){
         color           : color-invert($color);
-        background-color: darken($color, 5%);
-        border-color    : darken($color, 5%);
+        background-color: darken($color, 10%);
+        border-color    : darken($color, 10%);
       }
 
       &.#{$namespace}#{$buttons-namespace}--outlined {
