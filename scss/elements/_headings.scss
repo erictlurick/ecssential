@@ -4,6 +4,10 @@
    ELEMENTS / HEADINGS
    ========================================================================== */
 
+/**
+ * Simple default styles for headings 1 through 6.
+ */
+
 // Predefine the variable below in order to alter and enable specific features.
 $headings-subtitles-inline: true !default;
 
@@ -37,11 +41,15 @@ $headings-subtitles-inline: true !default;
     vertical-align: baseline;
     font-size     : 75%;
     line-height   : 1;
-    color         : color(text-soft);
+    color         : color(muted);
 
   }
 }
 
+
+// We have all of our heading font sizes defined here. Our `type()` mixin will
+// generate a rem-based `font-size`, as well as generating a `line-height` and
+// margins that will sit on our baseline grid.
 
 h1 { @extend %headings; @include type(4, 0, 1); }
 h2 { @extend %headings; @include type(3, 0, 1); }
@@ -63,7 +71,7 @@ h5 + h6 {
 
 
 /**
- * Off screen content.
+ * Off screen headings.
  */
 
 h1[aria-hidden],
