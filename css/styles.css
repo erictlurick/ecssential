@@ -2222,6 +2222,7 @@ img::-moz-selection {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   text-align: center;
   /* [4] */
+  text-decoration: none;
   border-bottom: none;
   cursor: pointer;
   /* [5] */

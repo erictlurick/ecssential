@@ -30,6 +30,7 @@ $buttons-outlined-border-width: 1px !default;
   font            : inherit; /* [3] */
   font-family     : $font-family-sans-serif;
   text-align      : center; /* [4] */
+  text-decoration : none;
   border-bottom   : none;
   cursor          : pointer; /* [5] */
   transition      : all $base-ui-transition;
