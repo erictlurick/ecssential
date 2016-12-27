@@ -432,7 +432,7 @@ body {
  */
 h1, h2, h3, h4, h5, h6, .u-h1-size, .u-h2-size, .u-h3-size, .u-h4-size, .u-h5-size, .u-h6-size {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  font-weight: 600;
+  font-weight: 400;
   word-wrap: break-word;
   color: rgba(0, 0, 0, 0.8);
   font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 1;
