@@ -4,72 +4,137 @@
    TRUMPS / COLORS
    ========================================================================== */
 
-// Predefine the variable below in order to alter and enable specific features.
-$color-spectrum: 7;
+/**
+ * Text colors variations.
+ */
+
+.#{$namespace}u-color-text                     { color: color(text); }
+.#{$namespace}u-color-text-soft                { color: color(text-soft); }
+.#{$namespace}u-color-text-muted               { color: color(text-muted); }
+.#{$namespace}u-color-text-primary             { color: color(primary); }
+.#{$namespace}u-color-text-primary-highlight   { color: color(primary-highlight); }
+.#{$namespace}u-color-text-primary-shadow      { color: color(primary-shadow); }
+.#{$namespace}u-color-text-secondary           { color: color(secondary); }
+.#{$namespace}u-color-text-secondary-highlight { color: color(secondary-highlight); }
+.#{$namespace}u-color-text-secondary-shadow    { color: color(secondary-shadow); }
+.#{$namespace}u-color-text-action              { color: color(action); }
+.#{$namespace}u-color-text-info                { color: color(info); }
+.#{$namespace}u-color-text-success             { color: color(success); }
+.#{$namespace}u-color-text-warning             { color: color(warning); }
+.#{$namespace}u-color-text-error               { color: color(action); }
+//.#{$namespace}u-color-text-black               { color: color(black); }
+//.#{$namespace}u-color-text-white               { color: color(text-white); }
 
 
-.u-text-white { color: $color-white; }
-.u-text-soft  { color: color(text-soft); }
-.u-text-muted { color: color(muted); }
+/**
+ * Background colors variations.
+ */
 
-// Loop trough the $colors map and set a class for text colors.
-@each $list, $color-name in $color-list {
-  .u-text-#{$color-name} {
-    color: map-get($list, #{$color-spectrum});
-  }
-}
+.#{$namespace}u-background                     { background-color: color(background); }
+.#{$namespace}u-background-primary             { background-color: color(primary); }
+.#{$namespace}u-background-primary-highlight   { background-color: color(primary-highlight); }
+.#{$namespace}u-background-primary-shadow      { background-color: color(primary-shadow); }
+.#{$namespace}u-background-secondary           { background-color: color(secondary); }
+.#{$namespace}u-background-secondary-highlight { background-color: color(secondary-highlight); }
+.#{$namespace}u-background-secondary-shadow    { background-color: color(secondary-shadow); }
+.#{$namespace}u-background-ui-light            { background-color: color(ui-light); }
+.#{$namespace}u-background-ui-medium           { background-color: color(ui-medium); }
+.#{$namespace}u-background-ui-dark             { background-color: color(ui-dark); }
+.#{$namespace}u-background-action              { background-color: color(action); }
+.#{$namespace}u-background-info                { background-color: color(info); }
+.#{$namespace}u-background-success             { background-color: color(success); }
+.#{$namespace}u-background-warning             { background-color: color(warning); }
+.#{$namespace}u-background-error               { background-color: color(error); }
+//.#{$namespace}u-background-black               { background-color: color(black); }
+//.#{$namespace}u-background-white               { background-color: color(white); }
 
-// Loop trough the $colors map and set a class for background colors.
-@each $list, $color-name in $color-list {
-  .u-background-#{$color-name} {
-    background-color: map-get($list, #{$color-spectrum});
-  }
-}
 
-// Loop trough the $colors map and set a class for border colors.
-@each $list, $color-name in $color-list {
-  .u-border-#{$color-name} {
-    border-color: map-get($list, #{$color-spectrum});
-  }
-}
+/**
+ * Border colors variations.
+ */
 
-// Loop trough the $colors map and set a class for fill colors.
-@each $list, $color-name in $color-list {
-  .u-fill-#{$color-name} {
-    fill: map-get($list, #{$color-spectrum});
-  }
-}
+.#{$namespace}u-border-primary                 { border-color: color(primary); }
+.#{$namespace}u-border-primary-highlight       { border-color: color(primary-highlight); }
+.#{$namespace}u-border-primary-shadow          { border-color: color(primary-shadow); }
+.#{$namespace}u-border-secondary               { border-color: color(secondary); }
+.#{$namespace}u-border-secondary-highlight     { border-color: color(secondary-highlight); }
+.#{$namespace}u-border-secondary-shadow        { border-color: color(secondary-shadow); }
+.#{$namespace}u-border-ui-light                { border-color: color(ui-light); }
+.#{$namespace}u-border-ui-medium               { border-color: color(ui-medium); }
+.#{$namespace}u-border-ui-dark                 { border-color: color(ui-dark); }
+.#{$namespace}u-border-action                  { border-color: color(action); }
+.#{$namespace}u-border-info                    { border-color: color(info); }
+.#{$namespace}u-border-success                 { border-color: color(success); }
+.#{$namespace}u-border-warning                 { border-color: color(warning); }
+.#{$namespace}u-border-error                   { border-color: color(error); }
+//.#{$namespace}u-border-black                   { border-color: color(black); }
+//.#{$namespace}u-border-white                   { border-color: color(white); }
 
-// Loop trough the $colors map and set a for stroke colors.
-@each $list, $color-name in $color-list {
-  .u-stroke-#{$color-name} {
-    stroke: map-get($list, #{$color-spectrum});
-  }
-}
+
+/**
+ * Fill colors variations.
+ */
+
+.#{$namespace}u-fill-primary                   { fill: color(primary); }
+.#{$namespace}u-fill-primary-highlight         { fill: color(primary-highlight); }
+.#{$namespace}u-fill-primary-shadow            { fill: color(primary-shadow); }
+.#{$namespace}u-fill-secondary                 { fill: color(secondary); }
+.#{$namespace}u-fill-secondary-highlight       { fill: color(secondary-highlight); }
+.#{$namespace}u-fill-secondary-shadow          { fill: color(secondary-shadow); }
+.#{$namespace}u-fill-ui-light                  { fill: color(ui-light); }
+.#{$namespace}u-fill-ui-medium                 { fill: color(ui-medium); }
+.#{$namespace}u-fill-ui-dark                   { fill: color(ui-dark); }
+.#{$namespace}u-fill-action                    { fill: color(action); }
+.#{$namespace}u-fill-info                      { fill: color(info); }
+.#{$namespace}u-fill-success                   { fill: color(success); }
+.#{$namespace}u-fill-warning                   { fill: color(warning); }
+.#{$namespace}u-fill-error                     { fill: color(error); }
+//.#{$namespace}u-fill-black                     { fill: color(black); }
+//.#{$namespace}u-fill-white                     { fill: color(white); }
 
 
 /**
  * Gives us the ability to do color manipulations right in the browser.
  */
 
-.u-color-darken-1       { color: rgba(0, 0, 0, .0625) }
-.u-color-darken-2       { color: rgba(0, 0, 0, .125) }
-.u-color-darken-3       { color: rgba(0, 0, 0, .25) }
-.u-color-darken-4       { color: rgba(0, 0, 0, .5) }
+.#{$namespace}u-color-dark                     { color: rgba(0, 0, 0, .0625) }
+.#{$namespace}u-color-x-dark                   { color: rgba(0, 0, 0, .125) }
+.#{$namespace}u-color-xx-dark                  { color: rgba(0, 0, 0, .25) }
+.#{$namespace}u-color-xxx-dark                 { color: rgba(0, 0, 0, .5) }
 
-.u-color-lighten-1      { color: rgba(255, 255, 255, .0625) }
-.u-color-lighten-2      { color: rgba(255, 255, 255, .125) }
-.u-color-lighten-3      { color: rgba(255, 255, 255, .25) }
-.u-color-lighten-4      { color: rgba(255, 255, 255, .5) }
+.#{$namespace}u-color-light                    { color: rgba(255, 255, 255, .0625) }
+.#{$namespace}u-color-x-light                  { color: rgba(255, 255, 255, .125) }
+.#{$namespace}u-color-xx-light                 { color: rgba(255, 255, 255, .25) }
+.#{$namespace}u-color-xxx-light                { color: rgba(255, 255, 255, .5) }
 
-.u-background-darken-1  { background-color: rgba(0, 0, 0, .0625) }
-.u-background-darken-2  { background-color: rgba(0, 0, 0, .125) }
-.u-background-darken-3  { background-color: rgba(0, 0, 0, .25) }
-.u-background-darken-4  { background-color: rgba(0, 0, 0, .5) }
+.#{$namespace}u-background-dark                { background-color: rgba(0, 0, 0, .0625) }
+.#{$namespace}u-background-x-dark              { background-color: rgba(0, 0, 0, .125) }
+.#{$namespace}u-background-xx-dark             { background-color: rgba(0, 0, 0, .25) }
+.#{$namespace}u-background-xxx-dark            { background-color: rgba(0, 0, 0, .5) }
 
-.u-background-lighten-1 { background-color: rgba(255, 255, 255, .0625) }
-.u-background-lighten-2 { background-color: rgba(255, 255, 255, .125) }
-.u-background-lighten-3 { background-color: rgba(255, 255, 255, .25) }
-.u-background-lighten-4 { background-color: rgba(255, 255, 255, .5) }
+.#{$namespace}u-background-light               { background-color: rgba(255, 255, 255, .0625) }
+.#{$namespace}u-background-x-light             { background-color: rgba(255, 255, 255, .125) }
+.#{$namespace}u-background-xx-light            { background-color: rgba(255, 255, 255, .25) }
+.#{$namespace}u-background-xxx-light           { background-color: rgba(255, 255, 255, .5) }
+
+.#{$namespace}u-border-dark                    { border-color: rgba(0, 0, 0, .0625) }
+.#{$namespace}u-border-x-dark                  { border-color: rgba(0, 0, 0, .125) }
+.#{$namespace}u-border-xx-dark                 { border-color: rgba(0, 0, 0, .25) }
+.#{$namespace}u-border-xxx-dark                { border-color: rgba(0, 0, 0, .5) }
+
+.#{$namespace}u-border-light                   { border-color: rgba(255, 255, 255, .0625) }
+.#{$namespace}u-border-x-light                 { border-color: rgba(255, 255, 255, .125) }
+.#{$namespace}u-border-xx-light                { border-color: rgba(255, 255, 255, .25) }
+.#{$namespace}u-border-xxx-light               { border-color: rgba(255, 255, 255, .5) }
+
+.#{$namespace}u-fill-dark                      { color: rgba(0, 0, 0, .0625) }
+.#{$namespace}u-fill-x-dark                    { color: rgba(0, 0, 0, .125) }
+.#{$namespace}u-fill-xx-dark                   { color: rgba(0, 0, 0, .25) }
+.#{$namespace}u-fill-xxx-dark                  { color: rgba(0, 0, 0, .5) }
+
+.#{$namespace}u-fill-light                     { color: rgba(255, 255, 255, .0625) }
+.#{$namespace}u-fill-x-light                   { color: rgba(255, 255, 255, .125) }
+.#{$namespace}u-fill-xx-light                  { color: rgba(255, 255, 255, .25) }
+.#{$namespace}u-fill-xxx-light                 { color: rgba(255, 255, 255, .5) }
 
 }//endif

@@ -1,0 +1,28 @@
+@if (objects(numbering) == true) {
+
+/* ==========================================================================
+   OBJECTS / NUMBERING
+   ========================================================================== */
+
+// Predefine the variable below in order to alter and enable specific features.
+$numbering-namespace: 'o-numbering' !default;
+
+
+.#{$namespace}#{$numbering-namespace} {
+
+  &#{&} {
+    counter-reset: numbering;
+  }
+
+  .#{$namespace}#{$numbering-namespace}__item {
+    counter-increment: numbering;
+
+    &:before {
+      content: counter(numbering) ". ";
+    }
+
+  }
+
+}
+
+}//endif

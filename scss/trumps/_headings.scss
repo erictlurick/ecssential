@@ -15,11 +15,18 @@
  *
  */
 
-.u-h1-size { @extend %headings; @include type(4, 0, 1); }
-.u-h2-size { @extend %headings; @include type(3, 0, 1); }
-.u-h3-size { @extend %headings; @include type(2, 0, 0); }
-.u-h4-size { @extend %headings; @include type(0, 0, 0); }
-.u-h5-size { @extend %headings; @include type(0, 0, 0); }
-.u-h6-size { @extend %headings; @include type(0, 0, 0); }
+.#{$namespace}u-h1-size { @extend %headings; @include type(4, 0, 1); }
+.#{$namespace}u-h2-size { @extend %headings; @include type(3, 0, 1); }
+.#{$namespace}u-h3-size { @extend %headings; @include type(2, 0, 0); }
+.#{$namespace}u-h4-size { @extend %headings; @include type(0, 0, 0); }
+.#{$namespace}u-h5-size { @extend %headings; @include type(0, 0, 0); }
+.#{$namespace}u-h6-size { @extend %headings; @include type(0, 0, 0); }
+
+
+/**
+ * A generic heading style which can be applied to any headings.
+ */
+
+.#{$namespace}u-heading { @extend %headings; @include type(0, 0, 1); }
 
 }//endif

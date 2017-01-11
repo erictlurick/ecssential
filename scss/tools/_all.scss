@@ -2,21 +2,19 @@
     // TOOLS / ALL
 //------------------------------------\\
 
-// Functions.
-@import "functions/colors";
-@import "functions/units";
-@import "functions/exponent";
-
-// Mixins.
-@import "mixins/attention";
-@import "mixins/baseline";
-@import "mixins/borders";
-@import "mixins/breakpoints";
-@import "mixins/clearfix";
-@import "mixins/flexbox";
-@import "mixins/google-fonts";
-@import "mixins/hide";
-@import "mixins/prefix";
-@import "mixins/pseudo-elements";
-@import "mixins/space";
-@import "mixins/typography";
+@import "functions/colors",
+        "functions/units",
+        "functions/exponent",
+        "mixins/attention",
+        "mixins/baseline",
+        "mixins/borders",
+        "mixins/breakpoints",
+        "mixins/clearfix",
+        "mixins/flexbox",
+        "mixins/google-fonts",
+        "mixins/hide",
+        "mixins/prefix",
+        "mixins/pseudo-elements",
+        "mixins/space",
+        "mixins/typography",
+        "mixins/widths";

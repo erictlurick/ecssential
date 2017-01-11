@@ -13,120 +13,142 @@
  * Basic positioning to alter the default document flow.
  */
 
-.u-static              { position: static; }
-.u-relative            { position: relative; }
-.u-absolute            { position: absolute; }
-.u-fixed               { position: fixed; }
+.#{$namespace}u-static              { position: static; }
+.#{$namespace}u-relative            { position: relative; }
+.#{$namespace}u-absolute            { position: absolute; }
+.#{$namespace}u-fixed               { position: fixed; }
 
-.u-top-0px             { top: 0 ;}
-.u-right-0px           { right: 0; }
-.u-bottom-0px          { bottom: 0; }
-.u-left--0px           { left: 0; }
+.#{$namespace}u-top-0px             { top: 0 ;}
+.#{$namespace}u-right-0px           { right: 0; }
+.#{$namespace}u-bottom-0px          { bottom: 0; }
+.#{$namespace}u-left--0px           { left: 0; }
 
-.stack-order--1        { z-index: index($layers, level-1); }
-.stack-order--2        { z-index: index($layers, level-2); }
-.stack-order--3        { z-index: index($layers, level-3); }
-.stack-order--4        { z-index: index($layers, level-4); }
-.stack-order--5        { z-index: index($layers, level-5); }
+.#{$namespace}stack-order-1         { z-index: index($layers, level-1); }
+.#{$namespace}stack-order-2         { z-index: index($layers, level-2); }
+.#{$namespace}stack-order-3         { z-index: index($layers, level-3); }
+.#{$namespace}stack-order-4         { z-index: index($layers, level-4); }
+.#{$namespace}stack-order-5         { z-index: index($layers, level-5); }
 
-.u-inline              { display: inline; }
-.u-block               { display: block; }
-.u-inline-block        { display: inline-block; }
-.u-table               { display: table; }
-.u-table-cell          { display: table-cell; }
+.#{$namespace}u-inline              { display: inline; }
+.#{$namespace}u-block               { display: block; }
+.#{$namespace}u-inline-block        { display: inline-block; }
+.#{$namespace}u-table               { display: table; }
+.#{$namespace}u-table-cell          { display: table-cell; }
 
-.u-overflow--hidden    { overflow: hidden; }
-.u-overflow--scroll    { overflow: scroll; }
-.u-overflow--auto      { overflow: auto; }
+.#{$namespace}u-overflow-hidden     { overflow: hidden; }
+.#{$namespace}u-overflow-scroll     { overflow: scroll; }
+.#{$namespace}u-overflow-auto       { overflow: auto; }
 
-.u-clearfix            { @include clearfix; }
+.#{$namespace}u-clearfix            { @include clearfix; }
 
-.u-pushed-right        { float: right }
-.u-pulled-left         { float: left }
-.u-centered            { display: block; margin-right: auto; margin-left: auto; }
+.#{$namespace}u-centered            { display: block; margin-right: auto; margin-left: auto; }
+.#{$namespace}u-pushed-right        { float: right }
+.#{$namespace}u-pulled-left         { float: left }
 
-.u-aligned-left        { text-align: left; }
-.u-aligned-center      { text-align: center; }
-.u-aligned-right       { text-align: right; }
-.u-justified           { text-align: justify; }
+@include breakpoint(medium) {
+
+  img,
+  figure {
+    &.#{$namespace}u-pushed-right {
+      float: right;
+      width: 33.333%;
+      @include space(margin-left);
+    }
+  }
+
+  img,
+  figure {
+    &.#{$namespace}u-pulled-left {
+      float: left;
+      width: 33.333%;
+      @include space(margin-right);
+    }
+  }
+
+}
+
+.#{$namespace}u-aligned-left        { text-align: left; }
+.#{$namespace}u-aligned-center      { text-align: center; }
+.#{$namespace}u-aligned-right       { text-align: right; }
+.#{$namespace}u-justified           { text-align: justify; }
 
 
 /**
  * Adjust vertical alignment.
  */
 
-.u-aligned-top         { vertical-align: top; }
-.u-aligned-middle      { vertical-align: middle; }
-.u-aligned-bottom      { vertical-align: bottom; }
-.u-aligned-baseline    { vertical-align: baseline; }
+.#{$namespace}u-aligned-top         { vertical-align: top; }
+.#{$namespace}u-aligned-middle      { vertical-align: middle; }
+.#{$namespace}u-aligned-bottom      { vertical-align: bottom; }
+.#{$namespace}u-aligned-baseline    { vertical-align: baseline; }
 
 
 /**
  * Adjust borders and border radii.
  */
 
-.u-border              { @include border($direction: all, $width: 1px, $style: solid, $color: color(ui-medium), $radius: $base-ui-radius); }
-.u-border-right        { @include border($direction: right, $width: 1px, $style: solid, $color: color(ui-medium), $radius: $base-ui-radius); }
-.u-border-bottom       { @include border($direction: bottom, $width: 1px, $style: solid, $color: color(ui-medium), $radius: $base-ui-radius); }
-.u-border-left         { @include border($direction: left, $width: 1px, $style: solid, $color: color(ui-medium), $radius: $base-ui-radius); }
+.#{$namespace}u-border              { @include border($direction: all, $width: 1px, $style: solid, $color: color(ui-medium), $radius: $base-ui-radius); }
+.#{$namespace}u-border-right        { @include border($direction: right, $width: 1px, $style: solid, $color: color(ui-medium), $radius: $base-ui-radius); }
+.#{$namespace}u-border-bottom       { @include border($direction: bottom, $width: 1px, $style: solid, $color: color(ui-medium), $radius: $base-ui-radius); }
+.#{$namespace}u-border-left         { @include border($direction: left, $width: 1px, $style: solid, $color: color(ui-medium), $radius: $base-ui-radius); }
 
-.u-border-right--none  { border-right: 0; }
-.u-border-bottom--none { border-bottom: 0; }
-.u-border-left--none   { border-left: 0; }
-.u-not-bordered        { border: 0; }
+.#{$namespace}u-border-right--none  { border-right: 0; }
+.#{$namespace}u-border-bottom--none { border-bottom: 0; }
+.#{$namespace}u-border-left--none   { border-left: 0; }
+.#{$namespace}u-not-bordered        { border: 0; }
 
-.u-rounded             { border-radius: $base-ui-radius; }
-.u-rounded-top         { border-radius: $base-ui-radius $base-ui-radius 0 0;}
-.u-rounded-right       { border-radius: 0 $base-ui-radius $base-ui-radius 0;}
-.u-rounded-bottom      { border-radius: 0 0 $base-ui-radius $base-ui-radius;}
-.u-rounded-left        { border-radius: $base-ui-radius 0 0 $base-ui-radius;}
-.u-not-rounded         { border-radius: 0; }
+.#{$namespace}u-rounded             { border-radius: $base-ui-radius; }
+.#{$namespace}u-rounded-top         { border-radius: $base-ui-radius $base-ui-radius 0 0;}
+.#{$namespace}u-rounded-right       { border-radius: 0 $base-ui-radius $base-ui-radius 0;}
+.#{$namespace}u-rounded-bottom      { border-radius: 0 0 $base-ui-radius $base-ui-radius;}
+.#{$namespace}u-rounded-left        { border-radius: $base-ui-radius 0 0 $base-ui-radius;}
+.#{$namespace}u-not-rounded         { border-radius: 0; }
 
-.u-circle              { border-radius: 50% }
+.#{$namespace}u-circle              { border-radius: 50% }
 
 
 /**
  * Adjust the type of list-item marker.
  */
 
-.u-list-circle         { list-style-type: circle; }
-.u-list-disc           { list-style-type: disc; }
-.u-list-square         { list-style-type: square; }
-.u-list-decimal        { list-style-type: decimal; }
-.u-list-leading-zero   { list-style-type: decimal-leading-zero; }
-.u-list-lower-alpha    { list-style-type: lower-alpha; }
-.u-list-upper-alpha    { list-style-type: upper-alpha; }
-.u-list-lower-roman    { list-style-type: lower-roman; }
-.u-list-upper-roman    { list-style-type: upper-roman; }
+.#{$namespace}u-list-circle         { list-style-type: circle; }
+.#{$namespace}u-list-disc           { list-style-type: disc; }
+.#{$namespace}u-list-square         { list-style-type: square; }
+.#{$namespace}u-list-decimal        { list-style-type: decimal; }
+.#{$namespace}u-list-leading-zero   { list-style-type: decimal-leading-zero; }
+.#{$namespace}u-list-lower-alpha    { list-style-type: lower-alpha; }
+.#{$namespace}u-list-upper-alpha    { list-style-type: upper-alpha; }
+.#{$namespace}u-list-lower-roman    { list-style-type: lower-roman; }
+.#{$namespace}u-list-upper-roman    { list-style-type: upper-roman; }
 
 
 /**
  * Adjust typographic weights and styles.
  */
 
-.u-serif               { font-family: $font-family-serif; }
-.u-sans-serif          { font-family: $font-family-sans-serif; }
+.#{$namespace}u-serif               { font-family: $font-family-serif; }
+.#{$namespace}u-sans-serif          { font-family: $font-family-sans-serif; }
 
-.u-thin                { font-weight: 100; }
-.u-light               { font-weight: 300; }
-.u-regular             { font-weight: 400; }
-.u-medium              { font-weight: 600; }
-.u-bold                { font-weight: 700; }
-.u-ultra-bold          { font-weight: 900; }
+.#{$namespace}u-thin                { font-weight: 100; }
+.#{$namespace}u-light               { font-weight: 300; }
+.#{$namespace}u-regular             { font-weight: 400; }
+.#{$namespace}u-medium              { font-weight: 600; }
+.#{$namespace}u-bold                { font-weight: 700; }
+.#{$namespace}u-ultra-bold          { font-weight: 900; }
 
-.u-normal              { font-style: normal; }
-.u-italic              { font-style: italic; }
-.u-oblique             { font-style: oblique; }
+.#{$namespace}u-normal              { font-style: normal; }
+.#{$namespace}u-italic              { font-style: italic; }
+.#{$namespace}u-oblique             { font-style: oblique; }
 
-.u-uppercase           { text-transform: uppercase; }
-.u-lowercase           { text-transform: lowercase; }
+.#{$namespace}u-uppercase           { text-transform: uppercase; }
+.#{$namespace}u-lowercase           { text-transform: lowercase; }
 
-.u-underline           { text-decoration: underline; color: inherit; }
-.u-underline--none     { text-decoration: none; }
-.u-overline            { text-decoration: overline; color: inherit; }
-.u-line-through        { text-decoration: line-through; color: inherit; }
+.#{$namespace}u-underline           { text-decoration: underline; color: inherit; }
+.#{$namespace}u-not-underlined      { text-decoration: none; }
+.#{$namespace}u-overline            { text-decoration: overline; color: inherit; }
+.#{$namespace}u-line-through        { text-decoration: line-through; color: inherit; }
 
-.u-nowrap              { white-space: nowrap }
-.u-break-word          { word-wrap: break-word }
+.#{$namespace}u-no-wrap             { white-space: nowrap }
+.#{$namespace}u-break-word          { word-wrap: break-word }
 
 }//endif

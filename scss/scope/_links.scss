@@ -1,0 +1,85 @@
+@if (scope(links) == true) {
+
+/* ==========================================================================
+   SCOPE / LINKS
+   ========================================================================== */
+
+// Predefine the variable below in order to alter and enable specific features.
+$prose-namespace: 's-links' !default;
+
+
+.#{$namespace}#{$prose-namespace} {
+
+  /**
+   * Links.
+   *
+   * 1. Country / language version.
+   * 2. External links.
+   * 3. Mailto.
+   * 4. Telephone.
+   * 5. Documents.
+   * 6. Audio.
+   */
+
+  a[hreflang]:not([hreflang="fr"]):lang(fr):after,
+  a[lang^="fr"]:after,
+  a[hreflang]:not([hreflang^="en"]):lang(en):after,
+  a[lang^="en"]:after{
+    content: " ["attr(hreflang)"]"; /* [1] */
+  }
+
+  :lang(en)>a[lang]:not([hreflang]):after,
+  :lang(fr)>a[lang]:not([hreflang]):after,
+  :lang(en)>a[lang^="en"]:after,
+  :lang(fr)>a[lang^="fr"]:after{
+    content: none; /* [1] */
+  }
+
+  a[hreflang=""]:after,
+  h1 > a[hreflang]:after,
+  h2 > a[hreflang]:after,
+  h3 > a[hreflang]:after{
+    content: none !important; /* [1] */
+  }
+
+  a:not([href*="yourdomain.com"]):not([href^="#"]):not([href^="mailto"]):not([href^="tel"])::after {
+    content: "\0020\279A"; /* [2] */
+  }
+
+  a[hreflang]:not([href*="yourdomain.com"]):not([href^="#"]):not([href^="mailto"]):not([href^="tel"])::after {
+    content: "\0020[" attr(hreflang) "]\0020\279A"; /* [2] */
+  }
+
+  a[href^="mailto"]::after {
+    content: "\0020\2709"; /* [3] */
+  }
+
+  a[href^="tel"]::after {
+    content: "\0020\2706"; /* [4] */
+  }
+
+  a[download]::after {
+    content: "\0020\21A7"; /* [5] */
+  }
+
+  a[hreflang][download]::after {
+    content: "\0020[" attr(hreflang) "]\0020\21A7"; /* [5] */
+  }
+
+  a[href$=".mp3"]::after,
+  a[href$=".wma"]::after,
+  a[href$=".ogg"]::after,
+  a[href$=".flac"]::after {
+    content: "\0020\266B"; /* [6] */
+  }
+
+  a[hreflang][href$=".mp3"]::after,
+  a[hreflang][href$=".wma"]::after,
+  a[hreflang][href$=".ogg"]::after,
+  a[hreflang][href$=".flac"]::after {
+    content: "\0020[" attr(hreflang) "]\0020\266B"; /* [6] */
+  }
+
+}
+
+}//endif

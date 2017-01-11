@@ -2,10 +2,10 @@
     // GENERIC / ALL
 //------------------------------------\\
 
-@import "generic/reset";
-@import "generic/box-sizing";
-@import "generic/selections";
-@import "generic/shared";
-@import "generic/baseline-checks";
-@import "generic/breakpoint-checks";
-@import "generic/health-checks";
+@import "reset",
+        "box-sizing",
+        "selections",
+        "shared",
+        "baseline-checks",
+        "breakpoint-checks",
+        "health-checks";

@@ -67,10 +67,6 @@ blockquote p:last-of-type {
   margin-bottom: 0;
 }
 
-blockquote footer {
-  @include type(-1);
-}
-
 
 /**
  * 1. Hang the opening quote of the english blockquotes.

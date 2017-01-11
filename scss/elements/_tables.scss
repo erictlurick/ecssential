@@ -4,10 +4,6 @@
    ELEMENTS / TABLES
    ========================================================================== */
 
-// Predefine the variable below in order to alter and enable specific features.
-$table-color-background-hover: $color-gray-0 !default;
-
-
 /**
  * Crude table styles; tables are very difficult to keep on the baseline.
  *
@@ -16,45 +12,60 @@ $table-color-background-hover: $color-gray-0 !default;
  */
 
 table {
-    width: 100%; /* [1] */
+  width          : 100%; /* [1] */
+  border-collapse: collapse;
+  border-spacing : 0;
 
-    @if (typography(smooth) == true) {
-        font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0; /* [2] */
-    }
-
-    border-collapse: collapse;
-    border-spacing : 0;
+  @if (enhancements(smooth) == true) {
+    font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0; /* [2] */
+  }
 }
 
-thead {
-    font-weight: $font-weight-bold;
 
-    & > tr > th {
-        @include border(bottom);
-    }
-}
+@if (enhancements(smooth) == true) {
 
-tr:hover {
-    background-color: rgba($table-color-background-hover, 0.5);
-}
+  /**
+   * 1. Turns on tabular, lining numerals and slashed zero
+   */
 
-th, td {
-    @include space(padding, 0.5);
-    text-align    : center;
-    vertical-align: inherit;
-}
-
-@if (typography(smooth) == true) {
-
-    /**
-     * 1. Turns on tabular, lining numerals and slashed zero
-     */
-
-    tbody,
-    caption {
-        font-feature-settings: "kern" 1,  "liga" 1,  "calt" 1,  "pnum" 0,  "tnum" 1,  "onum" 0,  "lnum" 1, "zero" 1; /* [1] */
-    }
+  tbody,
+  caption {
+    font-feature-settings: "kern" 1,  "liga" 1,  "calt" 1,  "pnum" 0,  "tnum" 1,  "onum" 0,  "lnum" 1, "zero" 1; /* [1] */
+  }
 
 }//endif
+
+
+thead tr:last-child th{
+  @include border(bottom);
+}
+
+
+th,
+td {
+  @include space(padding, $base-spacing-unit-small);
+  text-align: left;
+}
+
+
+/**
+ * Cell alignments
+ */
+
+[colspan] {
+  text-align: center;
+}
+
+[colspan="1"] {
+  text-align: left;
+}
+
+[rowspan] {
+  vertical-align: middle;
+}
+
+[rowspan="1"] {
+  vertical-align: top;
+}
 
 }//endif

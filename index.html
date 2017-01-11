@@ -28,11 +28,11 @@
 	<link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
 	<link rel="dns-prefetch" href="//placehold.it" />
 
-	<!-- SVG local storage -->
-	<script src="js/lib/svgstorage.js"></script>
-
 	<!-- Stylesheets go here. Concatenate and minify for production -->
 	<link rel="stylesheet" href="css/styles.min.css" />
+
+	<!-- SVG local storage -->
+	<script src="js/lib/svgstorage.js"></script>
 
 	<!--[if lt IE 9]>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -135,109 +135,112 @@
 	<p role="alert">Votre logiciel de navigation est <strong>obsolète</strong>. Il contient des failles de sécurité et pourrait ne pas afficher certaines fonctionnalités. Découvrez <a href="http://browsehappy.com/">comment le mettre à jour</a> et profiter d&rsquo;une meilleure expérience d&rsquo;Internet.</p>
 	<![endif]-->
 
-	<header>
-		<div class="[ l-wrapper  l-wrapper--narrow ] [ u-padding-top--huge  u-padding-bottom--huge ]  u-aligned-center ">
+	<header class="u-background-ui-light">
+
+		<div class="[ l-wrapper  l-wrapper--medium ]  [ u-padding-top--large  u-padding-bottom--huge ]  u-aligned-center ">
 
 			<h1>eCSSential</h1>
 
 			<p>Base <abbr title="Cascading Style Sheets">css</abbr> respectueuse des standards <a href="//www.w3.org/" hreflang="en"><abbr title="World Wide Web Consortium">w3c</abbr></a>, soucieuse d&rsquo;accessibilité, et, naturellement adaptative pour démarrer un projet de site internet.</p>
 
-			<a class="[ c-button  c-button--round  c-button--info ]" href="https://github.com/erictlurick/ecssential/archive/master.zip">
-				<svg class="o-icon" aria-hidden="true"><use xlink:href="#download"></use></svg><noscript><img src="img/icons/font-awesome/png/download.png" alt="" /></noscript>
-				Télécharger
-			</a>
+			<a class="[ c-button  c-button--primary  c-button--rounded ]" href="https://github.com/erictlurick/ecssential/archive/master.zip">
+				<svg class="o-icon" aria-hidden="true"><use xlink:href="#download"></use></svg><noscript><img src="img/icons/font-awesome/png/download.png" alt="" /></noscript> Télécharger
+			</a>&nbsp;&nbsp;
 
-			<a class="[ c-button  c-button--info  c-button--outlined  c-button--round ]" href="https://github.com/erictlurick/ecssential">
-				<svg class="o-icon" aria-hidden="true"><use xlink:href="#github"></use></svg><noscript><img src="img/icons/font-awesome/png/github.png" alt="" /></noscript>
-				Github
+			<a class="[ c-button  c-button--primary  c-button--rounded  c-button--ghost ]" href="https://github.com/erictlurick/ecssential">
+				<svg class="o-icon" aria-hidden="true"><use xlink:href="#github"></use></svg><noscript><img src="img/icons/font-awesome/png/github.png" alt="" /></noscript> Github
 			</a>
 
 		</div>
+
 	</header>
 
+	<div class="[ l-wrapper  l-wrapper--medium ]">
 
+		<main class="o-numbering  [ u-padding-top--huge  u-padding-bottom--huge ]  s-links">
 
+			<div class="[ l-grid  l-grid--gutter ]">
 
-	<nav class="[ l-wrapper  l-wrapper--large ]">
+				<div class="[ l-grid__item  l-1/5@medium ]">
 
-		<h2 aria-hidden="true">Sommaire</h2>
+					<nav>
 
-		<ol class="o-list-inline  o-list-inline--banner" role="directory">
+						<h2 class="u-off-screen">Sommaire</h2>
 
-			<li class="o-list-inline__item  u-margin-right--small">
-				<a href="#installation">Installation</a>
-			</li>
+						<ol class="o-list-block" role="directory">
 
-			<li class="o-list-inline__item  u-margin-right--small">
-				<a href="#headings">Titraille</a>
-			</li>
+							<li class="o-list-block__item">
+								<a class="o-list-block__link" href="#installation">Installation</a>
+							</li>
 
-			<li class="o-list-inline__item  u-margin-right--small">
-				<a href="#text">Texte</a>
-			</li>
+							<li class="o-list-block__item">
+								<a class="o-list-block__link" href="#headings">Titraille</a>
+							</li>
 
-			<li class="o-list-inline__item  u-margin-right--small">
-				<a href="#links">Ancres et liens</a>
-			</li>
+							<li class="o-list-block__item">
+								<a class="o-list-block__link" href="#text">Texte</a>
+							</li>
 
-			<li class="o-list-inline__item  u-margin-right--small">
-				<a href="#code">Code</a>
-			</li>
+							<li class="o-list-block__item">
+								<a class="o-list-block__link" href="#links">Ancres et liens</a>
+							</li>
 
-			<li class="o-list-inline__item  u-margin-right--small">
-				<a href="#lists">Listes</a>
-			</li>
+							<li class="o-list-block__item">
+								<a class="o-list-block__link" href="#code">Code</a>
+							</li>
 
-			<li class="o-list-inline__item  u-margin-right--small">
-				<a href="#tables">Tableaux</a>
-			</li>
+							<li class="o-list-block__item">
+								<a class="o-list-block__link" href="#lists">Listes</a>
+							</li>
 
-			<li class="o-list-inline__item  u-margin-right--small">
-				<a href="#forms">Formulaires</a>
-			</li>
+							<li class="o-list-block__item">
+								<a class="o-list-block__link" href="#tables">Tableaux</a>
+							</li>
 
-			<li class="o-list-inline__item  u-margin-right--small">
-				<a href="#medias">Medias</a>
-			</li>
+							<li class="o-list-block__item">
+								<a class="o-list-block__link" href="#forms">Formulaires</a>
+							</li>
 
-			<li class="o-list-inline__item  u-margin-right--small">
-				<a href="#layout">Mise en page</a>
-			</li>
+							<li class="o-list-block__item">
+								<a class="o-list-block__link" href="#medias">Medias</a>
+							</li>
 
-			<li class="o-list-inline__item  u-margin-right--small">
-				<a href="#buttons">Boutons</a>
-			</li>
+							<li class="o-list-block__item">
+								<a class="o-list-block__link" href="#layout">Mise en page</a>
+							</li>
 
-			<li class="o-list-inline__item">
-				<a href="#icons">Icônographie</a>
-			</li>
+							<li class="o-list-block__item">
+								<a class="o-list-block__link" href="#buttons">Boutons</a>
+							</li>
 
-		</ol>
+							<li class="o-list-block__item">
+								<a class="o-list-block__link" href="#icons">Icônographie</a>
+							</li>
 
-	</nav>
+						</ol>
 
+					</nav>
 
+				</div><!--/ grid item -->
 
+				<div class="l-grid__item">
 
+					<section id="installation">
 
-	<main class="[ l-wrapper  l-wrapper--narrow ] [ u-padding-top--huge  u-padding-bottom--huge ]  u-prose">
+						<h2 class="o-numbering__item">Installation</h2>
 
-		<section id="installation">
+						<h3>Version pré compilée</h3>
 
-			<h2 id="installation">Installation</h2>
+						<p>Une version standard et une version minifiée du fichier <abbr title="Cascading Style Sheets">css</abbr> sont disponibles à votre convenance dans le répertoire <samp>css/</samp> prêts à être insérés dans votre fichier <abbr title="Hyper Text Markup Language">html</abbr>.</p>
 
-			<h3>Version pré compilée</h3>
-
-			<p>Une version standard et une version minifiée du fichier <abbr title="Cascading Style Sheets">css</abbr> sont disponibles à votre convenance dans le répertoire <samp>css/</samp> prêts à être insérés dans votre fichier <abbr title="Hyper Text Markup Language">html</abbr>.</p>
-
-			<pre><code>ecssential/
+						<pre><code>ecssential/
 ├── css/
 │   ├── styles.css
 │   └── styles.min.css</code></pre>
 
-			<p>À vous de compléter ou de modifier les styles prédéfinis en ajoutant vos propres déclarations <abbr title="Cascading Style Sheets">css</abbr> dans un nouveau fichier nommé, par exemple, <samp>theme.css</samp> et de l&rsquo;appeler à la suite.</p>
+						<p>À vous de compléter ou de modifier les styles prédéfinis en ajoutant vos propres déclarations <abbr title="Cascading Style Sheets">css</abbr> dans un nouveau fichier nommé, par exemple, <samp>theme.css</samp> et de l&rsquo;appeler à la suite dans votre document <abbr title="Hyper Text Markup Language">html</abbr>.</p>
 
-			<pre><code>&lt;html&gt;
+						<pre><code>&lt;html&gt;
   &lt;head&gt;
     ...
     &lt;link rel="stylesheet" href="css/styles.min.css"&gt;
@@ -247,17 +250,17 @@
   ...
 &lt;/html&gt;</code></pre>
 
-			<h3>Version <abbr title="Syntactically Awesome Style Sheets">sass</abbr></h3>
+						<h3>Version <abbr title="Syntactically Awesome Style Sheets">sass</abbr></h3>
 
-			<p>Cette option permet un paramétrage plus poussé en donnant la possibilité d&rsquo;activer ou désactiver certaines fonctionalités dans le fichier <samp>configuration.scss</samp> mais également de modifier les variables prédéfinies dans les fichiers <samp>global.scss</samp> et <samp>colors.scss</samp> situés dans le répertoire <code>settings/</code>. Il faudra ensuite compiler le fichier <code>styles.scss</code> pour rafraîchir vos déclarations de style.</p>
+						<p>Cette option permet un paramétrage plus poussé en donnant la possibilité d&rsquo;activer ou de désactiver certaines fonctionalités dans le fichier <samp>configuration.scss</samp> mais également de modifier les variables prédéfinies dans les fichiers <samp>global.scss</samp> et <samp>colors.scss</samp> situés dans le répertoire <code>settings/</code>. Il faudra ensuite compiler le fichier <code>styles.scss</code> pour rafraîchir vos déclarations de style.</p>
 
-			<h4>Organisation des fichiers</h4>
+						<h4>Organisation des fichiers</h4>
 
-			<p>Les préprocesseurs <abbr title="Cascading Style Sheets">css</abbr> comme <abbr title="Syntactically Awesome Style Sheets">sass</abbr> nous donnent la possibilité de fractionner notre code dans plusieurs dossiers et fichiers sans affecter les performances.</p>
+						<p>Les préprocesseurs <abbr title="Cascading Style Sheets">css</abbr> comme <abbr title="Syntactically Awesome Style Sheets">sass</abbr> nous donnent la possibilité de fractionner notre code en catégories dans plusieurs dossiers et fichiers sans affecter les performances. Chaque catégorie représente alors un ensemble de règles d&rsquo;utilisation.</p>
 
-			<p><abbr title="Block, Element, Modifier">bem</abbr> est la convention utilisée pour nommer et classifier les sélecteurs <abbr title="Cascading Style Sheets">css</abbr> de façon à les rendre plus stricts, transparents et informatifs. La structure globale est inspirée par <a href="//www.creativebloq.com/web-design/manage-large-scale-web-projects-new-css-architecture-itcss-41514731" hreflang="en"><abbr title="Inverted Triangle CSS">itcss</abbr></a>.</p>
+						<p><abbr title="Block, Element, Modifier">bem</abbr> est la convention utilisée pour nommer et classifier les sélecteurs <abbr title="Cascading Style Sheets">css</abbr> de façon à les rendre plus stricts, transparents et informatifs. La structure globale est inspirée par <a href="//www.creativebloq.com/web-design/manage-large-scale-web-projects-new-css-architecture-itcss-41514731" hreflang="en"><abbr title="Inverted Triangle CSS">itcss</abbr></a>.</p>
 
-			<pre><code>ecssential/
+						<pre><code>ecssential/
 ├── scss/
 │   ├── components/
 │   │   ├── all.scss
@@ -271,7 +274,8 @@
 │   │   ├── lists.scss
 │   │   ├── media.scss
 │   │   ├── page.scss
-│   │   ├── selections.scss
+│   │   ├── quotes.scss
+│   │   ├── tables.scss
 │   │   └── typography.scss
 │   ├── generic/
 │   │   ├── all.scss
@@ -280,36 +284,33 @@
 │   │   ├── breakpoint-checks.scss
 │   │   ├── health-checks.scss
 │   │   ├── reset.scss
+│   │   ├── selections.scss
 │   │   └── shared.scss
 │   ├── layout/
 │   │   ├── all.scss
-│   │   └── content.scss
-│   │   └── flexbox.scss
-│   │   └── grid.scss
+│   │   ├── flexbox.scss
+│   │   ├── grid.scss
 │   │   └── wrappers.scss
 │   ├── objects/
 │   │   ├── all.scss
-│   │   └── box.scss
-│   │   └── elevation.scss
-│   │   ├── form-fields.scss
-│   │   ├── form-helpers.scss
-│   │   └── icons.scss
-│   │   └── lists.scss
-│   │   └── pullquote.scss
-│   │   └── split.scss
-│   │   └── ratios.scss
+│   │   ├── forms.scss
+│   │   ├── icons.scss
+│   │   ├── lists.scss
+│   │   ├── numbering.scss
+│   │   ├── ratios.scss
 │   │   └── tables.scss
 │   ├── settings/
+│   │   ├── libs/
+│   │   │   ├── brand-colors.scss
+│   │   │   ├── font-stacks.scss
+│   │   │   ├── font-weights.scss
+│   │   │   └── scales.scss
 │   │   ├── all.scss
 │   │   ├── breakpoints.scss
-│   │   ├── colors-ui.scss
 │   │   ├── colors.scss
-│   │   ├── configuration.scss
-│   │   ├── font-stacks.scss
-│   │   ├── font-weight.scss
-│   │   ├── global.scss
 │   │   ├── layers.scss
-│   │   ├── scales.scss
+│   │   ├── settings.scss
+│   │   ├── switches.scss
 │   │   └── typography.scss
 │   ├── tools/
 │   │   ├── functions/
@@ -322,473 +323,503 @@
 │   │   │   ├── borders.scss
 │   │   │   ├── breakpoints.scss
 │   │   │   ├── clearfix.scss
+│   │   │   ├── flexbox.scss
+│   │   │   ├── google-fonts.scss
 │   │   │   ├── hide.scss
 │   │   │   ├── palette.scss
 │   │   │   ├── prefix.scss
 │   │   │   ├── pseudo-elements.scss
 │   │   │   ├── space.scss
-│   │   │   └── typography.scss
+│   │   │   ├── typography.scss
+│   │   │   └── widths.scss
 │   │   └── all.scss
 │   ├── trumps/
 │   │   ├── all.scss
-│   │   └── colors.scss
+│   │   ├── colors.scss
 │   │   ├── headings.scss
-│   │   └── helpers.scss
+│   │   ├── helpers.scss
 │   │   ├── print.scss
 │   │   ├── prose.scss
-│   │   └── show-hide.scss
-│   │   └── spacings.scss
-│   │   └── text.scss
+│   │   ├── show-hide.scss
+│   │   ├── spacings.scss
+│   │   ├── text.scss
+│   │   └── widths.scss
 │   └── styles.scss
 └── index.html</code></pre>
 
-			<h4>Ressources</h4>
+						<h4>Ressources</h4>
 
-			<ul>
+						<ul>
 
-				<li><a href="//guidecss.fr/">Feuilles de styles <abbr title="Cascading Style Sheets">css</abbr></a>, conseils et bonnes pratiques,</li>
+							<li><a href="//guidecss.fr/">Feuilles de styles <abbr title="Cascading Style Sheets">css</abbr></a>, conseils et bonnes pratiques,</li>
 
-				<li><a href="//medium.com/@ricardozea/sass-for-beginners-the-friendliest-guide-about-how-to-install-use-sass-on-windows-22ff4a32c1f7#.5j7qypbo9" hreflang="en"><abbr title="Syntactically Awesome Stylesheets">Sass</abbr> for beginners</a>, un guide pour installer et utiliser <abbr title="Syntactically Awesome Style Sheets">Sass</abbr> sur Windows.</li>
+							<li><a href="//medium.com/@ricardozea/sass-for-beginners-the-friendliest-guide-about-how-to-install-use-sass-on-windows-22ff4a32c1f7#.5j7qypbo9" hreflang="en"><abbr title="Syntactically Awesome Stylesheets">Sass</abbr> for beginners</a>, un guide pour installer et utiliser <abbr title="Syntactically Awesome Style Sheets">Sass</abbr> sur Windows.</li>
 
-			</ul>
+						</ul>
 
-			<small><a href="#top">[Haut de page]</a></small>
+						<small><a href="#top">[Haut de page]</a></small>
 
-		</section>
+					</section>
 
-		<hr>
+					<hr>
 
-		<section id="headings">
+					<section id="headings">
 
-			<h2>Titraille</h2>
+						<h2 class="o-numbering__item">Titraille</h2>
 
-			<p>Une échelle de taille pour les titres maintient la cohérence de votre mise en page et permet de les différencier facilement.</p>
+						<p>Une échelle de taille pour les titres maintient la cohérence de votre mise en page et permet de les différencier facilement.</p>
 
-			<figure class="u-aligned-left">
+						<figure class="u-aligned-left">
 
-				<p class="u-h1-size">Titre de niveau 1</p>
-				<p class="u-h2-size">Titre de niveau 2</p>
-				<p class="u-h3-size">Titre de niveau 3</p>
-				<p class="u-h4-size">Titre de niveau 4</p>
-				<p class="u-h5-size">Titre de niveau 5</p>
-				<p class="u-h6-size">Titre de niveau 6</p>
+							<p class="u-h1-size">Titre de niveau 1</p>
+							<p class="u-h2-size">Titre de niveau 2</p>
+							<p class="u-h3-size">Titre de niveau 3</p>
+							<p class="u-h4-size">Titre de niveau 4</p>
+							<p class="u-h5-size">Titre de niveau 5</p>
+							<p class="u-h6-size">Titre de niveau 6</p>
 
-				<p class="u-h1-size">Titre 1 avec <a href="#">lien</a> et <small>sous-titre</small></p>
-				<p>Titre de niveau 1 contenant un lien et un sous-titre avec les balises <samp>&lt;h1&gt;</samp>, <samp>&lt;a&gt;</samp> et <samp>&lt;small&gt;</samp></p>
+							<p class="u-h1-size">Titre 1 avec <a href="#">lien</a> et <small>sous-titre</small></p>
+							<p>Titre de niveau 1 contenant un lien et un sous-titre avec les balises <samp>&lt;h1&gt;</samp>, <samp>&lt;a&gt;</samp> et <samp>&lt;small&gt;</samp></p>
 
-				<p class="u-h2-size">Titre 2 avec <a href="#">lien</a> et <small>sous-titre</small></p>
-				<p>Titre de niveau 2 contenant un lien et un sous-titre avec les balises <samp>&lt;h2&gt;</samp>, <samp>&lt;a&gt;</samp> et <samp>&lt;small&gt;</samp></p>
+							<p class="u-h2-size">Titre 2 avec <a href="#">lien</a> et <small>sous-titre</small></p>
+							<p>Titre de niveau 2 contenant un lien et un sous-titre avec les balises <samp>&lt;h2&gt;</samp>, <samp>&lt;a&gt;</samp> et <samp>&lt;small&gt;</samp></p>
 
-				<p class="u-h3-size">Titre 3 avec <a href="#">lien</a> et <small>sous-titre</small></p>
-				<p>Titre de niveau 3 contenant un lien et un sous-titre avec les balises <samp>&lt;h3&gt;</samp>, <samp>&lt;a&gt;</samp> et <samp>&lt;small&gt;</samp></p>
+							<p class="u-h3-size">Titre 3 avec <a href="#">lien</a> et <small>sous-titre</small></p>
+							<p>Titre de niveau 3 contenant un lien et un sous-titre avec les balises <samp>&lt;h3&gt;</samp>, <samp>&lt;a&gt;</samp> et <samp>&lt;small&gt;</samp></p>
 
-				<p class="u-h4-size">Titre 4 avec <a href="#">lien</a> et <small>sous-titre</small></p>
-				<p>Titre de niveau 4 contenant un lien et un sous-titre avec les balises <samp>&lt;h4&gt;</samp>, <samp>&lt;a&gt;</samp> et <samp>&lt;small&gt;</samp></p>
+							<p class="u-h4-size">Titre 4 avec <a href="#">lien</a> et <small>sous-titre</small></p>
+							<p>Titre de niveau 4 contenant un lien et un sous-titre avec les balises <samp>&lt;h4&gt;</samp>, <samp>&lt;a&gt;</samp> et <samp>&lt;small&gt;</samp></p>
 
-				<p class="u-h5-size">Titre 5 avec <a href="#">lien</a> et <small>sous-titre</small></p>
-				<p>Titre de niveau 5 contenant un lien et un sous-titre avec les balises <samp>&lt;h5&gt;</samp>, <samp>&lt;a&gt;</samp> et <samp>&lt;small&gt;</samp></p>
+							<p class="u-h5-size">Titre 5 avec <a href="#">lien</a> et <small>sous-titre</small></p>
+							<p>Titre de niveau 5 contenant un lien et un sous-titre avec les balises <samp>&lt;h5&gt;</samp>, <samp>&lt;a&gt;</samp> et <samp>&lt;small&gt;</samp></p>
 
-				<p class="u-h6-size">Titre 6 avec <a href="#">lien</a> et <small>sous-titre</small></p>
-				<p class="u-margin-bottom--none">Titre de niveau 6 contenant un lien et un sous-titre avec les balises <samp>&lt;h6&gt;</samp>, <samp>&lt;a&gt;</samp> et <samp>&lt;small&gt;</samp></p>
+							<p class="u-h6-size">Titre 6 avec <a href="#">lien</a> et <small>sous-titre</small></p>
+							<p class="u-margin-bottom--none">Titre de niveau 6 contenant un lien et un sous-titre avec les balises <samp>&lt;h6&gt;</samp>, <samp>&lt;a&gt;</samp> et <samp>&lt;small&gt;</samp></p>
 
-			</figure>
+						</figure>
 
-			<p role="note"><mark>Afin de respecter scrupuleusement une charte graphique dont la hiérarchie visuelle des titres ne coïncide pas avec le balisage sémantique du document <abbr title="Hyper Text Markup Language">html</abbr> il est possible d&rsquo;utiliser les classes <abbr title="Cascading Style Sheets">css</abbr> <samp>.u-h1-size</samp>, <samp>.u-h2-size</samp>, <samp>.u-h3-size</samp>, <samp>.u-h4-size</samp>, <samp>.u-h5-size</samp>, <samp>.u-h6-size</samp>.</mark></p>
+						<p role="note"><mark>Afin de respecter scrupuleusement une charte graphique dont la hiérarchie visuelle des titres ne coïncide pas avec le balisage sémantique du document <abbr title="Hyper Text Markup Language">html</abbr> il est possible d&rsquo;utiliser les classes <abbr title="Cascading Style Sheets">css</abbr> <samp>.u-h1-size</samp>, <samp>.u-h2-size</samp>, <samp>.u-h3-size</samp>, <samp>.u-h4-size</samp>, <samp>.u-h5-size</samp>, <samp>.u-h6-size</samp>.</mark></p>
 
-			<small><a href="#top">[Haut de page]</a></small>
+						<small><a href="#top">[Haut de page]</a></small>
 
-		</section>
+					</section>
 
-		<hr>
+					<hr>
 
-		<section id="text">
+					<section id="text">
 
-			<h2>Texte</h2>
+						<h2 class="o-numbering__item">Texte</h2>
 
-			<h3>Chapeau</h3>
+						<h3>Chapeau</h3>
 
-			<p class="u-lede">Le chapeau (souvent écrit <em>chapô</em> est un texte généralement court, précédant le corps d&rsquo;un article, et dont le but est d&rsquo;en encourager la lecture en résumant le propos qui va être développé.</p>
+						<p class="u-lede">Le chapeau (souvent écrit <em>chapô</em> est un texte généralement court, précédant le corps d&rsquo;un article, et dont le but est d&rsquo;en encourager la lecture en résumant le propos qui va être développé.</p>
 
-			<pre><code>&lt;p class="u-lede"&gt;&hellip;&lt;/p&gt;</code></pre>
+						<pre><code>&lt;p class="u-lede"&gt;&hellip;&lt;/p&gt;</code></pre>
 
-			<h3>Paragraphes</h3>
+						<h3>Paragraphes</h3>
 
-			<p>Une suite de 45 &agrave; 75 caractères est communément considérée comme suffisante pour constituer une longueur de ligne de texte. La ligne de 66 caractères (en comptant &agrave; la fois les lettres et les espaces) représente un idéal souvent utilisé qui est possible avec les classes <abbr title="Cascading Style Sheets">css</abbr> <samp>.l-wrapper</samp> et <samp>.l-wrapper--narrow</samp> combinées.</p>
+						<p>Une suite de 45 &agrave; 75 caractères est communément considérée comme suffisante pour constituer une longueur de ligne de texte. La ligne de 66 caractères (en comptant &agrave; la fois les lettres et les espaces) représente un idéal souvent utilisé qui est possible avec les classes <abbr title="Cascading Style Sheets">css</abbr> <samp>.l-wrapper</samp> et <samp>.l-wrapper--narrow</samp> combinées.</p>
 
-			<p class="u-dropcap">Les lettrines sont composées d&rsquo;une lettre initiale majuscule décorée placée en tête d&rsquo;un texte et occupant une hauteur supérieure à la ligne courante. Les autres lettres du premier mot sont généralement en petites capitales. Comme lettre ornée, elle commence et décore une inscription, un paragraphe ou un chapitre d&rsquo;ouvrage. Les moines du Moyen Âge cultivaient l&rsquo;art de la lettrine dans leurs enluminures. Avec l&rsquo;invention de l'imprimerie, la lettrine est devenue un ornement typographique. Elle peut provenir d&rsquo;une vignette conçue à cet effet ou d&rsquo;un caractère plus grand de la même police d&rsquo;écriture ou d&rsquo;une autre sorte.</p>
+						<p class="u-dropcap">Les lettrines sont composées d&rsquo;une lettre initiale majuscule décorée placée en tête d&rsquo;un texte et occupant une hauteur supérieure à la ligne courante. Les autres lettres du premier mot sont généralement en petites capitales. Comme lettre ornée, elle commence et décore une inscription, un paragraphe ou un chapitre d&rsquo;ouvrage. Les moines du Moyen Âge cultivaient l&rsquo;art de la lettrine dans leurs enluminures. Avec l&rsquo;invention de l'imprimerie, la lettrine est devenue un ornement typographique. Elle peut provenir d&rsquo;une vignette conçue à cet effet ou d&rsquo;un caractère plus grand de la même police d&rsquo;écriture ou d&rsquo;une autre sorte.</p>
 
-			<pre><code>&lt;p class="u-dropcap"&gt;&hellip;&lt;/p&gt;</code></pre>
+						<pre><code>&lt;p class="u-dropcap"&gt;&hellip;&lt;/p&gt;</code></pre>
 
-			<p role="note"><mark>Pour une présentation des paragraphes en alinéa activez là avec <samp>'indent': true</samp> dans la liste de variables <samp>$typography</samp> qui se trouve dans le fichier <samp>scss/settings/configuration.scss</samp></mark></p>
+						<p role="note"><mark>Pour une présentation des paragraphes en alinéa activez là avec <samp>'indent': true</samp> dans la liste de variables <samp>$typography</samp> qui se trouve dans le fichier <samp>scss/settings/configuration.scss</samp></mark></p>
 
-			<h3>Taille du texte</h3>
+						<h3>Taille du texte</h3>
 
-			<figure class="u-aligned-left">
-				<p class="u-text--x-small">Petit-romain</p>
-				<p class="u-text--small">Cicéro</p>
-				<p class="u-text--large">Double-canon</p>
-				<p class="u-text--x-large">Triple-canon</p>
-				<p class="u-margin-bottom--none  u-text--xx-large">Grosse-nompareille</p>
-			</figure>
+						<figure class="u-aligned-left">
+							<p class="u-text--x-small">Petit-romain</p>
+							<p class="u-text--small">Cicéro</p>
+							<p class="u-text--large">Double-canon</p>
+							<p class="u-text--x-large">Triple-canon</p>
+							<p class="u-margin-bottom--none  u-text--xx-large">Grosse-nompareille</p>
+						</figure>
 
-			<pre><code>&lt;p class="u-text--x-small"&gt;Petit-romain&lt;/p&gt;<br>&lt;p class="u-text--small"&gt;Cicéro&lt;/p&gt;<br>&lt;p class="u-text--large"&gt;Double-canon&lt;/p&gt;<br>&lt;p class="u-text--x-large"&gt;Triple-canon&lt;/p&gt;<br>&lt;p class="u-text--xx-large"&gt;Grosse-nompareille&lt;/p&gt;</code></pre>
+						<pre><code>&lt;p class="u-text--x-small"&gt;Petit-romain&lt;/p&gt;<br>&lt;p class="u-text--small"&gt;Cicéro&lt;/p&gt;<br>&lt;p class="u-text--large"&gt;Double-canon&lt;/p&gt;<br>&lt;p class="u-text--x-large"&gt;Triple-canon&lt;/p&gt;<br>&lt;p class="u-text--xx-large"&gt;Grosse-nompareille&lt;/p&gt;</code></pre>
 
-			<h3>Citations</h3>
+						<h3>Citations</h3>
 
-			<p><q>Exemple de citation au fil du texte avec la balise <samp>&lt;q&gt;</samp>.</q></p>
-			<p><q>Exemple de <q>citation imbriquée</q> dans une citation au fil du texte avec les balises <samp>&lt;q&gt;</samp>.</q></p>
+						<p><q>Exemple de citation au fil du texte avec la balise <samp>&lt;q&gt;</samp>.</q></p>
+						<p><q>Exemple de <q>citation imbriquée</q> dans une citation au fil du texte avec les balises <samp>&lt;q&gt;</samp>.</q></p>
 
-			<p>Example de citation avec la balise <samp>&lt;blockquote&gt;</samp> dans laquelle la source est précisée avec <samp>&lt;footer&gt;</samp>&#8202;:</p>
+						<p>Example de citation avec la balise <samp>&lt;blockquote&gt;</samp> dans laquelle la source est précisée avec <samp>&lt;footer&gt;</samp>&#8202;:</p>
 
-			<blockquote>
-				<p>On peut aussi faire remarquer que les formules conçues avec du faux-texte ont tendance à sous-estimer l&rsquo;espace nécessaire à une titraille immédiatement intelligible, ce qui oblige les rédactions à formuler ensuite des titres simplificateurs, voire inexacts, pour ne pas dépasser l&rsquo;espace imparti&hellip;</p>
-				<footer><cite><a href="//www.amazon.fr/Conception-sites-web-Lart-simplicit%C3%A9/dp/2744008877">Conception de sites web</a></cite> par Jakob Nielsen</footer>
-			</blockquote>
+						<blockquote>
+							<p>On peut aussi faire remarquer que les formules conçues avec du faux-texte ont tendance à sous-estimer l&rsquo;espace nécessaire à une titraille immédiatement intelligible, ce qui oblige les rédactions à formuler ensuite des titres simplificateurs, voire inexacts, pour ne pas dépasser l&rsquo;espace imparti&hellip;</p>
+							<footer><cite><a href="//www.amazon.fr/Conception-sites-web-Lart-simplicit%C3%A9/dp/2744008877">Conception de sites web</a></cite> par Jakob Nielsen</footer>
+						</blockquote>
 
-			<pre><code>&lt;q&gt;Exemple de citation au fil du texte.&lt;/q&gt;<br><br>&lt;q&gt;Exemple de &lt;q&gt;citation imbriquée&lt;/q&gt; dans une citation au fil du texte&lt;/q&gt;<br><br>&lt;blockquote>
+						<pre><code>&lt;q&gt;Exemple de citation au fil du texte.&lt;/q&gt;<br><br>&lt;q&gt;Exemple de &lt;q&gt;citation imbriquée&lt;/q&gt; dans une citation au fil du texte&lt;/q&gt;<br><br>&lt;blockquote>
   &lt;p&gt;On peut aussi faire remarquer que les formules conçues avec du faux-texte&hellip;&lt;/p&gt;
   &lt;footer&gt;&lt;cite&gt;&lt;a href="http://www.amazon.fr/Conception-sites-web-Lart-simplicit%C3%A9/dp/2744008877"&gt;Conception de sites web&lt;/a&gt;&lt;/cite&gt; par Jakob Nielsen&lt;/footer&gt;
 &lt;/blockquote&gt;</code></pre>
 
-			<h4>Modificateurs</h4>
+						<h4>Modificateurs</h4>
 
-			<p>Avec la classe <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-pullquote</samp>&#8202;:</p>
+						<p>Citation mise en exergue avec la classe <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-pullquote</samp>&#8202;:</p>
 
-			<p>Généralement, on utilise un texte en faux latin (le texte ne veut rien dire, il a été modifié), le Lorem ipsum ou Lipsum, qui permet donc de faire office de texte d'attente. L'avantage de le mettre en latin est que l'opérateur sait au premier coup d'oeil que la page contenant ces lignes n'est pas valide, et surtout l'attention du client n'est pas dérangée par le contenu, il demeure concentré seulement sur l'aspect graphique.</p>
+						<p>Généralement, on utilise un texte en faux latin (le texte ne veut rien dire, il a été modifié), le Lorem ipsum ou Lipsum, qui permet donc de faire office de texte d'attente. L'avantage de le mettre en latin est que l'opérateur sait au premier coup d'oeil que la page contenant ces lignes n'est pas valide, et surtout l'attention du client n'est pas dérangée par le contenu, il demeure concentré seulement sur l'aspect graphique.</p>
 
-			<p><q class="o-pullquote">Ce texte a pour autre avantage d'utiliser des mots de longueur variable, essayant de simuler une occupation normale.</q> La méthode simpliste consistant à copier-coller un court texte plusieurs fois (« ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ») a l'inconvénient de ne pas permettre une juste appréciation typographique du résultat final.</p>
+						<p><q class="u-pull-quote">Ce texte a pour autre avantage d'utiliser des mots de longueur variable, essayant de simuler une occupation normale.</q> La méthode simpliste consistant à copier-coller un court texte plusieurs fois (« ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ») a l'inconvénient de ne pas permettre une juste appréciation typographique du résultat final.</p>
 
-			<pre><code>&lt;p&gt;Généralement, on utilise un texte en faux latin (le texte ne veut rien dire, il a été modifié), le Lorem ipsum ou Lipsum, qui permet donc de faire office de texte d&rsquo;attente. L&rsquo;avantage de le mettre en latin est que l&rsquo;opérateur sait au premier coup d&rsquo;oeil que la page contenant ces lignes n&rsquo;est pas valide, et surtout l&rsquo;attention du client n&rsquo;est pas dérangée par le contenu, il demeure concentré seulement sur l&rsquo;aspect graphique.&lt;/p&gt;
+						<pre><code>&lt;p&gt;Généralement, on utilise un texte en faux latin (le texte ne veut rien dire, il a été modifié), le Lorem ipsum ou Lipsum, qui permet donc de faire office de texte d&rsquo;attente. L&rsquo;avantage de le mettre en latin est que l&rsquo;opérateur sait au premier coup d&rsquo;oeil que la page contenant ces lignes n&rsquo;est pas valide, et surtout l&rsquo;attention du client n&rsquo;est pas dérangée par le contenu, il demeure concentré seulement sur l&rsquo;aspect graphique.&lt;/p&gt;
 
-<p>&lt;q class="o-pullquote"&gt;Ce texte a pour autre avantage d&rsquo;utiliser des mots de longueur variable, essayant de simuler une occupation normale.&lt;/q&gt; La méthode simpliste consistant à copier-coller un court texte plusieurs fois (« ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ») a l&rsquo;inconvénient de ne pas permettre une juste appréciation typographique du résultat final.&lt;/p&gt;</code></pre>
+&lt;p&gt;<mark>&lt;q class="u-pull-quote"&gt;Ce texte a pour autre avantage d&rsquo;utiliser des mots de longueur variable, essayant de simuler une occupation normale.&lt;/q&gt;</mark> La méthode simpliste consistant à copier-coller un court texte plusieurs fois (« ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ») a l&rsquo;inconvénient de ne pas permettre une juste appréciation typographique du résultat final.&lt;/p&gt;</code></pre>
 
-			<h3>Marquage sémantique</h3>
+						<h3>Marquage sémantique</h3>
 
-			<ul>
+						<ul>
 
-				<li>L&rsquo;element <samp>&lt;a&gt;</samp> est utilisé pour les <a href="#!">hyperliens</a>,</li>
+							<li>L&rsquo;element <samp>&lt;a&gt;</samp> est utilisé pour les <a href="#!">hyperliens</a>,</li>
 
-				<li>L&rsquo;élément <samp>&lt;abbr&gt;</samp> est utlisé pour les abbréviations et les acronymes sont attribut title ne doit être utilisé que pour l&rsquo;extension de l&rsquo;abbréviation. Example&#8202;: <abbr title="Abbreviation">abbr</abbr>,</li>
+							<li>L&rsquo;élément <samp>&lt;abbr&gt;</samp> est utlisé pour les abbréviations et les acronymes sont attribut title ne doit être utilisé que pour l&rsquo;extension de l&rsquo;abbréviation. Example&#8202;: <abbr title="Abbreviation">abbr</abbr>,</li>
 
-				<li>L&rsquo;élément <samp>&lt;b&gt;</samp> est utilisé dans une partie de texte <b>en gras</b> sémantiquement faible,</li>
+							<li>L&rsquo;élément <samp>&lt;b&gt;</samp> est utilisé dans une partie de texte <b>en gras</b> sémantiquement faible,</li>
 
-				<li>L&rsquo;élément <samp>&lt;strong&gt;</samp> est utilisé pour donner de <strong>l&rsquo;importance</strong> au texte,</li>
+							<li>L&rsquo;élément <samp>&lt;strong&gt;</samp> est utilisé pour donner de <strong>l&rsquo;importance</strong> au texte,</li>
 
-				<li>L&rsquo;élément <samp>&lt;i&gt;</samp> est utilisé pour <i>différencier</i> une partie du texte,</li>
+							<li>L&rsquo;élément <samp>&lt;i&gt;</samp> est utilisé pour <i>différencier</i> une partie du texte,</li>
 
-				<li>L&rsquo;élément <samp>&lt;cite&gt;</samp> est utilisé pour citer <cite>le titre</cite> d&rsquo;une oeuvre, d&rsquo;un document ou d&rsquo;un évènement,</li>
+							<li>L&rsquo;élément <samp>&lt;cite&gt;</samp> est utilisé pour citer <cite>le titre</cite> d&rsquo;une oeuvre, d&rsquo;un document ou d&rsquo;un évènement,</li>
 
-				<li>L&rsquo;élément <samp>&lt;code&gt;</samp> est utlisé pour déclarer du <code>code informatique</code>,</li>
+							<li>L&rsquo;élément <samp>&lt;code&gt;</samp> est utlisé pour déclarer du <code>code informatique</code>,</li>
 
-				<li>L&rsquo;élément <samp>&lt;del&gt;</samp> est utilisé pour indiquer qu&rsquo;une partie de texte est <del>supprimée</del>,</li>
+							<li>L&rsquo;élément <samp>&lt;del&gt;</samp> est utilisé pour indiquer qu&rsquo;une partie de texte est <del>supprimée</del>,</li>
 
-				<li>L&rsquo;élément <samp>&lt;dfn&gt;</samp> est utilisé dans un paragraphe ou une liste de définitions pour représenter le <dfn title="Définition du terme">terme d&rsquo;une définition</dfn>,</li>
+							<li>L&rsquo;élément <samp>&lt;dfn&gt;</samp> est utilisé dans un paragraphe ou une liste de définitions pour représenter le <dfn title="Définition du terme">terme d&rsquo;une définition</dfn>,</li>
 
-				<li>L&rsquo;élément <samp>&lt;em&gt;</samp> est utilisé pour mettre <em>une partie du texte</em> en emphase,</li>
+							<li>L&rsquo;élément <samp>&lt;em&gt;</samp> est utilisé pour mettre <em>une partie du texte</em> en emphase,</li>
 
-				<li>L&rsquo;élément <samp>&lt;ins&gt;</samp> est utilisé pour insérer un nouveau texte dans un <ins>document révisé</ins>,</li>
+							<li>L&rsquo;élément <samp>&lt;ins&gt;</samp> est utilisé pour insérer un nouveau texte dans un <ins>document révisé</ins>,</li>
 
-				<li>L&rsquo;élément <samp>&lt;kbd&gt;</samp> est utilisé lorsque le texte est utilisé pour définir des <kbd>actions</kbd> au clavier,</li>
+							<li>L&rsquo;élément <samp>&lt;kbd&gt;</samp> est utilisé lorsque le texte est utilisé pour définir des <kbd>actions</kbd> au clavier,</li>
 
-				<li>L&rsquo;élément <samp>&lt;mark&gt;</samp> est utilisé pour marquer du texte, par exemple <mark>surligner</mark> un résultat de recherche,</li>
+							<li>L&rsquo;élément <samp>&lt;mark&gt;</samp> est utilisé pour marquer du texte, par exemple <mark>surligner</mark> un résultat de recherche,</li>
 
-				<li>L&rsquo;élément <samp>&lt;q&gt;</samp> est utilisé pour une <q>citation courte</q> provenant d&rsquo;une ressource externe,</li>
+							<li>L&rsquo;élément <samp>&lt;q&gt;</samp> est utilisé pour une <q>citation courte</q> provenant d&rsquo;une ressource externe,</li>
 
-				<li>L&rsquo;élément <samp>&lt;s&gt;</samp> est utilisé pour identifier une partie de texte qui n&rsquo;est pas <s>correct</s> ou non pertinent,</li>
+							<li>L&rsquo;élément <samp>&lt;s&gt;</samp> est utilisé pour identifier une partie de texte qui n&rsquo;est pas <s>correct</s> ou non pertinent,</li>
 
-				<li>L&rsquo;élément <samp>&lt;samp&gt;</samp> est utilisé dans un paragraphe pour écrire un <samp>échantillon</samp> de code,</li>
+							<li>L&rsquo;élément <samp>&lt;samp&gt;</samp> est utilisé dans un paragraphe pour écrire un <samp>échantillon</samp> de code,</li>
 
-				<li>L&rsquo;élément <samp>&lt;small&gt;</samp> est utilisée comme <small>contenu relatif</small> mais non essentiel,</li>
+							<li>L&rsquo;élément <samp>&lt;small&gt;</samp> est utilisée comme <small>contenu relatif</small> mais non essentiel,</li>
 
-				<li>L&rsquo;élément <samp>&lt;span&gt;</samp> est utilisé pour mettre en style une <span>portion de texte</span> qui se différencie des autres,</li>
+							<li>L&rsquo;élément <samp>&lt;span&gt;</samp> est utilisé pour mettre en style une <span>portion de texte</span> qui se différencie des autres,</li>
 
-				<li>L&rsquo;élément <samp>&lt;sub&gt;</samp> est utlisé pour déclarer un indice,</li>
+							<li>L&rsquo;élément <samp>&lt;sub&gt;</samp> est utlisé pour déclarer un indice,</li>
 
-				<li>L&rsquo;élément <samp>&lt;sup&gt;</samp> est utlisé pour déclarer un exposant,</li>
+							<li>L&rsquo;élément <samp>&lt;sup&gt;</samp> est utlisé pour déclarer un exposant,</li>
 
-				<li>L&rsquo;élément <samp>&lt;var&gt;</samp> est utilisé pour déclarer une <var>variable</var>.</li>
+							<li>L&rsquo;élément <samp>&lt;var&gt;</samp> est utilisé pour déclarer une <var>variable</var>.</li>
 
-			</ul>
+						</ul>
 
-			<h3>Espaces</h3>
+						<h3>Espaces</h3>
 
-			<p>Toute combinaison d&rsquo;espace, de rentrée d&rsquo;alinéa ou de retour à la ligne, est automatiquement comprise comme une espace mot. Si vous devez insérer plus qu&rsquo;un espace mot entre deux phrases, ou tout autre caractère, utilisez alors l&rsquo;un des caractères d&rsquo;espace disponible en Unicode. Même si le caractère lui-même n&rsquo;est pas présent dans le fichier de la police de caratères utilisée, les navigateurs qui comprennent l&rsquo;Unicode pourront en afficher une bonne approximation. Résistez à la tentation d&rsquo;utiliser l&rsquo;espace insécable <samp>&amp;nbsp;</samp> qui n&rsquo;a de signification que pour lui-même.</p>
+						<p>Toute combinaison d&rsquo;espace, de rentrée d&rsquo;alinéa ou de retour à la ligne, est automatiquement comprise comme une espace mot. Si vous devez insérer plus qu&rsquo;un espace mot entre deux phrases, ou tout autre caractère, utilisez alors l&rsquo;un des caractères d&rsquo;espace disponible en Unicode. Même si le caractère lui-même n&rsquo;est pas présent dans le fichier de la police de caratères utilisée, les navigateurs qui comprennent l&rsquo;Unicode pourront en afficher une bonne approximation. Résistez à la tentation d&rsquo;utiliser l&rsquo;espace insécable <samp>&amp;nbsp;</samp> qui n&rsquo;a de signification que pour lui-même.</p>
 
-			<ul class="u-clearfix">
+						<!--<ul>
 
-				<li><span>Espace d&rsquo;un em ou d&rsquo;un cadratin avec <samp>&amp;#8195;</samp></span> <mark class="u-pushed-right">&#8195;</mark></li>
+							<li><span>Espace d&rsquo;un em ou d&rsquo;un cadratin avec <samp>&amp;#8195;</samp></span> <mark>&#8195;</mark></li>
 
-				<li><span>Espace num&eacute;rique (&eacute;gale &agrave; la chasse d&rsquo;un z&eacute;ro) avec <samp>&amp;#8199;</samp></span> <mark class="u-pushed-right">&#8199;</mark></li>
+							<li><span>Espace num&eacute;rique (&eacute;gale &agrave; la chasse d&rsquo;un z&eacute;ro) avec <samp>&amp;#8199;</samp></span> <mark>&#8199;</mark></li>
 
-				<li><span>Espace d&rsquo;un tiers de cadratin avec <samp>&amp;#8196;</samp></span> <mark class="u-pushed-right">&#8196;</mark></li>
+							<li><span>Espace d&rsquo;un tiers de cadratin avec <samp>&amp;#8196;</samp></span> <mark>&#8196;</mark></li>
 
-				<li><span>Espace d&rsquo;un quart de cadratin avec <samp>&amp;#8197;</samp></span> <mark class="u-pushed-right">&#8197;</mark></li>
+							<li><span>Espace d&rsquo;un quart de cadratin avec <samp>&amp;#8197;</samp></span> <mark>&#8197;</mark></li>
 
-				<li><span>Espace ponctuation (&eacute;gale &agrave; la chasse d&rsquo;une virgule) avec <samp>&amp;#8200;</samp></span> <mark class="u-pushed-right">&#8200;</mark></li>
+							<li><span>Espace ponctuation (&eacute;gale &agrave; la chasse d&rsquo;une virgule) avec <samp>&amp;#8200;</samp></span> <mark>&#8200;</mark></li>
 
-				<li><span>Espace fine (1/5 cadratin, 1/8 en fran&ccedil;ais) avec <samp>&amp;#8201;</samp></span> <mark class="u-pushed-right">&#8201;</mark></li>
+							<li><span>Espace fine (1/5 cadratin, 1/8 en fran&ccedil;ais) avec <samp>&amp;#8201;</samp></span> <mark>&#8201;</mark></li>
 
-				<li><span>Espace d&rsquo;un sixi&egrave;me de cadratin avec<samp>&amp;#8198;</samp></span> <mark class="u-pushed-right">&#8198;</mark></li>
+							<li><span>Espace d&rsquo;un sixi&egrave;me de cadratin avec<samp>&amp;#8198;</samp></span> <mark>&#8198;</mark></li>
 
-				<li><span>Espace ultra fine (de 1/10 &agrave; 1/16 de cadratin) avec <samp>&amp;#8202;</samp></span> <mark class="u-pushed-right">&#8202;</mark></li>
+							<li><span>Espace ultra fine (de 1/10 &agrave; 1/16 de cadratin) avec <samp>&amp;#8202;</samp></span> <mark>&#8202;</mark></li>
 
-			</ul>
+						</ul>-->
 
-			<h3>Couleurs</h3>
+						<table>
+  							<tbody>
 
-			<ul>
-				<li>Echantillon de texte par défaut</li>
-				<li><span class="u-text-soft">Echantillon de texte</span> avec la classe <abbr title="Cascading Style Sheets">css</abbr> <code>.u-text-soft</code></li>
-				<li><span class="u-text-muted">Echantillon de texte</span> avec la classe <abbr title="Cascading Style Sheets">css</abbr> <code>.u-text-muted</code></li>
-				<li><span class="u-text-red">Echantillon de texte</span> avec la classe <abbr title="Cascading Style Sheets">css</abbr> <code>.u-text-red</code></li>
-				<li><span class="u-text-pink">Echantillon de texte</span> avec la classe <abbr title="Cascading Style Sheets">css</abbr> <code>.u-text-pink</code></li>
-				<li><span class="u-text-grape">Echantillon de texte</span> avec la classe <abbr title="Cascading Style Sheets">css</abbr> <code>.u-text-grape</code></li>
-				<li><span class="u-text-violet">Echantillon de texte</span> avec la classe <abbr title="Cascading Style Sheets">css</abbr> <code>.u-text-violet</code></li>
-				<li><span class="u-text-indigo">Echantillon de texte</span> avec la classe <abbr title="Cascading Style Sheets">css</abbr> <code>.u-text-indigo</code></li>
-				<li><span class="u-text-blue">Echantillon de texte</span> avec la classe <abbr title="Cascading Style Sheets">css</abbr> <code>.u-text-blue</code></li>
-				<li><span class="u-text-cyan">Echantillon de texte</span> avec la classe <abbr title="Cascading Style Sheets">css</abbr> <code>.u-text-cyan</code></li>
-				<li><span class="u-text-teal">Echantillon de texte</span> avec la classe <abbr title="Cascading Style Sheets">css</abbr> <code>.u-text-teal</code></li>
-				<li><span class="u-text-green">Echantillon de texte</span> avec la classe <abbr title="Cascading Style Sheets">css</abbr> <code>.u-text-green</code></li>
-				<li><span class="u-text-lime">Echantillon de texte</span> avec la classe <abbr title="Cascading Style Sheets">css</abbr> <code>.u-text-lime</code></li>
-				<li><span class="u-text-yellow">Echantillon de texte</span> avec la classe <abbr title="Cascading Style Sheets">css</abbr> <code>.u-text-yellow</code></li>
-				<li><span class="u-text-orange">Echantillon de texte</span> avec la classe <abbr title="Cascading Style Sheets">css</abbr> <code>.u-text-orange</code></li>
-			</ul>
+    							<tr>
+									<td class="u-padding--none">Espace d&rsquo;un em ou d&rsquo;un cadratin avec <samp>&amp;#8195;</samp>&#8202;:</td>
+									<td class="u-padding--none"><mark>&#8195;</mark></td>
+								</tr>
 
-			<small><a href="#top">[Haut de page]</a></small>
+								<tr>
+									<td class="u-padding--none">Espace num&eacute;rique (&eacute;gale &agrave; la chasse d&rsquo;un z&eacute;ro) avec <samp>&amp;#8199;</samp>&#8202;:</td>
+									<td class="u-padding--none"><mark>&#8199;</mark></td>
+								</tr>
 
-		</section>
+								<tr>
+									<td class="u-padding--none">Espace d&rsquo;un tiers de cadratin avec <samp>&amp;#8196;</samp>&#8202;:</td>
+									<td class="u-padding--none"><mark>&#8196;</mark></td>
+								</tr>
 
-		<hr>
+								<tr>
+									<td class="u-padding--none">Espace d&rsquo;un quart de cadratin avec <samp>&amp;#8197;</samp>&#8202;:</td>
+									<td class="u-padding--none"><mark>&#8197;</mark></td>
+								</tr>
 
-		<section id="links">
+								<tr>
+									<td class="u-padding--none">Espace ponctuation (&eacute;gale &agrave; la chasse d&rsquo;une virgule) avec <samp>&amp;#8200;</samp>&#8202;:</td>
+									<td class="u-padding--none"><mark>&#8200;</mark></td>
+								</tr>
 
-			<h2>Ancres et liens</h2>
+								<tr>
+									<td class="u-padding--none">Espace fine (1/5 cadratin, 1/8 en fran&ccedil;ais) avec <samp>&amp;#8201;</samp>&#8202;:</td>
+									<td class="u-padding--none"><mark>&#8201;</mark></td>
+								</tr>
 
-			<h3>Liens internes</h3>
+								<tr>
+									<td class="u-padding--none">Espace d&rsquo;un sixi&egrave;me de cadratin avec<samp>&amp;#8198;</samp>&#8202;:</td>
+									<td class="u-padding--none"><mark>&#8198;</mark></td>
+								</tr>
 
-			<p>Les hyperliens <samp>&lt;a&gt;</samp> doivent être visuellement distingués du reste du contenu. Les hyperliens de même nature ont des couleurs, des formes et des comportements identiques sur toutes les pages.</p>
+								<tr>
+									<td class="u-padding--none">Espace ultra fine (de 1/10 &agrave; 1/16 de cadratin) avec <samp>&amp;#8202;</samp>&#8202;:</td>
+									<td class="u-padding--none"><mark>&#8202;</mark></td>
+								</tr>
 
-			<ul>
+							</tbody>
+						</table>
 
-				<li><a href="#!">Lien interne</a></li>
+						<small><a href="#top">[Haut de page]</a></small>
 
-				<li><a href="mailto:adresse@courriel.net" title="Écrire à adresse@courriel.net">Ecrivez-nous&#8202;!</a></li>
+					</section>
 
-				<li><a href="tel:+33141592653">+33 1 41 59 26 53</a></li>
+					<hr>
 
-				<li><a href="#!" download>Document à télécharger <small>(<abbr title="Document PDF">PDF</abbr> &ndash; 215&nbsp;Ko)</small></a></li>
+					<section id="links">
 
-				<li><a href="#!">Document audio <small>(<abbr title="Fichier MP3">mp3</abbr> &ndash; 12&nbsp;min.)</small></a></li>
+						<h2 class="o-numbering__item">Ancres et liens</h2>
 
-			</ul>
+						<h3>Liens internes</h3>
 
-			<pre><code>&lt;a href="#!"&gt;Lien interne&lt;/a&gt;<br><br>&lt;a href="mailto:adresse@courriel.net" title="Écrire à adresse@courriel.net"&gt;Ecrivez-nous&amp;#8202;!&lt;/a&gt;<br><br>&lt;a href="tel:+33141592653"&gt;+33 1 41 59 26 53&lt;/a&gt;<br><br>&lt;a href="#!" download>Document à télécharger &lt;small&gt;(&lt;abbr title="Document PDF">PDF&lt;/abbr&gt; &ndash; 215&nbsp;Ko)&lt;/small&gt;&lt;/a&gt;<br><br>&lt;a href="//url.com/file.mp3">Document audio &lt;small&gt;(&lt;abbr title="Fichier Ogg"&gt;Ogg&lt;/abbr&gt; &ndash; 12&nbsp;min.)&lt;/small&gt;&lt;/a&gt;</code></pre>
+						<p>Les hyperliens <samp>&lt;a&gt;</samp> doivent être visuellement distingués du reste du contenu. Les hyperliens de même nature ont des couleurs, des formes et des comportements identiques sur toutes les pages.</p>
 
-			<h3>Liens externes</h3>
+						<ul>
 
-			<p>Les <a href="#!">liens internes</a> et les <a href="http://checklists.opquast.com/11/criteria/687/" title="Bonne pratique Opquast N&#176;188">liens externes</a> sont différenciés. Lorsqu&rsquo;elle différe de la page d&rsquo;origine, mieux vaut spécifier la langue de destination&#8202;: voici la <a href="http://www.w3.org/Translations/WCAG20-fr/">version française</a> des <a href="http://www.w3.org/TR/WCAG20/" title="Web Content Accessibility Guidelines" hreflang="en"><abbr title="Web Content Accessibility Guidelines" lang="en">WCAG</abbr>&nbsp;2.0</a>. Pour en savoir plus, voir cet article sur la <a href="http://letrainde13h37.fr/43/signaletique-hyperliens/">signalétique des hyperliens</a>.</p>
+							<li><a href="#!">Lien interne</a></li>
 
-			<ul>
+							<li><a href="mailto:adresse@courriel.net" title="Écrire à adresse@courriel.net">Ecrivez-nous&#8202;!</a></li>
 
-				<li><a href="//url.com" hreflang="en">Lien externe</a></li>
+							<li><a href="tel:+33141592653">+33 1 41 59 26 53</a></li>
 
-				<li><a href="//url.com/file.pdf" download>Document à télécharger <small>(<abbr title="Document PDF">PDF</abbr> &ndash; 215&nbsp;Ko)</small></a></li>
+							<li><a href="#!" download>Document à télécharger (<abbr title="Document PDF">PDF</abbr> &ndash; 215&nbsp;Ko)</a></li>
 
-				<li><a href="//url.com/file.mp3">Document audio <small>(<abbr title="Fichier MP3">mp3</abbr> &ndash; 12&nbsp;min.)</small></a></li>
+							<li><a href="#!">Document audio (<abbr title="Fichier MP3">mp3</abbr> &ndash; 12&nbsp;min.)</a></li>
 
-			</ul>
+						</ul>
 
-			<pre><code>&lt;a href="//url.com" hreflang="en"&gt;Lien externe&lt;/a&gt;<br><br>&lt;a href="//url.com/file.pdf" download>Document à télécharger &lt;small&gt;(&lt;abbr title="Document PDF">PDF&lt;/abbr&gt; &ndash; 215&nbsp;Ko)&lt;/small&gt;&lt;/a&gt;<br><br>&lt;a href="//url.com/file.mp3">Document audio &lt;small&gt;(&lt;abbr title="Fichier Ogg"&gt;Ogg&lt;/abbr&gt; &ndash; 12&nbsp;min.)&lt;/small&gt;&lt;/a&gt;</code></pre>
+						<pre><code>&lt;a href="#!"&gt;Lien interne&lt;/a&gt;<br><br>&lt;a href="mailto:adresse@courriel.net" title="Écrire à adresse@courriel.net"&gt;Ecrivez-nous&amp;#8202;!&lt;/a&gt;<br><br>&lt;a href="tel:+33141592653"&gt;+33 1 41 59 26 53&lt;/a&gt;<br><br>&lt;a href="#!" download>Document à télécharger &lt;small&gt;(&lt;abbr title="Document PDF">PDF&lt;/abbr&gt; &ndash; 215&nbsp;Ko)&lt;/small&gt;&lt;/a&gt;<br><br>&lt;a href="//url.com/file.mp3">Document audio &lt;small&gt;(&lt;abbr title="Fichier Ogg"&gt;Ogg&lt;/abbr&gt; &ndash; 12&nbsp;min.)&lt;/small&gt;&lt;/a&gt;</code></pre>
 
-			<small><a href="#top">[Haut de page]</a></small>
+						<h3>Liens externes</h3>
 
-		</section>
+						<p>Les <a href="#!">liens internes</a> et les <a href="http://checklists.opquast.com/11/criteria/687/" title="Bonne pratique Opquast N&#176;188">liens externes</a> sont différenciés. Lorsqu&rsquo;elle différe de la page d&rsquo;origine, mieux vaut spécifier la langue de destination&#8202;: voici la <a href="http://www.w3.org/Translations/WCAG20-fr/">version française</a> des <a href="http://www.w3.org/TR/WCAG20/" title="Web Content Accessibility Guidelines" hreflang="en"><abbr title="Web Content Accessibility Guidelines" lang="en">WCAG</abbr>&nbsp;2.0</a>. Pour en savoir plus, voir cet article sur la <a href="http://letrainde13h37.fr/43/signaletique-hyperliens/">signalétique des hyperliens</a>.</p>
 
-		<hr>
+						<ul>
 
-		<section id="code">
+							<li><a href="//url.com" hreflang="en">Lien externe</a></li>
 
-			<h2>Code</h2>
+							<li><a href="//url.com/file.pdf" download>Document à télécharger (<abbr title="Document PDF">PDF</abbr> &ndash; 215&nbsp;Ko)</a></li>
 
-			<ul>
+							<li><a href="//url.com/file.mp3">Document audio (<abbr title="Fichier MP3">mp3</abbr> &ndash; 12&nbsp;min.)</a></li>
 
-				<li>La balise <samp>&lt;code&gt;</samp> représente un <code>bloc de code</code>,</li>
+						</ul>
 
-				<li>La balise <samp>&lt;samp&gt;</samp> indique que l&rsquo;ordinateur produit <samp>un texte</samp>,</li>
+						<pre><code>&lt;a href="//url.com" hreflang="en"&gt;Lien externe&lt;/a&gt;<br><br>&lt;a href="//url.com/file.pdf" download>Document à télécharger &lt;small&gt;(&lt;abbr title="Document PDF">PDF&lt;/abbr&gt; &ndash; 215&nbsp;Ko)&lt;/small&gt;&lt;/a&gt;<br><br>&lt;a href="//url.com/file.mp3">Document audio &lt;small&gt;(&lt;abbr title="Fichier Ogg"&gt;Ogg&lt;/abbr&gt; &ndash; 12&nbsp;min.)&lt;/small&gt;&lt;/a&gt;</code></pre>
 
-				<li>La balise <samp>&lt;kbd&gt;</samp> représente une <kbd>entrée</kbd> saisie au clavier,</li>
+						<small><a href="#top">[Haut de page]</a></small>
 
-				<li>La balise <samp>&lt;var&gt;</samp> permet d&rsquo;écrire des <var>variables</var> pour des formules simples.</li>
+					</section>
 
-			</ul>
+					<hr>
 
-			<p>Lorsqu&rsquo;on veut afficher du texte tel qu&rsquo;il serait dans un éditeur de texte on utilisera la balise <code>&lt;pre&gt;</code></p>
+					<section id="code">
 
-			<pre><code>! " # $ % &amp; ' ( ) * + , - . /
+						<h2 class="o-numbering__item">Code</h2>
+
+						<ul>
+
+							<li>La balise <samp>&lt;code&gt;</samp> représente un <code>bloc de code</code>,</li>
+
+							<li>La balise <samp>&lt;samp&gt;</samp> indique que l&rsquo;ordinateur produit <samp>un texte</samp>,</li>
+
+							<li>La balise <samp>&lt;kbd&gt;</samp> représente une <kbd>entrée</kbd> saisie au clavier,</li>
+
+							<li>La balise <samp>&lt;var&gt;</samp> permet d&rsquo;écrire des <var>variables</var> pour des formules simples.</li>
+
+						</ul>
+
+						<p>Lorsqu&rsquo;on veut afficher du texte tel qu&rsquo;il serait dans un éditeur de texte on utilisera la balise <code>&lt;pre&gt;</code></p>
+
+						<pre><code>! " # $ % &amp; ' ( ) * + , - . /
 0 1 2 3 4 5 6 7 8 9 : ; &lt; = &gt; ?
 @ A B C D E F G H I J K L M N O
 P Q R S T U V W X Y Z [ \ ] ^ _
 ` a b c d e f g h i j k l m n o
 p q r s t u v w x y z { | } ~</code></pre>
 
-			<p role="note"><mark>Si vous mentionnez du code informatique dans votre texte préformaté vous devriez également imbriquer la balise <samp>&lt;code&gt;</samp> dans la balise <samp>&lt;pre&gt;</samp></mark></p>
+						<p role="note"><mark>Si vous mentionnez du code informatique dans votre texte préformaté vous devriez également imbriquer la balise <samp>&lt;code&gt;</samp> dans la balise <samp>&lt;pre&gt;</samp></mark></p>
 
-			<small><a href="#top">[Haut de page]</a></small>
+						<small><a href="#top">[Haut de page]</a></small>
 
-		</section>
+					</section>
 
-		<hr>
+					<hr>
 
-		<section id="lists">
+					<section id="lists">
 
-			<h2>Listes</h2>
+						<h2 class="o-numbering__item">Listes</h2>
 
-			<p>Une liste comporte une phrase introductive suivie d&rsquo;une suite d'éléments. Si la phrase introductive est <em>ouverte</em> elle est marqué par un double point qui ouvre la liste dont les éléments commencent avec une minuscule et se terminent avec une virgule ou un point virgule. Si la phrase introductive est <em>fermée</em> par un point les éléments commencent avec une majuscule et se terminent par un point. Dans les deux cas le dernier élément se termine systématiquement par un point.</p>
+						<p>Une liste comporte une phrase introductive suivie d&rsquo;une suite d'éléments. Si la phrase introductive est <em>ouverte</em> elle est marqué par un double point qui ouvre la liste dont les éléments commencent avec une minuscule et se terminent avec une virgule ou un point virgule. Si la phrase introductive est <em>fermée</em> par un point les éléments commencent avec une majuscule et se terminent par un point. Dans les deux cas le dernier élément se termine systématiquement par un point.</p>
 
-			<p class="u-margin-bottom--none">Les listes non-ordonnées avec l&rsquo;élément <samp>&lt;ul&gt;</samp> n&rsquo;ont pas de notion d&rsquo;ordre et on peut mélanger leurs éléments sans que cela modifie leur sens&#8202;:</p>
+						<p class="u-margin-bottom--none">Les listes non-ordonnées avec l&rsquo;élément <samp>&lt;ul&gt;</samp> n&rsquo;ont pas de notion d&rsquo;ordre et on peut mélanger leurs éléments sans que cela modifie leur sens&#8202;:</p>
 
-			<ul>
-				<li>élément 1,</li>
-				<li>élément 2.</li>
-			</ul>
+						<ul>
+							<li>élément 1,</li>
+							<li>élément 2.</li>
+						</ul>
 
-			<p class="u-margin-bottom--none">Listes non-ordonnées imbriquées&#8202;:</p>
+						<p class="u-margin-bottom--none">Listes non-ordonnées imbriquées&#8202;:</p>
 
-			<ul>
+						<ul>
 
-				<li>élément 1,</li>
+							<li>élément 1,</li>
 
-				<li>liste imbriquée&#8202;:
-					<ul>
-						<li>élément 3,</li>
-						<li>élément 4,</li>
-					</ul>
-				</li>
+							<li>liste imbriquée&#8202;:
+								<ul>
+									<li>élément 3,</li>
+									<li>élément 4,</li>
+								</ul>
+							</li>
 
-				<li>élément 5.</li>
+							<li>élément 5.</li>
 
-			</ul>
+						</ul>
 
-			<p class="u-margin-bottom--none">Les énumération avec l&rsquo;élément <samp>&lt;ol&gt;</samp> sont numérotées et doivent être lues dans un ordre donné. On retrouve souvent ces listes pour décrire des processus pas-à-pas où chaque étape ne peut être réalisée que si l&rsquo;action précédente a été traitée&#8202;:</p>
+						<p class="u-margin-bottom--none">Les énumération avec l&rsquo;élément <samp>&lt;ol&gt;</samp> sont numérotées et doivent être lues dans un ordre donné. On retrouve souvent ces listes pour décrire des processus pas-à-pas où chaque étape ne peut être réalisée que si l&rsquo;action précédente a été traitée&#8202;:</p>
 
-			<ol>
-				<li>élément 1,</li>
-				<li>élément 1.</li>
-			</ol>
+						<ol>
+							<li>élément 1,</li>
+							<li>élément 1.</li>
+						</ol>
 
-			<p class="u-margin-bottom--none">&Eacute;numérations imbriquées&#8202;:</p>
+						<p class="u-margin-bottom--none">&Eacute;numérations imbriquées&#8202;:</p>
 
-			<ol>
+						<ol>
 
-				<li>élément 1,</li>
+							<li>élément 1,</li>
 
-				<li>énumération imbriquée&#8202;:
-					<ol>
-						<li>élément 2,</li>
-						<li>élément 3,</li>
-					</ol>
-				</li>
+							<li>énumération imbriquée&#8202;:
+								<ol>
+									<li>élément 2,</li>
+									<li>élément 3,</li>
+								</ol>
+							</li>
 
-				<li>élément 4.</li>
+							<li>élément 4.</li>
 
-			</ol>
+						</ol>
 
-			<p>Les listes de définitions comportent deux parties. Un terme et une description. Pour marquer une liste de définitions il vous faut trois éléments <abbr title="Hyper Text Markup Language">html</abbr>&#8202;: un conteneur <samp>&lt;dl&gt;</samp>, un terme de définition <samp>&lt;dt&gt;</samp> et une description du terme de définition <samp>&lt;dd&gt;</samp>.</p>
+						<p>Les listes de définitions comportent deux parties. Un terme et une description. Pour marquer une liste de définitions il vous faut trois éléments <abbr title="Hyper Text Markup Language">html</abbr>&#8202;: un conteneur <samp>&lt;dl&gt;</samp>, un terme de définition <samp>&lt;dt&gt;</samp> et une description du terme de définition <samp>&lt;dd&gt;</samp>.</p>
 
-			<dl>
-				<dt>Terme de définition</dt>
-				<dd>Description du terme de définition.</dd>
-				<dt>Terme de définition</dt>
-				<dd>Description du terme de définition.</dd>
-			</dl>
+						<dl>
+							<dt>Terme de définition</dt>
+							<dd>Description du terme de définition.</dd>
+							<dt>Terme de définition</dt>
+							<dd>Description du terme de définition.</dd>
+						</dl>
 
-			<h3>Modificateurs</h3>
+						<h3>Modificateurs</h3>
 
-			<h4>Puces</h4>
+						<h4>Puces</h4>
 
-			<p class="u-margin-bottom--none">Avec la classe <abbr title="Cascading Style Sheets">css</abbr> <samp>.u-list-circle</samp>&#8202;:</p>
+						<p class="u-margin-bottom--none">Avec la classe <abbr title="Cascading Style Sheets">css</abbr> <samp>.u-list-circle</samp>&#8202;:</p>
 
-			<ul class="u-list-circle">
-				<li>élément 1,</li>
-				<li>élément 2.</li>
-			</ul>
+						<ul class="u-list-circle">
+							<li>élément 1,</li>
+							<li>élément 2.</li>
+						</ul>
 
-			<p class="u-margin-bottom--none">Avec la classe <abbr title="Cascading Style Sheets">css</abbr> <samp>.u-list-disc</samp>&#8202;:</p>
+						<p class="u-margin-bottom--none">Avec la classe <abbr title="Cascading Style Sheets">css</abbr> <samp>.u-list-disc</samp>&#8202;:</p>
 
-			<ul class="u-list-disc">
-				<li>élément 1,</li>
-				<li>élément 2.</li>
-			</ul>
+						<ul class="u-list-disc">
+							<li>élément 1,</li>
+							<li>élément 2.</li>
+						</ul>
 
-			<p class="u-margin-bottom--none">Avec la classe <abbr title="Cascading Style Sheets">css</abbr> <samp>.u-list-square</samp>&#8202;:</p>
+						<p class="u-margin-bottom--none">Avec la classe <abbr title="Cascading Style Sheets">css</abbr> <samp>.u-list-square</samp>&#8202;:</p>
 
-			<ul class="u-list-square">
-				<li>élément 1,</li>
-				<li>élément 2.</li>
-			</ul>
+						<ul class="u-list-square">
+							<li>élément 1,</li>
+							<li>élément 2.</li>
+						</ul>
 
-			<h4>&Eacute;numérations</h4>
+						<h4>&Eacute;numérations</h4>
 
-			<p class="u-margin-bottom--none">Avec la classe <abbr title="Cascading Style Sheets">css</abbr> <samp>.u-list-decimal</samp>&#8202;:</p>
+						<p class="u-margin-bottom--none">Avec la classe <abbr title="Cascading Style Sheets">css</abbr> <samp>.u-list-decimal</samp>&#8202;:</p>
 
-			<ol class="u-list-decimal">
-				<li>élément 1,</li>
-				<li>élément 2.</li>
-			</ol>
+						<ol class="u-list-decimal">
+							<li>élément 1,</li>
+							<li>élément 2.</li>
+						</ol>
 
-			<p class="u-margin-bottom--none">Avec la classe <abbr title="Cascading Style Sheets">css</abbr> <samp>.u-list-leading-zero</samp>&#8202;:</p>
+						<p class="u-margin-bottom--none">Avec la classe <abbr title="Cascading Style Sheets">css</abbr> <samp>.u-list-leading-zero</samp>&#8202;:</p>
 
-			<ol class="u-list-leading-zero">
-				<li>élément 1,</li>
-				<li>élément 2.</li>
-			</ol>
+						<ol class="u-list-leading-zero">
+							<li>élément 1,</li>
+							<li>élément 2.</li>
+						</ol>
 
-			<p class="u-margin-bottom--none">Avec la classe <abbr title="Cascading Style Sheets">css</abbr><samp>.u-list-upper-roman</samp>&#8202;:</p>
+						<p class="u-margin-bottom--none">Avec la classe <abbr title="Cascading Style Sheets">css</abbr><samp>.u-list-upper-roman</samp>&#8202;:</p>
 
-			<ol class="u-list-upper-roman">
-				<li>élément 1,</li>
-				<li>élément 2.</li>
-			</ol>
+						<ol class="u-list-upper-roman">
+							<li>élément 1,</li>
+							<li>élément 2.</li>
+						</ol>
 
-			<p class="u-margin-bottom--none">Avec la classe <abbr title="Cascading Style Sheets">css</abbr><samp>.u-list-lower-roman</samp>&#8202;:</p>
+						<p class="u-margin-bottom--none">Avec la classe <abbr title="Cascading Style Sheets">css</abbr><samp>.u-list-lower-roman</samp>&#8202;:</p>
 
-			<ol class="u-list-lower-roman">
-				<li>élément 1,</li>
-				<li>élément 2.</li>
-			</ol>
+						<ol class="u-list-lower-roman">
+							<li>élément 1,</li>
+							<li>élément 2.</li>
+						</ol>
 
-			<p class="u-margin-bottom--none">Avec la classe <abbr title="Cascading Style Sheets">css</abbr><samp>.u-list-upper-alpha</samp>&#8202;:</p>
+						<p class="u-margin-bottom--none">Avec la classe <abbr title="Cascading Style Sheets">css</abbr><samp>.u-list-upper-alpha</samp>&#8202;:</p>
 
-			<ol class="u-list-upper-alpha">
-				<li>élément 1,</li>
-				<li>élément 2.</li>
-			</ol>
+						<ol class="u-list-upper-alpha">
+							<li>élément 1,</li>
+							<li>élément 2.</li>
+						</ol>
 
-			<p class="u-margin-bottom--none">Avec la classe <abbr title="Cascading Style Sheets">css</abbr><samp>.u-list-lower-alpha</samp>&#8202;:</p>
+						<p class="u-margin-bottom--none">Avec la classe <abbr title="Cascading Style Sheets">css</abbr><samp>.u-list-lower-alpha</samp>&#8202;:</p>
 
-			<ol class="u-list-lower-alpha">
-				<li>élément 1,</li>
-				<li>élément 2.</li>
-			</ol>
+						<ol class="u-list-lower-alpha">
+							<li>élément 1,</li>
+							<li>élément 2.</li>
+						</ol>
 
-			<p class="u-margin-bottom--none">Appliquer des énumérations imbriquées avec une numérotation ordonnée avec la classe <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-list--ordered</samp>&#8202;:</p>
+						<p class="u-margin-bottom--none">Appliquer des énumérations imbriquées avec une numérotation ordonnée avec la classe <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-list--ordered</samp>&#8202;:</p>
 
-			<ol class="o-list-ordered">
+						<ol class="o-list-ordered">
 
-				<li class="o-list-ordered__item">élément 1</li>
+							<li class="o-list-ordered__item">élément 1</li>
 
-				<li class="o-list-ordered__item">élément 2
-					<ol class="o-list-ordered">
-						<li class="o-list-ordered__item">élément 3</li>
-						<li class="o-list-ordered__item">élément 4</li>
-					</ol>
-				</li>
+							<li class="o-list-ordered__item">élément 2
+								<ol class="o-list-ordered">
+									<li class="o-list-ordered__item">élément 3</li>
+									<li class="o-list-ordered__item">élément 4</li>
+								</ol>
+							</li>
 
-				<li class="o-list-ordered__item">élément 5</li>
+							<li class="o-list-ordered__item">élément 5</li>
 
-			</ol>
+						</ol>
 
-			<pre><code>&lt;ol class="o-list--ordered"&gt;
+						<pre><code>&lt;ol class="o-list--ordered"&gt;
   &lt;li class="o-list__item"&gt;élément 1&lt;/li&gt;
   &lt;li class="o-list__item"&gt;élément 2
     &lt;ol class="o-list--ordered"&gt;
@@ -799,501 +830,504 @@ p q r s t u v w x y z { | } ~</code></pre>
   &lt;li class="o-list__item"&gt;élément 5&lt;/li&gt;
 &lt;/ol&gt;</code></pre>
 
-			<h4>Styles</h4>
-
-			<p>Un point de vue largement répandu consiste à considérer le menu de navigation comme une liste de liens et à utiliser la balise correspondant aux listes non ordonnées de manière appropriée.</p>
-
-			<p>Supprimer les puces et l&rsquo;indentation avec la classe <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-list-bare</samp>&#8202;:</p>
-
-			<ul class="o-list-bare">
-				<li>élément 1</li>
-				<li>élément 2</li>
-			</ul>
+						<h4>Styles</h4>
+
+						<p>Un point de vue largement répandu consiste à considérer le menu de navigation comme une liste de liens et à utiliser la balise correspondant aux listes non ordonnées de manière appropriée.</p>
+
+						<p>Supprimer les puces et l&rsquo;indentation avec la classe <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-list-bare</samp>&#8202;:</p>
+
+						<ul class="o-list-bare">
+							<li>élément 1</li>
+							<li>élément 2</li>
+						</ul>
+
+						<p>Afficher une liste d&rsquo;élements à la verticale avec la classe <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-list-block</samp>&#8202;:</p>
 
-			<p>Afficher une liste d&rsquo;élements à la verticale avec la classe <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-list-ui</samp>&#8202;:</p>
-
-			<ul class="o-list-ui  o-list-ui--small  u-margin-bottom">
-				<li class="o-list-ui__item"><a href="#!">élément 1</a></li>
-				<li class="o-list-ui__item"><a href="#!">élément 2</a></li>
-			</ul>
-
-			<p><mark>La classe <samp>.o-list-ui</samp> peut être complétée par une des quatre classes <abbr title="Cascading Style Sheets">css</abbr> suivantes qui définissent les marges internes&#8202;: <samp>o-list-ui--tiny</samp>, <samp>o-list-ui--small</samp>, <samp>o-list-ui--large</samp>, <samp>o-list-ui--huge</samp>. Activez ou désactivez le séparateur avec la variable <samp>$show-list-ui-separator</samp> et modifiez sa couleur avec la variable <samp>$list-ui-color-separator</samp> qui se trouvent dans le fichier <samp>scss/objects/_lists.scss</samp>.</mark></p>
-
-			<p>Afficher une liste d&rsquo;élements à l&rsquo;horizontale avec la classe <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-list-inline</samp>&#8202;:</p>
-
-			<ul class="o-list-inline">
-				<li class="o-list-inline__item">élément 1</li>
-				<li class="o-list-inline__item">élément 2</li>
-			</ul>
-
-			<p>Afficher une liste d&rsquo;élements centrés à l&rsquo;horizontale avec les classes <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-list-inline</samp> et <samp>.o-list-inline--banner</samp>&#8202;:</p>
-
-			<ul class="[ o-list-inline  o-list-inline--banner ]">
-				<li class="o-list-inline__item">élément 1</li>
-				<li class="o-list-inline__item">élément 2</li>
-			</ul>
-
-			<p>Délimiter les éléments de liste avec une virgule en combinant les classes <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-list-inline</samp> et <samp>.o-list-inline--comma</samp>&#8202;:</p>
-
-			<ul class="[ o-list-inline  o-list-inline--comma ]">
-				<li class="o-list-inline__item">élément 1</li>
-				<li class="o-list-inline__item">élément 2</li>
-				<li class="o-list-inline__item">élément 3</li>
-				<li class="o-list-inline__item">élément 4</li>
-			</ul>
-
-			<p>Délimiter les éléments de liste avec un tiret en combinant les classes <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-list-inline</samp> et <samp>.o-list-inline--dash</samp>&#8202;:</p>
-
-			<ul class="[ o-list-inline  o-list-inline--dash ]">
-				<li class="o-list-inline__item">élément 1</li>
-				<li class="o-list-inline__item">élément 2</li>
-				<li class="o-list-inline__item">élément 3</li>
-				<li class="o-list-inline__item">élément 4</li>
-			</ul>
-
-			<p>Délimiter les éléments de liste avec une barre verticale en combinant les classes <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-list-inline</samp> et <samp>.o-list-inline--pipe</samp>&#8202;:</p>
-
-			<ul class="[ o-list-inline  o-list-inline--pipe ]">
-				<li class="o-list-inline__item">élément 1</li>
-				<li class="o-list-inline__item">élément 2</li>
-				<li class="o-list-inline__item">élément 3</li>
-				<li class="o-list-inline__item">élément 4</li>
-			</ul>
-
-			<p>Forcer une liste à occuper 100% de la largeur disponible de son parent avec la classe <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-list-fit</samp>&#8202;:</p>
-
-			<ul class="o-list-fit">
-				<li class="o-list-fit__item">élément 1</li>
-				<li class="o-list-fit__item">élément 2</li>
-				<li class="o-list-fit__item">élément 3</li>
-				<li class="o-list-fit__item">élément 4</li>
-			</ul>
-
-			<small><a href="#top">[Haut de page]</a></small>
-
-		</section>
-
-		<hr>
-
-		<section id="tables">
-
-			<h2>Tableaux</h2>
-
-			<p>Il est souvent utile de présenter des informations structurées avec des tableaux qui permettent de les afficher en lignes et en colonnes.</p>
-
-			<table>
-				<thead>
-					<tr>
-						<th>Colonne 1</th>
-						<th>Colonne 2</th>
-						<th>Colonne 3</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>Cellule 1</td>
-						<td><em>Cellule 2</em></td>
-						<td><strong>Cellule 3</strong></td>
-					</tr>
-					<tr>
-						<td>Cellule 4</td>
-						<td>Cellule 5</td>
-						<td>Cellule 6</td>
-					</tr>
-				</tbody>
-			</table>
-
-			<h3>Modificateurs</h3>
-
-			<p>Largeur de colonnes fixes avec la classe <abbr title="Cascading Style Sheets">css</abbr> <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-table--fixed</samp>&#8202;:</p>
-
-			<table class="o-table--fixed">
-				<thead>
-					<tr>
-						<th>Colonne 1</th>
-						<th>Colonne 2</th>
-						<th>Colonne 3</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>Cellule 1</td>
-						<td><em>Cellule 2</em></td>
-						<td><strong>Cellule 3</strong></td>
-					</tr>
-					<tr>
-						<td>Cellule 4</td>
-						<td>Cellule 5</td>
-						<td>Cellule 6</td>
-					</tr>
-				</tbody>
-			</table>
-
-			<p>Bordures avec la classe <abbr title="Cascading Style Sheets">css</abbr> <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-table--bordered</samp>&#8202;:</p>
-
-			<table class="o-table--bordered">
-				<thead>
-					<tr>
-						<th>Colonne 1</th>
-						<th>Colonne 2</th>
-						<th>Colonne 3</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>Cellule 1</td>
-						<td><em>Cellule 2</em></td>
-						<td><strong>Cellule 3</strong></td>
-					</tr>
-					<tr>
-						<td>Cellule 4</td>
-						<td>Cellule 5</td>
-						<td>Cellule 6</td>
-					</tr>
-				</tbody>
-			</table>
-
-			<p>Bandes avec la classe <abbr title="Cascading Style Sheets">css</abbr> <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-table--striped</samp>&#8202;:</p>
-
-
-			<table class="o-table--striped">
-				<thead>
-					<tr>
-						<th>Colonne 1</th>
-						<th>Colonne 2</th>
-						<th>Colonne 3</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>Cellule 1</td>
-						<td><em>Cellule 2</em></td>
-						<td><strong>Cellule 3</strong></td>
-					</tr>
-					<tr>
-						<td>Cellule 4</td>
-						<td>Cellule 5</td>
-						<td>Cellule 6</td>
-					</tr>
-				</tbody>
-			</table>
-
-			<p>Les classes <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-table--fixed</samp>, <samp>.o-table--bordered</samp> et <samp>.o-table--striped</samp> peuvent être combinées&#8202;:</p>
-
-			<table class="[ o-table--fixed  o-table--striped  o-table--bordered ]">
-				<thead>
-					<tr>
-						<th>Colonne 1</th>
-						<th>Colonne 2</th>
-						<th>Colonne 3</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>Cellule 1</td>
-						<td><em>Cellule 2</em></td>
-						<td><strong>Cellule 3</strong></td>
-					</tr>
-					<tr>
-						<td>Cellule 4</td>
-						<td>Cellule 5</td>
-						<td>Cellule 6</td>
-					</tr>
-				</tbody>
-			</table>
-
-			<p role="note"><mark>Activez ou désactivez ces modificateurs avec <samp>'tables': true</samp> ou <samp>'tables': false</samp> dans la liste de variables <samp>$objects</samp> qui se trouve dans le fichier <samp>scss/settings/configuration.scss</samp></mark></p>
-
-
-			<small><a href="#top">[Haut de page]</a></small>
-
-		</section>
-
-		<hr>
-
-		<section id="forms">
-
-			<h2>Formulaires</h2>
-
-			<form>
-
-				<fieldset>
-
-					<legend>Affichage en ligne par défaut&#8202;:</legend>
-
-					<label>
-						<strong>Text input</strong>
-						<input type="text" value="default value">
-					</label>
-
-					<label>
-						<strong>Email input</strong>
-						<input type="email">
-					</label>
-
-					<label>
-						<strong>URL input</strong>
-						<input type="url" placeholder="http://">
-					</label>
-
-					<label>
-						<strong>Password input</strong>
-						<input type="password" value="password">
-					</label>
-
-					<label>
-						<strong>File input</strong>
-						<input type="file">
-					</label>
-
-					<label>
-						<strong>Radio input</strong>
-						<input type="radio" name="rad">
-					</label>
-
-					<label>
-						<b>Checkbox input</b>
-						<input type="checkbox">
-					</label>
-
-					<label>
-						<strong>Disabled input</strong>
-						<input type="text" disabled value="disabled value">
-					</label>
-
-					<label>
-						<strong>Readonly input</strong>
-						<input type="text" readonly value="readonly value">
-					</label>
-
-					<label>
-						<strong>Select field</strong>
-						<select>
-							<option>Option 01</option>
-							<option>Option 02</option>
-						</select>
-					</label>
-
-					<label>
-						<strong>Textarea</strong>
-						<textarea>Textarea text</textarea>
-					</label>
-
-					<input class="[ c-button  c-button--info ]" type="submit" value="Input Submit">
-					<input class="[ c-button  c-button--outlined ]" type="reset" value="Input Reset">
-
-				</fieldset>
-
-			</form>
-
-			<!--<form>
-
-				<fieldset>
-
-					<div class="o-form-field">
-						<label for="name">Nom</label>
-						<input id="name" type="text" placeholder=" " pattern="^([a-zA-Z\s]{3,})$" required aria-required="true" aria-describedby="name-format" title="Votre prénom et votre nom" />
-						<span id="name-format" class="o-form-helper">Votre nom doit comporter au moins trois lettres</span>
-					</div>
-
-					<div class="o-form-field">
-						<label for="email">Email</label>
-						<input id="email" type="email" placeholder=" " required aria-required="true" aria-describedby="email-format" title="Votre adresse email" />
-						<span id="email-format" class="o-form-helper">Veuillez saisir une adresse email valide</span>
-					</div>
-
-					<div class="o-form-field">
-						<label for="url">Site</label>
-						<input id="url" type="url" placeholder=" " pattern="(http|https)://.+" aria-describedby="url-format" title="L'adresse de votre site internet" />
-						<span id="url-format" class="o-form-helper">Veuillez saisir une adresse internet valide</span>
-					</div>
-
-					<div class="o-form-field">
-						<label for="message">Message</label>
-						<textarea id="message" placeholder=" " required aria-required="true"></textarea>
-					</div>
-
-					<input class="[ c-button  c-button--rounded  c-button--small  c-button--action ]" type="submit" value="Envoyer">
-
-				</fieldset>
-
-			</form>
-
-			-->
-
-			<small><a href="#top">[Haut de page]</a></small>
-
-		</section>
-
-		<hr>
-
-		<section id="medias">
-
-			<h2>Médias</h2>
-
-			<h3>Images</h3>
-
-			<img class="u-centered" src="//placehold.it/800x600/ced4da/868e96?text=image" alt="" />
-
-			<p><strong>Paragraphe précédé d&rsquo;une image centrée</strong>. Généralement, on utilise un texte en faux latin (le texte ne veut rien dire, il a été modifié), le Lorem ipsum ou Lipsum, qui permet donc de faire office de texte d'attente. L&rsquo;avantage de le mettre en latin est que l&rsquo;opérateur sait au premier coup d&rsquo;oeil que la page contenant ces lignes n&rsquo;est pas valide, et surtout l&rsquo;attention du client n&rsquo;est pas dérangée par le contenu, il demeure concentré seulement sur l&rsquo;aspect graphique.</p>
-
-			<img class="u-pulled-left" src="//placehold.it/300x200/ced4da/868e96?text=image" alt="" />
-
-			<p><strong>Paragraphe précédé d&rsquo;une image positionnée à gauche</strong>. Ce texte a pour autre avantage d&rsquo;utiliser des mots de longueur variable, essayant de simuler une occupation normale. La méthode simpliste consistant à copier-coller un court texte plusieurs fois (« ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ») a l&rsquo;inconvénient de ne pas permettre une juste appréciation typographique du résultat final. Il circule des centaines de versions différentes du Lorem ipsum, mais ce texte aurait originellement été tiré de l'ouvrage de Cicéron, De Finibus Bonorum et Malorum (Liber Primus, 32), texte populaire à cette époque, dont l&rsquo;une des premières phrases est : « Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit... » (« Il n&rsquo;existe personne qui aime la souffrance pour elle-même, ni qui la recherche ni qui la veuille pour ce qu&rsquo;elle est... »).</p>
-
-			<img class="u-pushed-right" src="//placehold.it/300x200/ced4da/868e96?text=image" alt="" />
-
-			<p><strong>Paragraphe précédé d&rsquo;une image positionnée à droite</strong>. Expert en utilisabilité des sites web et des logiciels, Jakob Nielsen souligne que l&rsquo;une des limites de l&rsquo;utilisation du faux-texte dans la conception de sites web est que ce texte n&rsquo;étant jamais lu, il ne permet pas de vérifier sa lisibilité effective. La lecture à l&rsquo;écran étant plus difficile, cet aspect est pourtant essentiel. Nielsen préconise donc l&rsquo;utilisation de textes représentatifs plutôt que du lorem ipsum. On peut aussi faire remarquer que les formules conçues avec du faux-texte ont tendance à sous-estimer l&rsquo;espace nécessaire à une titraille immédiatement intelligible, ce qui oblige les rédactions à formuler ensuite des titres simplificateurs, voire inexacts, pour ne pas dépasser l&rsquo;espace imparti.</p>
-
-			<pre><code>&lt;img class="is-centered" src="//placehold.it/800x600/ced4da/868e96?text=image"&gt;
+						<ul class="o-list-block  u-margin-bottom">
+							<li class="o-list-block__item"><a class="o-list-block__link" href="#!">élément 1</a></li>
+							<li class="o-list-block__item"><a class="o-list-block__link" href="#!">élément 2</a></li>
+						</ul>
+
+						<pre><code>&lt;ul class="o-list-block"&gt;
+  &lt;li class="o-list-block__item"&gt;&lt;a class="o-list-block__link" href="#!"&gt;élément 1&lt;/a&gt;&lt;/li&gt;
+  &lt;li class="o-list-block__item"&gt;&lt;a class="o-list-block__link" href="#!"&gt;élément 2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+						<p>Afficher une liste d&rsquo;élements à l&rsquo;horizontale avec la classe <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-list-inline</samp>&#8202;:</p>
+
+						<ul class="o-list-inline">
+							<li class="o-list-inline__item">élément 1</li>
+							<li class="o-list-inline__item">élément 2</li>
+						</ul>
+
+						<p>Afficher une liste d&rsquo;élements centrés à l&rsquo;horizontale avec les classes <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-list-inline</samp> et <samp>.o-list-inline--banner</samp>&#8202;:</p>
+
+						<ul class="[ o-list-inline  o-list-inline--banner ]">
+							<li class="o-list-inline__item">élément 1</li>
+							<li class="o-list-inline__item">élément 2</li>
+						</ul>
+
+						<p>Délimiter les éléments de liste avec une virgule en combinant les classes <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-list-inline</samp> et <samp>.o-list-inline--comma</samp>&#8202;:</p>
+
+						<ul class="[ o-list-inline  o-list-inline--comma ]">
+							<li class="o-list-inline__item">élément 1</li>
+							<li class="o-list-inline__item">élément 2</li>
+							<li class="o-list-inline__item">élément 3</li>
+							<li class="o-list-inline__item">élément 4</li>
+						</ul>
+
+						<p>Délimiter les éléments de liste avec un tiret en combinant les classes <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-list-inline</samp> et <samp>.o-list-inline--dash</samp>&#8202;:</p>
+
+						<ul class="[ o-list-inline  o-list-inline--dash ]">
+							<li class="o-list-inline__item">élément 1</li>
+							<li class="o-list-inline__item">élément 2</li>
+							<li class="o-list-inline__item">élément 3</li>
+							<li class="o-list-inline__item">élément 4</li>
+						</ul>
+
+						<p>Délimiter les éléments de liste avec une barre verticale en combinant les classes <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-list-inline</samp> et <samp>.o-list-inline--pipe</samp>&#8202;:</p>
+
+						<ul class="[ o-list-inline  o-list-inline--pipe ]">
+							<li class="o-list-inline__item">élément 1</li>
+							<li class="o-list-inline__item">élément 2</li>
+							<li class="o-list-inline__item">élément 3</li>
+							<li class="o-list-inline__item">élément 4</li>
+						</ul>
+
+						<p>Forcer une liste à occuper 100% de la largeur disponible de son parent avec la classe <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-list-fit</samp>&#8202;:</p>
+
+						<ul class="o-list-fit">
+							<li class="o-list-fit__item">élément 1</li>
+							<li class="o-list-fit__item">élément 2</li>
+							<li class="o-list-fit__item">élément 3</li>
+							<li class="o-list-fit__item">élément 4</li>
+						</ul>
+
+						<small><a href="#top">[Haut de page]</a></small>
+
+					</section>
+
+					<hr>
+
+					<section id="tables">
+
+						<h2 class="o-numbering__item">Tableaux</h2>
+
+						<p>Il est souvent utile de présenter des informations structurées avec des tableaux qui permettent de les afficher en lignes et en colonnes.</p>
+
+						<table>
+							<thead>
+								<tr>
+									<th>Colonne 1</th>
+									<th>Colonne 2</th>
+									<th>Colonne 3</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Cellule 1</td>
+									<td><em>Cellule 2</em></td>
+									<td><strong>Cellule 3</strong></td>
+								</tr>
+								<tr>
+									<td>Cellule 4</td>
+									<td>Cellule 5</td>
+									<td>Cellule 6</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<h3>Modificateurs</h3>
+
+						<p>Largeur de colonnes fixes avec la classe <abbr title="Cascading Style Sheets">css</abbr> <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-table--fixed</samp>&#8202;:</p>
+
+						<table class="o-table--fixed">
+							<thead>
+								<tr>
+									<th>Colonne 1</th>
+									<th>Colonne 2</th>
+									<th>Colonne 3</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Cellule 1</td>
+									<td><em>Cellule 2</em></td>
+									<td><strong>Cellule 3</strong></td>
+								</tr>
+								<tr>
+									<td>Cellule 4</td>
+									<td>Cellule 5</td>
+									<td>Cellule 6</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<p>Bordures avec la classe <abbr title="Cascading Style Sheets">css</abbr> <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-table--bordered</samp>&#8202;:</p>
+
+						<table class="o-table--bordered">
+							<thead>
+								<tr>
+									<th>Colonne 1</th>
+									<th>Colonne 2</th>
+									<th>Colonne 3</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Cellule 1</td>
+									<td><em>Cellule 2</em></td>
+									<td><strong>Cellule 3</strong></td>
+								</tr>
+								<tr>
+									<td>Cellule 4</td>
+									<td>Cellule 5</td>
+									<td>Cellule 6</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<p>Bandes avec la classe <abbr title="Cascading Style Sheets">css</abbr> <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-table--striped</samp>&#8202;:</p>
+
+
+						<table class="o-table--striped">
+							<thead>
+								<tr>
+									<th>Colonne 1</th>
+									<th>Colonne 2</th>
+									<th>Colonne 3</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Cellule 1</td>
+									<td><em>Cellule 2</em></td>
+									<td><strong>Cellule 3</strong></td>
+								</tr>
+								<tr>
+									<td>Cellule 4</td>
+									<td>Cellule 5</td>
+									<td>Cellule 6</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<p>Les classes <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-table--fixed</samp>, <samp>.o-table--bordered</samp> et <samp>.o-table--striped</samp> peuvent être combinées&#8202;:</p>
+
+						<table class="[ o-table--fixed  o-table--striped  o-table--bordered ]">
+							<thead>
+								<tr>
+									<th>Colonne 1</th>
+									<th>Colonne 2</th>
+									<th>Colonne 3</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Cellule 1</td>
+									<td><em>Cellule 2</em></td>
+									<td><strong>Cellule 3</strong></td>
+								</tr>
+								<tr>
+									<td>Cellule 4</td>
+									<td>Cellule 5</td>
+									<td>Cellule 6</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<p role="note"><mark>Activez ou désactivez ces modificateurs avec <samp>'tables': true</samp> ou <samp>'tables': false</samp> dans la liste de variables <samp>$objects</samp> qui se trouve dans le fichier <samp>scss/settings/switches.scss</samp></mark></p>
+
+
+						<small><a href="#top">[Haut de page]</a></small>
+
+					</section>
+
+					<hr>
+
+					<section id="forms">
+
+						<h2 class="o-numbering__item">Formulaires</h2>
+
+						<form>
+
+							<fieldset>
+
+								<legend>Affichage en ligne par défaut&#8202;:</legend>
+
+								<div class="o-form-field">
+									<label for="text-input"><strong>Text input</strong></label>
+									<input id="text-input" type="text" value="default value" tabindex="1" />
+								</div>
+
+								<div class="o-form-field">
+									<label for="email-input"><strong>Email input</strong></label>
+									<input id="email-input" type="email" tabindex="2" />
+								</div>
+
+								<div class="o-form-field">
+									<label for="url-input"><strong>URL input</strong></label>
+									<input id="url-input" type="url" placeholder="http://" tabindex="3" />
+								</div>
+
+								<div class="o-form-field">
+									<label for="password-input"><strong>Password input</strong></label>
+									<input id="password-input" type="password" value="password" tabindex="4" />
+								</div>
+
+								<div class="o-form-field">
+									<label for="file-input"><strong>File input</strong></label>
+									<input id="file-input" type="file" tabindex="5" />
+								</div>
+
+								<div class="o-form-field">
+									<label for="radio-input"><strong>Radio input</strong></label>
+									<input id="radio-input" type="radio" value="Choice 1" tabindex="6" />
+								</div>
+
+								<div class="o-form-field">
+									<label for="checkbox-input"><strong>Checkbox input</strong></label>
+									<input id="checkbox-input" type="checkbox" value="Choice 2" tabindex="7" />
+								</div>
+
+								<div class="o-form-field">
+									<label for="disabled-input"><strong>Disabled input</strong></label>
+									<input id="disabled-input" type="text" disabled value="disabled value" tabindex="8" />
+								</div>
+
+								<div class="o-form-field">
+									<label for="readonly-input"><strong>Readonly input</strong></label>
+									<input id="readonly-input" type="text" readonly value="readonly value" tabindex="9" />
+								</div>
+
+								<div class="o-form-field">
+									<label for="select-choice"><strong>Select field</strong></label>
+									<select id="select-choice">
+										<option>Choice 01</option>
+										<option>Choice 02</option>
+									</select>
+								</div>
+
+								<div class="o-form-field">
+									<label for="textarea"><strong>Textarea</strong></label>
+									<textarea id="textarea">Textarea text</textarea>
+								</div>
+
+								<div class="o-form-field">
+									<input class="[ c-button  c-button--action ]" type="submit" value="Input submit" />
+									<input class="[ c-button  c-button--ghost ]" type="reset" value="Input reset" />
+								</div>
+
+							</fieldset>
+
+						</form>
+
+					<!--<form>
+
+							<fieldset>
+
+								<div class="o-form-field">
+									<label for="name">Nom</label>
+									<input id="name" type="text" placeholder=" " pattern="^([a-zA-Z\s]{3,})$" required aria-required="true" aria-describedby="name-format" title="Votre prénom et votre nom" />
+									<span id="name-format" class="o-form-helper">Votre nom doit comporter au moins trois lettres</span>
+								</div>
+
+								<div class="o-form-field">
+									<label for="email">Email</label>
+									<input id="email" type="email" placeholder=" " required aria-required="true" aria-describedby="email-format" title="Votre adresse email" />
+									<span id="email-format" class="o-form-helper">Veuillez saisir une adresse email valide</span>
+								</div>
+
+								<div class="o-form-field">
+									<label for="url">Site</label>
+									<input id="url" type="url" placeholder=" " pattern="(http|https)://.+" aria-describedby="url-format" title="L'adresse de votre site internet" />
+									<span id="url-format" class="o-form-helper">Veuillez saisir une adresse internet valide</span>
+								</div>
+
+								<div class="o-form-field">
+									<label for="message">Message</label>
+									<textarea id="message" placeholder=" " required aria-required="true"></textarea>
+								</div>
+
+								<input class="[ c-button  c-button--rounded  c-button--small  c-button--action ]" type="submit" value="Envoyer">
+
+							</fieldset>
+
+						</form>-->
+
+						<small><a href="#top">[Haut de page]</a></small>
+
+					</section>
+
+					<hr>
+
+					<section id="medias">
+
+						<h2 class="o-numbering__item">Médias</h2>
+
+						<h3>Images</h3>
+
+						<img class="u-centered" src="//placehold.it/800x600/ced4da/868e96?text=image" alt="" />
+
+						<p><strong>Paragraphe précédé d&rsquo;une image centrée</strong>. Généralement, on utilise un texte en faux latin (le texte ne veut rien dire, il a été modifié), le Lorem ipsum ou Lipsum, qui permet donc de faire office de texte d'attente. L&rsquo;avantage de le mettre en latin est que l&rsquo;opérateur sait au premier coup d&rsquo;oeil que la page contenant ces lignes n&rsquo;est pas valide, et surtout l&rsquo;attention du client n&rsquo;est pas dérangée par le contenu, il demeure concentré seulement sur l&rsquo;aspect graphique.</p>
+
+						<img class="u-pulled-left" src="//placehold.it/300x200/ced4da/868e96?text=image" alt="" />
+
+						<p><strong>Paragraphe précédé d&rsquo;une image positionnée à gauche</strong>. Ce texte a pour autre avantage d&rsquo;utiliser des mots de longueur variable, essayant de simuler une occupation normale. La méthode simpliste consistant à copier-coller un court texte plusieurs fois (« ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ») a l&rsquo;inconvénient de ne pas permettre une juste appréciation typographique du résultat final. Il circule des centaines de versions différentes du Lorem ipsum, mais ce texte aurait originellement été tiré de l'ouvrage de Cicéron, De Finibus Bonorum et Malorum (Liber Primus, 32), texte populaire à cette époque, dont l&rsquo;une des premières phrases est : « Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit... » (« Il n&rsquo;existe personne qui aime la souffrance pour elle-même, ni qui la recherche ni qui la veuille pour ce qu&rsquo;elle est... »).</p>
+
+						<img class="u-pushed-right" src="//placehold.it/300x200/ced4da/868e96?text=image" alt="" />
+
+						<p><strong>Paragraphe précédé d&rsquo;une image positionnée à droite</strong>. Expert en utilisabilité des sites web et des logiciels, Jakob Nielsen souligne que l&rsquo;une des limites de l&rsquo;utilisation du faux-texte dans la conception de sites web est que ce texte n&rsquo;étant jamais lu, il ne permet pas de vérifier sa lisibilité effective. La lecture à l&rsquo;écran étant plus difficile, cet aspect est pourtant essentiel. Nielsen préconise donc l&rsquo;utilisation de textes représentatifs plutôt que du lorem ipsum. On peut aussi faire remarquer que les formules conçues avec du faux-texte ont tendance à sous-estimer l&rsquo;espace nécessaire à une titraille immédiatement intelligible, ce qui oblige les rédactions à formuler ensuite des titres simplificateurs, voire inexacts, pour ne pas dépasser l&rsquo;espace imparti.</p>
+
+						<pre><code>&lt;img class="u-centered" src="//placehold.it/800x600/ced4da/868e96?text=image"&gt;
 &lt;p&gt;&hellip;&lt;/p&gt;
 
-&lt;img class="is-pulled-left" src="//placehold.it/300x200/ced4da/868e96?text=image"&gt;
+&lt;img class="u-pulled-left" src="//placehold.it/300x200/ced4da/868e96?text=image"&gt;
 &lt;p&gt;&hellip;&lt;/p&gt;
 
-&lt;img class="is-pushed-right" src="//placehold.it/300x200/ced4da/868e96?text=image"&gt;
+&lt;img class="u-pushed-right" src="//placehold.it/300x200/ced4da/868e96?text=image"&gt;
 &lt;p&gt;&hellip;&lt;/p&gt;</code></pre>
 
-			<h3>Images non disponibles</h3>
+						<h3>Images non disponibles</h3>
 
-			<p>Affichage par défaut si l&rsquo;image distante est momentanément indisponible ou n&rsquo;existe plus.</p>
+						<p>La balise <code>alt</code>, en complément du nom de l&rsquo;image, permet d&rsquo;associer un mot clé ou une expression à une image qui sera affichée en tant que description si l&rsquo;image distante est momentanément indisponible ou n&rsquo;existe plus.</p>
 
-			<p class="u-aligned-center"><img src="url.com/broken.jpg" alt="Description de l'image" /></p>
+						<p class="u-aligned-center"><img src="url.com/broken.jpg" alt="Description de l'image" /></p>
 
-			<h3>Figures</h3>
+						<h3>Figures</h3>
 
-			<figure>
-				<img class="u-centered" src="//placehold.it/800x600/ced4da/868e96?text=image" alt="Description de l'image" />
-				<figcaption>La légende est un court texte accompagnant une photo ou un dessin et vise à lui donner un sens. Elle peut se placer avant ou après le media principal.</figcaption>
-			</figure>
+						<figure>
+							<img class="u-centered" src="//placehold.it/800x600/ced4da/868e96?text=image" alt="Description de l'image" />
+							<figcaption>La légende est un court texte accompagnant une photo ou un dessin et vise à lui donner un sens. Elle peut se placer avant ou après le media principal.</figcaption>
+						</figure>
 
-			<p><strong>Paragraphe précédé d&rsquo;une figure centrée</strong>.  Généralement, on utilise un texte en faux latin (le texte ne veut rien dire, il a été modifié), le Lorem ipsum ou Lipsum, qui permet donc de faire office de texte d'attente. L&rsquo;avantage de le mettre en latin est que l&rsquo;opérateur sait au premier coup d&rsquo;oeil que la page contenant ces lignes n&rsquo;est pas valide, et surtout l&rsquo;attention du client n&rsquo;est pas dérangée par le contenu, il demeure concentré seulement sur l&rsquo;aspect graphique.</p>
+						<p><strong>Paragraphe précédé d&rsquo;une figure centrée</strong>.  Généralement, on utilise un texte en faux latin (le texte ne veut rien dire, il a été modifié), le Lorem ipsum ou Lipsum, qui permet donc de faire office de texte d'attente. L&rsquo;avantage de le mettre en latin est que l&rsquo;opérateur sait au premier coup d&rsquo;oeil que la page contenant ces lignes n&rsquo;est pas valide, et surtout l&rsquo;attention du client n&rsquo;est pas dérangée par le contenu, il demeure concentré seulement sur l&rsquo;aspect graphique.</p>
 
-			<figure class="u-pulled-left">
-				<img src="//placehold.it/300x200/ced4da/868e96?text=image" alt="Description de l'image" />
-				<figcaption>La légende est un court texte accompagnant une photo ou un dessin et vise à lui donner un sens. Elle peut se placer avant ou après le media principal.</figcaption>
-			</figure>
+						<figure class="u-pulled-left">
+							<img src="//placehold.it/300x200/ced4da/868e96?text=image" alt="Description de l'image" />
+							<figcaption>La légende est un court texte accompagnant une photo ou un dessin et vise à lui donner un sens. Elle peut se placer avant ou après le media principal.</figcaption>
+						</figure>
 
-			<p><strong>Paragraphe précédé d&rsquo;une figure positionnée à gauche</strong>. Ce texte a pour autre avantage d&rsquo;utiliser des mots de longueur variable, essayant de simuler une occupation normale. La méthode simpliste consistant à copier-coller un court texte plusieurs fois (« ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ») a l&rsquo;inconvénient de ne pas permettre une juste appréciation typographique du résultat final. Il circule des centaines de versions différentes du Lorem ipsum, mais ce texte aurait originellement été tiré de l'ouvrage de Cicéron, De Finibus Bonorum et Malorum (Liber Primus, 32), texte populaire à cette époque, dont l&rsquo;une des premières phrases est : « Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit... » (« Il n&rsquo;existe personne qui aime la souffrance pour elle-même, ni qui la recherche ni qui la veuille pour ce qu&rsquo;elle est... »).</p>
+						<p><strong>Paragraphe précédé d&rsquo;une figure positionnée à gauche</strong>. Ce texte a pour autre avantage d&rsquo;utiliser des mots de longueur variable, essayant de simuler une occupation normale. La méthode simpliste consistant à copier-coller un court texte plusieurs fois (« ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ») a l&rsquo;inconvénient de ne pas permettre une juste appréciation typographique du résultat final. Il circule des centaines de versions différentes du Lorem ipsum, mais ce texte aurait originellement été tiré de l'ouvrage de Cicéron, De Finibus Bonorum et Malorum (Liber Primus, 32), texte populaire à cette époque, dont l&rsquo;une des premières phrases est : « Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit... » (« Il n&rsquo;existe personne qui aime la souffrance pour elle-même, ni qui la recherche ni qui la veuille pour ce qu&rsquo;elle est... »).</p>
 
-			<figure class="u-pushed-right">
-				<img src="//placehold.it/300x200/ced4da/868e96?text=image" alt="Description de l'image" />
-				<figcaption>La légende est un court texte accompagnant une photo ou un dessin et vise à lui donner un sens. Elle peut se placer avant ou après le media principal.</figcaption>
-			</figure>
+						<figure class="u-pushed-right">
+							<img src="//placehold.it/300x200/ced4da/868e96?text=image" alt="Description de l'image" />
+							<figcaption>La légende est un court texte accompagnant une photo ou un dessin et vise à lui donner un sens. Elle peut se placer avant ou après le media principal.</figcaption>
+						</figure>
 
-			<p><strong>Paragraphe précédé d&rsquo;une figure positionnée à droite</strong>. Expert en utilisabilité des sites web et des logiciels, Jakob Nielsen souligne que l&rsquo;une des limites de l&rsquo;utilisation du faux-texte dans la conception de sites web est que ce texte n&rsquo;étant jamais lu, il ne permet pas de vérifier sa lisibilité effective. La lecture à l&rsquo;écran étant plus difficile, cet aspect est pourtant essentiel. Nielsen préconise donc l&rsquo;utilisation de textes représentatifs plutôt que du lorem ipsum. On peut aussi faire remarquer que les formules conçues avec du faux-texte ont tendance à sous-estimer l&rsquo;espace nécessaire à une titraille immédiatement intelligible, ce qui oblige les rédactions à formuler ensuite des titres simplificateurs, voire inexacts, pour ne pas dépasser l&rsquo;espace imparti. Contrairement à une idée répandue, le faux-texte ne donne même pas un aperçu réaliste du gris typographique, en particulier dans le cas des textes justifiés&#8202;: en effet, les mots fictifs employés dans le faux-texte ne faisant évidemment pas partie des dictionnaires des logiciels de PAO, les programmes de césure ne peuvent pas effectuer leur travail habituel sur de tels textes. Par conséquent, l&rsquo;interlettrage du faux-texte sera toujours quelque peu supérieur à ce qu&rsquo;il aurait été avec un texte réel, qui présentera donc un aspect plus sombre et moins lisible que le faux-texte avec lequel le graphiste a effectué ses essais. Un vrai texte pose aussi des problèmes de lisibilité spécifiques (noms propres, numéros de téléphone, retours à la ligne fréquents, composition des citations en italiques, intertitres de plus de deux lignes&hellip;) qu&rsquo;on n&rsquo;observe jamais dans le faux-texte.</p>
+						<p><strong>Paragraphe précédé d&rsquo;une figure positionnée à droite</strong>. Expert en utilisabilité des sites web et des logiciels, Jakob Nielsen souligne que l&rsquo;une des limites de l&rsquo;utilisation du faux-texte dans la conception de sites web est que ce texte n&rsquo;étant jamais lu, il ne permet pas de vérifier sa lisibilité effective. La lecture à l&rsquo;écran étant plus difficile, cet aspect est pourtant essentiel. Nielsen préconise donc l&rsquo;utilisation de textes représentatifs plutôt que du lorem ipsum. On peut aussi faire remarquer que les formules conçues avec du faux-texte ont tendance à sous-estimer l&rsquo;espace nécessaire à une titraille immédiatement intelligible, ce qui oblige les rédactions à formuler ensuite des titres simplificateurs, voire inexacts, pour ne pas dépasser l&rsquo;espace imparti. Contrairement à une idée répandue, le faux-texte ne donne même pas un aperçu réaliste du gris typographique, en particulier dans le cas des textes justifiés&#8202;: en effet, les mots fictifs employés dans le faux-texte ne faisant évidemment pas partie des dictionnaires des logiciels de PAO, les programmes de césure ne peuvent pas effectuer leur travail habituel sur de tels textes. Par conséquent, l&rsquo;interlettrage du faux-texte sera toujours quelque peu supérieur à ce qu&rsquo;il aurait été avec un texte réel, qui présentera donc un aspect plus sombre et moins lisible que le faux-texte avec lequel le graphiste a effectué ses essais. Un vrai texte pose aussi des problèmes de lisibilité spécifiques (noms propres, numéros de téléphone, retours à la ligne fréquents, composition des citations en italiques, intertitres de plus de deux lignes&hellip;) qu&rsquo;on n&rsquo;observe jamais dans le faux-texte.</p>
 
-			<p role="note"><mark>les éléments <code>&lt;figure&gt;</code> et <code>&lt;figcaption&gt;</code> fonctionnent ensemble pour associer une légende à une image ou autre média. La légende peut se placer avant ou après le media principal. Ces illustrations peuvent être positionnées avec <code>.u-centred</code>, <code>.u-pulled-left</code> et <code>.u-pushed-right</code>.</mark></p>
+						<p role="note"><mark>les éléments <code>&lt;figure&gt;</code> et <code>&lt;figcaption&gt;</code> fonctionnent ensemble pour associer une légende à une image ou autre média. La légende peut se placer avant ou après le media principal. Ces illustrations peuvent être positionnées avec <code>.u-centred</code>, <code>.u-pulled-left</code> et <code>.u-pushed-right</code>.</mark></p>
 
-			<h3>Vidéos</h3>
+						<h3>Vidéos</h3>
 
-			<p>Affichage de vidéos en <samp>iframe</samp> par défaut&#8202;:</p>
+						<p>Affichage de vidéos en <samp>iframe</samp> par défaut&#8202;:</p>
 
-			<figure>
-				<iframe width="853" height="480" src="https://www.youtube.com/embed/8FqZZrbnwkM?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-			</figure>
+						<figure>
+							<iframe width="853" height="480" src="https://www.youtube.com/embed/8FqZZrbnwkM?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+						</figure>
 
-			<pre><code>&lt;figure&gt;
+						<pre><code>&lt;figure&gt;
   &lt;iframe width="853" height="480" src="https://www.youtube.com/embed/8FqZZrbnwkM?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen>&lt;/iframe&gt;
 &lt;/figure&gt;</code></pre>
 
-			<h4>Modificateurs</h4>
+						<h4>Modificateurs</h4>
 
-			<p>Conserver le ratio de vidéos adaptatives en <samp>iframe</samp> avec la classe <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-ratio</samp>&#8202;:</p>
+						<p>Conserver le ratio de vidéos adaptatives en <samp>iframe</samp> avec la classe <abbr title="Cascading Style Sheets">css</abbr> <samp>.o-ratio</samp>&#8202;:</p>
 
-			<figure class="[ o-ratio  o-ratio--16:9 ]">
-				<iframe width="853" height="480" src="https://www.youtube.com/embed/8FqZZrbnwkM?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-			</figure>
+						<figure class="[ o-ratio  o-ratio--16:9 ]">
+							<iframe width="853" height="480" src="https://www.youtube.com/embed/8FqZZrbnwkM?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+						</figure>
 
-			<pre><code>&lt;figure class="[ o-ratio  o-ratio--16:9 ]"&gt;
+						<pre><code>&lt;figure class="[ o-ratio  o-ratio--16:9 ]"&gt;
   &lt;iframe width="853" height="480" src="https://www.youtube.com/embed/8FqZZrbnwkM?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen>&lt;/iframe&gt;
 &lt;/figure&gt;</code></pre>
 
-			<p role="note"><mark>Par défaut le ratio est de 1:1 avec la classe <abbr title="Cascading Style Sheets">css</abbr> <samp>o-ratio</samp>. La série de classes additionelles <samp>.o-ratio--2:1</samp>, <samp>.o-ratio--4:3</samp> et <samp>o-ratio--16:9</samp> permettent de le modifier. Activez ou désactivez ces modificateurs avec <samp>'ratios': true</samp> ou <samp>'ratios': false</samp> dans la liste de variables <samp>$objects</samp> qui se trouve dans le fichier <samp>scss/settings/configuration.scss</samp></mark></p>
+						<p role="note"><mark>Par défaut le ratio est de 1:1 avec la classe <abbr title="Cascading Style Sheets">css</abbr> <samp>o-ratio</samp>. La série de classes additionelles <samp>.o-ratio--2:1</samp>, <samp>.o-ratio--4:3</samp> et <samp>o-ratio--16:9</samp> permettent de le modifier. Activez ou désactivez ces modificateurs avec <samp>'ratios': true</samp> ou <samp>'ratios': false</samp> dans le fichier <samp>scss/settings/switches.scss</samp></mark></p>
 
-			<small><a href="#top">[Haut de page]</a></small>
+						<small><a href="#top">[Haut de page]</a></small>
 
-		</section>
+					</section>
 
-		<hr>
+					<hr>
 
-		<section id="layout">
+					<section id="layout">
 
-			<h2>Mise en page</h2>
+						<h2 class="o-numbering__item">Mise en page</h2>
 
-			<h3>Conteneurs</h3>
+						<h3>Conteneurs</h3>
 
-			<ul>
-				<li>La classe <abbr title="Cascading Style Sheets">css</abbr> <samp>l-wrapper</samp> est utilisée pour définir un cadre fluide avec marges internes horizontales.</li>
-				<li>La classe <abbr title="Cascading Style Sheets">css</abbr> complémentaire <samp>l-wrapper--wide</samp> est utilisée pour définir la largeur maximale du cadre à 1193px pour une taille de caractère de base de 16px.</li>
-				<li>la classe <abbr title="Cascading Style Sheets">css</abbr> complémentaire <samp>l-wrapper--medium</samp> est utilisée pour définir la largeur maximale du cadre à 895px pour une taille de caractère de base de  16px.</li>
-				<li>La classe <abbr title="Cascading Style Sheets">css</abbr> complémentaire <samp>l-wrapper--narrow</samp> est utilisée pour définir la largeur maximale du conteneur à 528px pour une taille de caractère de base de  16px.</li>
-			</ul>
+						<ul>
+							<li>La classe <abbr title="Cascading Style Sheets">css</abbr> <samp>l-wrapper</samp> est utilisée pour définir un cadre fluide avec marges internes horizontales.</li>
+							<li>La classe <abbr title="Cascading Style Sheets">css</abbr> complémentaire <samp>l-wrapper--wide</samp> est utilisée pour définir la largeur maximale du cadre à 1193px pour une taille de caractère de base de 16px.</li>
+							<li>la classe <abbr title="Cascading Style Sheets">css</abbr> complémentaire <samp>l-wrapper--medium</samp> est utilisée pour définir la largeur maximale du cadre à 895px pour une taille de caractère de base de  16px.</li>
+							<li>La classe <abbr title="Cascading Style Sheets">css</abbr> complémentaire <samp>l-wrapper--narrow</samp> est utilisée pour définir la largeur maximale du conteneur à 528px pour une taille de caractère de base de  16px.</li>
+						</ul>
 
-			<p role="note"><mark>Les valeurs de largeur maximale sont définies d&rsquo;après l&rsquo;échelle typographique en fonction de la taille de caractère et de l&rsquo;interligne par défaut, voir <a href="//www.modularscale.com/" hreflang="en">modularscale.com</a>.</mark></p>
+						<p role="note"><mark>Les valeurs de largeur maximale sont définies d&rsquo;après l&rsquo;échelle typographique en fonction de la taille de caractère et de l&rsquo;interligne par défaut, voir <a href="//www.modularscale.com/" hreflang="en">modularscale.com</a>.</mark></p>
 
-			<h3>Grille</h3>
+						<h3>Grille</h3>
 
-			<p>La grille est totalement implicite de sorte que les colonnes seront de longueurs égales par rapport au conteneur.</p>
+						<p>La grille est totalement implicite de sorte que les colonnes seront de longueurs égales par rapport au conteneur.</p>
 
-			<div class="l-grid">
-				<div class="l-grid__item">
-					<p><strong>Colonne 1&#8202;:</strong> pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-				</div>
-				<div class="l-grid__item">
-					<p><strong>Colonne 2&#8202;:</strong> pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-				</div>
-				<div class="l-grid__item">
-					<p><strong>Colonne 3&#8202;:</strong> pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-				</div>
-				<div class="l-grid__item">
-					<p><strong>Colonne 4&#8202;:</strong> pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-				</div>
-			</div>
+						<div class="l-grid">
+							<div class="l-grid__item  u-background-ui-light">
+								<p><strong>Colonne 1&#8202;:</strong> pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+							</div>
+							<div class="l-grid__item">
+								<p><strong>Colonne 2&#8202;:</strong> pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+							</div>
+							<div class="l-grid__item">
+								<p><strong>Colonne 3&#8202;:</strong> pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+							</div>
+							<div class="l-grid__item">
+								<p><strong>Colonne 4&#8202;:</strong> pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+							</div>
+						</div>
 
-			<h4>Modificateurs</h4>
+						<h4>Modificateurs</h4>
 
-			<p>Pour un contrôle plus fin des cellules individuelles vous pouvez utiliser les classes <abbr title="Cascading Style Sheets">css</abbr> de dimensionnement <samp>.l-1/1</samp>, <samp>.l-1/2</samp>, <samp>.l-1/3</samp> et <samp>.l-1/4</samp>.</p>
+						<p>Pour un contrôle plus fin des cellules individuelles vous pouvez utiliser les classes <abbr title="Cascading Style Sheets">css</abbr> de dimensionnement <samp>.l-1/1</samp>, <samp>.l-1/2</samp>, <samp>.l-1/3</samp>, <samp>.l-1/4</samp> et <samp>.l-1/5</samp>.</p>
 
-			<div class="l-grid">
-				<div class="[ l-grid__item  l-1/2 ]">
-					<p><strong>Colonne 1&#8202;:</strong> pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-				</div>
-				<div class="[ l-grid__item  l-1/2 ]">
-					<p><strong>Colonne 2&#8202;:</strong> pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-				</div>
-			</div>
+						<div class="l-grid">
+							<div class="[ l-grid__item  l-1/2 ]">
+								<p><strong>Colonne 1&#8202;:</strong> pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+							</div>
+							<div class="[ l-grid__item  l-1/2 ]">
+								<p><strong>Colonne 2&#8202;:</strong> pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+							</div>
+						</div>
 
-			<p>Pour une mise en page adaptative vous pouvez combiner des classes en leur ajoutant les suffixes <samp>@medium</samp> ou <samp>@large</samp> en fonction de la résolution d'écran.</p>
+						<p>Pour une mise en page adaptative vous pouvez combiner des classes en leur ajoutant les suffixes <samp>@medium</samp> ou <samp>@large</samp> en fonction de la résolution d'écran.</p>
 
-			<div class="l-grid">
-				<div class="[ l-grid__item  l-1/1  l-1/3@medium ]">
-					<p><strong>Colonne 1&#8202;:</strong> pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-				</div>
-				<div class="[ l-grid__item  l-1/1  l-1/3@medium ]">
-					<p><strong>Colonne 2&#8202;:</strong> pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-				</div>
-				<div class="[ l-grid__item  l-1/1  l-1/3@medium ]">
-					<p><strong>Colonne 3&#8202;:</strong> pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-				</div>
-			</div>
+						<div class="l-grid">
+							<div class="[ l-grid__item  l-1/1  l-1/3@medium ]">
+								<p><strong>Colonne 1&#8202;:</strong> pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+							</div>
+							<div class="[ l-grid__item  l-1/1  l-1/3@medium ]">
+								<p><strong>Colonne 2&#8202;:</strong> pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+							</div>
+							<div class="[ l-grid__item  l-1/1  l-1/3@medium ]">
+								<p><strong>Colonne 3&#8202;:</strong> pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+							</div>
+						</div>
 
-			<div class="l-grid">
-				<div class="[ l-grid__item  l-1/1  l-1/2@medium  l-1/4@large ]">
-					<p><strong>Colonne 1&#8202;:</strong> pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-				</div>
-				<div class="[ l-grid__item  l-1/1  l-1/2@medium  l-1/4@large ]">
-					<p><strong>Colonne 2&#8202;:</strong> pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-				</div>
-				<div class="[ l-grid__item  l-1/1  l-1/2@medium  l-1/4@large ]">
-					<p><strong>Colonne 3&#8202;:</strong> pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-				</div>
-				<div class="[ l-grid__item  l-1/1  l-1/2@medium  l-1/4@large ]">
-					<p><strong>Colonne 4&#8202;:</strong> pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-				</div>
-			</div>
+						<div class="l-grid">
+							<div class="[ l-grid__item  l-1/1  l-1/2@medium  l-1/4@large ]">
+								<p><strong>Colonne 1&#8202;:</strong> pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+							</div>
+							<div class="[ l-grid__item  l-1/1  l-1/2@medium  l-1/4@large ]">
+								<p><strong>Colonne 2&#8202;:</strong> pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+							</div>
+							<div class="[ l-grid__item  l-1/1  l-1/2@medium  l-1/4@large ]">
+								<p><strong>Colonne 3&#8202;:</strong> pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+							</div>
+							<div class="[ l-grid__item  l-1/1  l-1/2@medium  l-1/4@large ]">
+								<p><strong>Colonne 4&#8202;:</strong> pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+							</div>
+						</div>
 
-			<pre><code>&lt;div class="l-grid"&gt;
+						<pre><code>&lt;div class="l-grid"&gt;
   &lt;div class="l-grid__item"&gt;&hellip;&lt;/div&gt;
   &lt;div class="l-grid__item"&gt;&hellip;&lt;/div&gt;
   &lt;div class="l-grid__item"&gt;&hellip;&lt;/div&gt;
@@ -1318,138 +1352,138 @@ p q r s t u v w x y z { | } ~</code></pre>
   &lt;div class="[ l-grid__item  l-1/1  l-1/2@medium  l-1/4@large ]"&gt;&hellip;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
-			<small><a href="#top">[Haut de page]</a></small>
+						<small><a href="#top">[Haut de page]</a></small>
 
-		</section>
+					</section>
 
-		<hr>
+					<hr>
 
-		<section id="buttons">
+					<section id="buttons">
 
-			<h2>Boutons</h2>
+						<h2 class="o-numbering__item">Boutons</h2>
 
-			<p><button class="c-button">Bouton</button></p>
+						<p><button class="c-button">Bouton</button></p>
 
-			<pre><code>&lt;button class="c-button"&gt;Bouton&lt;/button&gt;</code></pre>
+						<pre><code>&lt;button class="c-button"&gt;Bouton&lt;/button&gt;</code></pre>
 
-			<h3>Modificateurs</h3>
+						<h3>Modificateurs</h3>
 
-			<h4>Emphase</h4>
+						<h4>Emphase</h4>
 
-			<p>
-				<button class="[ c-button c-button--info ]">Information</button>
-				<button class="[ c-button c-button--success ]">Succès</button>
-				<button class="[ c-button c-button--warning ]">Alerte</button>
-				<button class="[ c-button c-button--error ]">Erreur</button>
-			</p>
+						<p>
+							<button class="[ c-button c-button--info ]">Information</button>
+							<button class="[ c-button c-button--action ]">Action</button>
+							<button class="[ c-button c-button--success ]">Succès</button>
+							<button class="[ c-button c-button--warning ]">Alerte</button>
+							<button class="[ c-button c-button--error ]">Erreur</button>
+						</p>
 
-			<pre><code>&lt;button class="[ c-button  c-button--info ]"&gt;Information&lt;/button>
+						<pre><code>&lt;button class="[ c-button  c-button--info ]"&gt;Information&lt;/button>
+&lt;button class="[ c-button  c-button--action ]">Action&lt;/button&gt;
 &lt;button class="[ c-button  c-button--success ]">Succès&lt;/button&gt;
 &lt;button class="[ c-button  c-button--warning ]">Alerte&lt;/button&gt;
 &lt;button class="[ c-button  c-button--error ]">Erreur&lt;/button&gt;</code></pre>
 
-			<h4>Dimensions</h4>
+						<h4>Dimensions</h4>
 
-			<p>
-				<button class="[ c-button c-button--info c-button--full ]">Information</button>
-			</p>
+						<p>
+							<button class="[ c-button c-button--info c-button--fit ]">Information</button>
+						</p>
 
-			<pre><code>&lt;button class="[ c-button  c-button--info  c-button--full ]"&gt;Information&lt;/button&gt;</code></pre>
+						<pre><code>&lt;button class="[ c-button  c-button--info  c-button--full ]"&gt;Information&lt;/button&gt;</code></pre>
 
-			<p>
-				<button class="[ c-button c-button--info c-button--tiny ]">Information</button>
-				<button class="[ c-button c-button--info c-button--small ]">Information</button>
-				<button class="[ c-button c-button--info c-button--large ]">Information</button>
-				<button class="[ c-button c-button--info c-button--huge ]">Information</button>
-			</p>
+						<p>
+							<button class="[ c-button c-button--info c-button--small ]">Information</button>
+							<button class="[ c-button c-button--info c-button--large ]">Information</button>
+						</p>
 
-			<pre><code>&lt;button class="[ c-button c-button--info c-button--tiny ]"&gt;Information&lt;/button&gt;
-&lt;button class="[ c-button c-button--info c-button--small ]"&gt;Information&lt;/button&gt;
-&lt;button class="[ c-button c-button--info c-button--large ]"&gt;Information&lt;/button&gt;
-&lt;button class="[ c-button c-button--info c-button--huge ]"&gt;Information&lt;/button&gt;</code></pre>
+						<pre><code>&lt;button class="[ c-button c-button--info c-button--small ]"&gt;Information&lt;/button&gt;
+&lt;button class="[ c-button c-button--info c-button--large ]"&gt;Information&lt;/button&gt;</code></pre>
 
-			<h4>Apparence</h4>
+						<h4>Apparence</h4>
 
-			<p>
-				<button class="[ c-button c-button--outlined ]">Défaut</button>
-				<button class="[ c-button c-button--info c-button--outlined ]">Information</button>
-				<button class="[ c-button c-button--success c-button--outlined ]">Succès</button>
-				<button class="[ c-button c-button--warning c-button--outlined ]">Alerte</button>
-				<button class="[ c-button c-button--error c-button--outlined ]">Erreur</button>
-			</p>
+						<p>
+							<button class="[ c-button c-button--ghost ]">Défaut</button>
+							<button class="[ c-button c-button--info c-button--ghost ]">Information</button>
+							<button class="[ c-button c-button--success c-button--ghost ]">Succès</button>
+							<button class="[ c-button c-button--warning c-button--ghost ]">Alerte</button>
+							<button class="[ c-button c-button--error c-button--ghost ]">Erreur</button>
+						</p>
 
-			<pre><code>&lt;button class="[ c-button  c-button--outlined ]"&gt;Button&gt;/button&gt;
-&lt;button class="[ c-button  c-button--info  c-button--outlined ]"&gt;Information&lt;/button&gt;
-&lt;button class="[ c-button  c-button--success  c-button--outlined ]"&gt;Succès&lt;/button&gt;
-&lt;button class="[ c-button  c-button--warning  c-button--outlined ]"&gt;Alerte&lt;/button&gt;
-&lt;button class="[ c-button  c-button--error  c-button--outlined ]"&gt;Erreur&lt;/button&gt;</code></pre>
+						<pre><code>&lt;button class="[ c-button  c-button--ghost ]"&gt;Button&gt;/button&gt;
+&lt;button class="[ c-button  c-button--info  c-button--ghost ]"&gt;Information&lt;/button&gt;
+&lt;button class="[ c-button  c-button--success  c-button--ghost ]"&gt;Succès&lt;/button&gt;
+&lt;button class="[ c-button  c-button--warning  c-button--ghost ]"&gt;Alerte&lt;/button&gt;
+&lt;button class="[ c-button  c-button--error  c-button--ghost ]"&gt;Erreur&lt;/button&gt;</code></pre>
 
-			<p>
-				<button class="[ c-button c-button--info c-button--disabled ]">Information</button>
-				<button class="[ c-button c-button--success c-button--disabled ]">Succès</button>
-				<button class="[ c-button c-button--warning c-button--disabled ]">Alerte</button>
-				<button class="[ c-button c-button--error c-button--disabled ]">Erreur</button>
-			</p>
+						<h4>Désactivation</h4>
 
-			<pre><code>&lt;button class="[ c-button  c-button--info  c-button--disabled ]"&gt;Information&lt;/button&gt;
+						<p>
+							<button class="[ c-button c-button--info c-button--disabled ]">Information</button>
+							<button class="[ c-button c-button--success c-button--disabled ]">Succès</button>
+							<button class="[ c-button c-button--warning c-button--disabled ]">Alerte</button>
+							<button class="[ c-button c-button--error c-button--disabled ]">Erreur</button>
+						</p>
+
+						<pre><code>&lt;button class="[ c-button  c-button--info  c-button--disabled ]"&gt;Information&lt;/button&gt;
 &lt;button class="[ c-button  c-button--success  c-button--disabled ]"&gt;Succès&lt;/button&gt;
 &lt;button class="[ c-button  c-button--warning  c-button--disabled ]"&gt;Alerte&lt;/button&gt;
-&lt;button class="[ c-button  c-button--error  c-button--disabled ]"&gt;Erreur&lt;/button&gt;</code></pre
+&lt;button class="[ c-button  c-button--error  c-button--disabled ]"&gt;Erreur&lt;/button&gt;</code></pre>
 
-			<p>
-				<button class="[ c-button c-button--info c-button--round ]">Information</button>
-				<button class="[ c-button c-button--info c-button--pill ]">Information</button>
-			</p>
+						<h4>Arrondis</h4>
 
-			<pre><code>&lt;button class="[ c-button  c-button--info  c-button--tiny ]"&gt;Information&lt;/button&gt;
-&lt;button class="[ c-button  c-button--info  c-button--small ]"&gt;Information&lt;/button&gt;
-&lt;button class="[ c-button  c-button--info  c-button--round ]"&gt;Information&lt;/button&gt;
+						<p>
+							<button class="[ c-button c-button--info c-button--rounded ]">Information</button>
+							<button class="[ c-button c-button--info c-button--pill ]">Information</button>
+						</p>
+
+						<pre><code>&lt;button class="[ c-button  c-button--info  c-button--rounded ]"&gt;Information&lt;/button&gt;
 &lt;button class="[ c-button  c-button--info  c-button--pill ]"&gt;Information&lt;/button&gt;</code></pre>
 
-			<small><a href="#top">[Haut de page]</a></small>
+						<small><a href="#top">[Haut de page]</a></small>
 
-		</section>
+					</section>
 
-		<hr>
+					<hr>
 
-		<section id="icons">
+					<section id="icons">
 
-			<h2>Icônographie</h2>
+						<h2 class="o-numbering__item">Icônographie</h2>
 
-			<p><abbr title="Scalable Vector Graphic">SVG</abbr> est un format d&rsquo;image vectoriel reposant sur une syntaxe <abbr title="Extensible Markup Language">XML</abbr> qui lui confère l&rsquo;avantage d&rsquo;être redimensionable sans perte de qualité. Avec <abbr title="HyperText Markup Language">Html</abbr> 5 l&rsquo;élément <samp>&lt;svg&gt;</samp> permet de définir un ensemble de pictogrammes directement dans une page. Il existe des outils permettant d&rsquo;automatiser le processus dont <a href="//icomoon.io/" hreflang="en">Icomoon</a>. Pour en savoir plus, voir cet article qui explique <a href="//la-cascade.io/comment-travailler-avec-des-icones-en-svg/#firefox">comment travailler avec des icônes en <abbr title="Scalable Vector Graphic">SVG</abbr></a>.</p>
+						<p><abbr title="Scalable Vector Graphic">SVG</abbr> est un format d&rsquo;image vectoriel reposant sur une syntaxe <abbr title="Extensible Markup Language">XML</abbr> qui lui confère l&rsquo;avantage d&rsquo;être redimensionable sans perte de qualité. Avec <abbr title="HyperText Markup Language">Html</abbr> 5 l&rsquo;élément <samp>&lt;svg&gt;</samp> permet de définir un ensemble de pictogrammes directement dans une page. Il existe des outils permettant d&rsquo;automatiser le processus dont <a href="//icomoon.io/" hreflang="en">Icomoon</a>. Pour en savoir plus, voir cet article qui explique <a href="//la-cascade.io/comment-travailler-avec-des-icones-en-svg/#firefox">comment travailler avec des icônes en <abbr title="Scalable Vector Graphic">SVG</abbr></a>.</p>
 
-			<p role="note">Note&#8202;: il est conseillé d&rsquo;utiliser <samp>aria-hidden="true"</samp> pour garantir que les lecteurs d&rsquo;écran ne liront pas l&rsquo;icône à haute voix. Pour un lien ou un bouton dont le seul contenu est une icône il est recommandé de spécifier un texte accessible avec <samp>aria-label</samp> sur l&rsquo;élément <samp>&lt;a&gt;</samp> ou <samp>&lt;button&gt;</samp>. Les définitions graphiques <abbr title="Scalable Vector Graphic">SVG</abbr> font parti du document et ne seront pas mises en cache par le navigateur comme un sujet distinct ce qui signifie qu&rsquo;elles ne seront pas réutilisable à travers les pages mais il est possible de <a href="//osvaldas.info/caching-svg-sprite-in-localstorage" hreflang="en">stocker les données dans le navigateur de l&rsquo;utilisateur</a> avec javascript. La limite de stockage est habituellement de 5 Mo par domaine.</p>
+						<p role="note">Note&#8202;: il est conseillé d&rsquo;utiliser <samp>aria-hidden="true"</samp> pour garantir que les lecteurs d&rsquo;écran ne liront pas l&rsquo;icône à haute voix. Pour un lien ou un bouton dont le seul contenu est une icône il est recommandé de spécifier un texte accessible avec <samp>aria-label</samp> sur l&rsquo;élément <samp>&lt;a&gt;</samp> ou <samp>&lt;button&gt;</samp>. Les définitions graphiques <abbr title="Scalable Vector Graphic">SVG</abbr> font parti du document et ne seront pas mises en cache par le navigateur comme un sujet distinct ce qui signifie qu&rsquo;elles ne seront pas réutilisable à travers les pages mais il est possible de <a href="//osvaldas.info/caching-svg-sprite-in-localstorage" hreflang="en">stocker les données dans le navigateur de l&rsquo;utilisateur</a> avec javascript. La limite de stockage est habituellement de 5 Mo par domaine.</p>
 
-			<figure class="is-aligned-center">
+						<figure class="is-aligned-center">
 
-				<div>
-					<svg class="o-icon" aria-hidden="true"><use xlink:href="#home"></use></svg><noscript><img src="img/icons/font-awesome/png/home.png" alt="" /></noscript>
-					<svg class="o-icon" aria-hidden="true"><use xlink:href="#search"></use></svg><noscript><img src="img/icons/font-awesome/png/search.png" alt="" /></noscript>
-					<svg class="o-icon" aria-hidden="true"><use xlink:href="#close"></use></svg><noscript><img src="img/icons/font-awesome/png/close.png" alt="" /></noscript>
-					<svg class="o-icon" aria-hidden="true"><use xlink:href="#file"></use></svg><noscript><img src="img/icons/font-awesome/png/file.png" alt="" /></noscript>
-					<svg class="o-icon" aria-hidden="true"><use xlink:href="#download"></use></svg><noscript><img src="img/icons/font-awesome/png/download.png" alt="" /></noscript>
-					<svg class="o-icon" aria-hidden="true"><use xlink:href="#tags"></use></svg><noscript><img src="img/icons/font-awesome/png/tags.png" alt="" /></noscript>
-					<svg class="o-icon" aria-hidden="true"><use xlink:href="#calendar"></use></svg><noscript><img src="img/icons/font-awesome/png/calendar.png" alt="" /></noscript>
-					<svg class="o-icon" aria-hidden="true"><use xlink:href="#comments"></use></svg><noscript><img src="img/icons/font-awesome/png/comments.png" alt="" /></noscript>
-					<svg class="o-icon" aria-hidden="true"><use xlink:href="#envelope"></use></svg><noscript><img src="img/icons/font-awesome/png/envelope.png" alt="" /></noscript>
-					<svg class="o-icon" aria-hidden="true"><use xlink:href="#print"></use></svg><noscript><img src="img/icons/font-awesome/png/print.png" alt="" /></noscript>
-					<svg class="o-icon" aria-hidden="true"><use xlink:href="#eye"></use></svg><noscript><img src="img/icons/font-awesome/png/eye.png" alt="" /></noscript>
-					<svg class="o-icon" aria-hidden="true"><use xlink:href="#camera"></use></svg><noscript><img src="img/icons/font-awesome/png/camera.png" alt="" /></noscript>
-					<svg class="o-icon" aria-hidden="true"><use xlink:href="#video-camera"></use></svg><noscript><img src="img/icons/font-awesome/png/video-camera.png" alt="" /></noscript>
-					<svg class="o-icon" aria-hidden="true"><use xlink:href="#share-alt"></use></svg><noscript><img src="img/icons/font-awesome/png/share-alt.png" alt="" /></noscript>
-					<svg class="o-icon" aria-hidden="true"><use xlink:href="#feed"></use></svg><noscript><img src="img/icons/font-awesome/png/feed.png" alt="" /></noscript>
-					<svg class="o-icon" aria-hidden="true"><use xlink:href="#twitter"></use></svg><noscript><img src="img/icons/font-awesome/png/twitter.png" alt="" /></noscript>
-					<svg class="o-icon" aria-hidden="true"><use xlink:href="#facebook"></use></svg><noscript><img src="img/icons/font-awesome/png/facebook.png" alt="" /></noscript>
-					<svg class="o-icon" aria-hidden="true"><use xlink:href="#github"></use></svg><noscript><img src="img/icons/font-awesome/png/github.png" alt="" /></noscript>
-					<svg class="o-icon" aria-hidden="true"><use xlink:href="#soundcloud"></use></svg><noscript><img src="img/icons/font-awesome/png/soundcloud.png" alt="" /></noscript>
-					<svg class="o-icon" aria-hidden="true"><use xlink:href="#youtube"></use></svg><noscript><img src="img/icons/font-awesome/png/youtube.png" alt="" /></noscript>
-				</div>
+							<div>
+								<svg class="o-icon" aria-hidden="true"><use xlink:href="#home"></use></svg><noscript><img src="img/icons/font-awesome/png/home.png" alt="" /></noscript>
+								<svg class="o-icon" aria-hidden="true"><use xlink:href="#search"></use></svg><noscript><img src="img/icons/font-awesome/png/search.png" alt="" /></noscript>
+								<svg class="o-icon" aria-hidden="true"><use xlink:href="#close"></use></svg><noscript><img src="img/icons/font-awesome/png/close.png" alt="" /></noscript>
+								<svg class="o-icon" aria-hidden="true"><use xlink:href="#file"></use></svg><noscript><img src="img/icons/font-awesome/png/file.png" alt="" /></noscript>
+								<svg class="o-icon" aria-hidden="true"><use xlink:href="#download"></use></svg><noscript><img src="img/icons/font-awesome/png/download.png" alt="" /></noscript>
+								<svg class="o-icon" aria-hidden="true"><use xlink:href="#tags"></use></svg><noscript><img src="img/icons/font-awesome/png/tags.png" alt="" /></noscript>
+								<svg class="o-icon" aria-hidden="true"><use xlink:href="#calendar"></use></svg><noscript><img src="img/icons/font-awesome/png/calendar.png" alt="" /></noscript>
+								<svg class="o-icon" aria-hidden="true"><use xlink:href="#comments"></use></svg><noscript><img src="img/icons/font-awesome/png/comments.png" alt="" /></noscript>
+								<svg class="o-icon" aria-hidden="true"><use xlink:href="#envelope"></use></svg><noscript><img src="img/icons/font-awesome/png/envelope.png" alt="" /></noscript>
+								<svg class="o-icon" aria-hidden="true"><use xlink:href="#print"></use></svg><noscript><img src="img/icons/font-awesome/png/print.png" alt="" /></noscript>
+								<svg class="o-icon" aria-hidden="true"><use xlink:href="#eye"></use></svg><noscript><img src="img/icons/font-awesome/png/eye.png" alt="" /></noscript>
+								<svg class="o-icon" aria-hidden="true"><use xlink:href="#camera"></use></svg><noscript><img src="img/icons/font-awesome/png/camera.png" alt="" /></noscript>
+								<svg class="o-icon" aria-hidden="true"><use xlink:href="#video-camera"></use></svg><noscript><img src="img/icons/font-awesome/png/video-camera.png" alt="" /></noscript>
+								<svg class="o-icon" aria-hidden="true"><use xlink:href="#share-alt"></use></svg><noscript><img src="img/icons/font-awesome/png/share-alt.png" alt="" /></noscript>
+								<svg class="o-icon" aria-hidden="true"><use xlink:href="#feed"></use></svg><noscript><img src="img/icons/font-awesome/png/feed.png" alt="" /></noscript>
+								<svg class="o-icon" aria-hidden="true"><use xlink:href="#twitter"></use></svg><noscript><img src="img/icons/font-awesome/png/twitter.png" alt="" /></noscript>
+								<svg class="o-icon" aria-hidden="true"><use xlink:href="#facebook"></use></svg><noscript><img src="img/icons/font-awesome/png/facebook.png" alt="" /></noscript>
+								<svg class="o-icon" aria-hidden="true"><use xlink:href="#github"></use></svg><noscript><img src="img/icons/font-awesome/png/github.png" alt="" /></noscript>
+								<svg class="o-icon" aria-hidden="true"><use xlink:href="#soundcloud"></use></svg><noscript><img src="img/icons/font-awesome/png/soundcloud.png" alt="" /></noscript>
+								<svg class="o-icon" aria-hidden="true"><use xlink:href="#youtube"></use></svg><noscript><img src="img/icons/font-awesome/png/youtube.png" alt="" /></noscript>
+							</div>
 
-				<figcaption>&Eacute;chantillon d&rsquo;icônes extrait de la librarie <a href="https://fortawesome.github.io/Font-Awesome/icons/" hreflang="en">Font Awesome</a> (628 icônes)</figcaption>
+							<figcaption>&Eacute;chantillon d&rsquo;icônes extrait de la librarie <a href="https://fortawesome.github.io/Font-Awesome/icons/" hreflang="en">Font Awesome</a> (628 icônes)</figcaption>
 
-			</figure>
+						</figure>
 
-			<pre><code>&lt;html&gt;
+						<pre><code>&lt;html&gt;
     &lt;head&gt;
         &hellip;
         &lt;style&gt;
@@ -1490,19 +1524,25 @@ p q r s t u v w x y z { | } ~</code></pre>
     &lt;body&gt;
 &lt;/html&gt;</code></pre>
 
-			<small><a href="#top">[Haut de page]</a></small>
+						<small><a href="#top">[Haut de page]</a></small>
 
-		</section>
+					</section>
 
-	</main>
+				</div><!--/ grid item -->
+
+			</div><!--/ grid -->
+
+		</main>
 
 
 
 
 
-	<footer class="[ l-wrapper  l-wrapper--narrow ]  u-aligned-center">
-		<small>Ecssential &copy; 2016 &mdash; Made with &hearts; by &Eacute;ric Mutschler</small>
-	</footer>
+		<footer class="[ l-wrapper  l-wrapper--medium ]  [ u-padding-top  u-padding-bottom ]  u-aligned-center">
+			<small>Ecssential &copy; 2016 &mdash; Made with &hearts; by &Eacute;ric Mutschler</small>
+		</footer>
+
+	</div><!--/ wrapper -->
 
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/min/jquery-2.1.3.min.js"><\/script>')</script>

@@ -1,25 +1,20 @@
-@if (trumps(flexbox) == true) {
+@if (layout(flexbox) == true) {
 
 /* ==========================================================================
    LAYOUT / FLEXBOX
    ========================================================================== */
 
 /**
- * Flexbox helper classes.
+ * A simple set of class-based flexbox rules which let you specify layout
+ * properties directly in markup..
  *
  * Source: https://codepen.io/thulstrup/pen/waJZBW/
  */
 
-
-.l-horizontal,
-.l-horizontal-reverse,
-.l-vertical,
-.l-vertical-reverse   { @include flexbox; }
-
-.l-horizontal         { @include flex-direction(row); }
-.l-horizontal-reverse { @include flex-direction(row-reverse); }
-.l-vertical           { @include flex-direction(column); }
-.l-vertical-reverse   { @include flex-direction(column-reverse); }
+.l-horizontal         { @include flexbox; @include flex-direction(row); }
+.l-horizontal-reverse { @include flexbox; @include flex-direction(row-reverse); }
+.l-vertical           { @include flexbox; @include flex-direction(column); }
+.l-vertical-reverse   { @include flexbox; @include flex-direction(column-reverse); }
 
 .l-inline             { @include inline-flex; }
 
@@ -53,7 +48,7 @@
 
 
 /**
- * Alignment in main axis
+ * Alignment in main axis.
  */
 
 .l-start-justified    { @include justify-content(flex-start); }
@@ -64,7 +59,7 @@
 
 
 /**
- * Self alignment
+ * Self alignment.
  */
 
 .l-self-start         { @include align-self(flex-start); }

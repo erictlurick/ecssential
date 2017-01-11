@@ -1,0 +1,35 @@
+@if (objects(image-heights) == true) {
+
+/* ==========================================================================
+   OBJECTS / IMAGE-HEIGHTS
+   ========================================================================== */
+
+/**
+ * Keep your images on your baseline.
+ *
+ * Please note, these will not work too nicely with fluid images and will
+ * distort when resized below a certain width. Use with caution.
+ */
+
+// Predefine the variable below in order to alter and enable specific features.
+$images-namespace: 'o-image' !default;
+
+
+.#{$namespace}#{$images-namespace}-short {
+    @include space(height, 5);
+}
+
+.#{$namespace}#{$images-namespace}-medium {
+    //@include space(height, 10);
+    height: $base-font-size * $base-line-height * 10 + rem;
+}
+
+.#{$namespace}#{$images-namespace}-tall {
+    @include space(height, 15);
+}
+
+.#{$namespace}#{$images-namespace}-huge{
+    @include space(height, 20);
+}
+
+}//endif

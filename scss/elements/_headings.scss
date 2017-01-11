@@ -5,7 +5,9 @@
    ========================================================================== */
 
 /**
- * Simple default styles for headings 1 through 6.
+ * Simple default styles for headings 1 through 6. Anything more opinionated
+ * should likely be applied via classes (see:
+ * http://csswizardry.com/2016/02/managing-typography-on-large-apps/).
  */
 
 // Predefine the variable below in order to alter and enable specific features.
@@ -13,10 +15,11 @@ $headings-subtitles-inline: true !default;
 
 
 %headings {
+
   font-family   : $font-family-headings;
   font-weight   : $font-weight-headings;
   word-wrap     : break-word;
-  color         : color(headings);
+  color         : color(text);
 
   // Turn on discretionary ligatures for larger headings.
   @if (typography(glyphs) == true) {
@@ -41,9 +44,10 @@ $headings-subtitles-inline: true !default;
     vertical-align: baseline;
     font-size     : 75%;
     line-height   : 1;
-    color         : color(muted);
+    color         : color(text-muted);
 
   }
+
 }
 
 
@@ -53,34 +57,9 @@ $headings-subtitles-inline: true !default;
 
 h1 { @extend %headings; @include type(4, 0, 1); }
 h2 { @extend %headings; @include type(3, 0, 1); }
-h3 { @extend %headings; @include type(2, 0, 0.5); }
-h4 { @extend %headings; @include type(1, 0, 0.5); }
+h3 { @extend %headings; @include type(2, 0, 1); }
+h4 { @extend %headings; @include type(1, 0, 1); }
 h5 { @extend %headings; @include type(0, 0, 0); }
 h6 { @extend %headings; @include type(0, 0, 0); }
-
-
-/**
- * Set space between headings.
- */
-
-h3 + h4,
-h4 + h5,
-h5 + h6 {
-  @include space(margin-top);
-}
-
-
-/**
- * Off screen headings.
- */
-
-h1[aria-hidden],
-h2[aria-hidden],
-h3[aria-hidden],
-h4[aria-hidden],
-h5[aria-hidden],
-h6[aria-hidden] {
-  @include visually-hidden();
-}
 
 }//endif

@@ -59,10 +59,10 @@ $grid-gutter                         : $base-line-height + rem; // Value in rem.
 // Forms settings
 // ==========================================================================
 
-$label-color                         : color(muted);
+$label-color                         : color(text-muted);
 $input-color-text                    : color(text);
 $input-color-text-disabled           : color(ui-disabled);
-$input-color-placeholder             : color(muted);
+$input-color-placeholder             : color(text-muted);
 $input-color-background              : #fff !default;
 $input-color-border                  : color(ui-medium);
 $input-color-border-focus            : color(ui-dark);

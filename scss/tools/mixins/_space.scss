@@ -11,12 +11,26 @@
 //
 // @csswizardry https://github.com/csswizardry/typecsset/blob/master/typecsset.scss
 
-@mixin space($property, $lines: 1, $font-size: $base-font-size, $line-height: $base-line-height) {
+@mixin space($property, $lines: $base-spacing-unit, $font-size: $base-font-size, $line-height: $base-line-height, $border: none) {
 
-    @if (fallback(pixels) == true) {
-		#{$property}: $lines * ($base-font-size * $base-line-height) + px;
-	}//endif
+	@if ($border == none) {
 
-    #{$property}: $lines * $line-height + rem;
+    	@if (fallback(pixels) == true) {
+			#{$property}: $lines * ($base-font-size * $base-line-height) + px;
+		}
+
+    	#{$property}: $lines * $line-height + rem;
+
+    }
+
+    @else {
+
+    	@if (fallback(pixels) == true) {
+			#{$property}: ($lines * ($base-font-size * $base-line-height) - strip-units($border)) + px;
+		}
+
+    	#{$property}: ($lines * $line-height) - (strip-units($border) / $base-font-size) + rem;
+
+    }
 
 }

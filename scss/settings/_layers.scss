@@ -3,12 +3,12 @@
 //------------------------------------\\
 
 // Define a list of elements for stacking. the numbers will be adjusted
-// accordingly to the list order. Example: `z-index: index($layers, level-1)`.
+// accordingly to the list order. Example: `z-index: index($layers, stack-order-1)`.
 
 $layers: (
-  'level-1',
-  'level-2',
-  'level-3',
-  'level-4',
-  'level-5'
+  'stack-order-1',
+  'stack-order-2',
+  'stack-order-3',
+  'stack-order-4',
+  'stack-order-5'
 ) !default;

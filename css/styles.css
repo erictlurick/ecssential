@@ -1,98 +1,4 @@
 @charset "UTF-8";
-/**
- * CONTENTS
- *
- * SETTINGS
- * Breakpoints..........Define our breakpoints for later use.
- * Colors UI............Color scheme for UI design.
- * Colors...............Our brand and project colours.
- * Configuration........Define any project-level configuration, feature
- *                      switches, etc. in here.
- * Font stacks..........A collection of font stacks.
- * Font weights.........Define our font weights for later use.
- * Global...............Standardise some UI treatments.
- * Layers...............Define a list of stacking levels for later use.
- * Scales...............Define a list of typographic scales.
- * Typography...........Base typographical styles.
- *
- * FUNCTIONS
- * Colors...............Functions to get colour values
- * Exponent.............Exponent operator
- * Units................Internally-used functions to remove the units and get
-                        the em or rem value based on the pixel value.
- *
- * MIXINS
- * Attention............Apply styles to links in one go
- * Baseline.............Baseline grid.
- * Borders..............Apply borders and keep a consistent baseline.
- * Breakpoints..........Responsive breakpoints.
- * Clearfix.............Drop micro clearfix into a selector.
- * Flexbox..............Easily generate flexbox layouts.
- * Hide.................Hide content.
- * Palette..............A whole bunch of friendly color variables.
- * Prefix...............Allows you to prefix multiple properties at once.
- * Pseudo elements......Easily generate pseudo-elements.
- * Space................Space elements by an amount based on your magic number.
- * Typography...........Apply typographic styles.
- *
- * GENERIC
- * Baseline checks......Quickly debug and fix the baseline by adding a noticeable
-                        background color to block level elements.
- * Box sizing...........Set the global `box-sizing` state to `border-box`.
- * Breakpoint checks....Use this little piece of CSS to see what media queries
-                        are being rendered in your browser.
- * Health checks........By using substring selectors, we can target and then
-                        visualise the general makeup of a page based on the types
-                        of class it contains.
- * Reset................A level playing field using Jonathan T. Neal's Sanitize.
- * Shared...............Sensibly and tersely share some global commonalities
- *                      (particularly useful when managing vertical rhythm).
- *
- * ELEMENTS
- * Page.................Set up our document's default `font-size` and
- *                      `line-height`.
- * Headings.............Set up our document's default for headings 1 through 6.
- * Typography...........Set up our document's default for typography.
- * Anchors..............Set up our document's default for links.
- * Quotes...............Set up our document's default for quotes.
- * Code.................Set up our document's default for code.
- * Forms................Set up our document's default for forms.
- * Lists................Set up our document's default for lists.
- * Tables...............Set up our document's default for tables
- * Media................Set up our document's default for images and figures.
- * Selections...........Set up our document's default for selections.
- *
- * LAYOUT
- * Content..............Abstract layout into a quasi-grid-system.
- * Grid.................Basic flexbox grid.
- * Wrappers.............Use wrappers when you need a content area that is a
- *                      standardized width and centered on the page.
- *
- * OBJECTS
- * Box..................Boxes off content.
-
- * Form fields..........Group sets of form fields.
- * Form helpers.........Extra help text displayed after a field when that field
-                        is in focus and invalid.
- * Icons................Set up SVG icons.
- * Ratios...............Create ratio-bound content blocks, to keep media (e.g.
- *                      images, videos) in their correct aspect ratios.
- * Tables...............Table styles variants.
- *
- * COMPONENTS
- * Buttons..............Set up various button styles.
- *
- * TRUMPS
- * Headings.............Headings 1-6's corresponding Greek-alphabet abstract
-                        classes for double- stranded heading hierarchy.
- * Text.................Utilities to adjust the size of a span of text by a
-                        little bit more, or a little bit less.
- * Prose................
- * Helpers..............A series of classes to use arbitrarily.
- * Print................Very crude, reset-like styles taken from the HTML5
-                        Boilerplate.
-
- */
 /* ==========================================================================
    GENERIC / RESET
    ========================================================================== */
@@ -296,19 +202,15 @@ select::-ms-value {
  * http://paulirish.com/2012/box-sizing-border-box-ftw
  */
 html {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 *, *::before, *::after {
-  -webkit-box-sizing: inherit;
-  -moz-box-sizing: inherit;
   box-sizing: inherit;
 }
 
 /* ==========================================================================
-   ELEMENTS / SELECTIONS
+   GENERIC / SELECTIONS
    ========================================================================== */
 /**
  * 1. Customize `background` for text selections.
@@ -316,7 +218,7 @@ html {
  */
 ::-moz-selection {
   color: #fff;
-  background-color: #228ae6;
+  background-color: #378bb5;
   /* 1 */
   text-shadow: none;
   /* 2 */
@@ -324,7 +226,7 @@ html {
 
 ::selection {
   color: #fff;
-  background-color: #228ae6;
+  background-color: #378bb5;
   /* 1 */
   text-shadow: none;
   /* 2 */
@@ -333,6 +235,9 @@ html {
 /**
  * Change `background` for text selections when browser is unfocused.
  */
+::-moz-selection:window-inactive {
+  background-color: #d0d0d0;
+}
 ::selection:window-inactive {
   background-color: #d0d0d0;
 }
@@ -340,6 +245,9 @@ html {
 /**
 * Remove `background` on images when selected.
 */
+img::-moz-selection {
+  background-color: transparent;
+}
 img::selection {
   background-color: transparent;
 }
@@ -387,11 +295,11 @@ ul, ol {
  * 1. Ensure the page always fills at least the entire height of the viewport.
  * 2. Clip the left/right edges if it overflows the area
  * 3. Force scrollbars to always be visible to prevent awkward ÔÇÿjumpsÔÇÖ when
+ *    navigating between pages that do/do not have enough content to produce
+ *    scrollbars naturally.
  * 4. Set the default `font-size` and `line-height` for the entire project,
  *    sourced from our default variables. The `font-size` is calculated to exist
  *    in ems, the `line-height` is calculated to exist unitlessly.
- *    navigating between pages that do/do not have enough content to produce
- *    scrollbars naturally.
  * 5. Prevent certain mobile browsers from automatically zooming fonts.
  * 6. Fonts on OSX will look more consistent with other systems that do not
  *    render text using sub-pixel anti-aliasing.
@@ -404,7 +312,7 @@ html {
   overflow-y: scroll;
   /* [3] */
   font-family: Georgia, Times, "Times New Roman", serif;
-  font-size: 1.125em;
+  font-size: 1em;
   /* [4] */
   line-height: 1.5;
   /* [4] */
@@ -415,61 +323,62 @@ html {
   /* [5] */
   -ms-text-size-adjust: 100%;
   /* [5] */
-  -moz-osx-font-smoothing: grayscale;
-  /* [6] */
-  -webkit-font-smoothing: antialiased;
-  /* [6] */
 }
-@media (min-width: 53.3333333333em) {
+@media (min-width: 60em) {
   html {
     font-size: 125%;
     /* [4] */
   }
 }
 
-html {
-  position: relative;
+/**
+ * 1. Turn on kerning, standard ligatures, and proportional, oldstyle numerals
+ *    Turn off all other ligatures, tabular, lining numerals, and alternates
+ *    Uses same settings for tables
+ */
+html,
+body,
+table {
+  -webkit-font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0;
+          font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0;
+  /* [1] */
 }
 
-html::after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  z-index: -1;
-  width: 100%;
-  height: auto;
-  background-image: linear-gradient(#ffcadf 1px, transparent 1px, transparent 0.75rem, #e2d1fb 0.75rem, transparent 0.8055555556rem);
-  background-size: 100% 1.5em;
-}
-
+/**
+ * 1. Ensure the page always fills at least the entire height of the viewport.
+ * 2. Show hyphens for every browser supporting it and break lines in every other
+ *    browser.
+ */
 body {
+  min-height: 100%;
+  /* [1] */
   overflow-wrap: break-word;
   word-wrap: break-word;
   -webkit-hyphen: auto;
   -ms-hyphen: auto;
   -moz-hyphen: auto;
   hyphen: auto;
+  /* [2] */
 }
 
 /* ==========================================================================
    ELEMENTS / HEADINGS
    ========================================================================== */
 /**
- * Simple default styles for headings 1 through 6.
+ * Simple default styles for headings 1 through 6. Anything more opinionated
+ * should likely be applied via classes (see:
+ * http://csswizardry.com/2016/02/managing-typography-on-large-apps/).
  */
-h1, h2, h3, h4, h5, h6, .u-h1-size, .u-h2-size, .u-h3-size, .u-h4-size, .u-h5-size, .u-h6-size {
+h1, h2, h3, h4, h5, h6, .u-h1-size, .u-h2-size, .u-h3-size, .u-h4-size, .u-h5-size, .u-h6-size, .u-heading {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  font-weight: 400;
+  font-weight: 700;
   word-wrap: break-word;
   color: rgba(0, 0, 0, 0.8);
-  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 1;
 }
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, .u-h1-size a, .u-h2-size a, .u-h3-size a, .u-h4-size a, .u-h5-size a, .u-h6-size a {
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, .u-h1-size a, .u-h2-size a, .u-h3-size a, .u-h4-size a, .u-h5-size a, .u-h6-size a, .u-heading a {
   font-weight: inherit;
 }
-h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .u-h1-size small, .u-h2-size small, .u-h3-size small, .u-h4-size small, .u-h5-size small, .u-h6-size small {
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .u-h1-size small, .u-h2-size small, .u-h3-size small, .u-h4-size small, .u-h5-size small, .u-h6-size small, .u-heading small {
   display: table;
   height: 1.5rem;
   vertical-align: baseline;
@@ -477,33 +386,33 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .u-h1-size small, .u
   line-height: 1;
   color: rgba(0, 0, 0, 0.44);
 }
-@media (min-width: 40em) {
-  h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .u-h1-size small, .u-h2-size small, .u-h3-size small, .u-h4-size small, .u-h5-size small, .u-h6-size small {
+@media (min-width: 45em) {
+  h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .u-h1-size small, .u-h2-size small, .u-h3-size small, .u-h4-size small, .u-h5-size small, .u-h6-size small, .u-heading small {
     display: inline;
   }
 }
 
 h1 {
   margin-bottom: 1.5rem;
-  font-size: 3.1666666667rem;
+  font-size: 3.1875rem;
   line-height: 4.5rem;
 }
 
 h2 {
   margin-bottom: 1.5rem;
-  font-size: 2.3888888889rem;
+  font-size: 2.375rem;
   line-height: 3rem;
 }
 
 h3 {
-  margin-bottom: 0.75rem;
-  font-size: 1.7777777778rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
   line-height: 3rem;
 }
 
 h4 {
-  margin-bottom: 0.75rem;
-  font-size: 1.3333333333rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.3125rem;
   line-height: 1.5rem;
 }
 
@@ -515,34 +424,6 @@ h5 {
 h6 {
   font-size: 1rem;
   line-height: 1.5rem;
-}
-
-/**
- * Set space between headings.
- */
-h3 + h4,
-h4 + h5,
-h5 + h6 {
-  margin-top: 1.5rem;
-}
-
-/**
- * Off screen headings.
- */
-h1[aria-hidden],
-h2[aria-hidden],
-h3[aria-hidden],
-h4[aria-hidden],
-h5[aria-hidden],
-h6[aria-hidden] {
-  position: absolute !important;
-  width: 1px !important;
-  height: 1px !important;
-  margin: -1px !important;
-  padding: 0 !important;
-  border: 0 !important;
-  clip: rect(0 0 0 0) !important;
-  overflow: hidden !important;
 }
 
 /* ==========================================================================
@@ -574,7 +455,7 @@ xmp {
  * For use in smallprint etc.
  */
 small {
-  font-size: 0.7777777778rem;
+  font-size: 0.75rem;
   line-height: 1;
 }
 
@@ -591,8 +472,6 @@ abbr[title] {
   /* [2] */
   cursor: help;
   /* [2] */
-  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "smcp" 1, "c2sc" 1;
-  /* [3] */
 }
 
 /**
@@ -624,6 +503,7 @@ mark {
   /* [1] */
   background-color: transparent !important;
   /* [1] */
+  background-image: -webkit-linear-gradient(top, #defad3, #defad3);
   background-image: linear-gradient(to bottom, #defad3, #defad3);
 }
 
@@ -641,6 +521,7 @@ ins {
   text-decoration: none;
   color: rgba(0, 0, 0, 0.8);
   background-color: transparent !important;
+  background-image: -webkit-linear-gradient(top, #e0f4ff, #e0f4ff);
   background-image: linear-gradient(to bottom, #e0f4ff, #e0f4ff);
 }
 
@@ -653,6 +534,7 @@ del {
   text-decoration: none;
   color: rgba(0, 0, 0, 0.8);
   background-color: transparent !important;
+  background-image: -webkit-linear-gradient(top, #ffa8a8, #ffa8a8);
   background-image: linear-gradient(to bottom, #ffa8a8, #ffa8a8);
 }
 
@@ -664,13 +546,6 @@ s {
 
 address {
   font-style: normal;
-}
-
-/**
- * Turn on discretionary ligatures.
- */
-time {
-  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0;
 }
 
 /**
@@ -695,8 +570,6 @@ sup {
   /* [3] */
   vertical-align: baseline;
   /* [1] */
-  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0, "sups" 1;
-  /* [4] */
 }
 
 sup {
@@ -722,70 +595,23 @@ summary {
  */
 hr {
   width: 100%;
+  height: 1px;
+  overflow: hidden;
   margin-top: 0;
   margin-right: auto;
   margin-bottom: 0;
   margin-left: auto;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-  border: 0;
-  background-image: linear-gradient(to bottom, transparent 50%, transparent 50%);
-  background-position: 0 50%;
-  background-repeat: repeat-x;
-  background-size: 100% 0.0888888889rem;
-  position: relative;
-}
-hr:after {
-  content: "• • •";
-  position: absolute;
-  top: 1.425rem;
-  right: 0;
-  left: 0;
-  line-height: 0;
-  letter-spacing: 0.6em;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
   text-align: center;
-  color: #495057;
+  border: 0;
 }
-
-/* Dropcaps
-   ========================================================================== */
-/**
- * The font size and margins used on lines 8 and 10 of the code above vary for
- * different typefaces. The following table provides values for two heights of
- * drop cap for each of four common typefaces.
-
-    Times New Roman/Times, two lines   => font-size: 3.29em | margin: 0.205em 0.153em 0 0
-    Times New Roman/Times, three lines => font-size: 5.53em | margin: 0.151em 0.0904em 0 0
-    Georgia, two lines                 => font-size: 3.20em | margin: 0.225em 0.159em 0 0
-    Georgia, three lines               => font-size: 5.32em | margin: 0.172em 0.0940em 0 0
-    Arial/Helvetica, two lines         => font-size: 3.11em | margin: 0.240em 0.161em 0 0
-    Arial/Helvetica, three lines       => font-size: 5.20em | margin: 0.192em 0.0962em 0 0
-    Verdana, two lines                 => font-size: 3.06em | margin: 0.218em 0.163em 0 0
-    Verdana, three lines               => font-size: 5.12em | margin: 0.162em 0.0977em 0 0
-
- * Info: http://code.stephenmorley.org/html-and-css/creating-drop-caps/
- */
-.u-dropcap:first-letter {
-  float: left;
-  vertical-align: bottom;
-  margin: 0.225em 0.159em 0 0;
-  font-family: Georgia;
-  font-size: 3.2em;
-  line-height: 0.5;
-  text-transform: uppercase;
-  color: inherit;
-}
-
-/* Lede
-   ========================================================================== */
-/**
- * The `.u-lede` class is used to make the introductory text (usually a paragraph)
- * of a document slightly larger: en.wikipedia.org/wiki/Lede_(news)
- */
-.u-lede {
-  margin-bottom: 1.5rem;
-  font-size: 1.3333333333rem;
-  line-height: 1.5rem;
+hr::after {
+  content: "\2022\2022\2022";
+  position: relative;
+  top: -0.8em;
+  letter-spacing: 1em;
+  color: rgba(0, 0, 0, 0.6);
 }
 
 /* ==========================================================================
@@ -795,16 +621,14 @@ hr:after {
  * 1. Remove the gray background color from active links in IE 10.
  */
 a {
-  color: #228ae6;
+  color: #378bb5;
   background-color: transparent;
   /* [1] */
-  transition: all 0.25s ease-out;
+  -webkit-transition: color 0.25s ease-out;
+  transition: color 0.25s ease-out;
 }
-
-a:hover,
-a:focus,
-a:active {
-  color: #1670bf;
+a:hover, a:active, a:focus {
+  color: #2b6d8e;
 }
 
 /**
@@ -824,16 +648,6 @@ a:active {
 }
 
 /**
- * Additional info.
- */
-a:before,
-a:after {
-  font-size: 0.7777777778rem;
-  line-height: 1;
-  vertical-align: baseline;
-}
-
-/**
  * Remove borders.
  */
 a img,
@@ -848,6 +662,332 @@ a code {
   padding: inherit;
   color: inherit;
   background: inherit;
+}
+
+/* ==========================================================================
+   ELEMENTS / LISTS
+   ========================================================================== */
+/**
+ * Remove trailing margins from nested lists.
+ */
+li > ul,
+li > ol {
+  margin-bottom: 0;
+  margin-left: 1em;
+}
+
+/**
+ * Navigation lists.
+ */
+nav ul,
+nav ol {
+  margin-left: 0;
+  list-style: none;
+}
+
+/* ==========================================================================
+   ELEMENTS / FORMS
+   ========================================================================== */
+form,
+fieldset {
+  margin-bottom: 1.5rem;
+}
+
+/**
+ * 1. inputs with a type=["search"] in WebKit browsers by default have rounded
+ *    corners and are very strict in what you can alter via CSS. We don't want
+ *    that styling and remove it in one fell swoop with appearance.
+ *    Info: https://css-tricks.com/almanac/properties/a/appearance/
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* [1] */
+}
+
+/**
+ * Make sure our form elements don't use any UA-specific font styles: we want
+ * them to use ours. This may need reverting as more design information becomes
+ * available, and we start putting together more complete forms.
+ */
+input {
+  font: inherit;
+}
+
+/**
+ * Placeholder attribute text.
+ *
+ * 1. In Firefox, placeholder text has a default opacity of around 0.5 so setting
+ *    color: red on the placeholder will result in a muted color unless you also
+ *    set opacity: 1.
+ */
+input::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.44);
+}
+
+input::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.44);
+  opacity: 1;
+}
+
+/* [1] */
+input:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.44);
+}
+
+input::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.44);
+}
+
+input::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.44);
+}
+
+input::placeholder {
+  color: rgba(0, 0, 0, 0.44);
+}
+
+/**
+ * Change Autocomplete styles in Chrome.
+ *
+ * 1. Text color.
+ * 2. Trick the yellow color to your own background color with a strong inside
+ *    shadow. Change `white` to any color.
+ * 3. Use this if you need a transparent input field.
+ */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: inherit !important;
+  /* [1] */
+  -webkit-box-shadow: 0 0 0px 1000px white inset, 0px 0px 0px 1px rgba(0, 0, 0, 0.125) !important;
+  /* [2] */
+}
+
+/**
+ * 1. Remove default styling.
+ * 2. When input not empty / in focus / not valid
+ */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="week"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+select,
+textarea {
+  width: auto;
+  padding-right: 0.6rem;
+  padding-left: 0.6rem;
+  color: rgba(0, 0, 0, 0.8);
+  background-color: white;
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.125);
+  border: none;
+  border-radius: 3px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  /* [1] */
+}
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+select:focus,
+textarea:focus {
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.25);
+}
+input[type="text"]:invalid:focus:not(:placeholder-shown),
+input[type="password"]:invalid:focus:not(:placeholder-shown),
+input[type="email"]:invalid:focus:not(:placeholder-shown),
+input[type="url"]:invalid:focus:not(:placeholder-shown),
+input[type="date"]:invalid:focus:not(:placeholder-shown),
+input[type="month"]:invalid:focus:not(:placeholder-shown),
+input[type="time"]:invalid:focus:not(:placeholder-shown),
+input[type="datetime"]:invalid:focus:not(:placeholder-shown),
+input[type="datetime-local"]:invalid:focus:not(:placeholder-shown),
+input[type="week"]:invalid:focus:not(:placeholder-shown),
+input[type="number"]:invalid:focus:not(:placeholder-shown),
+input[type="search"]:invalid:focus:not(:placeholder-shown),
+input[type="tel"]:invalid:focus:not(:placeholder-shown),
+input[type="color"]:invalid:focus:not(:placeholder-shown),
+select:invalid:focus:not(:placeholder-shown),
+textarea:invalid:focus:not(:placeholder-shown) {
+  box-shadow: 0px 0px 0px 1px #fa5252;
+  /* [2] */
+}
+input[type="text"][disabled], input[type="text"][readonly],
+input[type="password"][disabled],
+input[type="password"][readonly],
+input[type="email"][disabled],
+input[type="email"][readonly],
+input[type="url"][disabled],
+input[type="url"][readonly],
+input[type="date"][disabled],
+input[type="date"][readonly],
+input[type="month"][disabled],
+input[type="month"][readonly],
+input[type="time"][disabled],
+input[type="time"][readonly],
+input[type="datetime"][disabled],
+input[type="datetime"][readonly],
+input[type="datetime-local"][disabled],
+input[type="datetime-local"][readonly],
+input[type="week"][disabled],
+input[type="week"][readonly],
+input[type="number"][disabled],
+input[type="number"][readonly],
+input[type="search"][disabled],
+input[type="search"][readonly],
+input[type="tel"][disabled],
+input[type="tel"][readonly],
+input[type="color"][disabled],
+input[type="color"][readonly],
+select[disabled],
+select[readonly],
+textarea[disabled],
+textarea[readonly] {
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.44);
+}
+input[type="text"][disabled],
+input[type="password"][disabled],
+input[type="email"][disabled],
+input[type="url"][disabled],
+input[type="date"][disabled],
+input[type="month"][disabled],
+input[type="time"][disabled],
+input[type="datetime"][disabled],
+input[type="datetime-local"][disabled],
+input[type="week"][disabled],
+input[type="number"][disabled],
+input[type="search"][disabled],
+input[type="tel"][disabled],
+input[type="color"][disabled],
+select[disabled],
+textarea[disabled] {
+  cursor: not-allowed;
+}
+
+/**
+ * Specify the type of cursor to be displayed.
+ */
+input[type="submit"],
+input[type="reset"] {
+  cursor: pointer;
+}
+
+/**
+ * Turns on lining, proportional numerals without clarified zeroes.
+ */
+input[type="color"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="number"],
+input[type="range"],
+input[type="tel"],
+input[type="week"] {
+  -webkit-font-feature-settings: "kern" 0, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 0, "lnum" 1, "zero" 0;
+          font-feature-settings: "kern" 0, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 0, "lnum" 1, "zero" 0;
+  /* [1] */
+}
+
+/**
+ * 1. Remove the extra bottom margin that both Firefox and Chrome seem to give
+ *    to textareas.
+ */
+textarea {
+  vertical-align: top;
+  /* [1] */
+}
+
+/* ==========================================================================
+   ELEMENTS / CODE
+   ========================================================================== */
+/**
+ * 1. Fix an odd quirk whereby, without this, code blocks are rendered at a
+ *    font-size smaller than 1em.
+ * 2. Turn off kerning and ligatures, turn on lining, tabular numerals, slashed
+ *    zero.
+ */
+code,
+kbd,
+pre,
+samp {
+  font-family: Consolas, monaco, monospace;
+  /* [1] */
+  text-shadow: 0 1px #fff;
+  background-color: rgba(0, 0, 0, 0.0625);
+  border-radius: 3px;
+  -webkit-font-feature-settings: "kern" 0, "liga" 0, "calt" 1, "dlig" 0, "pnum" 0, "tnum" 1, "onum" 0, "lnum" 1, "zero" 1;
+          font-feature-settings: "kern" 0, "liga" 0, "calt" 1, "dlig" 0, "pnum" 0, "tnum" 1, "onum" 0, "lnum" 1, "zero" 1;
+  /* [2] */
+}
+
+code,
+kbd,
+samp {
+  padding: 0.1em 0.2em;
+  font-size: 90%;
+  text-shadow: 0 1px #fff;
+}
+
+/**
+ * 1. Contain overflow in all browsers.
+ */
+pre {
+  padding-top: 0.75rem;
+  padding-right: 0.6rem;
+  padding-bottom: 0.75rem;
+  padding-left: 0.6rem;
+  white-space: pre;
+  /* [1] */
+  white-space: pre-wrap;
+  /* [1] */
+  word-break: break-all;
+  /* [1] */
+  word-wrap: break-word;
+  /* [1] */
+  background-color: rgba(0, 0, 0, 0.0625);
+  border-radius: 3px;
+}
+
+pre code {
+  padding: 0;
+  background-color: transparent;
+  border-radius: none;
+}
+
+pre mark {
+  color: inherit;
+  background: none;
+  border-bottom: 1px solid;
 }
 
 /* ==========================================================================
@@ -915,318 +1055,12 @@ blockquote p:last-of-type {
   margin-bottom: 0;
 }
 
-blockquote footer {
-  font-size: 0.7777777778rem;
-  line-height: 1.5rem;
-}
-
 /**
  * 1. Hang the opening quote of the english blockquotes.
  */
 :lang(en) blockquote p:first-child {
   text-indent: -.41em;
   /* 1 */
-}
-
-/* ==========================================================================
-   ELEMENTS / CODE
-   ========================================================================== */
-/**
- * 1. Fix an odd quirk whereby, without this, code blocks are rendered at a
- *    font-size smaller than 1rem.
- */
-code,
-kbd,
-pre,
-samp {
-  font-family: Consolas, monaco, monospace;
-  /* [1] */
-  font-size: 1rem;
-  /* [1] */
-  text-shadow: 0 1px #fff;
-  color: rgba(0, 0, 0, 0.8);
-  background-color: #f1f3f5;
-  border-radius: 3px;
-}
-
-code,
-kbd,
-samp {
-  padding: .1em;
-  font-size: 90%;
-}
-
-/**
- * 1. Contain overflow in all browsers.
- */
-pre {
-  padding: 1.5rem;
-  white-space: pre;
-  /* [1] */
-  white-space: pre-wrap;
-  /* [1] */
-  word-break: break-all;
-  /* [1] */
-  word-wrap: break-word;
-  /* [1] */
-}
-
-pre code {
-  padding: 0;
-  background-color: transparent;
-  border-radius: none;
-}
-
-/* ==========================================================================
-   ELEMENTS / FORMS
-   ========================================================================== */
-label {
-  display: block;
-}
-
-/**
- * 1. inputs with a type=["search"] in WebKit browsers by default have rounded
- *    corners and are very strict in what you can alter via CSS. We don't want
- *    that styling and remove it in one fell swoop with appearance.
- *    Info: https://css-tricks.com/almanac/properties/a/appearance/
- */
-input[type="search"] {
-  -webkit-appearance: textfield;
-  /* [1] */
-}
-
-/**
- * Make sure our form elements don't use any UA-specific font styles: we want
- * them to use ours. This may need reverting as more design information becomes
- * available, and we start putting together more complete forms.
- */
-input {
-  font: inherit;
-}
-
-/**
- * 1. Remove default styling.
- * 2. When input not empty / in focus / not valid
- */
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="url"],
-input[type="date"],
-input[type="month"],
-input[type="time"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="week"],
-input[type="number"],
-input[type="search"],
-input[type="tel"],
-input[type="color"],
-select,
-textarea {
-  width: auto;
-  height: 1.5rem;
-  padding-right: 0.375rem;
-  padding-left: 0.375rem;
-  color: rgba(0, 0, 0, 0.8);
-  background-color: #fff;
-  border: none;
-  border-radius: 3px;
-  box-shadow: 0px 0px 0px 1px #dee2e6;
-  transition: all 0.25s ease-out;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  appearance: none;
-  /* [1] */
-}
-input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="date"]:focus,
-input[type="month"]:focus,
-input[type="time"]:focus,
-input[type="datetime"]:focus,
-input[type="datetime-local"]:focus,
-input[type="week"]:focus,
-input[type="number"]:focus,
-input[type="search"]:focus,
-input[type="tel"]:focus,
-input[type="color"]:focus,
-select:focus,
-textarea:focus {
-  box-shadow: 0px 0px 0px 1px #ced4da;
-}
-input[type="text"]:invalid:focus:not(:placeholder-shown),
-input[type="password"]:invalid:focus:not(:placeholder-shown),
-input[type="email"]:invalid:focus:not(:placeholder-shown),
-input[type="url"]:invalid:focus:not(:placeholder-shown),
-input[type="date"]:invalid:focus:not(:placeholder-shown),
-input[type="month"]:invalid:focus:not(:placeholder-shown),
-input[type="time"]:invalid:focus:not(:placeholder-shown),
-input[type="datetime"]:invalid:focus:not(:placeholder-shown),
-input[type="datetime-local"]:invalid:focus:not(:placeholder-shown),
-input[type="week"]:invalid:focus:not(:placeholder-shown),
-input[type="number"]:invalid:focus:not(:placeholder-shown),
-input[type="search"]:invalid:focus:not(:placeholder-shown),
-input[type="tel"]:invalid:focus:not(:placeholder-shown),
-input[type="color"]:invalid:focus:not(:placeholder-shown),
-select:invalid:focus:not(:placeholder-shown),
-textarea:invalid:focus:not(:placeholder-shown) {
-  box-shadow: 0px 0px 0px 1px #fa5252;
-  /* [2] */
-}
-input[type="text"][disabled], input[type="text"][readonly],
-input[type="password"][disabled],
-input[type="password"][readonly],
-input[type="email"][disabled],
-input[type="email"][readonly],
-input[type="url"][disabled],
-input[type="url"][readonly],
-input[type="date"][disabled],
-input[type="date"][readonly],
-input[type="month"][disabled],
-input[type="month"][readonly],
-input[type="time"][disabled],
-input[type="time"][readonly],
-input[type="datetime"][disabled],
-input[type="datetime"][readonly],
-input[type="datetime-local"][disabled],
-input[type="datetime-local"][readonly],
-input[type="week"][disabled],
-input[type="week"][readonly],
-input[type="number"][disabled],
-input[type="number"][readonly],
-input[type="search"][disabled],
-input[type="search"][readonly],
-input[type="tel"][disabled],
-input[type="tel"][readonly],
-input[type="color"][disabled],
-input[type="color"][readonly],
-select[disabled],
-select[readonly],
-textarea[disabled],
-textarea[readonly] {
-  font-style: italic;
-  color: #e9ecef;
-}
-input[type="text"][disabled],
-input[type="password"][disabled],
-input[type="email"][disabled],
-input[type="url"][disabled],
-input[type="date"][disabled],
-input[type="month"][disabled],
-input[type="time"][disabled],
-input[type="datetime"][disabled],
-input[type="datetime-local"][disabled],
-input[type="week"][disabled],
-input[type="number"][disabled],
-input[type="search"][disabled],
-input[type="tel"][disabled],
-input[type="color"][disabled],
-select[disabled],
-textarea[disabled] {
-  cursor: not-allowed;
-}
-
-/**
- * Turns on lining, proportional numerals without clarified zeroes.
- */
-input[type="color"],
-input[type="date"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="number"],
-input[type="range"],
-input[type="tel"],
-input[type="week"] {
-  font-feature-settings: "kern" 0, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 0, "lnum" 1, "zero" 0;
-  /* [1] */
-}
-
-/**
- * Placeholder attribute text.
- *
- * 1. In Firefox, placeholder text has a default opacity of around 0.5 so setting
- *    color: red on the placeholder will result in a muted color unless you also
- *    set opacity: 1.
- */
-input::-webkit-input-placeholder {
-  color: rgba(0, 0, 0, 0.44);
-}
-
-input::-moz-placeholder {
-  color: rgba(0, 0, 0, 0.44);
-  opacity: 1;
-}
-
-/* [1] */
-input:-ms-input-placeholder {
-  color: rgba(0, 0, 0, 0.44);
-}
-
-input::placeholder {
-  color: rgba(0, 0, 0, 0.44);
-}
-
-/**
- * Change Autocomplete styles in Chrome.
- *
- * 1. Text color.
- * 2. Trick the yellow color to your own background color with a strong inside
- *    shadow. Change `white` to any color.
- * 3. Use this if you need a transparent input field.
- */
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus
-input:-webkit-autofill,
-textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover
-textarea:-webkit-autofill:focus,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus {
-  -webkit-text-fill-color: rgba(0, 0, 0, 0.8) !important;
-  /* [1] */
-  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
-  /* [2] */
-}
-
-/**
- * 1. Remove the extra bottom margin that both Firefox and Chrome seem to give
- *    to textareas.
- */
-textarea {
-  vertical-align: top;
-  /* [1] */
-  min-height: 6rem;
-}
-
-select {
-  height: 1.5rem;
-}
-
-/* ==========================================================================
-   ELEMENTS / LISTS
-   ========================================================================== */
-/**
- * Remove trailing margins from nested lists.
- */
-li > ul,
-li > ol {
-  margin-bottom: 0;
-  margin-left: 1em;
-}
-
-/**
- * Navigation lists.
- */
-nav ul,
-nav ol {
-  margin-left: 0;
-  list-style: none;
 }
 
 /* ==========================================================================
@@ -1241,48 +1075,50 @@ nav ol {
 table {
   width: 100%;
   /* [1] */
-  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0;
-  /* [2] */
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-thead {
-  font-weight: 700;
-}
-thead > tr > th {
+thead tr:last-child th {
   position: relative;
 }
-thead > tr > th::after {
+thead tr:last-child th::after {
   content: '';
   position: absolute;
   top: 100%;
   left: 0;
   width: 100%;
   height: 1px;
-  background-image: linear-gradient(to bottom, transparent 50%, #ced4da 50%);
+  background-image: -webkit-linear-gradient(top, transparent 50%, rgba(0, 0, 0, 0.125) 50%);
+  background-image: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.125) 50%);
   background-position: 0 100%;
   background-repeat: repeat-x;
   background-size: 100% 2px;
 }
 
-tr:hover {
-  background-color: rgba(248, 249, 250, 0.5);
-}
-
-th, td {
+th,
+td {
   padding: 0.75rem;
-  text-align: center;
-  vertical-align: inherit;
+  text-align: left;
 }
 
 /**
- * 1. Turns on tabular, lining numerals and slashed zero
+ * Cell alignments
  */
-tbody,
-caption {
-  font-feature-settings: "kern" 1,  "liga" 1,  "calt" 1,  "pnum" 0,  "tnum" 1,  "onum" 0,  "lnum" 1, "zero" 1;
-  /* [1] */
+[colspan] {
+  text-align: center;
+}
+
+[colspan="1"] {
+  text-align: left;
+}
+
+[rowspan] {
+  vertical-align: middle;
+}
+
+[rowspan="1"] {
+  vertical-align: top;
 }
 
 /* ==========================================================================
@@ -1293,10 +1129,10 @@ caption {
  * 2. Preserve image ratio.
  * 3. Correct a bug on IE8.
  * 4. Offset `alt` text from surrounding copy.
- * 3. Setting `vertical-align` removes the whitespace that appears under `img`
+ * 5. Setting `vertical-align` removes the whitespace that appears under `img`
  *    elements when they are dropped into a page as-is. Safer alternative to
  *    using `display: block;`.
- * 6. Remove border when inside `a` element in IE 8/9/10.
+ * 6. Remove border when inside an `a` element in IE 8/9/10.
  */
 img,
 canvas,
@@ -1309,6 +1145,8 @@ video {
   /* [2] */
   width: auto;
   /* [3] */
+  font-style: italic;
+  /* [4] */
   vertical-align: middle;
   /* [5] */
   border: 0;
@@ -1317,9 +1155,9 @@ video {
 
 /**
  * 1. If a `width` and/or `height` attribute have been explicitly defined, letÔÇÖs
- * not make the image fluid.
+ *    not make the image fluid.
  * 2. Google Maps breaks if `max-width: 100%` acts upon it; use their selector
- * to remove the effects.
+ *    to remove the effects.
  */
 img[width],
 img[height],
@@ -1345,37 +1183,24 @@ figure {
   text-align: center;
   /* [1] */
 }
+figure > img {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
 
 figcaption {
   display: inline-block;
   /* [1] */
   vertical-align: top;
   /* [2] */
-  font-size: 0.7777777778rem;
+  font-size: 0.75rem;
   line-height: 1.5rem;
   text-align: left;
   /* [1] */
   color: rgba(0, 0, 0, 0.6);
 }
 
-/**
- * Image placement variations
- */
-@media (min-width: 40em) {
-  img.u-pushed-right,
-  figure.u-pushed-right {
-    float: right;
-    width: 33.333%;
-    margin-left: 1.5rem;
-  }
-
-  img.u-pulled-left,
-  figure.u-pulled-left {
-    float: left;
-    width: 33.333%;
-    margin-right: 1.5rem;
-  }
-}
 /**
  * Broken images are ugly. But they don't always have to be. We can use CSS to
  * apply styles to the `img` element to provide a better experience than the
@@ -1387,19 +1212,19 @@ figcaption {
    $(window).bind('load', function() {
      $('img').each(function() {
        if((typeof this.naturalWidth != "undefined" && this.naturalWidth == 0 ) || this.readyState == 'uninitialized' ) {
-         $(this).addClass('js-img-broken');
+         $(this).attr('id', js-img-broken');
        }
      });
    });
  *
  * @ireaderinokun http://bitsofco.de/styling-broken-images/
  */
-img.js-img-broken {
+img#js-img-broken {
   display: block;
   position: relative;
   outline: none;
 }
-img.js-img-broken::before {
+img#js-img-broken::before {
   content: '';
   position: absolute;
   top: 0;
@@ -1408,7 +1233,7 @@ img.js-img-broken::before {
   height: 100%;
   content: attr(alt);
   z-index: 1;
-  font-size: 0.7777777778rem;
+  font-size: 0.75rem;
   line-height: 1.5rem;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-weight: 700;
@@ -1416,9 +1241,10 @@ img.js-img-broken::before {
   text-align: center;
   text-shadow: 0 1px #fff;
   color: inherit;
-  background-color: #f1f3f5;
+  background-color: #efefef;
+  opacity: 1;
 }
-img.js-img-broken::after {
+img#js-img-broken::after {
   content: '';
   position: absolute;
   top: 50%;
@@ -1427,7 +1253,7 @@ img.js-img-broken::after {
   height: 100%;
   content: "⚠" " image non disponible";
   z-index: 2;
-  font-size: 0.7777777778rem;
+  font-size: 0.75rem;
   line-height: 1.5rem;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-weight: 400;
@@ -1436,6 +1262,268 @@ img.js-img-broken::after {
   text-shadow: 0 1px #fff;
   color: inherit;
   background-color: transparent;
+}
+
+/* ==========================================================================
+   LAYOUT / FLEXBOX
+   ========================================================================== */
+/**
+ * A simple set of class-based flexbox rules which let you specify layout
+ * properties directly in markup..
+ *
+ * Source: https://codepen.io/thulstrup/pen/waJZBW/
+ */
+.l-horizontal {
+  display: -webkit-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.l-horizontal-reverse {
+  display: -webkit-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-direction: reverse;
+  -webkit-box-orient: horizontal;
+  -moz-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+
+.l-vertical {
+  display: -webkit-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.l-vertical-reverse {
+  display: -webkit-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-direction: reverse;
+  -webkit-box-orient: vertical;
+  -moz-flex-direction: column-reverse;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+}
+
+.l-inline {
+  display: -webkit-inline-box;
+  display: -moz-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.l-wrap {
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.l-wrap-reverse {
+  -ms-flex-wrap: wrap-reverse;
+  flex-wrap: wrap-reverse;
+}
+
+.l-flex-auto {
+  -webkit-box-flex: 1;
+  -moz-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+.l-flex-none {
+  -webkit-box-flex: none;
+  -moz-flex: none;
+  -ms-flex: none;
+  flex: none;
+}
+
+.l-flex-1 {
+  -webkit-box-flex: 1;
+  -moz-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.l-flex-2 {
+  -webkit-box-flex: 2;
+  -moz-flex: 2;
+  -ms-flex: 2;
+  flex: 2;
+}
+
+.l-flex-3 {
+  -webkit-box-flex: 3;
+  -moz-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+}
+
+.l-flex-4 {
+  -webkit-box-flex: 4;
+  -moz-flex: 4;
+  -ms-flex: 4;
+  flex: 4;
+}
+
+.l-flex-5 {
+  -webkit-box-flex: 5;
+  -moz-flex: 5;
+  -ms-flex: 5;
+  flex: 5;
+}
+
+.l-flex-6 {
+  -webkit-box-flex: 6;
+  -moz-flex: 6;
+  -ms-flex: 6;
+  flex: 6;
+}
+
+.l-flex-7 {
+  -webkit-box-flex: 7;
+  -moz-flex: 7;
+  -ms-flex: 7;
+  flex: 7;
+}
+
+.l-flex-8 {
+  -webkit-box-flex: 8;
+  -moz-flex: 8;
+  -ms-flex: 8;
+  flex: 8;
+}
+
+.l-flex-9 {
+  -webkit-box-flex: 9;
+  -moz-flex: 9;
+  -ms-flex: 9;
+  flex: 9;
+}
+
+.l-flex-10 {
+  -webkit-box-flex: 10;
+  -moz-flex: 10;
+  -ms-flex: 10;
+  flex: 10;
+}
+
+.l-flex-11 {
+  -webkit-box-flex: 11;
+  -moz-flex: 11;
+  -ms-flex: 11;
+  flex: 11;
+}
+
+.l-flex-12 {
+  -webkit-box-flex: 12;
+  -moz-flex: 12;
+  -ms-flex: 12;
+  flex: 12;
+}
+
+/**
+ * Alignments in cross axis.
+ */
+.l-start {
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  -moz-align-items: flex-start;
+  align-items: flex-start;
+}
+
+.l-center {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -moz-align-items: center;
+  align-items: center;
+}
+
+.l-end {
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  -moz-align-items: flex-end;
+  align-items: flex-end;
+}
+
+/**
+ * Alignment in main axis.
+ */
+.l-start-justified {
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -moz-justify-content: flex-start;
+  justify-content: flex-start;
+}
+
+.l-center-justified {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -moz-justify-content: center;
+  justify-content: center;
+}
+
+.l-end-justified {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  -moz-justify-content: flex-end;
+  justify-content: flex-end;
+}
+
+.l-around-justified {
+  -ms-flex-pack: distribute;
+  -moz-justify-content: space-around;
+  justify-content: space-around;
+}
+
+.l-justified {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+}
+
+/**
+ * Self alignment.
+ */
+.l-self-start {
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+}
+
+.l-self-center {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.l-self-end {
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+}
+
+.l-self-stretch {
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  -ms-grid-row-align: stretch;
+      align-self: stretch;
 }
 
 /* ==========================================================================
@@ -1458,22 +1546,17 @@ img.js-img-broken::after {
  */
 .l-grid.l-grid {
   display: -webkit-box;
-  display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-wrap: wrap;
-  -moz-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
   list-style: none;
 }
-.l-grid .l-grid__item {
+.l-grid > .l-grid__item {
   -webkit-box-flex: 1;
-  -webkit-flex: 1;
-  -moz-box-flex: 1;
   -moz-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -1484,7 +1567,7 @@ img.js-img-broken::after {
 .l-grid--gutter.l-grid--gutter {
   margin-left: -1.5rem;
 }
-.l-grid--gutter.l-grid--gutter .l-grid__item {
+.l-grid--gutter.l-grid--gutter > .l-grid__item {
   margin-left: 1.5rem;
 }
 
@@ -1500,8 +1583,6 @@ img.js-img-broken::after {
  */
 .l-grid__item.l-1\/1 {
   -webkit-box-flex: 0;
-  -webkit-flex: 0 0 calc(100% - 1.5rem);
-  -moz-box-flex: 0;
   -moz-flex: 0 0 calc(100% - 1.5rem);
   -ms-flex: 0 0 calc(100% - 1.5rem);
   flex: 0 0 calc(100% - 1.5rem);
@@ -1509,8 +1590,6 @@ img.js-img-broken::after {
 
 .l-grid__item.l-1\/2 {
   -webkit-box-flex: 0;
-  -webkit-flex: 0 0 calc(50% - 1.5rem);
-  -moz-box-flex: 0;
   -moz-flex: 0 0 calc(50% - 1.5rem);
   -ms-flex: 0 0 calc(50% - 1.5rem);
   flex: 0 0 calc(50% - 1.5rem);
@@ -1518,8 +1597,6 @@ img.js-img-broken::after {
 
 .l-grid__item.l-1\/3 {
   -webkit-box-flex: 0;
-  -webkit-flex: 0 0 calc(33.3333% - 1.5rem);
-  -moz-box-flex: 0;
   -moz-flex: 0 0 calc(33.3333% - 1.5rem);
   -ms-flex: 0 0 calc(33.3333% - 1.5rem);
   flex: 0 0 calc(33.3333% - 1.5rem);
@@ -1527,21 +1604,24 @@ img.js-img-broken::after {
 
 .l-grid__item.l-1\/4 {
   -webkit-box-flex: 0;
-  -webkit-flex: 0 0 calc(25% - 1.5rem);
-  -moz-box-flex: 0;
   -moz-flex: 0 0 calc(25% - 1.5rem);
   -ms-flex: 0 0 calc(25% - 1.5rem);
   flex: 0 0 calc(25% - 1.5rem);
 }
 
+.l-grid__item.l-1\/5 {
+  -webkit-box-flex: 0;
+  -moz-flex: 0 0 calc(20% - 1.5rem);
+  -ms-flex: 0 0 calc(20% - 1.5rem);
+  flex: 0 0 calc(20% - 1.5rem);
+}
+
 /**
  * Responsive modifiers.
  */
-@media (min-width: 40em) {
+@media (min-width: 45em) {
   .l-grid__item.l-1\/1\@medium {
     -webkit-box-flex: 0;
-    -webkit-flex: 0 0 calc(100% - 1.5rem);
-    -moz-box-flex: 0;
     -moz-flex: 0 0 calc(100% - 1.5rem);
     -ms-flex: 0 0 calc(100% - 1.5rem);
     flex: 0 0 calc(100% - 1.5rem);
@@ -1549,8 +1629,6 @@ img.js-img-broken::after {
 
   .l-grid__item.l-1\/2\@medium {
     -webkit-box-flex: 0;
-    -webkit-flex: 0 0 calc(50% - 1.5rem);
-    -moz-box-flex: 0;
     -moz-flex: 0 0 calc(50% - 1.5rem);
     -ms-flex: 0 0 calc(50% - 1.5rem);
     flex: 0 0 calc(50% - 1.5rem);
@@ -1558,8 +1636,6 @@ img.js-img-broken::after {
 
   .l-grid__item.l-1\/3\@medium {
     -webkit-box-flex: 0;
-    -webkit-flex: 0 0 calc(33.3333% - 1.5rem);
-    -moz-box-flex: 0;
     -moz-flex: 0 0 calc(33.3333% - 1.5rem);
     -ms-flex: 0 0 calc(33.3333% - 1.5rem);
     flex: 0 0 calc(33.3333% - 1.5rem);
@@ -1567,18 +1643,21 @@ img.js-img-broken::after {
 
   .l-grid__item.l-1\/4\@medium {
     -webkit-box-flex: 0;
-    -webkit-flex: 0 0 calc(25% - 1.5rem);
-    -moz-box-flex: 0;
     -moz-flex: 0 0 calc(25% - 1.5rem);
     -ms-flex: 0 0 calc(25% - 1.5rem);
     flex: 0 0 calc(25% - 1.5rem);
   }
+
+  .l-grid__item.l-1\/5\@medium {
+    -webkit-box-flex: 0;
+    -moz-flex: 0 0 calc(20% - 1.5rem);
+    -ms-flex: 0 0 calc(20% - 1.5rem);
+    flex: 0 0 calc(20% - 1.5rem);
+  }
 }
-@media (min-width: 53.3333333333em) {
+@media (min-width: 60em) {
   .l-grid__item.l-1\/1\@large {
     -webkit-box-flex: 0;
-    -webkit-flex: 0 0 calc(100% - 1.5rem);
-    -moz-box-flex: 0;
     -moz-flex: 0 0 calc(100% - 1.5rem);
     -ms-flex: 0 0 calc(100% - 1.5rem);
     flex: 0 0 calc(100% - 1.5rem);
@@ -1586,8 +1665,6 @@ img.js-img-broken::after {
 
   .l-grid__item.l-1\/2\@large {
     -webkit-box-flex: 0;
-    -webkit-flex: 0 0 calc(50% - 1.5rem);
-    -moz-box-flex: 0;
     -moz-flex: 0 0 calc(50% - 1.5rem);
     -ms-flex: 0 0 calc(50% - 1.5rem);
     flex: 0 0 calc(50% - 1.5rem);
@@ -1595,8 +1672,6 @@ img.js-img-broken::after {
 
   .l-grid__item.l-1\/3\@large {
     -webkit-box-flex: 0;
-    -webkit-flex: 0 0 calc(33.3333% - 1.5rem);
-    -moz-box-flex: 0;
     -moz-flex: 0 0 calc(33.3333% - 1.5rem);
     -ms-flex: 0 0 calc(33.3333% - 1.5rem);
     flex: 0 0 calc(33.3333% - 1.5rem);
@@ -1604,101 +1679,18 @@ img.js-img-broken::after {
 
   .l-grid__item.l-1\/4\@large {
     -webkit-box-flex: 0;
-    -webkit-flex: 0 0 calc(25% - 1.5rem);
-    -moz-box-flex: 0;
     -moz-flex: 0 0 calc(25% - 1.5rem);
     -ms-flex: 0 0 calc(25% - 1.5rem);
     flex: 0 0 calc(25% - 1.5rem);
   }
-}
-/* Alignment features
-   ========================================================================== */
-/**
- * Top-aligned grid cells.
- */
-.l-grid--up {
-  -webkit-box-align: start;
-  -ms-flex-align: start;
-  -webkit-align-items: flex-start;
-  -moz-align-items: flex-start;
-  align-items: flex-start;
-}
 
-/**
- * Bottom-aligned grid cells.
- */
-.l-grid--down {
-  -webkit-box-align: end;
-  -ms-flex-align: end;
-  -webkit-align-items: flex-end;
-  -moz-align-items: flex-end;
-  align-items: flex-end;
+  .l-grid__item.l-1\/5\@large {
+    -webkit-box-flex: 0;
+    -moz-flex: 0 0 calc(20% - 1.5rem);
+    -ms-flex: 0 0 calc(20% - 1.5rem);
+    flex: 0 0 calc(20% - 1.5rem);
+  }
 }
-
-/**
- * Vertically centered grid cells.
- */
-.l-grid--between {
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  -moz-align-items: center;
-  align-items: center;
-}
-
-/**
- * Justified grid cells.
- */
-.l-grid--justified {
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  -moz-justify-content: center;
-  justify-content: center;
-}
-
-/**
- * Top-aligned cell.
- */
-.l-grid__item--up {
-  -webkit-align-self: flex-start;
-  -moz-align-self: flex-start;
-  -ms-flex-item-align: start;
-  align-self: flex-start;
-}
-
-/**
- * Bottom-aligned cell.
- */
-.l-grid__item--down {
-  -webkit-align-self: flex-end;
-  -moz-align-self: flex-end;
-  -ms-flex-item-align: end;
-  align-self: flex-end;
-}
-
-/**
- * Vertically centered cell.
- */
-.l-grid__item--between {
-  -webkit-align-self: center;
-  -moz-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-}
-
-/**
- * The cell takes all of the available space inside the flex container.
- */
-.l-grid__item--adapted {
-  -webkit-box-flex: none;
-  -webkit-flex: none;
-  -moz-box-flex: none;
-  -moz-flex: none;
-  -ms-flex: none;
-  flex: none;
-}
-
 /* ==========================================================================
    LAYOUT / WRAPPERS
    ========================================================================== */
@@ -1718,7 +1710,33 @@ img.js-img-broken::after {
   max-width: 55.927em;
 }
 .l-wrapper.l-wrapper--narrow {
-  max-width: 48em;
+  max-width: 33em;
+}
+
+/* ==========================================================================
+   OBJECTS / FORM-FIELDS
+   ========================================================================== */
+/**
+ * Group sets of form fields in a list, e.g.:
+ *
+   <div class="o-form-field">
+     <label />
+     <input />
+   </div>
+
+   <div class="o-form-field">
+     <label />
+     <select />
+   </div>
+
+   <div class="o-form-field">
+     <label />
+     <input />
+   </div>
+ *
+ */
+.o-form-field {
+  margin-bottom: 0.75rem;
 }
 
 /* ==========================================================================
@@ -1862,6 +1880,31 @@ img.js-img-broken::after {
 }
 
 /* ==========================================================================
+   OBJECTS / IMAGE-HEIGHTS
+   ========================================================================== */
+/**
+ * Keep your images on your baseline.
+ *
+ * Please note, these will not work too nicely with fluid images and will
+ * distort when resized below a certain width. Use with caution.
+ */
+.o-image-short {
+  height: 7.5rem;
+}
+
+.o-image-medium {
+  height: 240rem;
+}
+
+.o-image-tall {
+  height: 22.5rem;
+}
+
+.o-image-huge {
+  height: 30rem;
+}
+
+/* ==========================================================================
    OBJECTS / LIST-BARE
    ========================================================================== */
 /**
@@ -1871,6 +1914,65 @@ img.js-img-broken::after {
 .o-list-bare {
   margin-left: 0;
   list-style: none;
+}
+
+/* ==========================================================================
+   OBJECTS / LIST-BLOCK
+   ========================================================================== */
+/**
+ * Create big blocky lists of content, e.g.:
+ *
+   <ul class=block-list>
+      <li>Foo</li>
+      <li>Bar</li>
+      <li>Baz</li>
+      <li><a href=# class=block-list__link>Foo Bar Baz</a></li>
+   </ul>
+ *
+ * Extend this object in your theme stylesheet.
+ *
+ * Demo: jsfiddle.net/inuitcss/hR57q
+ *
+ */
+.o-list-block.o-list-block {
+  margin-left: 0;
+  list-style: none;
+  position: relative;
+}
+.o-list-block.o-list-block::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: -webkit-linear-gradient(top, transparent 50%, rgba(0, 0, 0, 0.125) 50%);
+  background-image: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.125) 50%);
+  background-position: 0 top;
+  background-repeat: repeat-x;
+  background-size: 100% 2px;
+}
+.o-list-block .o-list-block__item {
+  padding: 0.75rem;
+  position: relative;
+}
+.o-list-block .o-list-block__item::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-image: -webkit-linear-gradient(top, transparent 50%, rgba(0, 0, 0, 0.125) 50%);
+  background-image: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.125) 50%);
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 100% 2px;
+}
+.o-list-block .o-list-block__link {
+  display: block;
+  margin: -0.75rem;
+  padding: 0.75rem;
 }
 
 /* ==========================================================================
@@ -1993,56 +2095,16 @@ img.js-img-broken::after {
 }
 
 /* ==========================================================================
-   OBJECTS / LIST-UI
+   OBJECTS / NUMBERING
    ========================================================================== */
-/**
- * The UI list object creates blocky list items with a keyline separator out of
- * a `ul` or `ol`.
- */
-.o-list-ui.o-list-ui {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+.o-numbering.o-numbering {
+  counter-reset: numbering;
 }
-.o-list-ui > .o-list-ui__item {
-  padding: 1.5rem;
-  background-image: linear-gradient(to bottom, transparent 50%, #dee2e6 50%);
-  background-position: 0 100%;
-  background-repeat: repeat-x;
-  background-size: 100% 0.1rem;
+.o-numbering .o-numbering__item {
+  counter-increment: numbering;
 }
-.o-list-ui.o-list-ui--tiny > .o-list-ui__item {
-  padding: 0.375rem;
-}
-.o-list-ui.o-list-ui--small > .o-list-ui__item {
-  padding: 0.75rem;
-}
-.o-list-ui.o-list-ui--large > .o-list-ui__item {
-  padding: 2.25rem;
-}
-.o-list-ui.o-list-ui--huge > .o-list-ui__item {
-  padding: 3rem;
-}
-
-/* ==========================================================================
-   OBJECTS / PULLQUOTE
-   ========================================================================== */
-.o-pullquote {
-  display: block;
-  margin-top: 1.5rem;
-  margin-right: 3rem;
-  margin-bottom: 1.5rem;
-  margin-left: 3rem;
-  font-size: 1.3333333333rem;
-  line-height: 1.5rem;
-  font-style: italic;
-  text-align: center;
-}
-.o-pullquote::before {
-  content: '';
-}
-.o-pullquote::after {
-  content: '';
+.o-numbering .o-numbering__item:before {
+  content: counter(numbering) ". ";
 }
 
 /* ==========================================================================
@@ -2104,8 +2166,6 @@ img.js-img-broken::after {
 /* ==========================================================================
    OBJECTS / TABLES
    ========================================================================== */
-/* Equal-width table cells.
-   ========================================================================== */
 /**
  * `table-layout: fixed` forces all cells within a table to occupy the same
  * width as each other. This also has performance benefits: because the browser
@@ -2117,14 +2177,8 @@ img.js-img-broken::after {
   table-layout: fixed;
 }
 
-/* Style variants
-   ========================================================================== */
 /**
  * Bordered tables.
- *
-   <table class="o-table--bordered">
-     ...
-   </table>
  */
 .o-table--bordered {
   position: relative;
@@ -2136,7 +2190,8 @@ img.js-img-broken::after {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(to bottom, transparent 50%, #ced4da 50%);
+  background-image: -webkit-linear-gradient(top, transparent 50%, rgba(0, 0, 0, 0.125) 50%);
+  background-image: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.125) 50%);
   background-position: 0 top;
   background-repeat: repeat-x;
   background-size: 100% 2px;
@@ -2151,7 +2206,8 @@ img.js-img-broken::after {
   left: 0;
   width: 100%;
   height: 1px;
-  background-image: linear-gradient(to bottom, transparent 50%, #ced4da 50%);
+  background-image: -webkit-linear-gradient(top, transparent 50%, rgba(0, 0, 0, 0.125) 50%);
+  background-image: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.125) 50%);
   background-position: 0 100%;
   background-repeat: repeat-x;
   background-size: 100% 2px;
@@ -2166,7 +2222,8 @@ img.js-img-broken::after {
   left: 0;
   width: 100%;
   height: 1px;
-  background-image: linear-gradient(to bottom, transparent 50%, #ced4da 50%);
+  background-image: -webkit-linear-gradient(top, transparent 50%, rgba(0, 0, 0, 0.125) 50%);
+  background-image: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.125) 50%);
   background-position: 0 100%;
   background-repeat: repeat-x;
   background-size: 100% 2px;
@@ -2174,25 +2231,21 @@ img.js-img-broken::after {
 .o-table--bordered th, .o-table--bordered td {
   position: relative;
   border-style: solid;
-  border-color: #ced4da;
+  border-color: rgba(0, 0, 0, 0.125);
   border-left-width: 1px;
 }
 .o-table--bordered tr > th:last-child, .o-table--bordered tr > td:last-child {
   position: relative;
   border-style: solid;
-  border-color: #ced4da;
+  border-color: rgba(0, 0, 0, 0.125);
   border-right-width: 1px;
 }
 
 /**
- * Striped tables.
- *
-   <table class="o-table--striped">
-     ...
-   </table>
+ * Striped tables
  */
-.o-table--striped tbody > tr:nth-child(odd) {
-  background-color: #f1f3f5;
+.o-table--striped tbody tr:nth-of-type(odd) {
+  background-color: #ffc;
 }
 
 /* ==========================================================================
@@ -2205,8 +2258,6 @@ img.js-img-broken::after {
  *    buttons).
  * 4. Reset/normalize some styles.
  * 5. Force all button-styled elements to appear clickable.
- * 6. Subtract the border size from the padding value so that buttons do not
- *    grow larger as we add borders.
  */
 .c-button {
   display: inline-block;
@@ -2215,37 +2266,49 @@ img.js-img-broken::after {
   /* [2] */
   margin: 0;
   /* [4] */
-  margin-right: 0.375rem;
-  padding: 0.75rem 1.5rem;
+  padding-top: 0.75rem;
+  padding-right: 1.5rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1.5rem;
   font: inherit;
   /* [3] */
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   text-align: center;
   /* [4] */
   text-decoration: none;
-  border-bottom: none;
   cursor: pointer;
   /* [5] */
-  transition: all 0.25s ease-out;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+/* Size variants
+   ========================================================================== */
+.c-button--small {
+  padding-top: 0.375rem;
+  padding-right: 0.75rem;
+  padding-bottom: 0.375rem;
+  padding-left: 0.75rem;
+}
+
+.c-button--large {
+  padding-top: 1.5rem;
+  padding-right: 2.25rem;
+  padding-bottom: 1.5rem;
+  padding-left: 2.25rem;
+}
+
+.c-button--fit {
+  width: 100%;
 }
 
 /* Style variants
    ========================================================================== */
-.c-button--round {
+.c-button--rounded {
   border-radius: 3px;
 }
 
 .c-button--pill {
   border-radius: 3rem;
-}
-
-.c-button--outlined {
-  color: currentColor;
-  box-shadow: 0px 0px 0px 1px currentColor;
-}
-.c-button--outlined:hover, .c-button--outlined:active, .c-button--outlined:focus {
-  color: rgba(0, 0, 0, 0.8);
-  border-color: rgba(0, 0, 0, 0.8);
 }
 
 .c-button--disabled,
@@ -2254,143 +2317,298 @@ img.js-img-broken::after {
   pointer-events: none;
 }
 
-/* Size variants
+/* Ghost buttons
    ========================================================================== */
-.c-button--huge {
-  padding: 1.5rem 1.5rem;
+/**
+ * Ghost buttons have see-through backgrounds and are bordered.
+ */
+.c-button--ghost {
+  padding-top: 0.65625rem;
+  padding-right: 1.40625rem;
+  padding-bottom: 0.65625rem;
+  padding-left: 1.40625rem;
+  border: 2px solid currentColor;
 }
-
-.c-button--large {
-  padding: 1.125rem 1.5rem;
+.c-button--ghost, .c-button--ghost:hover, .c-button--ghost:active, .c-button--ghost:focus {
+  background: none;
 }
-
-.c-button--small {
-  padding: 0.375rem 1.5rem;
+.c-button--ghost.c-button--small {
+  padding-top: 0.25rem;
+  padding-right: 0.625rem;
+  padding-bottom: 0.25rem;
+  padding-left: 0.625rem;
 }
-
-.c-button--tiny {
-  padding: 0.1875rem 0.5rem;
-}
-
-.c-button--full {
-  display: block;
-  width: 100%;
-  margin-right: 0;
-  margin-left: 0;
-  padding-right: 0;
-  padding-left: 0;
+.c-button--ghost.c-button--large {
+  padding-top: 2.125rem;
+  padding-right: 0.625rem;
+  padding-bottom: 2.125rem;
+  padding-left: 0.625rem;
 }
 
 /* Color variants
    ========================================================================== */
-.c-button--action {
+.c-button--primary {
+  background-color: #378bb5;
+}
+.c-button--primary, .c-button--primary:hover, .c-button--primary:active, .c-button--primary:focus {
+  text-decoration: none;
+  /* [4] */
   color: #fff;
-  background-color: #228ae6;
-  border-color: #228ae6;
 }
-.c-button--action:hover, .c-button--action:active, .c-button--action:focus {
-  color: #fff;
-  background-color: #1670bf;
-  border-color: #1670bf;
+.c-button--primary:hover, .c-button--primary:focus {
+  background-color: #317ca1;
 }
-.c-button--action.c-button--outlined {
-  color: #228ae6;
-  background-color: transparent;
+.c-button--primary.c-button--ghost {
+  color: #378bb5;
 }
-.c-button--action.c-button--outlined:hover, .c-button--action.c-button--outlined:active, .c-button--action.c-button--outlined:focus {
-  color: #1670bf;
-  box-shadow-color: #1670bf;
+.c-button--primary.c-button--ghost, .c-button--primary.c-button--ghost:hover, .c-button--primary.c-button--ghost:active, .c-button--primary.c-button--ghost:focus {
+  background: none;
+}
+.c-button--primary.c-button--ghost:hover, .c-button--primary.c-button--ghost:focus {
+  color: #2b6d8e;
 }
 
-.c-button--success {
+.c-button--secondary {
+  background-color: #abc123;
+}
+.c-button--secondary, .c-button--secondary:hover, .c-button--secondary:active, .c-button--secondary:focus {
+  text-decoration: none;
+  /* [4] */
   color: #fff;
-  background-color: #51cf66;
-  border-color: #51cf66;
 }
-.c-button--success:hover, .c-button--success:active, .c-button--success:focus {
+.c-button--secondary:hover, .c-button--secondary:focus {
+  background-color: #98ab1f;
+}
+.c-button--secondary.c-button--ghost {
+  color: #abc123;
+}
+.c-button--secondary.c-button--ghost, .c-button--secondary.c-button--ghost:hover, .c-button--secondary.c-button--ghost:active, .c-button--secondary.c-button--ghost:focus {
+  background: none;
+}
+.c-button--secondary.c-button--ghost:hover, .c-button--secondary.c-button--ghost:focus {
+  color: #85961b;
+}
+
+.c-button--black {
+  background-color: #000;
+}
+.c-button--black, .c-button--black:hover, .c-button--black:active, .c-button--black:focus {
+  text-decoration: none;
+  /* [4] */
   color: #fff;
-  background-color: #33ba4a;
-  border-color: #33ba4a;
 }
-.c-button--success.c-button--outlined {
-  color: #51cf66;
-  background-color: transparent;
+.c-button--black:hover, .c-button--black:focus {
+  background-color: black;
 }
-.c-button--success.c-button--outlined:hover, .c-button--success.c-button--outlined:active, .c-button--success.c-button--outlined:focus {
-  color: #33ba4a;
-  box-shadow-color: #33ba4a;
+.c-button--black.c-button--ghost {
+  color: #000;
+}
+.c-button--black.c-button--ghost, .c-button--black.c-button--ghost:hover, .c-button--black.c-button--ghost:active, .c-button--black.c-button--ghost:focus {
+  background: none;
+}
+.c-button--black.c-button--ghost:hover, .c-button--black.c-button--ghost:focus {
+  color: black;
+}
+
+.c-button--white {
+  background-color: #fff;
+}
+.c-button--white, .c-button--white:hover, .c-button--white:active, .c-button--white:focus {
+  text-decoration: none;
+  /* [4] */
+  color: rgba(0, 0, 0, 0.8);
+}
+.c-button--white:hover, .c-button--white:focus {
+  background-color: #f2f2f2;
+}
+.c-button--white.c-button--ghost {
+  color: #fff;
+}
+.c-button--white.c-button--ghost, .c-button--white.c-button--ghost:hover, .c-button--white.c-button--ghost:active, .c-button--white.c-button--ghost:focus {
+  background: none;
+}
+.c-button--white.c-button--ghost:hover, .c-button--white.c-button--ghost:focus {
+  color: #e6e6e6;
+}
+
+.c-button--action {
+  background-color: #378bb5;
+}
+.c-button--action, .c-button--action:hover, .c-button--action:active, .c-button--action:focus {
+  text-decoration: none;
+  /* [4] */
+  color: #fff;
+}
+.c-button--action:hover, .c-button--action:focus {
+  background-color: #317ca1;
+}
+.c-button--action.c-button--ghost {
+  color: #378bb5;
+}
+.c-button--action.c-button--ghost, .c-button--action.c-button--ghost:hover, .c-button--action.c-button--ghost:active, .c-button--action.c-button--ghost:focus {
+  background: none;
+}
+.c-button--action.c-button--ghost:hover, .c-button--action.c-button--ghost:focus {
+  color: #2b6d8e;
 }
 
 .c-button--error {
-  color: #fff;
   background-color: #fa5252;
-  border-color: #fa5252;
 }
-.c-button--error:hover, .c-button--error:active, .c-button--error:focus {
+.c-button--error, .c-button--error:hover, .c-button--error:active, .c-button--error:focus {
+  text-decoration: none;
+  /* [4] */
   color: #fff;
-  background-color: #f92020;
-  border-color: #f92020;
 }
-.c-button--error.c-button--outlined {
+.c-button--error:hover, .c-button--error:focus {
+  background-color: #f93939;
+}
+.c-button--error.c-button--ghost {
   color: #fa5252;
-  background-color: transparent;
 }
-.c-button--error.c-button--outlined:hover, .c-button--error.c-button--outlined:active, .c-button--error.c-button--outlined:focus {
+.c-button--error.c-button--ghost, .c-button--error.c-button--ghost:hover, .c-button--error.c-button--ghost:active, .c-button--error.c-button--ghost:focus {
+  background: none;
+}
+.c-button--error.c-button--ghost:hover, .c-button--error.c-button--ghost:focus {
   color: #f92020;
-  box-shadow-color: #f92020;
 }
 
 .c-button--warning {
-  color: #fff;
   background-color: #ffa94d;
-  border-color: #ffa94d;
 }
-.c-button--warning:hover, .c-button--warning:active, .c-button--warning:focus {
+.c-button--warning, .c-button--warning:hover, .c-button--warning:active, .c-button--warning:focus {
+  text-decoration: none;
+  /* [4] */
   color: #fff;
-  background-color: #ff901a;
-  border-color: #ff901a;
 }
-.c-button--warning.c-button--outlined {
+.c-button--warning:hover, .c-button--warning:focus {
+  background-color: #ff9d34;
+}
+.c-button--warning.c-button--ghost {
   color: #ffa94d;
-  background-color: transparent;
 }
-.c-button--warning.c-button--outlined:hover, .c-button--warning.c-button--outlined:active, .c-button--warning.c-button--outlined:focus {
+.c-button--warning.c-button--ghost, .c-button--warning.c-button--ghost:hover, .c-button--warning.c-button--ghost:active, .c-button--warning.c-button--ghost:focus {
+  background: none;
+}
+.c-button--warning.c-button--ghost:hover, .c-button--warning.c-button--ghost:focus {
   color: #ff901a;
-  box-shadow-color: #ff901a;
 }
 
 .c-button--info {
-  color: #fff;
   background-color: #4dadf7;
-  border-color: #4dadf7;
 }
-.c-button--info:hover, .c-button--info:active, .c-button--info:focus {
+.c-button--info, .c-button--info:hover, .c-button--info:active, .c-button--info:focus {
+  text-decoration: none;
+  /* [4] */
   color: #fff;
-  background-color: #1c97f5;
-  border-color: #1c97f5;
 }
-.c-button--info.c-button--outlined {
+.c-button--info:hover, .c-button--info:focus {
+  background-color: #35a2f6;
+}
+.c-button--info.c-button--ghost {
   color: #4dadf7;
-  background-color: transparent;
 }
-.c-button--info.c-button--outlined:hover, .c-button--info.c-button--outlined:active, .c-button--info.c-button--outlined:focus {
+.c-button--info.c-button--ghost, .c-button--info.c-button--ghost:hover, .c-button--info.c-button--ghost:active, .c-button--info.c-button--ghost:focus {
+  background: none;
+}
+.c-button--info.c-button--ghost:hover, .c-button--info.c-button--ghost:focus {
   color: #1c97f5;
-  box-shadow-color: #1c97f5;
+}
+
+.c-button--success {
+  background-color: #40c057;
+}
+.c-button--success, .c-button--success:hover, .c-button--success:active, .c-button--success:focus {
+  text-decoration: none;
+  /* [4] */
+  color: #fff;
+}
+.c-button--success:hover, .c-button--success:focus {
+  background-color: #39ad4e;
+}
+.c-button--success.c-button--ghost {
+  color: #40c057;
+}
+.c-button--success.c-button--ghost, .c-button--success.c-button--ghost:hover, .c-button--success.c-button--ghost:active, .c-button--success.c-button--ghost:focus {
+  background: none;
+}
+.c-button--success.c-button--ghost:hover, .c-button--success.c-button--ghost:focus {
+  color: #339a45;
 }
 
 /* ==========================================================================
-   THEME / ECSSENTIAL
+   SCOPE / LINKS
    ========================================================================== */
-main {
-  counter-reset: headings;
+.s-links {
+  /**
+   * Links.
+   *
+   * 1. Country / language version.
+   * 2. External links.
+   * 3. Mailto.
+   * 4. Telephone.
+   * 5. Documents.
+   * 6. Audio.
+   */
 }
-
-h2 {
-  counter-increment: headings;
+.s-links a[hreflang]:not([hreflang="fr"]):lang(fr):after,
+.s-links a[lang^="fr"]:after,
+.s-links a[hreflang]:not([hreflang^="en"]):lang(en):after,
+.s-links a[lang^="en"]:after {
+  content: " [" attr(hreflang) "]";
+  /* [1] */
 }
-
-h2:before {
-  content: counter(headings) ". ";
+.s-links :lang(en) > a[lang]:not([hreflang]):after,
+.s-links :lang(fr) > a[lang]:not([hreflang]):after,
+.s-links :lang(en) > a[lang^="en"]:after,
+.s-links :lang(fr) > a[lang^="fr"]:after {
+  content: none;
+  /* [1] */
+}
+.s-links a[hreflang=""]:after,
+.s-links h1 > a[hreflang]:after,
+.s-links h2 > a[hreflang]:after,
+.s-links h3 > a[hreflang]:after {
+  content: none !important;
+  /* [1] */
+}
+.s-links a:not([href*="yourdomain.com"]):not([href^="#"]):not([href^="mailto"]):not([href^="tel"])::after {
+  content: "\0020\279A";
+  /* [2] */
+}
+.s-links a[hreflang]:not([href*="yourdomain.com"]):not([href^="#"]):not([href^="mailto"]):not([href^="tel"])::after {
+  content: " [" attr(hreflang) "] ➚";
+  /* [2] */
+}
+.s-links a[href^="mailto"]::after {
+  content: "\0020\2709";
+  /* [3] */
+}
+.s-links a[href^="tel"]::after {
+  content: "\0020\2706";
+  /* [4] */
+}
+.s-links a[download]::after {
+  content: "\0020\21A7";
+  /* [5] */
+}
+.s-links a[hreflang][download]::after {
+  content: " [" attr(hreflang) "] ↧";
+  /* [5] */
+}
+.s-links a[href$=".mp3"]::after,
+.s-links a[href$=".wma"]::after,
+.s-links a[href$=".ogg"]::after,
+.s-links a[href$=".flac"]::after {
+  content: "\0020\266B";
+  /* [6] */
+}
+.s-links a[hreflang][href$=".mp3"]::after,
+.s-links a[hreflang][href$=".wma"]::after,
+.s-links a[hreflang][href$=".ogg"]::after,
+.s-links a[hreflang][href$=".flac"]::after {
+  content: " [" attr(hreflang) "] ♫";
+  /* [6] */
 }
 
 /* ==========================================================================
@@ -2408,18 +2626,18 @@ h2:before {
  */
 .u-h1-size {
   margin-bottom: 1.5rem;
-  font-size: 3.1666666667rem;
+  font-size: 3.1875rem;
   line-height: 4.5rem;
 }
 
 .u-h2-size {
   margin-bottom: 1.5rem;
-  font-size: 2.3888888889rem;
+  font-size: 2.375rem;
   line-height: 3rem;
 }
 
 .u-h3-size {
-  font-size: 1.7777777778rem;
+  font-size: 1.75rem;
   line-height: 3rem;
 }
 
@@ -2438,9 +2656,15 @@ h2:before {
   line-height: 1.5rem;
 }
 
-/* ==========================================================================
-   TRUMPS / TEXT
-   ========================================================================== */
+/**
+ * A generic heading style which can be applied to any headings.
+ */
+.u-heading {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
 /**
  * Text adjustments.
  *
@@ -2453,567 +2677,691 @@ h2:before {
  *
  */
 .u-text--xx-large {
-  font-size: 5.6111111111rem;
+  font-size: 5.625rem;
   line-height: 6rem;
 }
 
 .u-text--x-large {
-  font-size: 4.2222222222rem;
+  font-size: 4.1875rem;
   line-height: 4.5rem;
 }
 
 .u-text--large {
-  font-size: 3.1666666667rem;
+  font-size: 3.1875rem;
   line-height: 4.5rem;
 }
 
+.u-text--normal {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
 .u-text--small {
-  font-size: 0.7777777778rem;
+  font-size: 0.75rem;
   line-height: 1.5rem;
 }
 
 .u-text--x-small {
-  font-size: 0.5555555556rem;
+  font-size: 0.5625rem;
+  line-height: 1.5rem;
+}
+
+/**
+ * Dropcaps.
+ *
+ * The font size and margins used on lines 8 and 10 of the code above vary for
+ * different typefaces. The following table provides values for two heights of
+ * drop cap for each of four common typefaces.
+
+    Times New Roman/Times, two lines   => font-size: 3.29em | margin: 0.205em 0.153em 0 0
+    Times New Roman/Times, three lines => font-size: 5.53em | margin: 0.151em 0.0904em 0 0
+    Georgia, two lines                 => font-size: 3.20em | margin: 0.225em 0.159em 0 0
+    Georgia, three lines               => font-size: 5.32em | margin: 0.172em 0.0940em 0 0
+    Arial/Helvetica, two lines         => font-size: 3.11em | margin: 0.240em 0.161em 0 0
+    Arial/Helvetica, three lines       => font-size: 5.20em | margin: 0.192em 0.0962em 0 0
+    Verdana, two lines                 => font-size: 3.06em | margin: 0.218em 0.163em 0 0
+    Verdana, three lines               => font-size: 5.12em | margin: 0.162em 0.0977em 0 0
+
+ * Info: http://code.stephenmorley.org/html-and-css/creating-drop-caps/
+ */
+.u-dropcap:first-letter {
+  float: left;
+  vertical-align: bottom;
+  margin: 0.225em 0.159em 0 0;
+  font-family: Georgia;
+  font-size: 3.2em;
+  line-height: 0.5;
+  text-transform: uppercase;
+  color: inherit;
+}
+
+/**
+ * The `.u-lede` class is used to make the introductory text (usually a paragraph)
+ * of a document slightly larger: en.wikipedia.org/wiki/Lede_(news)
+ */
+.u-lede {
+  margin-bottom: 1.5rem;
+  font-size: 1.3125rem;
   line-height: 1.5rem;
 }
 
 /* ==========================================================================
-   TRUMPS / PROSE
+   OBJECTS / PULLQUOTE
    ========================================================================== */
-.u-prose {
-  /**
-   * Links.
-   *
-   * 1. Country / language version.
-   * 2. External links.
-   * 3. Mailto.
-   * 4. Telephone.
-   * 5. Documents.
-   * 6. Audio.
-   */
-}
-.u-prose a[hreflang]:not([hreflang="fr"]):lang(fr):after,
-.u-prose a[lang^="fr"]:after,
-.u-prose a[hreflang]:not([hreflang^="en"]):lang(en):after,
-.u-prose a[lang^="en"]:after {
-  content: " [" attr(hreflang) "]";
-  /* [1] */
-}
-.u-prose :lang(en) > a[lang]:not([hreflang]):after,
-.u-prose :lang(fr) > a[lang]:not([hreflang]):after,
-.u-prose :lang(en) > a[lang^="en"]:after,
-.u-prose :lang(fr) > a[lang^="fr"]:after {
-  content: none;
-  /* [1] */
-}
-.u-prose a[hreflang=""]:after,
-.u-prose h1 > a[hreflang]:after,
-.u-prose h2 > a[hreflang]:after,
-.u-prose h3 > a[hreflang]:after {
-  content: none !important;
-  /* [1] */
-}
-.u-prose a:not([href*="yourdomain.com"]):not([href^="#"]):not([href^="mailto"]):not([href^="tel"])::after {
-  content: "\0020\279A";
-  /* [2] */
-}
-.u-prose a[hreflang]:not([href*="yourdomain.com"]):not([href^="#"]):not([href^="mailto"]):not([href^="tel"])::after {
-  content: " [" attr(hreflang) "] ➚";
-  /* [2] */
-}
-.u-prose a[href^="mailto"]::after {
-  content: "\0020\2709";
-  /* [3] */
-}
-.u-prose a[href^="tel"]::after {
-  content: "\0020\2706";
-  /* [4] */
-}
-.u-prose a[download]::after {
-  content: "\0020\21A7";
-  /* [5] */
-}
-.u-prose a[hreflang][download]::after {
-  content: " [" attr(hreflang) "] ↧";
-  /* [5] */
-}
-.u-prose a[href$=".mp3"]::after,
-.u-prose a[href$=".wma"]::after,
-.u-prose a[href$=".ogg"]::after,
-.u-prose a[href$=".flac"]::after {
-  content: "\0020\266B";
-  /* [6] */
-}
-.u-prose a[hreflang][href$=".mp3"]::after,
-.u-prose a[hreflang][href$=".wma"]::after,
-.u-prose a[hreflang][href$=".ogg"]::after,
-.u-prose a[hreflang][href$=".flac"]::after {
-  content: " [" attr(hreflang) "] ♫";
-  /* [6] */
-}
-
-/* ==========================================================================
-   TRUMPS / HELPERS
-   ========================================================================== */
-/**
- * A series of classes to use arbitrarily.
- */
-/**
- * Basic positioning to alter the default document flow.
- */
-.u-static {
-  position: static;
-}
-
-.u-relative {
-  position: relative;
-}
-
-.u-absolute {
-  position: absolute;
-}
-
-.u-fixed {
-  position: fixed;
-}
-
-.u-top-0px {
-  top: 0;
-}
-
-.u-right-0px {
-  right: 0;
-}
-
-.u-bottom-0px {
-  bottom: 0;
-}
-
-.u-left--0px {
-  left: 0;
-}
-
-.stack-order--1 {
-  z-index: 1;
-}
-
-.stack-order--2 {
-  z-index: 2;
-}
-
-.stack-order--3 {
-  z-index: 3;
-}
-
-.stack-order--4 {
-  z-index: 4;
-}
-
-.stack-order--5 {
-  z-index: 5;
-}
-
-.u-inline {
-  display: inline;
-}
-
-.u-block {
+.u-pull-quote {
   display: block;
-}
-
-.u-inline-block {
-  display: inline-block;
-}
-
-.u-table {
-  display: table;
-}
-
-.u-table-cell {
-  display: table-cell;
-}
-
-.u-overflow--hidden {
-  overflow: hidden;
-}
-
-.u-overflow--scroll {
-  overflow: scroll;
-}
-
-.u-overflow--auto {
-  overflow: auto;
-}
-
-.u-clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.u-pushed-right {
-  float: right;
-}
-
-.u-pulled-left {
-  float: left;
-}
-
-.u-centered {
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.u-aligned-left {
-  text-align: left;
-}
-
-.u-aligned-center {
+  margin-top: 1.5rem;
+  margin-right: 3rem;
+  margin-bottom: 1.5rem;
+  margin-left: 3rem;
+  font-size: 1.3125rem;
+  line-height: 1.5rem;
+  font-style: italic;
   text-align: center;
 }
-
-.u-aligned-right {
-  text-align: right;
-}
-
-.u-justified {
-  text-align: justify;
-}
-
-/**
- * Adjust vertical alignment.
- */
-.u-aligned-top {
-  vertical-align: top;
-}
-
-.u-aligned-middle {
-  vertical-align: middle;
-}
-
-.u-aligned-bottom {
-  vertical-align: bottom;
-}
-
-.u-aligned-baseline {
-  vertical-align: baseline;
-}
-
-/**
- * Adjust borders and border radii.
- */
-.u-border {
-  position: relative;
-  border-style: solid;
-  border-color: #dee2e6;
-  border-right-width: 1px;
-  border-left-width: 1px;
-}
-.u-border::before {
+.u-pull-quote::before {
   content: '';
-  position: absolute;
-  top: -1px;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: linear-gradient(to bottom, transparent 50%, #dee2e6 50%);
-  background-position: 0 top;
-  background-repeat: repeat-x;
-  background-size: 100% 2px;
 }
-.u-border::after {
+.u-pull-quote::after {
   content: '';
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background-image: linear-gradient(to bottom, transparent 50%, #dee2e6 50%);
-  background-position: 0 bottom;
-  background-repeat: repeat-x;
-  background-size: 100% 2px;
-}
-
-.u-border-right {
-  position: relative;
-  border-style: solid;
-  border-color: #dee2e6;
-  border-right-width: 1px;
-}
-
-.u-border-bottom {
-  position: relative;
-}
-.u-border-bottom::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background-image: linear-gradient(to bottom, transparent 50%, #dee2e6 50%);
-  background-position: 0 100%;
-  background-repeat: repeat-x;
-  background-size: 100% 2px;
-}
-
-.u-border-left {
-  position: relative;
-  border-style: solid;
-  border-color: #dee2e6;
-  border-left-width: 1px;
-}
-
-.u-border-right--none {
-  border-right: 0;
-}
-
-.u-border-bottom--none {
-  border-bottom: 0;
-}
-
-.u-border-left--none {
-  border-left: 0;
-}
-
-.u-not-bordered {
-  border: 0;
-}
-
-.u-rounded {
-  border-radius: 3px;
-}
-
-.u-rounded-top {
-  border-radius: 3px 3px 0 0;
-}
-
-.u-rounded-right {
-  border-radius: 0 3px 3px 0;
-}
-
-.u-rounded-bottom {
-  border-radius: 0 0 3px 3px;
-}
-
-.u-rounded-left {
-  border-radius: 3px 0 0 3px;
-}
-
-.u-not-rounded {
-  border-radius: 0;
-}
-
-.u-circle {
-  border-radius: 50%;
 }
 
 /**
- * Adjust the type of list-item marker.
+ * Small caps.
+ *
+ * For browsers that don't support OpenType, features, use all caps.
  */
-.u-list-circle {
-  list-style-type: circle;
-}
-
-.u-list-disc {
-  list-style-type: disc;
-}
-
-.u-list-square {
-  list-style-type: square;
-}
-
-.u-list-decimal {
-  list-style-type: decimal;
-}
-
-.u-list-leading-zero {
-  list-style-type: decimal-leading-zero;
-}
-
-.u-list-lower-alpha {
-  list-style-type: lower-alpha;
-}
-
-.u-list-upper-alpha {
-  list-style-type: upper-alpha;
-}
-
-.u-list-lower-roman {
-  list-style-type: lower-roman;
-}
-
-.u-list-upper-roman {
-  list-style-type: upper-roman;
-}
-
-/**
- * Adjust typographic weights and styles.
- */
-.u-serif {
-  font-family: Georgia, Times, "Times New Roman", serif;
-}
-
-.u-sans-serif {
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-}
-
-.u-thin {
-  font-weight: 100;
-}
-
-.u-light {
-  font-weight: 300;
-}
-
-.u-regular {
-  font-weight: 400;
-}
-
-.u-medium {
-  font-weight: 600;
-}
-
-.u-bold {
-  font-weight: 700;
-}
-
-.u-ultra-bold {
-  font-weight: 900;
-}
-
-.u-normal {
-  font-style: normal;
-}
-
-.u-italic {
-  font-style: italic;
-}
-
-.u-oblique {
-  font-style: oblique;
-}
-
-.u-uppercase {
+.u-small-caps {
   text-transform: uppercase;
+  -ms-font-feature-settings: "lnum", "smcp", "c2sc" 0;
 }
 
-.u-lowercase {
-  text-transform: lowercase;
+/**
+ * Progressively enhance with `font-feature-settings` if `font-variant-caps`
+ * isn't supported.
+ */
+@supports not (font-variant-caps: small-caps) {
+  .u-small-caps {
+    text-transform: inherit;
+    -webkit-font-feature-settings: "onum", "smcp", "c2sc" 0;
+    font-feature-settings: "onum", "smcp", "c2sc" 0;
+  }
+}
+/**
+ * Otherwise, and ideally, use `font-variant-caps`.
+ */
+@supports (font-variant-caps: small-caps) {
+  .u-small-caps {
+    text-transform: inherit;
+    -webkit-font-feature-settings: "c2sc";
+    font-feature-settings: "c2sc";
+    font-variant-caps: small-caps;
+  }
+}
+/* ==========================================================================
+   TRUMPS / COLORS
+   ========================================================================== */
+/**
+ * Text colors variations.
+ */
+.u-color-text {
+  color: rgba(0, 0, 0, 0.8);
 }
 
-.u-underline {
-  text-decoration: underline;
-  color: inherit;
+.u-color-text-soft {
+  color: rgba(0, 0, 0, 0.6);
 }
 
-.u-underline--none {
-  text-decoration: none;
+.u-color-text-muted {
+  color: rgba(0, 0, 0, 0.44);
 }
 
-.u-overline {
-  text-decoration: overline;
-  color: inherit;
+.u-color-text-primary {
+  color: #378bb5;
 }
 
-.u-line-through {
-  text-decoration: line-through;
-  color: inherit;
+.u-color-text-primary-highlight {
+  color: #4099c5;
 }
 
-.u-nowrap {
-  white-space: nowrap;
+.u-color-text-primary-shadow {
+  color: #317ca1;
 }
 
-.u-break-word {
-  word-wrap: break-word;
+.u-color-text-secondary {
+  color: #abc123;
+}
+
+.u-color-text-secondary-highlight {
+  color: #bed727;
+}
+
+.u-color-text-secondary-shadow {
+  color: #98ab1f;
+}
+
+.u-color-text-action {
+  color: #378bb5;
+}
+
+.u-color-text-info {
+  color: #4dadf7;
+}
+
+.u-color-text-success {
+  color: #40c057;
+}
+
+.u-color-text-warning {
+  color: #ffa94d;
+}
+
+.u-color-text-error {
+  color: #378bb5;
+}
+
+/**
+ * Background colors variations.
+ */
+.u-background {
+  background-color: #fff;
+}
+
+.u-background-primary {
+  background-color: #378bb5;
+}
+
+.u-background-primary-highlight {
+  background-color: #4099c5;
+}
+
+.u-background-primary-shadow {
+  background-color: #317ca1;
+}
+
+.u-background-secondary {
+  background-color: #abc123;
+}
+
+.u-background-secondary-highlight {
+  background-color: #bed727;
+}
+
+.u-background-secondary-shadow {
+  background-color: #98ab1f;
+}
+
+.u-background-ui-light {
+  background-color: rgba(0, 0, 0, 0.0625);
+}
+
+.u-background-ui-medium {
+  background-color: rgba(0, 0, 0, 0.125);
+}
+
+.u-background-ui-dark {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.u-background-action {
+  background-color: #378bb5;
+}
+
+.u-background-info {
+  background-color: #4dadf7;
+}
+
+.u-background-success {
+  background-color: #40c057;
+}
+
+.u-background-warning {
+  background-color: #ffa94d;
+}
+
+.u-background-error {
+  background-color: #fa5252;
+}
+
+/**
+ * Border colors variations.
+ */
+.u-border-primary {
+  border-color: #378bb5;
+}
+
+.u-border-primary-highlight {
+  border-color: #4099c5;
+}
+
+.u-border-primary-shadow {
+  border-color: #317ca1;
+}
+
+.u-border-secondary {
+  border-color: #abc123;
+}
+
+.u-border-secondary-highlight {
+  border-color: #bed727;
+}
+
+.u-border-secondary-shadow {
+  border-color: #98ab1f;
+}
+
+.u-border-ui-light {
+  border-color: rgba(0, 0, 0, 0.0625);
+}
+
+.u-border-ui-medium {
+  border-color: rgba(0, 0, 0, 0.125);
+}
+
+.u-border-ui-dark {
+  border-color: rgba(0, 0, 0, 0.25);
+}
+
+.u-border-action {
+  border-color: #378bb5;
+}
+
+.u-border-info {
+  border-color: #4dadf7;
+}
+
+.u-border-success {
+  border-color: #40c057;
+}
+
+.u-border-warning {
+  border-color: #ffa94d;
+}
+
+.u-border-error {
+  border-color: #fa5252;
+}
+
+/**
+ * Fill colors variations.
+ */
+.u-fill-primary {
+  fill: #378bb5;
+}
+
+.u-fill-primary-highlight {
+  fill: #4099c5;
+}
+
+.u-fill-primary-shadow {
+  fill: #317ca1;
+}
+
+.u-fill-secondary {
+  fill: #abc123;
+}
+
+.u-fill-secondary-highlight {
+  fill: #bed727;
+}
+
+.u-fill-secondary-shadow {
+  fill: #98ab1f;
+}
+
+.u-fill-ui-light {
+  fill: rgba(0, 0, 0, 0.0625);
+}
+
+.u-fill-ui-medium {
+  fill: rgba(0, 0, 0, 0.125);
+}
+
+.u-fill-ui-dark {
+  fill: rgba(0, 0, 0, 0.25);
+}
+
+.u-fill-action {
+  fill: #378bb5;
+}
+
+.u-fill-info {
+  fill: #4dadf7;
+}
+
+.u-fill-success {
+  fill: #40c057;
+}
+
+.u-fill-warning {
+  fill: #ffa94d;
+}
+
+.u-fill-error {
+  fill: #fa5252;
+}
+
+/**
+ * Gives us the ability to do color manipulations right in the browser.
+ */
+.u-color-dark {
+  color: rgba(0, 0, 0, 0.0625);
+}
+
+.u-color-x-dark {
+  color: rgba(0, 0, 0, 0.125);
+}
+
+.u-color-xx-dark {
+  color: rgba(0, 0, 0, 0.25);
+}
+
+.u-color-xxx-dark {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.u-color-light {
+  color: rgba(255, 255, 255, 0.0625);
+}
+
+.u-color-x-light {
+  color: rgba(255, 255, 255, 0.125);
+}
+
+.u-color-xx-light {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.u-color-xxx-light {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.u-background-dark {
+  background-color: rgba(0, 0, 0, 0.0625);
+}
+
+.u-background-x-dark {
+  background-color: rgba(0, 0, 0, 0.125);
+}
+
+.u-background-xx-dark {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.u-background-xxx-dark {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.u-background-light {
+  background-color: rgba(255, 255, 255, 0.0625);
+}
+
+.u-background-x-light {
+  background-color: rgba(255, 255, 255, 0.125);
+}
+
+.u-background-xx-light {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.u-background-xxx-light {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.u-border-dark {
+  border-color: rgba(0, 0, 0, 0.0625);
+}
+
+.u-border-x-dark {
+  border-color: rgba(0, 0, 0, 0.125);
+}
+
+.u-border-xx-dark {
+  border-color: rgba(0, 0, 0, 0.25);
+}
+
+.u-border-xxx-dark {
+  border-color: rgba(0, 0, 0, 0.5);
+}
+
+.u-border-light {
+  border-color: rgba(255, 255, 255, 0.0625);
+}
+
+.u-border-x-light {
+  border-color: rgba(255, 255, 255, 0.125);
+}
+
+.u-border-xx-light {
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.u-border-xxx-light {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.u-fill-dark {
+  color: rgba(0, 0, 0, 0.0625);
+}
+
+.u-fill-x-dark {
+  color: rgba(0, 0, 0, 0.125);
+}
+
+.u-fill-xx-dark {
+  color: rgba(0, 0, 0, 0.25);
+}
+
+.u-fill-xxx-dark {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.u-fill-light {
+  color: rgba(255, 255, 255, 0.0625);
+}
+
+.u-fill-x-light {
+  color: rgba(255, 255, 255, 0.125);
+}
+
+.u-fill-xx-light {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.u-fill-xxx-light {
+  color: rgba(255, 255, 255, 0.5);
 }
 
 /* ==========================================================================
-   TRUMPS / SHOW-HIDE
+   TRUMPS / WIDTHS
    ========================================================================== */
-.u-text-hidden {
-  font: 0/0 a;
-  text-shadow: none;
-  color: transparent;
-  background-color: transparent;
-  border: 0;
+/**
+ * A series of width helper classes that you can use to size things like grid
+ * systems. Classes can take a fraction-like format (e.g. `.u-2/3`) or a spoken-
+ * word format (e.g. `.u-2-of-3`). Use these in your markup:
+ *
+ * <div class="u-3/4">
+ */
+.u-1\/1 {
+  width: 100% !important;
 }
 
-.u-shown {
-  display: block !important;
+.u-1\/2 {
+  width: 50% !important;
 }
 
-.u-hidden {
-  display: none !important;
+.u-2\/2 {
+  width: 100% !important;
 }
 
-.u-visible {
-  visibility: visible !important;
+.u-1\/3 {
+  width: 33.3333333333% !important;
 }
 
-.u-invisible {
-  visibility: hidden !important;
+.u-2\/3 {
+  width: 66.6666666667% !important;
 }
 
-.u-off-screen {
-  position: absolute !important;
-  width: 1px !important;
-  height: 1px !important;
-  margin: -1px !important;
-  padding: 0 !important;
-  border: 0 !important;
-  clip: rect(0 0 0 0) !important;
-  overflow: hidden !important;
+.u-3\/3 {
+  width: 100% !important;
 }
 
-@media (min-width: 26.6666666667em) {
-  .u-hide\@small {
-    position: absolute !important;
-    width: 1px !important;
-    height: 1px !important;
-    margin: -1px !important;
-    padding: 0 !important;
-    border: 0 !important;
-    clip: rect(0 0 0 0) !important;
-    overflow: hidden !important;
+.u-1\/4 {
+  width: 25% !important;
+}
+
+.u-2\/4 {
+  width: 50% !important;
+}
+
+.u-3\/4 {
+  width: 75% !important;
+}
+
+.u-4\/4 {
+  width: 100% !important;
+}
+
+.u-1\/5 {
+  width: 20% !important;
+}
+
+.u-2\/5 {
+  width: 40% !important;
+}
+
+.u-3\/5 {
+  width: 60% !important;
+}
+
+.u-4\/5 {
+  width: 80% !important;
+}
+
+.u-5\/5 {
+  width: 100% !important;
+}
+
+@media (min-width: 45em) {
+  .u-1\/1\@medium {
+    width: 100% !important;
+  }
+
+  .u-1\/2\@medium {
+    width: 50% !important;
+  }
+
+  .u-2\/2\@medium {
+    width: 100% !important;
+  }
+
+  .u-1\/3\@medium {
+    width: 33.3333333333% !important;
+  }
+
+  .u-2\/3\@medium {
+    width: 66.6666666667% !important;
+  }
+
+  .u-3\/3\@medium {
+    width: 100% !important;
+  }
+
+  .u-1\/4\@medium {
+    width: 25% !important;
+  }
+
+  .u-2\/4\@medium {
+    width: 50% !important;
+  }
+
+  .u-3\/4\@medium {
+    width: 75% !important;
+  }
+
+  .u-4\/4\@medium {
+    width: 100% !important;
+  }
+
+  .u-1\/5\@medium {
+    width: 20% !important;
+  }
+
+  .u-2\/5\@medium {
+    width: 40% !important;
+  }
+
+  .u-3\/5\@medium {
+    width: 60% !important;
+  }
+
+  .u-4\/5\@medium {
+    width: 80% !important;
+  }
+
+  .u-5\/5\@medium {
+    width: 100% !important;
   }
 }
-@media (min-width: 40em) {
-  .u-hide\@medium {
-    position: absolute !important;
-    width: 1px !important;
-    height: 1px !important;
-    margin: -1px !important;
-    padding: 0 !important;
-    border: 0 !important;
-    clip: rect(0 0 0 0) !important;
-    overflow: hidden !important;
+@media (min-width: 60em) {
+  .u-1\/1\@large {
+    width: 100% !important;
   }
-}
-@media (min-width: 53.3333333333em) {
-  .u-hide\@arge {
-    position: absolute !important;
-    width: 1px !important;
-    height: 1px !important;
-    margin: -1px !important;
-    padding: 0 !important;
-    border: 0 !important;
-    clip: rect(0 0 0 0) !important;
-    overflow: hidden !important;
+
+  .u-1\/2\@large {
+    width: 50% !important;
   }
-}
-@media (min-width: 71.1111111111em) {
-  .u-hide\@huge {
-    position: absolute !important;
-    width: 1px !important;
-    height: 1px !important;
-    margin: -1px !important;
-    padding: 0 !important;
-    border: 0 !important;
-    clip: rect(0 0 0 0) !important;
-    overflow: hidden !important;
+
+  .u-2\/2\@large {
+    width: 100% !important;
+  }
+
+  .u-1\/3\@large {
+    width: 33.3333333333% !important;
+  }
+
+  .u-2\/3\@large {
+    width: 66.6666666667% !important;
+  }
+
+  .u-3\/3\@large {
+    width: 100% !important;
+  }
+
+  .u-1\/4\@large {
+    width: 25% !important;
+  }
+
+  .u-2\/4\@large {
+    width: 50% !important;
+  }
+
+  .u-3\/4\@large {
+    width: 75% !important;
+  }
+
+  .u-4\/4\@large {
+    width: 100% !important;
+  }
+
+  .u-1\/5\@large {
+    width: 20% !important;
+  }
+
+  .u-2\/5\@large {
+    width: 40% !important;
+  }
+
+  .u-3\/5\@large {
+    width: 60% !important;
+  }
+
+  .u-4\/5\@large {
+    width: 80% !important;
+  }
+
+  .u-5\/5\@large {
+    width: 100% !important;
   }
 }
 /* ==========================================================================
@@ -3270,347 +3618,467 @@ h2:before {
 }
 
 /* ==========================================================================
-   TRUMPS / COLORS
+   TRUMPS / HELPERS
    ========================================================================== */
-.u-text-white {
-  color: #fff;
+/**
+ * A series of classes to use arbitrarily.
+ */
+/**
+ * Basic positioning to alter the default document flow.
+ */
+.u-static {
+  position: static;
 }
 
-.u-text-soft {
-  color: rgba(0, 0, 0, 0.6);
+.u-relative {
+  position: relative;
 }
 
-.u-text-muted {
-  color: rgba(0, 0, 0, 0.44);
+.u-absolute {
+  position: absolute;
 }
 
-.u-text-gray {
-  color: #495057;
+.u-fixed {
+  position: fixed;
 }
 
-.u-text-red {
-  color: #f03e3e;
+.u-top-0px {
+  top: 0;
 }
 
-.u-text-pink {
-  color: #d6336c;
+.u-right-0px {
+  right: 0;
 }
 
-.u-text-grape {
-  color: #ae3ec9;
+.u-bottom-0px {
+  bottom: 0;
 }
 
-.u-text-violet {
-  color: #7048e8;
+.u-left--0px {
+  left: 0;
 }
 
-.u-text-indigo {
-  color: #4263eb;
+.u-inline {
+  display: inline;
 }
 
-.u-text-blue {
-  color: #1c7cd6;
+.u-block {
+  display: block;
 }
 
-.u-text-cyan {
-  color: #1098ad;
+.u-inline-block {
+  display: inline-block;
 }
 
-.u-text-teal {
-  color: #0ca678;
+.u-table {
+  display: table;
 }
 
-.u-text-green {
-  color: #37b24d;
+.u-table-cell {
+  display: table-cell;
 }
 
-.u-text-lime {
-  color: #74b816;
+.u-overflow-hidden {
+  overflow: hidden;
 }
 
-.u-text-yellow {
-  color: #f59f00;
+.u-overflow-scroll {
+  overflow: scroll;
 }
 
-.u-text-orange {
-  color: #f76707;
+.u-overflow-auto {
+  overflow: auto;
 }
 
-.u-background-gray {
-  background-color: #495057;
+.u-clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
-.u-background-red {
-  background-color: #f03e3e;
+.u-centered {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
 }
 
-.u-background-pink {
-  background-color: #d6336c;
+.u-pushed-right {
+  float: right;
 }
 
-.u-background-grape {
-  background-color: #ae3ec9;
+.u-pulled-left {
+  float: left;
 }
 
-.u-background-violet {
-  background-color: #7048e8;
-}
-
-.u-background-indigo {
-  background-color: #4263eb;
-}
-
-.u-background-blue {
-  background-color: #1c7cd6;
-}
-
-.u-background-cyan {
-  background-color: #1098ad;
-}
-
-.u-background-teal {
-  background-color: #0ca678;
-}
-
-.u-background-green {
-  background-color: #37b24d;
-}
-
-.u-background-lime {
-  background-color: #74b816;
-}
-
-.u-background-yellow {
-  background-color: #f59f00;
-}
-
-.u-background-orange {
-  background-color: #f76707;
-}
-
-.u-border-gray {
-  border-color: #495057;
-}
-
-.u-border-red {
-  border-color: #f03e3e;
-}
-
-.u-border-pink {
-  border-color: #d6336c;
-}
-
-.u-border-grape {
-  border-color: #ae3ec9;
-}
-
-.u-border-violet {
-  border-color: #7048e8;
-}
-
-.u-border-indigo {
-  border-color: #4263eb;
-}
-
-.u-border-blue {
-  border-color: #1c7cd6;
-}
-
-.u-border-cyan {
-  border-color: #1098ad;
-}
-
-.u-border-teal {
-  border-color: #0ca678;
-}
-
-.u-border-green {
-  border-color: #37b24d;
-}
-
-.u-border-lime {
-  border-color: #74b816;
-}
-
-.u-border-yellow {
-  border-color: #f59f00;
-}
-
-.u-border-orange {
-  border-color: #f76707;
-}
+@media (min-width: 45em) {
+  img.u-pushed-right,
+  figure.u-pushed-right {
+    float: right;
+    width: 33.333%;
+    margin-left: 1.5rem;
+  }
 
-.u-fill-gray {
-  fill: #495057;
+  img.u-pulled-left,
+  figure.u-pulled-left {
+    float: left;
+    width: 33.333%;
+    margin-right: 1.5rem;
+  }
 }
-
-.u-fill-red {
-  fill: #f03e3e;
-}
-
-.u-fill-pink {
-  fill: #d6336c;
-}
-
-.u-fill-grape {
-  fill: #ae3ec9;
-}
-
-.u-fill-violet {
-  fill: #7048e8;
-}
-
-.u-fill-indigo {
-  fill: #4263eb;
-}
-
-.u-fill-blue {
-  fill: #1c7cd6;
-}
-
-.u-fill-cyan {
-  fill: #1098ad;
-}
-
-.u-fill-teal {
-  fill: #0ca678;
-}
-
-.u-fill-green {
-  fill: #37b24d;
-}
-
-.u-fill-lime {
-  fill: #74b816;
-}
-
-.u-fill-yellow {
-  fill: #f59f00;
-}
-
-.u-fill-orange {
-  fill: #f76707;
-}
-
-.u-stroke-gray {
-  stroke: #495057;
-}
-
-.u-stroke-red {
-  stroke: #f03e3e;
-}
-
-.u-stroke-pink {
-  stroke: #d6336c;
-}
-
-.u-stroke-grape {
-  stroke: #ae3ec9;
-}
-
-.u-stroke-violet {
-  stroke: #7048e8;
-}
-
-.u-stroke-indigo {
-  stroke: #4263eb;
-}
-
-.u-stroke-blue {
-  stroke: #1c7cd6;
-}
-
-.u-stroke-cyan {
-  stroke: #1098ad;
-}
-
-.u-stroke-teal {
-  stroke: #0ca678;
-}
-
-.u-stroke-green {
-  stroke: #37b24d;
+.u-aligned-left {
+  text-align: left;
 }
 
-.u-stroke-lime {
-  stroke: #74b816;
+.u-aligned-center {
+  text-align: center;
 }
 
-.u-stroke-yellow {
-  stroke: #f59f00;
+.u-aligned-right {
+  text-align: right;
 }
 
-.u-stroke-orange {
-  stroke: #f76707;
+.u-justified {
+  text-align: justify;
 }
 
 /**
- * Gives us the ability to do color manipulations right in the browser.
+ * Adjust vertical alignment.
  */
-.u-color-darken-1 {
-  color: rgba(0, 0, 0, 0.0625);
+.u-aligned-top {
+  vertical-align: top;
 }
 
-.u-color-darken-2 {
-  color: rgba(0, 0, 0, 0.125);
+.u-aligned-middle {
+  vertical-align: middle;
 }
 
-.u-color-darken-3 {
-  color: rgba(0, 0, 0, 0.25);
+.u-aligned-bottom {
+  vertical-align: bottom;
 }
 
-.u-color-darken-4 {
-  color: rgba(0, 0, 0, 0.5);
+.u-aligned-baseline {
+  vertical-align: baseline;
 }
 
-.u-color-lighten-1 {
-  color: rgba(255, 255, 255, 0.0625);
+/**
+ * Adjust borders and border radii.
+ */
+.u-border {
+  position: relative;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.125);
+  border-right-width: 1px;
+  border-left-width: 1px;
+}
+.u-border::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: -webkit-linear-gradient(top, transparent 50%, rgba(0, 0, 0, 0.125) 50%);
+  background-image: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.125) 50%);
+  background-position: 0 top;
+  background-repeat: repeat-x;
+  background-size: 100% 2px;
+}
+.u-border::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-image: -webkit-linear-gradient(top, transparent 50%, rgba(0, 0, 0, 0.125) 50%);
+  background-image: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.125) 50%);
+  background-position: 0 bottom;
+  background-repeat: repeat-x;
+  background-size: 100% 2px;
 }
 
-.u-color-lighten-2 {
-  color: rgba(255, 255, 255, 0.125);
+.u-border-right {
+  position: relative;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.125);
+  border-right-width: 1px;
 }
 
-.u-color-lighten-3 {
-  color: rgba(255, 255, 255, 0.25);
+.u-border-bottom {
+  position: relative;
+}
+.u-border-bottom::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-image: -webkit-linear-gradient(top, transparent 50%, rgba(0, 0, 0, 0.125) 50%);
+  background-image: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.125) 50%);
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 100% 2px;
 }
 
-.u-color-lighten-4 {
-  color: rgba(255, 255, 255, 0.5);
+.u-border-left {
+  position: relative;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.125);
+  border-left-width: 1px;
 }
 
-.u-background-darken-1 {
-  background-color: rgba(0, 0, 0, 0.0625);
+.u-border-right--none {
+  border-right: 0;
 }
 
-.u-background-darken-2 {
-  background-color: rgba(0, 0, 0, 0.125);
+.u-border-bottom--none {
+  border-bottom: 0;
 }
 
-.u-background-darken-3 {
-  background-color: rgba(0, 0, 0, 0.25);
+.u-border-left--none {
+  border-left: 0;
 }
 
-.u-background-darken-4 {
-  background-color: rgba(0, 0, 0, 0.5);
+.u-not-bordered {
+  border: 0;
 }
 
-.u-background-lighten-1 {
-  background-color: rgba(255, 255, 255, 0.0625);
+.u-rounded {
+  border-radius: 3px;
 }
 
-.u-background-lighten-2 {
-  background-color: rgba(255, 255, 255, 0.125);
+.u-rounded-top {
+  border-radius: 3px 3px 0 0;
 }
 
-.u-background-lighten-3 {
-  background-color: rgba(255, 255, 255, 0.25);
+.u-rounded-right {
+  border-radius: 0 3px 3px 0;
 }
 
-.u-background-lighten-4 {
-  background-color: rgba(255, 255, 255, 0.5);
+.u-rounded-bottom {
+  border-radius: 0 0 3px 3px;
 }
 
+.u-rounded-left {
+  border-radius: 3px 0 0 3px;
+}
+
+.u-not-rounded {
+  border-radius: 0;
+}
+
+.u-circle {
+  border-radius: 50%;
+}
+
+/**
+ * Adjust the type of list-item marker.
+ */
+.u-list-circle {
+  list-style-type: circle;
+}
+
+.u-list-disc {
+  list-style-type: disc;
+}
+
+.u-list-square {
+  list-style-type: square;
+}
+
+.u-list-decimal {
+  list-style-type: decimal;
+}
+
+.u-list-leading-zero {
+  list-style-type: decimal-leading-zero;
+}
+
+.u-list-lower-alpha {
+  list-style-type: lower-alpha;
+}
+
+.u-list-upper-alpha {
+  list-style-type: upper-alpha;
+}
+
+.u-list-lower-roman {
+  list-style-type: lower-roman;
+}
+
+.u-list-upper-roman {
+  list-style-type: upper-roman;
+}
+
+/**
+ * Adjust typographic weights and styles.
+ */
+.u-serif {
+  font-family: Georgia, Times, "Times New Roman", serif;
+}
+
+.u-sans-serif {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.u-thin {
+  font-weight: 100;
+}
+
+.u-light {
+  font-weight: 300;
+}
+
+.u-regular {
+  font-weight: 400;
+}
+
+.u-medium {
+  font-weight: 600;
+}
+
+.u-bold {
+  font-weight: 700;
+}
+
+.u-ultra-bold {
+  font-weight: 900;
+}
+
+.u-normal {
+  font-style: normal;
+}
+
+.u-italic {
+  font-style: italic;
+}
+
+.u-oblique {
+  font-style: oblique;
+}
+
+.u-uppercase {
+  text-transform: uppercase;
+}
+
+.u-lowercase {
+  text-transform: lowercase;
+}
+
+.u-underline {
+  text-decoration: underline;
+  color: inherit;
+}
+
+.u-not-underlined {
+  text-decoration: none;
+}
+
+.u-overline {
+  text-decoration: overline;
+  color: inherit;
+}
+
+.u-line-through {
+  text-decoration: line-through;
+  color: inherit;
+}
+
+.u-no-wrap {
+  white-space: nowrap;
+}
+
+.u-break-word {
+  word-wrap: break-word;
+}
+
+/* ==========================================================================
+   TRUMPS / SHOW-HIDE
+   ========================================================================== */
+.u-text-hidden {
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
+  background-color: transparent;
+  border: 0;
+}
+
+.u-shown {
+  display: block !important;
+}
+
+.u-hidden {
+  display: none !important;
+}
+
+.u-visible {
+  visibility: visible !important;
+}
+
+.u-invisible {
+  visibility: hidden !important;
+}
+
+.u-off-screen {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+
+@media (min-width: 30em) {
+  .u-hide\@small {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+    overflow: hidden !important;
+  }
+}
+@media (min-width: 45em) {
+  .u-hide\@medium {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+    overflow: hidden !important;
+  }
+}
+@media (min-width: 60em) {
+  .u-hide\@large {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+    overflow: hidden !important;
+  }
+}
+@media (min-width: 80em) {
+  .u-hide\@huge {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+    overflow: hidden !important;
+  }
+}
 /* ==========================================================================
    TRUMPS / PRINT
    ========================================================================== */

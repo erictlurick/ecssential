@@ -4,7 +4,21 @@
    ELEMENTS / TYPOGRAPHY
    ========================================================================== */
 
-@if (typography(hyphens) == true) {
+@if (enhancements(indent) == true) {
+
+/**
+ * Indented (rather than spaced) delimiting.
+ */
+
+p + p {
+  @include space(margin-top, 1);
+  text-indent: 1em;
+}
+
+}//endif
+
+
+@if (enhancements(hyphens) == true) {
 
 /**
  * http://meyerweb.com/eric/thoughts/2012/12/17/where-to-avoid-css-hyphenation
@@ -117,7 +131,6 @@ del {
   padding-left    : 0.1em;
   text-decoration : none;
   color           : color(text);
-  //background-color: #ee6e73;
   background-color: transparent !important;
   background-image: linear-gradient(to bottom, rgba(255, 168, 168, 1), rgba(255, 168, 168, 1));
 }
@@ -137,13 +150,13 @@ address {
 
 @if (typography(glyphs) == true) {
 
-    /**
-     * Turn on discretionary ligatures.
-     */
+  /**
+   * Turn on discretionary ligatures.
+   */
 
-    time {
-        font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0;
-    }
+  time {
+    font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0;
+  }
 
 }//endif
 
@@ -192,265 +205,70 @@ summary {
 }
 
 
-@if (typography(dividers) == true) {
-
 /**
  * Dividers.
  */
 
 // Predefine the variable below in order to alter and enable specific features.
-$divider-width                  : 100% !default;
-$divider-height                 : 1px !default;
-$divider-space-top              : 2 !default; // Space elements by an amount based on your magic number.
-$divider-space-bottom           : 2 !default; // Space elements by an amount based on your magic number.
-$divider-color                  : color(ui-medium) !default;
+$divider-width                : 100% !default;
+$divider-height               : 1px !default;
+$divider-spacing              : 2 !default; // Space elements by an amount based on your magic number.
 
-$enable-divider-ornaments       : false !default;
-$divider-ornament               : "\00A7" !default;
-$divider-ornament-space-top     : 1 !default; // Space elements by an amount based on your magic number.
-$divider-ornament-letter-spacing: 0 !default;
-$divider-ornament-color         : color(ui-medium) !default;
+$show-divider-ornament-section: false !default;
+$show-divider-ornament-dots   : true !default;
+
+$divider-ornament-color       : color(ui-dark) !default;
 
 
 hr {
-  width              : $divider-width;
-  margin-top         : 0;
-  margin-right       : auto;
-  margin-bottom      : 0;
-  margin-left        : auto;
-  @include space(padding-top, $divider-space-top);
-  @include space(padding-bottom, $divider-space-bottom);
-  border             : 0;
-  background-image   : linear-gradient(to bottom, transparent 50%, $divider-color 50%);
-  background-position: 0 50%;
-  background-repeat  : repeat-x;
-  background-size    : 100% rem(strip-units($divider-height) * 1.6);
 
-  @if ($enable-divider-ornaments == true) {
-    position: relative;
+  width                : $divider-width;
+  height               : $divider-height;
+  overflow: hidden;
+  margin-top           : 0;
+  margin-right         : auto;
+  margin-bottom        : 0;
+  margin-left          : auto;
+  @include space(padding-top, $divider-spacing);
+  @include space(padding-bottom, $divider-spacing);
+  text-align           : center;
 
-    &:after{
-      content       : $divider-ornament;
-      position      : absolute;
-      @include space(top, $divider-ornament-space-top);
-      right         : 0;
-      left          : 0;
-      line-height   : 0;
-      letter-spacing: $divider-ornament-letter-spacing;
-      text-align    : center;
-      color         : $divider-ornament-color;
-    }
-  }//endif
-}
+  @if ($show-divider-ornament-dots != true) {
+    background-image   : linear-gradient(to right, rgba(0, 0, 0, 0), $divider-ornament-color, rgba(0, 0, 0, 0));
+    background-position: 0 50%;
+    background-repeat  : repeat-x;
+    background-size    : 100% rem(strip-units($divider-height) * 1.6);
+  }
 
-}//endif
+  border               : 0;
 
+  @if ($show-divider-ornament-section == true) {
 
-
-
-
-@if (typography(indent) == true) {
-
-/* Paragraphs
-   ========================================================================== */
-
-/**
- * Indented (rather than spaced) delimiting.
- */
-
-p + p {
-  @include space(margin-top, 1);
-  text-indent: 1em;
-}
-
-}//endif
-
-
-
-
-
-@if (typography(dropcaps) == true) {
-
-/* Dropcaps
-   ========================================================================== */
-
-/**
- * The font size and margins used on lines 8 and 10 of the code above vary for
- * different typefaces. The following table provides values for two heights of
- * drop cap for each of four common typefaces.
-
-    Times New Roman/Times, two lines   => font-size: 3.29em | margin: 0.205em 0.153em 0 0
-    Times New Roman/Times, three lines => font-size: 5.53em | margin: 0.151em 0.0904em 0 0
-    Georgia, two lines                 => font-size: 3.20em | margin: 0.225em 0.159em 0 0
-    Georgia, three lines               => font-size: 5.32em | margin: 0.172em 0.0940em 0 0
-    Arial/Helvetica, two lines         => font-size: 3.11em | margin: 0.240em 0.161em 0 0
-    Arial/Helvetica, three lines       => font-size: 5.20em | margin: 0.192em 0.0962em 0 0
-    Verdana, two lines                 => font-size: 3.06em | margin: 0.218em 0.163em 0 0
-    Verdana, three lines               => font-size: 5.12em | margin: 0.162em 0.0977em 0 0
-
- * Info: http://code.stephenmorley.org/html-and-css/creating-drop-caps/
- */
-
-// Predefine the variables below in order to alter and enable specific features.
-$dropcap-namespace      : 'u-dropcap' !default;
-
-// Which height of drop cap would you like to use? 2 or 3 paragraph lines?
-$dropcap-number-of-lines: 2 !default;
-
-// Choose one of four common typefaces (Times, Georgia, Arial, Verdana).
-$dropcap-font-family    : Georgia !default;
-
-
-.#{$namespace}#{$dropcap-namespace} {
-
-  &:first-letter {
-    float         : left;
-    vertical-align: bottom;
-
-    @if ($dropcap-number-of-lines == 2) {
-
-      @if ($dropcap-font-family == Times) {
-        margin     : 0.205em 0.153em 0 0;
-        font-family: $dropcap-font-family;
-        font-size  : 3.29em
-      }
-
-      @if ($dropcap-font-family == Georgia) {
-        margin     : 0.225em 0.159em 0 0;
-        font-family: $dropcap-font-family;
-        font-size  : 3.2em;
-      }
-
-      @if ($dropcap-font-family == Arial) {
-        margin     : 0.240em 0.161em 0 0;
-        font-family: $dropcap-font-family;
-        font-size  : 3.11em;
-      }
-
-      @if ($dropcap-font-family == Verdana) {
-        margin     : 0.218em 0.163em 0 0;
-        font-family: $dropcap-font-family;
-        font-size  : 5.32em;
-      }
-
+    &::after {
+      content          : "\00A7";
+      display          : inline-block;
+      position         : relative;
+      top              : -0.8em;
+      padding          : 0 0.25em;
+      font-weight      : bold;
+      color            : $divider-ornament-color;
+      background-color : color(background);
     }
 
-    @if ($dropcap-number-of-lines == 3) {
+  }
 
-      @if ($dropcap-font-family == Times) {
-        margin     : 0.151em 0.0904em 0 0;
-        font-family: $dropcap-font-family;
-        font-size  : 5.53em;
-      }
+  @if ($show-divider-ornament-dots == true) {
 
-      @if ($dropcap-font-family == Georgia) {
-        margin     : 0.172em 0.0940em 0 0;
-        font-family: $dropcap-font-family;
-        font-size  : 5.53em;
-      }
-
-      @if ($dropcap-font-family == Arial) {
-        margin     : 0.192em 0.0962em 0 0;
-        font-family: $dropcap-font-family;
-        font-size  : 5.20em;
-      }
-
-      @if ($dropcap-font-family == Verdana) {
-        margin     : 0.162em 0.0977em 0 0;
-        font-family: $dropcap-font-family;
-        font-size  : 5.12em;
-      }
-
+    &::after {
+      content         : "\2022\2022\2022";
+      position        : relative;
+      top             : -0.8em;
+      letter-spacing  : 1em;
+      color           : color(text-soft);
     }
-
-    line-height   : 0.5;
-    text-transform: uppercase;
-    color         : inherit;
 
   }
 
 }
-
-}//endif
-
-
-
-
-
-@if (typography(lede) == true) {
-
-/* Lede
-   ========================================================================== */
-
-/**
- * The `.u-lede` class is used to make the introductory text (usually a paragraph)
- * of a document slightly larger: en.wikipedia.org/wiki/Lede_(news)
- */
-
-// Predefine the variables below in order to alter and enable specific features.
-$lede-namespace: 'u-lede' !default;
-
-
-.#{$namespace}#{$lede-namespace} {
-  @include type(1, 0, 1);
-}
-
-}//endif
-
-
-
-
-
-@if (typography(small-caps) == true) {
-
-/* Small caps
-   ========================================================================== */
-
-// Predefine the variables below in order to alter and enable specific features.
-$small-caps-namespace: 'u-small-caps' !default;
-
-
-/**
- * For browsers that don't support OpenType, features, use all caps.
- */
-
-.#{$namespace}#{$small-caps-namespace} {
-  text-transform: uppercase;
-  -ms-font-feature-settings: "lnum", "smcp", "c2sc" 0;
-}
-
-
-/**
- * Progressively enhance with `font-feature-settings` if `font-variant-caps`
- * isn't supported.
- */
-
-@supports not (font-variant-caps: small-caps) {
-
-  .#{$namespace}#{$small-caps-namespace} {
-    text-transform               : inherit;
-    -webkit-font-feature-settings: "onum", "smcp", "c2sc" 0;
-            font-feature-settings: "onum", "smcp", "c2sc" 0;
-    }
-
-}
-
-
-/**
- * Otherwise, and ideally, use `font-variant-caps`.
- */
-
-@supports (font-variant-caps: small-caps) {
-
-  .#{$namespace}#{$small-caps-namespace} {
-    text-transform               : inherit;
-    -webkit-font-feature-settings: "c2sc";
-    font-feature-settings: "c2sc";
-    font-variant-caps            : small-caps;
-  }
-
-}
-
-}//endif
 
 }//endif

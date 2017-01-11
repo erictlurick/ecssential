@@ -1,0 +1,169 @@
+//------------------------------------\\
+    // SETTINGS / SWITCHES
+//------------------------------------\\
+
+// Maps of global configuration settings. Set undesired components to `false` to
+// exclude them from the final output.
+
+$fallbacks: (
+  'pixels'           : false
+);
+
+$enhancements: (
+  'broken-images'    : true,
+  'dropcaps'         : true,
+  'glyphs'           : true,
+  'hyphens'          : true,
+  'indent'           : false,
+  'lede'             : true,
+  'pullquotes'       : true,
+  'small-caps'       : true,
+  'smooth'           : false
+) !default;
+
+$generic: (
+  'box-sizing'       : true,
+  'reset'            : true,
+  'selections'       : true,
+  'shared'           : true
+) !default;
+
+$elements: (
+  'anchors'          : true,
+  'code'             : true,
+  'forms'            : true,
+  'headings'         : true,
+  'lists'            : true,
+  'medias'           : true,
+  'page'             : true,
+  'quotes'           : true,
+  'tables'           : true,
+  'typography'       : true
+) !default;
+
+$layouts: (
+  'grid'             : true,
+  'flexbox'          : true,
+  'wrappers'         : true
+) !default;
+
+$objects: (
+  'form-fields'      : true,
+  'form-helpers'     : true,
+  'icons'            : true,
+  'list-bare'        : true,
+  'list-block'       : true,
+  'list-fit'         : true,
+  'list-inline'      : true,
+  'list-ordered'     : true,
+  'list-stacked'     : true,
+  'image-heights'    : true,
+  'numbering'        : true,
+  'ratios'           : true,
+  'tables'           : true
+) !default;
+
+$components: (
+  'buttons'          : true
+) !default;
+
+$scope: (
+  'links'            : true
+) !default;
+
+$trumps: (
+  'colors'           : true,
+  'headings'         : true,
+  'helpers'          : true,
+  'print'            : true,
+  'show-hide'        : true,
+  'spacings'         : true,
+  'text'             : true,
+  'widths'           : true
+) !default;
+
+$debugging: (
+  'baseline'         : false,
+  'baseline-checks'  : false,
+  'breakpoint-checks': false,
+  'health-checks'    : false,
+) !default;
+
+
+// You can access data in those maps using the following function:
+//
+//  config(<key>)
+//
+// Example usage:
+//
+//  @if (inuit-config(debug) == true) { ...  }
+
+@function fallback($key) {
+  @return map-get($fallbacks, $key);
+
+  @warn "Unknown `#{$key}` in $fallbacks.";
+  @return null;
+}
+
+@function enhancements($key) {
+  @return map-get($enhancements, $key);
+
+  @warn "Unknown `#{$key}` in $enhancements.";
+  @return null;
+}
+
+@function generic($key) {
+  @return map-get($generic, $key);
+
+  @warn "Unknown `#{$key}` in $generic.";
+  @return null;
+}
+
+@function elements($key) {
+  @return map-get($elements, $key);
+
+  @warn "Unknown `#{$key}` in $elements.";
+  @return null;
+}
+
+@function layout($key) {
+  @return map-get($layouts, $key);
+
+  @warn "Unknown `#{$key}` in $layouts.";
+  @return null;
+}
+
+@function objects($key) {
+  @return map-get($objects, $key);
+
+  @warn "Unknown `#{$key}` in $objects.";
+  @return null;
+}
+
+@function components($key) {
+  @return map-get($components, $key);
+
+  @warn "Unknown `#{$key}` in $components.";
+  @return null;
+}
+
+@function scope($key) {
+  @return map-get($scope, $key);
+
+  @warn "Unknown `#{$key}` in $scope.";
+  @return null;
+}
+
+@function trumps($key) {
+  @return map-get($trumps, $key);
+
+  @warn "Unknown `#{$key}` in $trumps.";
+  @return null;
+}
+
+@function debugging($key) {
+  @return map-get($debugging, $key);
+
+  @warn "Unknown `#{$key}` in $debugging.";
+  @return null;
+}

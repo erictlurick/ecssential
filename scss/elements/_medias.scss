@@ -1,0 +1,155 @@
+@if (elements(medias) == true) {
+
+/* ==========================================================================
+   ELEMENTS / MEDIA
+   ========================================================================== */
+
+/**
+ * 1. Fluid images for responsive purposes.
+ * 2. Preserve image ratio.
+ * 3. Correct a bug on IE8.
+ * 4. Offset `alt` text from surrounding copy.
+ * 5. Setting `vertical-align` removes the whitespace that appears under `img`
+ *    elements when they are dropped into a page as-is. Safer alternative to
+ *    using `display: block;`.
+ * 6. Remove border when inside an `a` element in IE 8/9/10.
+ */
+
+img,
+canvas,
+iframe,
+svg,
+video {
+  max-width     : 100%;     /* [1] */
+  height        : auto;     /* [2] */
+  width         : auto;     /* [3] */
+  font-style    : italic;   /* [4] */
+  vertical-align: middle;   /* [5] */
+  border        : 0;        /* [6] */
+}
+
+
+/**
+ * 1. If a `width` and/or `height` attribute have been explicitly defined, let’s
+ *    not make the image fluid.
+ * 2. Google Maps breaks if `max-width: 100%` acts upon it; use their selector
+ *    to remove the effects.
+ */
+
+img[width],     /* [1] */
+img[height],    /* [1] */
+.gm-style img { /* [2] */
+  max-width: none;
+}
+
+
+/**
+ * 1. As we know that `inline-block` elements grow wider max till 100%
+ *    (considering padding and no width defined) of its parent based on its
+ *    content. When the content text of figcaption is less, it's aligned
+ *    center by virtue of the property `text-align:center` defined on its
+ *    parent figure. As the text of figcaption grows into multiple lines, it
+ *    keeps widening to the max width of its parent figure width. Now the
+ *    magic starts! `text-align: left;` defined on figcaption makes the
+ *    content text left aligned.
+ * 2. Default value of `vertical-align` is baseline and when applied to blocks
+ *    of different heights, it's often unwanted. Applying a value of top will
+ *    solve the problem of white space above.
+ */
+
+figure {
+  text-align: center; /* [1] */
+
+  > img {
+    display     : block;
+    margin-right: auto;
+    margin-left : auto;
+  }
+}
+
+  figcaption {
+    display       : inline-block; /* [1] */
+    vertical-align: top;          /* [2] */
+    @include type(-1);
+    text-align    : left;         /* [1] */
+    color         : color(text-soft);
+  }
+
+
+@if (enhancements(broken-images) == true) {
+
+/**
+ * Broken images are ugly. But they don't always have to be. We can use CSS to
+ * apply styles to the `img` element to provide a better experience than the
+ * default. when the image is broken and not loaded, the pseudo-elements can
+ * appear.
+ *
+ * jQuery will detect broken images and add the `.is-broken` class.
+ *
+   $(window).bind('load', function() {
+     $('img').each(function() {
+       if((typeof this.naturalWidth != "undefined" && this.naturalWidth == 0 ) || this.readyState == 'uninitialized' ) {
+         $(this).attr('id', js-img-broken');
+       }
+     });
+   });
+ *
+ * @ireaderinokun http://bitsofco.de/styling-broken-images/
+ */
+
+// Predefine the variables below in order to alter and enable specific features.
+$broken-image-font-family            : $font-family-sans-serif !default;
+$broken-image-color-background       : #efefef !default;
+$broken-image-text-shadow            : 0 1px #fff !default;
+
+$broken-image-description-font-weight: $font-weight-bold !default;
+$broken-image-description-font-style : normal !default;
+$broken-image-description-text-align : center !default;
+$broken-image-description-color      : inherit !default;
+
+$broken-image-info-icon              : '\26A0' !default;
+$broken-image-info-text              : ' image non disponible' !default;
+$broken-image-info-font-weight       : $font-weight-regular !default;
+$broken-image-info-font-style        : normal !default;
+$broken-image-info-text-align        : center !default;
+$broken-image-info-color             : inherit !default;
+
+
+img#js-img-broken {
+
+  display : block;
+  position: relative;
+  outline : none;
+
+  @include pseudo-element(before) {
+    content         : attr(alt);
+    z-index         : index($layers, stack-order-1);
+    @include type(-1);
+    font-family     : $broken-image-font-family;
+    font-weight     : $broken-image-description-font-weight;
+    font-style      : $broken-image-description-font-style;
+    text-align      : $broken-image-description-text-align;
+    text-shadow     : $broken-image-text-shadow;
+    color           : $broken-image-description-color;
+    background-color: $broken-image-color-background;
+    opacity: 1;
+  }
+
+  @include pseudo-element(after, $top: 50%) {
+    content         : $broken-image-info-icon $broken-image-info-text;
+    z-index         : index($layers, stack-order-2);
+    @include type(-1);
+    font-family     : $broken-image-font-family;
+    font-weight     : $broken-image-info-font-weight;
+    font-style      : $broken-image-info-font-style;
+    text-align      : $broken-image-info-text-align;
+    text-shadow     : $broken-image-text-shadow;
+    color           : $broken-image-info-color;
+    background-color: transparent;
+  }
+
+}
+
+}//endif
+
+}//endif

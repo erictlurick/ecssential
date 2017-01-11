@@ -4,15 +4,8 @@
    OBJECTS / TABLES
    ========================================================================== */
 
-// Predefine the variables below in order to alter and enable specific features.
-$tables-namespace      : 'o-table' !default;
-
-$table-color-background: color(ui-light) !default;
-$table-color-border    : color(ui-medium) !default;
-
-
-/* Equal-width table cells.
-   ========================================================================== */
+// Predefine the variable below in order to alter and enable specific features.
+$tables-namespace: 'o-table' !default;
 
 /**
  * `table-layout: fixed` forces all cells within a table to occupy the same
@@ -27,55 +20,43 @@ $table-color-border    : color(ui-medium) !default;
 }
 
 
-
-
-
-/* Style variants
-   ========================================================================== */
-
 /**
  * Bordered tables.
- *
-   <table class="o-table--bordered">
-     ...
-   </table>
  */
-
 .#{$namespace}#{$tables-namespace}--bordered {
-    @include border(top);
 
-    & thead > tr > th {
-        @include border(bottom);
-    }
+  @include border(top);
 
-    & tbody > tr  td {
-        @include border(bottom);
-    }
+  & thead > tr > th {
+    @include border(bottom);
+  }
 
-    & th,
-    & td {
-        @include border(left);
-    }
+  & tbody > tr  td {
+    @include border(bottom);
+  }
 
-    & tr > th:last-child,
-    & tr > td:last-child {
-        @include border(right);
-    }
+  & th,
+  & td {
+    @include border(left);
+  }
+
+  & tr > th:last-child,
+  & tr > td:last-child {
+    @include border(right);
+  }
 
 }
 
-/**
- * Striped tables.
- *
-   <table class="o-table--striped">
-     ...
-   </table>
- */
 
+/**
+ * Striped tables
+ */
 .#{$namespace}#{$tables-namespace}--striped {
-    & tbody > tr:nth-child(odd) {
-        background-color: $table-color-background;
-    }
+
+  tbody tr:nth-of-type(odd) {
+    background-color: #ffc;
+  }
+
 }
 
 }//endif

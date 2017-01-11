@@ -2,8 +2,10 @@
     // OBJECTS / ALL
 //------------------------------------\\
 
-@import "objects/icons";
-@import "objects/lists";
-@import "objects/pullquote";
-@import "objects/ratios";
-@import "objects/tables";
+@import "forms",
+		"icons",
+		"images",
+		"lists",
+		"numbering",
+        "ratios",
+		"tables";

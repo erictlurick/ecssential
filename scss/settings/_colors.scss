@@ -13,21 +13,26 @@
 //  }
 
 $colors: (
-  'primary'    : $color-blue-5,
-  'text'       : rgba(0,0,0,0.8),
-  'text-soft'  : rgba(0,0,0,0.6),
-  'muted'      : rgba(0,0,0,0.44),
-  'headings'   : rgba(0,0,0,0.8),
-  'background' : $color-white,
-  'ui-dark'    : $color-gray-4,
-  'ui-medium'  : $color-gray-3,
-  'ui-light'   : $color-gray-1,
-  'ui-disabled': $color-gray-2,
-  'action'     : $color-blue-6,
-  'success'    : $color-green-5,
-	'error'      : $color-red-6,
-	'warning'    : $color-orange-4,
-	'info'       : $color-blue-4
+  'text'               : rgba(0,0,0,0.8),
+  'text-soft'          : rgba(0,0,0,0.6),
+  'text-muted'         : rgba(0,0,0,0.44),
+  'background'         : #fff,
+  'primary'            : #378bb5,
+  'primary-highlight'  : lighten(#378bb5, 5%),
+  'primary-shadow'     : darken(#378bb5, 5%),
+  'secondary'          : #abc123,
+  'secondary-highlight': lighten(#abc123, 5%),
+  'secondary-shadow'   : darken(#abc123, 5%),
+  'black'              : #000,
+  'white'              : #fff,
+  'ui-light'           : rgba(0,0,0,0.0625),
+  'ui-medium'          : rgba(0,0,0,0.125),
+  'ui-dark'            : rgba(0,0,0,0.25),
+  'action'             : #378bb5,
+  'error'              : #fa5252,
+  'warning'            : #ffa94d,
+  'info'               : #4dadf7,
+  'success'            : #40c057
 ) !default;
 
 

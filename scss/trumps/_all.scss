@@ -2,11 +2,11 @@
     // TRUMPS / ALL
 //------------------------------------\\
 
-@import "trumps/headings";
-@import "trumps/text";
-@import "trumps/prose";
-@import "trumps/helpers";
-@import "trumps/show-hide";
-@import "trumps/spacings";
-@import "trumps/colors";
-@import "trumps/print";
+@import "headings",
+        "text",
+        "colors",
+        "widths",
+        "spacings",
+        "helpers",
+        "show-hide",
+        "print";

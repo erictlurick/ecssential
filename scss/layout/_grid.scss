@@ -35,7 +35,7 @@ $grid-gutter: $base-line-height + rem !default;
     list-style : none;
   }
 
-  & &__item {
+  & > &__item {
     @include flex(1);
   }
 
@@ -53,7 +53,7 @@ $grid-gutter: $base-line-height + rem !default;
   &#{&} {
     margin-left: -$grid-gutter;
 
-    .#{$namespace}#{$grid-prefix}__item {
+    > .#{$namespace}#{$grid-prefix}__item {
       margin-left: $grid-gutter;
     }
   }
@@ -79,26 +79,32 @@ $grid-gutter: $base-line-height + rem !default;
  */
 
 .#{$namespace}#{$grid-prefix}__item {
-  &.l-1\/1 {
+  &.l-1#{$widths-delimiter}1 {
     @include flex(0, 0, calc(100% - #{$grid-gutter}));
   }
 }
 
 .#{$namespace}#{$grid-prefix}__item {
-  &.l-1\/2 {
+  &.l-1#{$widths-delimiter}2 {
     @include flex(0, 0, calc(50% - #{$grid-gutter}));
   }
 }
 
 .#{$namespace}#{$grid-prefix}__item {
-  &.l-1\/3 {
+  &.l-1#{$widths-delimiter}3 {
     @include flex(0, 0, calc(33.3333% - #{$grid-gutter}));
   }
 }
 
 .#{$namespace}#{$grid-prefix}__item {
-  &.l-1\/4 {
+  &.l-1#{$widths-delimiter}4 {
     @include flex(0, 0, calc(25% - #{$grid-gutter}));
+  }
+}
+
+.#{$namespace}#{$grid-prefix}__item {
+  &.l-1#{$widths-delimiter}5 {
+    @include flex(0, 0, calc(20% - #{$grid-gutter}));
   }
 }
 
@@ -110,135 +116,69 @@ $grid-gutter: $base-line-height + rem !default;
 @include breakpoint(medium) {
 
   .#{$namespace}#{$grid-prefix}__item {
-    &.l-1\/1\@medium {
+    &.l-1#{$widths-delimiter}1#{$widths-breakpoint-separator}medium {
       @include flex(0, 0, calc(100% - #{$grid-gutter}));
     }
   }
 
   .#{$namespace}#{$grid-prefix}__item {
-    &.l-1\/2\@medium {
+    &.l-1#{$widths-delimiter}2#{$widths-breakpoint-separator}medium {
       @include flex(0, 0, calc(50% - #{$grid-gutter}));
     }
   }
 
   .#{$namespace}#{$grid-prefix}__item {
-    &.l-1\/3\@medium {
+    &.l-1#{$widths-delimiter}3#{$widths-breakpoint-separator}medium {
       @include flex(0, 0, calc(33.3333% - #{$grid-gutter}));
     }
   }
 
   .#{$namespace}#{$grid-prefix}__item {
-    &.l-1\/4\@medium {
+    &.l-1#{$widths-delimiter}4#{$widths-breakpoint-separator}medium {
       @include flex(0, 0, calc(25% - #{$grid-gutter}));
     }
   }
+
+.#{$namespace}#{$grid-prefix}__item {
+  &.l-1#{$widths-delimiter}5#{$widths-breakpoint-separator}medium {
+    @include flex(0, 0, calc(20% - #{$grid-gutter}));
+  }
+}
 
 }
 
 @include breakpoint(large) {
 
   .#{$namespace}#{$grid-prefix}__item {
-    &.l-1\/1\@large {
+    &.l-1#{$widths-delimiter}1#{$widths-breakpoint-separator}large {
       @include flex(0, 0, calc(100% - #{$grid-gutter}));
     }
   }
 
   .#{$namespace}#{$grid-prefix}__item {
-    &.l-1\/2\@large {
+    &.l-1#{$widths-delimiter}2#{$widths-breakpoint-separator}large {
       @include flex(0, 0, calc(50% - #{$grid-gutter}));
     }
   }
 
   .#{$namespace}#{$grid-prefix}__item {
-    &.l-1\/3\@large {
+    &.l-1#{$widths-delimiter}3#{$widths-breakpoint-separator}large {
       @include flex(0, 0, calc(33.3333% - #{$grid-gutter}));
     }
   }
 
   .#{$namespace}#{$grid-prefix}__item {
-    &.l-1\/4\@large {
+    &.l-1#{$widths-delimiter}4#{$widths-breakpoint-separator}large {
       @include flex(0, 0, calc(25% - #{$grid-gutter}));
     }
   }
 
-}
+  .#{$namespace}#{$grid-prefix}__item {
+    &.l-1#{$widths-delimiter}5#{$widths-breakpoint-separator}large {
+      @include flex(0, 0, calc(20% - #{$grid-gutter}));
+    }
+  }
 
-
-
-
-
-/* Alignment features
-   ========================================================================== */
-
-/**
- * Top-aligned grid cells.
- */
-
-.#{$namespace}#{$grid-prefix}--up {
-  @include align-items(flex-start);
-}
-
-
-/**
- * Bottom-aligned grid cells.
- */
-
-.#{$namespace}#{$grid-prefix}--down {
-  @include align-items(flex-end);
-}
-
-
-/**
- * Vertically centered grid cells.
- */
-
-.#{$namespace}#{$grid-prefix}--between {
-  @include align-items(center);
-}
-
-
-/**
- * Justified grid cells.
- */
-
-.#{$namespace}#{$grid-prefix}--justified {
-  @include justify-content(center);
-}
-
-
-/**
- * Top-aligned cell.
- */
-
-.#{$namespace}#{$grid-prefix}__item--up {
-  @include align-self(flex-start);
-}
-
-
-/**
- * Bottom-aligned cell.
- */
-
-.#{$namespace}#{$grid-prefix}__item--down {
-  @include align-self(flex-end);
-}
-
-
-/**
- * Vertically centered cell.
- */
-
-.#{$namespace}#{$grid-prefix}__item--between {
-  @include align-self(center);
-}
-
-
-/**
- * The cell takes all of the available space inside the flex container.
- */
-
-.#{$namespace}#{$grid-prefix}__item--adapted {
-  @include flex(none);
 }
 
 }//endif

@@ -6,8 +6,6 @@
 
 // Predefine the variable below in order to alter and enable specific features.
 $buttons-namespace            : 'c-button' !default;
-$buttons-border-radius        : $base-ui-radius;
-$buttons-outlined-border-width: 1px !default;
 
 
 /**
@@ -17,23 +15,46 @@ $buttons-outlined-border-width: 1px !default;
  *    buttons).
  * 4. Reset/normalize some styles.
  * 5. Force all button-styled elements to appear clickable.
- * 6. Subtract the border size from the padding value so that buttons do not
- *    grow larger as we add borders.
  */
 
 .#{$namespace}#{$buttons-namespace} {
-  display         : inline-block; /* [1] */
-  vertical-align  : middle; /* [2] */
-  margin          : 0; /* [4] */
-  @include space(margin-right, 0.25);
-  padding         : rem($base-font-size * $base-line-height / 2)  rem($base-font-size * $base-line-height);
-  font            : inherit; /* [3] */
-  font-family     : $font-family-sans-serif;
-  text-align      : center; /* [4] */
-  text-decoration : none;
-  border-bottom   : none;
-  cursor          : pointer; /* [5] */
-  transition      : all $base-ui-transition;
+  display: inline-block; /* [1] */
+  vertical-align: middle; /* [2] */
+  margin: 0; /* [4] */
+  @include space(padding-top, 0.5);
+  @include space(padding-right);
+  @include space(padding-bottom, 0.5);
+  @include space(padding-left);
+  font: inherit; /* [3] */
+  text-align: center; /* [4] */
+  text-decoration: none;
+  cursor: pointer; /* [5] */
+  transition: all 300ms ease-in-out;
+}
+
+
+
+
+
+/* Size variants
+   ========================================================================== */
+
+.#{$namespace}#{$buttons-namespace}--small {
+  @include space(padding-top, 0.25);
+  @include space(padding-right, 0.5);
+  @include space(padding-bottom, 0.25);
+  @include space(padding-left, 0.5);
+}
+
+.#{$namespace}#{$buttons-namespace}--large {
+  @include space(padding-top);
+  @include space(padding-right, 1.5);
+  @include space(padding-bottom);
+  @include space(padding-left, 1.5);
+}
+
+.#{$namespace}#{$buttons-namespace}--fit {
+  width: 100%;
 }
 
 
@@ -43,22 +64,12 @@ $buttons-outlined-border-width: 1px !default;
 /* Style variants
    ========================================================================== */
 
-.#{$namespace}#{$buttons-namespace}--round {
-  border-radius: $buttons-border-radius;
+.#{$namespace}#{$buttons-namespace}--rounded {
+  border-radius: $base-ui-radius;
 }
 
 .#{$namespace}#{$buttons-namespace}--pill {
   border-radius: 3rem;
-}
-
-.#{$namespace}#{$buttons-namespace}--outlined {
-  color         : currentColor;
-  box-shadow    : 0px 0px 0px $buttons-outlined-border-width currentColor;
-
-  @include attention(){
-    color       : darken(color(text), 10%);
-    border-color: darken(color(text), 10%);
-  }
 }
 
 .#{$namespace}#{$buttons-namespace}--disabled,
@@ -71,32 +82,47 @@ $buttons-outlined-border-width: 1px !default;
 
 
 
-/* Size variants
+/* Ghost buttons
    ========================================================================== */
 
-.#{$namespace}#{$buttons-namespace}--huge {
-  padding: rem($base-font-size * ($base-line-height * 2) / 2)  rem($base-font-size * $base-line-height);
-}
+/**
+ * Ghost buttons have see-through backgrounds and are bordered.
+ */
 
-.#{$namespace}#{$buttons-namespace}--large {
-  padding: rem($base-font-size * ($base-line-height * 1.5) / 2)  rem($base-font-size * $base-line-height);
-}
+// Predefine the variable below in order to alter and enable specific features.
+$button-ghost-border-width: 2px;
+$button-ghost-spacing     : $button-ghost-border-width * 0.75 !default;
 
-.#{$namespace}#{$buttons-namespace}--small {
-  padding: rem($base-font-size * ($base-line-height / 2) / 2)  rem($base-font-size * $base-line-height);
-}
 
-.#{$namespace}#{$buttons-namespace}--tiny {
-  padding: rem($base-font-size * ($base-line-height / 4) / 2)  rem($base-font-size * ($base-line-height / 3));
-}
+.#{$namespace}#{$buttons-namespace}--ghost {
 
-.#{$namespace}#{$buttons-namespace}--full {
-  display      : block;
-  width        : 100%;
-  margin-right : 0;
-  margin-left  : 0;
-  padding-right: 0;
-  padding-left : 0;
+  @include space(padding-top, $lines: $base-spacing-unit-small, $border: $button-ghost-spacing);
+  @include space(padding-right, $lines: $base-spacing-unit, $border: $button-ghost-spacing);
+  @include space(padding-bottom, $lines: $base-spacing-unit-small, $border: $button-ghost-spacing);
+  @include space(padding-left, $lines: $base-spacing-unit, $border: $button-ghost-spacing);
+  border: $button-ghost-border-width solid currentColor;
+
+  &,
+  &:hover,
+  &:active,
+  &:focus {
+    background: none;
+  }
+
+  &.#{$namespace}#{$buttons-namespace}--small {
+    @include space(padding-top, $lines: $base-spacing-unit-tiny, $border: $button-ghost-border-width);
+    @include space(padding-right, $lines: $base-spacing-unit-small, $border: $button-ghost-border-width);
+    @include space(padding-bottom, $lines: $base-spacing-unit-tiny, $border: $button-ghost-border-width);
+    @include space(padding-left, $lines: $base-spacing-unit-small, $border: $button-ghost-border-width);
+  }
+
+  &.#{$namespace}#{$buttons-namespace}--large {
+    @include space(padding-top, $lines: $base-spacing-unit-large, $border: $button-ghost-border-width);
+    @include space(padding-right, $lines: $base-spacing-unit-small, $border: $button-ghost-border-width);
+    @include space(padding-bottom, $lines: $base-spacing-unit-large, $border: $button-ghost-border-width);
+    @include space(padding-left, $lines: $base-spacing-unit-small, $border: $button-ghost-border-width);
+  }
+
 }
 
 
@@ -108,31 +134,46 @@ $buttons-outlined-border-width: 1px !default;
 
 @each $type, $color in $colors {
 
-  @if ($type == action) or ($type == success) or ($type == error) or ($type == warning) or ($type == info) {
+  @if ($type == 'black') or ($type == 'white') or ($type == 'primary') or ($type == 'secondary') or ($type == 'action') or ($type == 'success') or ($type == 'error') or ($type == 'warning') or ($type == 'info') {
 
     .#{$namespace}#{$buttons-namespace}--#{$type} {
-      color           : color-invert($color);
+
       background-color: $color;
-      border-color    : $color;
 
-      @include attention(){
-        color           : color-invert($color);
-        background-color: darken($color, 10%);
-        border-color    : darken($color, 10%);
+      &,
+      &:hover,
+      &:active,
+      &:focus {
+        text-decoration: none; /* [4] */
+        color: color-invert($color);
       }
 
-      &.#{$namespace}#{$buttons-namespace}--outlined {
-        color           : $color;
-        background-color: transparent;
+      &:hover,
+      &:focus {
+        background-color: darken($color, 5%);
+      }
 
-        @include attention(){
-          color           : darken($color, 10%);
-          box-shadow-color: darken($color, 10%);
+      &.#{$namespace}#{$buttons-namespace}--ghost {
+
+        color: $color;
+
+        &,
+        &:hover,
+        &:active,
+        &:focus {
+          background: none;
         }
+
+        &:hover,
+        &:focus {
+          color: darken($color, 10%);
+        }
+
       }
+
     }
 
-  }//endif
+  }
 
 }
 

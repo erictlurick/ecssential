@@ -1,10 +1,10 @@
 // CONTENT
 //
 // 1. List-bare
-// 2. List-fit
-// 3. List-inline
-// 4. List-ordered
-// 5. List-ui
+// 2. List-block
+// 3. List-fit
+// 4. List-inline
+// 5. List-ordered
 
 // Predefine the variable below in order to alter and enable specific features.
 $lists-namespace: 'o-list' !default;
@@ -28,6 +28,60 @@ $list-bare-namespace: '-bare' !default;
 .#{$namespace}#{$lists-namespace}#{$list-bare-namespace} {
   margin-left: 0;
   list-style : none;
+}
+
+}//endif
+
+
+
+
+
+@if (objects(list-block) == true) {
+
+/* ==========================================================================
+   OBJECTS / LIST-BLOCK
+   ========================================================================== */
+
+/**
+ * Create big blocky lists of content, e.g.:
+ *
+   <ul class=block-list>
+      <li>Foo</li>
+      <li>Bar</li>
+      <li>Baz</li>
+      <li><a href=# class=block-list__link>Foo Bar Baz</a></li>
+   </ul>
+ *
+ * Extend this object in your theme stylesheet.
+ *
+ * Demo: jsfiddle.net/inuitcss/hR57q
+ *
+ */
+
+// Predefine the variables below in order to alter and enable specific features.
+$list-block-namespace      : '-block' !default;
+$list-block-color-separator: color(ui-medium) !default;
+
+
+.#{$namespace}#{$lists-namespace}#{$list-block-namespace} {
+
+  &#{&} {
+    margin-left: 0;
+    list-style: none;
+    @include border(top);
+  }
+
+  .#{$namespace}#{$lists-namespace}#{$list-block-namespace}__item {
+    @include space(padding, 0.5);
+    @include border(bottom);
+  }
+
+  .#{$namespace}#{$lists-namespace}#{$list-block-namespace}__link{
+    display: block;
+    @include space(margin, -0.5);
+    @include space(padding, 0.5);
+  }
+
 }
 
 }//endif
@@ -65,10 +119,10 @@ $list-fit-namespace: '-fit' !default;
     margin-left: 0;
   }
 
-  > .#{$namespace}#{$lists-namespace}#{$list-fit-namespace}__item {
+  & > .#{$namespace}#{$lists-namespace}#{$list-fit-namespace}__item {
     display: table-cell;
 
-    > a {
+    & > a {
       display: block;
     }
   }
@@ -149,11 +203,11 @@ $list-pipe-namespace  : '--pipe' !default;
   // Applying this class will comma separate your list items.
   &#{&}#{$list-comma-namespace} {
 
-    > .#{$namespace}#{$lists-namespace}#{$list-inline-namespace}__item::after {
+    & > .#{$namespace}#{$lists-namespace}#{$list-inline-namespace}__item::after {
       content: '\002C\00A0';
     }
 
-    > .#{$namespace}#{$lists-namespace}#{$list-inline-namespace}__item:last-child::after {
+    & > .#{$namespace}#{$lists-namespace}#{$list-inline-namespace}__item:last-child::after {
       content: ', etc.';
     }
 
@@ -162,11 +216,11 @@ $list-pipe-namespace  : '--pipe' !default;
   // Applying this class will dash separate your list items.
   &#{&}#{$list-dash-namespace} {
 
-    > .#{$namespace}#{$lists-namespace}#{$list-inline-namespace}__item::after {
+    & > .#{$namespace}#{$lists-namespace}#{$list-inline-namespace}__item::after {
       content: '\00A0\00A0\2013\00A0';
     }
 
-    > .#{$namespace}#{$lists-namespace}#{$list-inline-namespace}__item:last-child::after {
+    & > .#{$namespace}#{$lists-namespace}#{$list-inline-namespace}__item:last-child::after {
       content: '';
     }
 
@@ -175,11 +229,11 @@ $list-pipe-namespace  : '--pipe' !default;
   // Applying this class will pipe separate your list items.
   &#{&}#{$list-pipe-namespace} {
 
-    > .#{$namespace}#{$lists-namespace}#{$list-inline-namespace}__item::after {
+    & > .#{$namespace}#{$lists-namespace}#{$list-inline-namespace}__item::after {
       content: '\00A0\007C';
     }
 
-    > .#{$namespace}#{$lists-namespace}#{$list-inline-namespace}__item:last-child::after {
+    & > .#{$namespace}#{$lists-namespace}#{$list-inline-namespace}__item:last-child::after {
       content: '';
     }
 
@@ -230,81 +284,6 @@ $list-ordered-namespace: '-ordered' !default;
     &::before {
       content          : counters(ordered, ".") " ";
       counter-increment: ordered;
-    }
-  }
-
-}
-
-}//endif
-
-
-
-
-
-@if (objects(list-ui) == true) {
-
-/* ==========================================================================
-   OBJECTS / LIST-UI
-   ========================================================================== */
-
-/**
- * The UI list object creates blocky list items with a keyline separator out of
- * a `ul` or `ol`.
- */
-
-// Predefine the variable below in order to alter and enable specific features.
-$list-ui-namespace      : '-ui' !default;
-
-$show-list-ui-separator : true !default;
-$list-ui-color-separator: color(ui-medium) !default;
-
-
-.#{$namespace}#{$lists-namespace}#{$list-ui-namespace} {
-
-  &#{&} {
-    margin    : 0;
-    padding   : 0;
-    list-style: none;
-  }
-
-  & > &__item {
-
-    @include space(padding);
-
-    @if ($show-list-ui-separator == true) {
-      background-image   : linear-gradient(to bottom, transparent 50%, $list-ui-color-separator 50%);
-      background-position: 0 100%;
-      background-repeat  : repeat-x;
-      background-size    : 100% rem(strip-units(1px) * ($base-font-size / 10));
-    }//endif
-
-  }
-
-  // Tiny list-blocks.
-  &#{&}--tiny {
-    > .#{$namespace}#{$lists-namespace}#{$list-ui-namespace}__item {
-      @include space(padding, $base-spacing-unit-tiny);
-    }
-  }
-
-  // Small list-blocks.
-  &#{&}--small {
-    > .#{$namespace}#{$lists-namespace}#{$list-ui-namespace}__item {
-      @include space(padding, $base-spacing-unit-small);
-    }
-  }
-
-  // Large list-blocks.
-  &#{&}--large {
-    > .#{$namespace}#{$lists-namespace}#{$list-ui-namespace}__item {
-      @include space(padding, $base-spacing-unit-large);
-    }
-  }
-
-  // Huge list-blocks.
-  &#{&}--huge {
-    > .#{$namespace}#{$lists-namespace}#{$list-ui-namespace}__item {
-      @include space(padding, $base-spacing-unit-huge);
     }
   }
 

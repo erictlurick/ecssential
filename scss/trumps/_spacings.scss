@@ -44,7 +44,7 @@ $spacing-sizes: (
 
     @each $size, $value in $spacing-sizes {
 
-      .u-#{$property}#{$direction}#{$size} {
+      .#{$namespace}u-#{$property}#{$direction}#{$size} {
 
         @if (fallback(pixels) == true) {
           #{$property}#{$direction}: $value * ($base-font-size * $base-line-height) + px !important;

@@ -4,33 +4,33 @@
    TRUMPS / SHOW-HIDE
    ========================================================================== */
 
-.u-text-hidden { @include hide-text(); }
-.u-shown       { @include hide(undo); }
-.u-hidden      { @include hide; }
-.u-visible     { @include visibility(undo); }
-.u-invisible   { @include visibility; }
-.u-off-screen  { @include visually-hidden(); }
+.#{$namespace}u-text-hidden { @include hide-text(); }
+.#{$namespace}u-shown       { @include hide(undo); }
+.#{$namespace}u-hidden      { @include hide; }
+.#{$namespace}u-visible     { @include visibility(undo); }
+.#{$namespace}u-invisible   { @include visibility; }
+.#{$namespace}u-off-screen  { @include visually-hidden(); }
 
 @include breakpoint(small) {
-  .u-hide\@small {
+  .#{$namespace}u-hide#{$widths-breakpoint-separator}small {
     @include visually-hidden();
   }
 }
 
 @include breakpoint(medium) {
-  .u-hide\@medium {
+  .#{$namespace}u-hide#{$widths-breakpoint-separator}medium {
     @include visually-hidden();
   }
 }
 
 @include breakpoint(large) {
-  .u-hide\@arge {
+  .#{$namespace}u-hide#{$widths-breakpoint-separator}large {
     @include visually-hidden();
   }
 }
 
 @include breakpoint(x-large) {
-  .u-hide\@huge {
+  .#{$namespace}u-hide#{$widths-breakpoint-separator}huge {
     @include visually-hidden();
   }
 }

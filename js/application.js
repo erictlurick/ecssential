@@ -1,3 +1,118 @@
+// Storing SVG Sprite in localStorage
+// http://osvaldas.info/caching-svg-sprite-in-localstorage
+;( function( window, document ) {
+    'use strict';
+
+    var file     = 'img/icons/svg/svg.html',
+    revision = 1;
+
+    if( !document.createElementNS || !document.createElementNS( 'http://www.w3.org/2000/svg', 'svg' ).createSVGRect )
+        return true;
+
+    var isLocalStorage = 'localStorage' in window && window[ 'localStorage' ] !== null,
+        request,
+        data,
+        insertIT = function()
+        {
+            document.body.insertAdjacentHTML( 'afterbegin', data );
+        },
+        insert = function()
+        {
+            if( document.body ) insertIT();
+            else document.addEventListener( 'DOMContentLoaded', insertIT );
+        };
+
+        if( isLocalStorage && localStorage.getItem( 'inlineSVGrev' ) == revision )
+        {
+            data = localStorage.getItem( 'inlineSVGdata' );
+            if( data )
+            {
+                insert();
+                return true;
+            }
+        }
+
+        try
+        {
+            request = new XMLHttpRequest();
+            request.open( 'GET', file, true );
+            request.onload = function()
+            {
+                if( request.status >= 200 && request.status < 400 )
+                {
+                    data = request.responseText;
+                    insert();
+                    if( isLocalStorage )
+                    {
+                        localStorage.setItem( 'inlineSVGdata',  data );
+                        localStorage.setItem( 'inlineSVGrev',   revision );
+                    }
+                }
+            }
+            request.send();
+        }
+        catch( e ){}
+
+}( window, document ) );
+
+
+
+
+
+// Remove outlines for mouse users only
+// https://github.com/lindsayevans/outline.js/blob/master/outline.js
+(function(d){
+
+    var style_element = d.createElement('STYLE'),
+        dom_events = 'addEventListener' in d,
+        add_event_listener = function(type, callback){
+            // Basic cross-browser event handling
+            if(dom_events){
+                d.addEventListener(type, callback);
+            }else{
+                d.attachEvent('on' + type, callback);
+            }
+        },
+        set_css = function(css_text){
+            // Handle setting of <style> element contents in IE8
+            !!style_element.styleSheet ? style_element.styleSheet.cssText = css_text : style_element.innerHTML = css_text;
+        }
+    ;
+
+    d.getElementsByTagName('HEAD')[0].appendChild(style_element);
+
+    // Using mousedown instead of mouseover, so that previously focused elements don't lose focus ring on mouse move
+    add_event_listener('mousedown', function(){
+        set_css(':focus{outline:0}::-moz-focus-inner{border:0;}');
+    });
+
+    add_event_listener('keydown', function(){
+        set_css('');
+    });
+
+})(document);
+
+
+
+
+
+// Smooth Scrolling To Internal Links
+// http://www.paulund.co.uk/smooth-scroll-to-internal-links-with-jquery
+$(function() {
+	$('a[href^="#"]').on('click',function (e) {
+	    e.preventDefault();
+
+	    var target = this.hash,
+	    $target = $(target);
+
+	    $('html, body').stop().animate({'scrollTop': $target.offset().top}, 900, 'swing');
+	});
+});
+
+
+
+
+
 // Keep The Rhythm
 ;(function ( $, window, document, undefined ) {
 
@@ -85,136 +200,24 @@
 
 
 
-// Remove outlines for mouse users only
-// https://github.com/lindsayevans/outline.js/blob/master/outline.js
-(function(d){
-
-    var style_element = d.createElement('STYLE'),
-        dom_events = 'addEventListener' in d,
-        add_event_listener = function(type, callback){
-            // Basic cross-browser event handling
-            if(dom_events){
-                d.addEventListener(type, callback);
-            }else{
-                d.attachEvent('on' + type, callback);
-            }
-        },
-        set_css = function(css_text){
-            // Handle setting of <style> element contents in IE8
-            !!style_element.styleSheet ? style_element.styleSheet.cssText = css_text : style_element.innerHTML = css_text;
-        }
-    ;
-
-    d.getElementsByTagName('HEAD')[0].appendChild(style_element);
-
-    // Using mousedown instead of mouseover, so that previously focused elements don't lose focus ring on mouse move
-    add_event_listener('mousedown', function(){
-        set_css(':focus{outline:0}::-moz-focus-inner{border:0;}');
+// Apply CSS height to every iframe in correct ratio to it's current width
+// http://jaydenseric.com/blog/responsive-iframes
+function resizeIframes() {
+    // Loop over every iframe on the page
+    $('iframe').each(function() {
+        // Get the iframe's intended aspect ratio via it's inline dimensions
+        var ratio = $(this).attr('height') / $(this).attr('width');
+        // Apply a CSS height that is in correct ratio to it's current width
+        $(this).css('height', $(this).width() * ratio);
     });
+}
 
-    add_event_listener('keydown', function(){
-        set_css('');
-    });
+// Pop off an initial resize when the page loads
+resizeIframes();
 
-})(document);
-
-
-
-
-
-// Storing SVG Sprite in localStorage
-;( function( window, document ) {
-    'use strict';
-
-    var file     = 'img/icons/svg/svg.html',
-    revision = 1;
-
-    if( !document.createElementNS || !document.createElementNS( 'http://www.w3.org/2000/svg', 'svg' ).createSVGRect )
-        return true;
-
-    var isLocalStorage = 'localStorage' in window && window[ 'localStorage' ] !== null,
-        request,
-        data,
-        insertIT = function()
-        {
-            document.body.insertAdjacentHTML( 'afterbegin', data );
-        },
-        insert = function()
-        {
-            if( document.body ) insertIT();
-            else document.addEventListener( 'DOMContentLoaded', insertIT );
-        };
-
-        if( isLocalStorage && localStorage.getItem( 'inlineSVGrev' ) == revision )
-        {
-            data = localStorage.getItem( 'inlineSVGdata' );
-            if( data )
-            {
-                insert();
-                return true;
-            }
-        }
-
-        try
-        {
-            request = new XMLHttpRequest();
-            request.open( 'GET', file, true );
-            request.onload = function()
-            {
-                if( request.status >= 200 && request.status < 400 )
-                {
-                    data = request.responseText;
-                    insert();
-                    if( isLocalStorage )
-                    {
-                        localStorage.setItem( 'inlineSVGdata',  data );
-                        localStorage.setItem( 'inlineSVGrev',   revision );
-                    }
-                }
-            }
-            request.send();
-        }
-        catch( e ){}
-
-}( window, document ) );
-
-
-
-
-
-// Smooth Scrolling To Internal Links
-// http://www.paulund.co.uk/smooth-scroll-to-internal-links-with-jquery
-$(function() {
-	$('a[href^="#"]').on('click',function (e) {
-	    e.preventDefault();
-
-	    var target = this.hash,
-	    $target = $(target);
-
-	    $('html, body').stop().animate({'scrollTop': $target.offset().top}, 900, 'swing');
-	});
-});
-
-
-
-
-
-// Handle broken images.
-$(window).bind('load', function() {
-    $('img').each(function() {
-        if((typeof this.naturalWidth != "undefined" && this.naturalWidth == 0 ) || this.readyState == 'uninitialized' ) {
-            $(this).addClass('js-img-broken');
-        }
-    });
-});
-
-
-
-
-
-// Hide images.
-$(function() {
-	$('img').hide();
+// Update iframes each time the window is resized
+$(window).resize(function() {
+    resizeIframes();
 });
 
 
@@ -222,6 +225,11 @@ $(function() {
 
 
 (function fn() {
+
+    // Hide images.
+    $(function() {
+        $('img').hide();
+    });
 
 	fn.now = +new Date;
 
@@ -238,14 +246,14 @@ $(function() {
 		function WidthChange(mq) {
 			if (mq.matches) {
 				// window width is at least 960px
-				$('img, figure, iframe').keepTheRhythm({
+				$('img, figure').keepTheRhythm({
 					baseLine: 30,
 					verticalAlignment: "top"
 				});
 			}
 			else {
 				// window width is less than 960px
-				$('img, figure, iframe').keepTheRhythm({
+				$('img, figure').keepTheRhythm({
 					baseLine: 24,
 					verticalAlignment: "top"
 				});
@@ -258,3 +266,16 @@ $(function() {
 	});
 
 })();
+
+
+
+
+
+// Handle broken images.
+$(window).bind('load', function() {
+    $('img').each(function() {
+        if((typeof this.naturalWidth != "undefined" && this.naturalWidth == 0 ) || this.readyState == 'uninitialized' ) {
+            $(this).attr('id', 'js-img-broken');
+        }
+    });
+});

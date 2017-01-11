@@ -9,15 +9,15 @@
  */
 
 a {
-  color              : color(action);
-  background-color   : transparent; /* [1] */
-  transition         : all $base-ui-transition;
-}
 
-a:hover,
-a:focus,
-a:active {
-  color  : darken(color(action), 10%);
+  color           : color(action);
+  background-color: transparent; /* [1] */
+  transition      : color $base-ui-transition;
+
+  @include attention {
+  	color: darken(color(action), 10%);
+  }
+
 }
 
 
@@ -36,17 +36,6 @@ a:active {
 a:active {
   position: relative;
   top     : 1px;
-}
-
-
-/**
- * Additional info.
- */
-
-a:before,
-a:after {
-  @include type(-1, $line-height: 1);
-  vertical-align: baseline;
 }
 
 
