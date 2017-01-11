@@ -9,7 +9,7 @@ I built this simple set of essential <abbr title="Sassy CSS">SCSS</abbr> variabl
 <li>Simple to master and use</li>
 <li>It will ensure you'll maintain a baseline even when elements (images, iframes) tend to break your beautiful rhythm.</li>
 <li>Responsive friendly</li>
-<li>Lightweight (38kb minified)</li>
+<li>Lightweight (38kb minified, 9kb gziped)</li>
 <li>Work / think in pixels — win in REMs</li>
 <li>Switchable support for old browsers</li>
 <li>Switchable support for <a href="http://kennethormandy.com/journal/normalize-opentype-css">Normalize Opentype</a></li>
@@ -20,4 +20,4 @@ I built this simple set of essential <abbr title="Sassy CSS">SCSS</abbr> variabl
 <p>Preview at <a href="https://erictlurick.github.io/ecssential/">https://erictlurick.github.io/ecssential/</a></p>
 
 <h2>Acknowledgements &amp; Inspiration</h2>
-Heavily inspired by <a href="http://www.gridlover.net/">Grid Lover</a>, <a href="https://github.com/sevenupcan/gridlover-mixin">Gridlover Mixin</a>, <a href="https://10up.github.io/sanitize.css/">Sanitize</a>, <a href="https://github.com/inuitcss">InuitCSS</a> and <a href="https://yeun.github.io/open-color/">Open Color</a>.
+Heavily inspired by <a href="http://www.gridlover.net/">Grid Lover</a>, <a href="https://github.com/sevenupcan/gridlover-mixin">Gridlover Mixin</a>, <a href="https://10up.github.io/sanitize.css/">Sanitize</a> and <a href="https://github.com/inuitcss">InuitCSS</a>.
