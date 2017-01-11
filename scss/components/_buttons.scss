@@ -5,7 +5,7 @@
    ========================================================================== */
 
 // Predefine the variable below in order to alter and enable specific features.
-$buttons-namespace            : 'c-button' !default;
+$buttons-namespace: 'c-button' !default;
 
 
 /**
@@ -89,7 +89,7 @@ $buttons-namespace            : 'c-button' !default;
  * Ghost buttons have see-through backgrounds and are bordered.
  */
 
-// Predefine the variable below in order to alter and enable specific features.
+// Predefine the variables below in order to alter and enable specific features.
 $button-ghost-border-width: 2px;
 $button-ghost-spacing     : $button-ghost-border-width * 0.75 !default;
 

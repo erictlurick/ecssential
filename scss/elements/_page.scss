@@ -29,7 +29,7 @@ html {
   font-size                : ($base-font-size / 16) * 1em; /* [4] */
 
   @include breakpoint(large) {
-    font-size: $base-font-size-large;                    /* [4] */
+    font-size: $base-font-size-large;                      /* [4] */
   }
 
   line-height              : $base-line-height;            /* [4] */

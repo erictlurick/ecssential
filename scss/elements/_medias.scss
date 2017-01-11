@@ -20,12 +20,12 @@ canvas,
 iframe,
 svg,
 video {
-  max-width     : 100%;     /* [1] */
-  height        : auto;     /* [2] */
-  width         : auto;     /* [3] */
-  font-style    : italic;   /* [4] */
-  vertical-align: middle;   /* [5] */
-  border        : 0;        /* [6] */
+  max-width     : 100%;   /* [1] */
+  height        : auto;   /* [2] */
+  width         : auto;   /* [3] */
+  font-style    : italic; /* [4] */
+  vertical-align: middle; /* [5] */
+  border        : 0;      /* [6] */
 }
 
 
@@ -84,7 +84,7 @@ figure {
  * default. when the image is broken and not loaded, the pseudo-elements can
  * appear.
  *
- * jQuery will detect broken images and add the `.is-broken` class.
+ * jQuery will detect broken images and add the `.js-img-broken` ID.
  *
    $(window).bind('load', function() {
      $('img').each(function() {

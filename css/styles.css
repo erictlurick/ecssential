@@ -1207,7 +1207,7 @@ figcaption {
  * default. when the image is broken and not loaded, the pseudo-elements can
  * appear.
  *
- * jQuery will detect broken images and add the `.is-broken` class.
+ * jQuery will detect broken images and add the `.js-img-broken` ID.
  *
    $(window).bind('load', function() {
      $('img').each(function() {
