@@ -9,7 +9,7 @@ I built this simple set of essential <abbr title="Sassy CSS">SCSS</abbr> variabl
 <li>Simple to master and use</li>
 <li>It will ensure you'll maintain a baseline even when elements (images, iframes) tend to break your beautiful rhythm.</li>
 <li>Responsive friendly</li>
-<li>Lightweight (38kb minified, 9kb gziped)</li>
+<li>Lightweight (47kb minified, 9kb gziped)</li>
 <li>Work / think in pixels — win in REMs</li>
 <li>Switchable support for old browsers</li>
 <li>Switchable support for <a href="http://kennethormandy.com/journal/normalize-opentype-css">Normalize Opentype</a></li>
